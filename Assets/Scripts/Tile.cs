@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Tile : MonoBehaviour, IPointerClickHandler
+public class Tile : MonoBehaviour
 {
     public int type;
     public float spacing, offset;
@@ -16,7 +16,7 @@ public class Tile : MonoBehaviour, IPointerClickHandler
         spacing = s;
         offset = o;
         transform.parent = GameLogic.INSTANCE.gridParent;
-        transform.localScale = new Vector3(1,1,1) * 0.9f;
+        transform.localScale = new Vector3(1,1,1) * 0.975f;
         row = r; col = c;
         GoToPosition();
         gameLogic = GameLogic.INSTANCE;
@@ -41,7 +41,7 @@ public class Tile : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnMouseDown()
     {
         gameLogic.Clicked(this);
     }

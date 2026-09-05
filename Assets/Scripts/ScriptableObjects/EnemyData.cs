@@ -13,6 +13,5 @@ namespace Assets.Scripts.ScriptableObjects
         public float maxHp, speed, damage, maxAcceleration;
         public float wander, instability, cornerCut;
 
-
     }
 }

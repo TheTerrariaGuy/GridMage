@@ -42,6 +42,10 @@ public class MobScript : MonoBehaviour
     void Update()
     {
         Move();
+        if (Vector3.Magnitude(target - transform.localPosition) <= 0.05f)
+        {
+            UpdateTargetComplete();
+        }
     }
 
     private void Move()
@@ -49,6 +53,7 @@ public class MobScript : MonoBehaviour
         Vector3 optimalVel = (target - transform.localPosition).normalized * speed;
         Vector3 diff = optimalVel - currVelocity;
         currVelocity += diff * Time.deltaTime * maxAcceleration;
+        currVelocity = Vector3.ClampMagnitude(currVelocity, maxVelocity.magnitude);
         transform.localPosition = Vector3.MoveTowards(transform.localPosition, target, currVelocity.magnitude * Time.deltaTime);
     }
 
@@ -129,10 +134,5 @@ public class MobScript : MonoBehaviour
                 pathDisagreement++;
             }
         }
-    }
-
-    void Update()
-    {
-        
     }
 }

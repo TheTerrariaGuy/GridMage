@@ -22,12 +22,12 @@ namespace Assets.Scripts
                 return;
             }
             INSTANCE = this;
-            Init();
         }
 
         private void Init()
         {
             mobs = new HashSet<MobScript>();
+            UpdateBestPath(5, 5);
         }
 
         public void SummonAt(int r, int c, int type)

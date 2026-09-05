@@ -5,6 +5,7 @@ using static Indexing;
 
 namespace Assets.Scripts
 {
+    [DefaultExecutionOrder(-100)]
     public class GameLogic : MonoBehaviour
     {
         public static GameLogic INSTANCE;
@@ -12,14 +13,20 @@ namespace Assets.Scripts
         [NonSerialized] public int[,] grid;
         [NonSerialized] public Tile[,] tilesGrid;
         [NonSerialized] public HashSet<Tile> tilesSet;
-
         [SerializeField] private GameObject tile;
         [SerializeField] private int rows, cols;
         [SerializeField] public Transform gridParent;
         [SerializeField] public float spacing, offset;
+        [SerializeField] private float clock;
+        [SerializeField] private GameObject clockHand;
+        [SerializeField] public float maxMana, manaRegen;
+        
         private int currentSelection;
+        public float time;
+        public float currMana;
 
         // Use this for initialization
+
         void Start()
         {
             if (INSTANCE == null)
@@ -52,15 +59,42 @@ namespace Assets.Scripts
             }
         }
 
+        void Update()
+        {
+            if (!Selector.INSTANCE.spacePressed)
+            {
+                time += Time.deltaTime;
+                currMana += Time.deltaTime * manaRegen;
+                if (currMana > maxMana) currMana = maxMana;
+                float angle = time / clock * 360f;
+                clockHand.transform.localRotation = Quaternion.Euler(0f, 0f, -angle);
+            }
+            if (time > clock)
+            {
+                time -= clock;
+                ProcessSpells();
+            }
+        }
+
+        public ref float GetTime()
+        {
+            return ref time;
+        }
+
         public void UpdateTiles()
         {
             for (int i = 0; i < grid.GetLength(0); i++)
             {
                 for (int j = 0; j < grid.GetLength(1); j++)
                 {
-                    tilesGrid[i, j].ChangeType(grid[i, j]);
+                    UpdateTile(i,j);
                 }
             }
+        }
+
+        public void UpdateTile(int r, int c)
+        {
+            tilesGrid[r, c].ChangeType(grid[r, c]);
         }
         
         public void UpdateSelection(int newSelection)
@@ -70,10 +104,6 @@ namespace Assets.Scripts
 
         public void Clicked(Tile t)
         {
-            if (t.type != 0)
-            {
-                return;
-            }
             MakeMove(t.row, t.col, currentSelection);
         }
 
@@ -81,15 +111,15 @@ namespace Assets.Scripts
         // type: 100, 200 ,300, 400
         public void MakeMove(int r, int c, int type)
         {
+            if (grid[r, c] != 0 && grid[r, c] % 100 != 11) return;
+            float manaCost = Indexing.INSTANCE.manaCosts[type];
+            if (currMana - manaCost < 0) return;
+            currMana -= manaCost;
             grid[r, c] = type;
-            grid = HandleFading(grid);
-            int[,] beforeRxn = (int[,])grid.Clone();
-            grid = HandleSpells(grid);
-            grid = HandleOverlap(grid, beforeRxn);
-            UpdateTiles();
+            UpdateTile(r, c);
         }
 
-        public void MakeSkipMove()
+        public void ProcessSpells()
         {
             grid = HandleFading(grid);
             int[,] beforeRxn = (int[,])grid.Clone();

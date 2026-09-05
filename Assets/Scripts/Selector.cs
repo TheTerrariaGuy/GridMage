@@ -7,12 +7,15 @@ using static UnityEngine.Rendering.DebugUI.Table;
 
 public class Selector : MonoBehaviour, IPointerClickHandler
 {
-    
+    public static Selector INSTANCE { get; private set; }
     [SerializeField] private SpriteRenderer spriteRenderer;
     private int currentType;
+    public bool spacePressed;
     
     void Start()
     {
+        if (INSTANCE != null) Destroy(this);
+        INSTANCE = this;
         currentType = 0;
         ChangeType();
     }
@@ -43,11 +46,8 @@ public class Selector : MonoBehaviour, IPointerClickHandler
     void Update()
     {
         if (Keyboard.current == null) return;
-        
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
-        {
-            ChangeType();
-        }
+        spacePressed = Keyboard.current.spaceKey.IsPressed();
+
         if (Keyboard.current.digit1Key.wasPressedThisFrame)
         {
             ChangeType(100);
