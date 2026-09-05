@@ -15,7 +15,7 @@ public class Tile : MonoBehaviour
     {
         spacing = s;
         offset = o;
-        transform.parent = GameLogic.INSTANCE.gridParent;
+        transform.parent = GridHelper.INSTANCE.GetAnchor();
         transform.localScale = new Vector3(1,1,1) * 0.975f;
         row = r; col = c;
         GoToPosition();
@@ -25,11 +25,7 @@ public class Tile : MonoBehaviour
 
     public void GoToPosition()
     {
-        // Bottom left aligned
-        float xTarget, yTarget;
-        xTarget = col * spacing + offset;
-        yTarget = row * -spacing + offset;
-        transform.localPosition = new Vector3(xTarget, yTarget, 0);
+        transform.localPosition = GridHelper.INSTANCE.GetLocalPosition(row, col, spacing, offset);
     }
 
     public void ChangeType(int t)

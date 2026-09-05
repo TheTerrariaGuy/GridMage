@@ -9,10 +9,16 @@ namespace Assets.Scripts
     public class MobHandler : MonoBehaviour
     {
         public static MobHandler INSTANCE;
-        [SerializeField] private Dictionary<int, EnemyData> enemyData;
+        [SerializeField] private EnemyData[] enemyTypes = Array.Empty<EnemyData>();
+        private readonly Dictionary<int, EnemyData> enemyData = new Dictionary<int, EnemyData>();
         [SerializeField] private GameObject enemyPrefab;
         private HashSet<MobScript> mobs;
-        private NextStep[,] optimalPath;
+        [SerializeField] private int pathChannelCount;
+        private NextStep[,,] optimalPath; // [channel, row, col]
+        private static readonly (int r, int c)[] Directions =
+        {
+            (1, 0), (-1, 0), (0, 1), (0, -1)
+        };
 
         void Start()
         {
@@ -22,53 +28,97 @@ namespace Assets.Scripts
                 return;
             }
             INSTANCE = this;
+            Init();
         }
 
         private void Init()
         {
+            enemyData.Clear();
+            foreach (EnemyData data in enemyTypes)
+            {
+                if (data == null) continue;
+                if (enemyData.ContainsKey(data.type))
+                {
+                    continue;
+                }
+                enemyData.Add(data.type, data);
+            }
             mobs = new HashSet<MobScript>();
-            UpdateBestPath(5, 5);
+            UpdateBestPath(PlayerHandler.INSTANCE.r, PlayerHandler.INSTANCE.c);
+            SummonAt(10, 10, 1);
+            SummonAt(15, 10, 1);
+            SummonAt(10, 15, 1);
+            SummonAt(13, 10, 1);
+            SummonAt(10, 13, 1);
         }
 
-        public void SummonAt(int r, int c, int type)
+        public void HandleUpdate()
         {
-            if (!enemyData.ContainsKey(type)) print("Enemy type " + type + " not found in MobHandler");
-            GameObject enemy = Instantiate(enemyPrefab, GameLogic.INSTANCE.gridParent);
+            UpdateBestPath(PlayerHandler.INSTANCE.r, PlayerHandler.INSTANCE.c);
+            mobs.RemoveWhere(m => m == null);
+            foreach (MobScript m in mobs)
+            {
+                if (m == null) continue;
+                m.TakeDamage();
+                m.UpdateTargetIncomplete();
+            }
+        }
+
+        public void SummonAt(int r, int c, int type, int pathChannel = -1)
+        {
+            if (pathChannel < 0)
+            {
+                pathChannel = (int)(UnityEngine.Random.value * pathChannelCount);
+                
+            }
+            pathChannel = Math.Min(pathChannel, pathChannelCount - 1);
+
+            if (!GridHelper.IsInBounds(GameLogic.INSTANCE.tilesGrid, r, c)) return;
+            GameObject enemy = Instantiate(enemyPrefab, GridHelper.INSTANCE.GetAnchor());
             MobScript mobScript = enemy.GetComponent<MobScript>();
-            mobScript.Init(enemyData[type], GameLogic.INSTANCE.tilesGrid[r,c]);
+            EnemyData data = enemyData[type];
+            mobScript.Init(data, GameLogic.INSTANCE.tilesGrid[r,c], pathChannel);
             mobs.Add(mobScript);
         }
 
-        public NextStep getBestPath(int r, int c)
+        public NextStep getBestPath(int r, int c, int pathChannel = 0)
         {
-            return optimalPath[r, c];
+            if (!GridHelper.IsInBounds(optimalPath, pathChannel, r, c)) return null;
+            return optimalPath[pathChannel, r, c];
         }
 
-        public NextStep getBestPath(int r, int c, float wander)
+        public bool IsReachable(int r, int c, int pathChannel = 0)
         {
-            NextStep b = optimalPath[r, c];
+            return GridHelper.IsInBounds(optimalPath, pathChannel, r, c) &&
+                (optimalPath[pathChannel, r, c] != null ||
+                 (r == PlayerHandler.INSTANCE.r && c == PlayerHandler.INSTANCE.c));
+        }
+
+        public NextStep getBestPath(int r, int c, float wander, int pathChannel = 0)
+        {
+            NextStep b = getBestPath(r, c, pathChannel);
+            if (b == null) return null;
             float[] weights = new float[4];
             NextStep[] cands = new NextStep[4];
             int count = 0;
-            for (int i = -1; i <= 1; i += 2)
+            foreach ((int i, int j) in Directions)
             {
-                for (int j = -1; j <= 1; j += 2)
+                // check bounds, no backtrack
+                NextStep neighbor = getBestPath(r + i, c + j, pathChannel);
+                bool isBest = b.r == i && b.c == j;
+                if (isBest || (neighbor != null && !neighbor.Equals(new NextStep(-i, -j))))
                 {
-                    // check bounds, no backtrack
-                    if (r + i >= 0 && r + i < optimalPath.GetLength(0) && c + j >= 0 && c + j < optimalPath.GetLength(1) && optimalPath[r + i, c + j].Equals(new NextStep(-i, -j)))
+                    NextStep cand = new NextStep(i, j);
+                    if (b.Equals(cand))
                     {
-                        NextStep cand = new NextStep(i, j);
-                        if (b.Equals(cand))
-                        {
-                            weights[count] = 1;
-                        }
-                        else
-                        {
-                            weights[count] = UnityEngine.Random.value * wander / 4f;
-                        }
-                        cands[count] = cand;
-                        count++;
+                        weights[count] = 1;
                     }
+                    else
+                    {
+                        weights[count] = UnityEngine.Random.value * wander / 4f;
+                    }
+                    cands[count] = cand;
+                    count++;
                 }
             }
 
@@ -88,9 +138,15 @@ namespace Assets.Scripts
 
         public void UpdateBestPath(int targetR, int targetC)
         {
-            int[,] walls = ExtractWalls(); // both walls and visited
+            int[,] walls = GridHelper.INSTANCE.ExtractWalls();
+            optimalPath = new NextStep[Math.Max(1, pathChannelCount), walls.GetLength(0), walls.GetLength(1)];
+            for (int channel = 0; channel < optimalPath.GetLength(0); channel++)
+                BuildChannel(channel, targetR, targetC, (int[,])walls.Clone());
+        }
+
+        private void BuildChannel(int channel, int targetR, int targetC, int[,] walls)
+        {
             Queue<(int, int)> queue = new Queue<(int, int)>();
-            optimalPath = new NextStep[walls.GetLength(0), walls.GetLength(1)];
             walls[targetR, targetC] = 1;
             queue.Enqueue((targetR, targetC));
             while (queue.TryDequeue(out var current))
@@ -98,22 +154,19 @@ namespace Assets.Scripts
                 int r = current.Item1, c = current.Item2;
 
                 List<(int, int)> toAdd = new List<(int, int)>();
-                for (int i = -1; i <= 1; i += 2)
+                foreach ((int i, int j) in Directions)
                 {
-                    for (int j = -1; j <= 1; j += 2)
+                    int newR = r + i, newC = c + j;
+                    if (GridHelper.IsInBounds(walls, newR, newC) && walls[newR, newC] == 0 && optimalPath[channel, newR, newC] == null)
                     {
-                        int newR = r + i, newC = c + j;
-                        if (newR >= 0 && newR < walls.GetLength(0) && newC >= 0 && newC < walls.GetLength(1) && walls[newR, newC] == 0 && optimalPath[newR, newC] == null)
-                        {
-                            toAdd.Add((newR, newC));
-                        }
+                        toAdd.Add((newR, newC));
                     }
                 }
 
                 Shuffle(toAdd);
                 foreach ((int newR, int newC) in toAdd)
                 {
-                    optimalPath[newR, newC] = new NextStep(r - newR, c - newC);
+                    optimalPath[channel, newR, newC] = new NextStep(r - newR, c - newC);
                     walls[newR, newC] = 1; // mark as visited
                     queue.Enqueue((newR, newC));
                 }
@@ -131,38 +184,6 @@ namespace Assets.Scripts
             return values;
         }
         
-        public int[,] ExtractWalls()
-        {
-            int[,] grid = GameLogic.INSTANCE.grid;
-            int[,] walls = new int[grid.GetLength(0), grid.GetLength(1)];
-
-            for (int i = 0; i < grid.GetLength(0); i++)
-            {
-                for (int j = 0; j < grid.GetLength(1); j++)
-                {
-                    walls[i, j] = grid[i, j] / 100 == 4 ? 1 : 0;
-                }
-            }
-
-            return walls;
-        }
-
-        public Transform GetTileTransform(int r, int c)
-        {
-            return GameLogic.INSTANCE.tilesGrid[r, c].gameObject.transform;
-        }
-
-        public Tile GetTileOn(Vector3 position)
-        {
-            Vector3Int transformed = Vector3Int.RoundToInt((position - Vector3.one * GameLogic.INSTANCE.offset) / GameLogic.INSTANCE.spacing);
-            return GameLogic.INSTANCE.tilesGrid[transformed.x, transformed.y];
-        }
-
-        public Transform GetAnchor()
-        {
-            return GameLogic.INSTANCE.gridParent;
-        }
-
         public class NextStep
         {
             public int r, c;
@@ -171,6 +192,10 @@ namespace Assets.Scripts
             {
                 this.r = r;
                 this.c = c;
+            }
+            public bool Equals(NextStep other)
+            {
+                return other != null && other.r == this.r && other.c == this.c;
             }
         }
     }

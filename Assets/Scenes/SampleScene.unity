@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 45174055}
   - component: {fileID: 45174054}
+  - component: {fileID: 45174056}
   m_Layer: 0
   m_Name: GameHandler
   m_TagString: Untagged
@@ -157,9 +158,21 @@ MonoBehaviour:
   clock: 1
   clockHand: {fileID: 1782137552}
   maxMana: 100
-  manaRegen: 10
+  manaRegen: 5
   time: 0
   currMana: 50
+--- !u!114 &45174056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45174052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef758eb788d63894a90e87135e55eaec, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.GridHelper
 --- !u!4 &45174055
 Transform:
   m_ObjectHideFlags: 0
@@ -206,7 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   bar: {fileID: 1881731709}
-  current: 100
+  current: 50
   tspeed: 0.05
   vel: 0
 --- !u!212 &112242664
@@ -581,7 +594,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   spriteRenderer: {fileID: 698537592}
-  spacePressed: 0
 --- !u!212 &698537592
 SpriteRenderer:
   serializedVersion: 3

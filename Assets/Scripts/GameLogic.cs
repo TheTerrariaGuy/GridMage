@@ -20,10 +20,14 @@ namespace Assets.Scripts
         [SerializeField] private float clock;
         [SerializeField] private GameObject clockHand;
         [SerializeField] public float maxMana, manaRegen;
+
+
+        //[SerializeField] public GameObject playerPoint;
         
         private int currentSelection;
         public float time;
         public float currMana;
+        private const float ProcessSpellsManaCost = 5f;
 
         // Use this for initialization
 
@@ -61,19 +65,16 @@ namespace Assets.Scripts
 
         void Update()
         {
-            if (!Selector.INSTANCE.spacePressed)
-            {
-                time += Time.deltaTime;
-                currMana += Time.deltaTime * manaRegen;
-                if (currMana > maxMana) currMana = maxMana;
-                float angle = time / clock * 360f;
-                clockHand.transform.localRotation = Quaternion.Euler(0f, 0f, -angle);
-            }
+            time += Time.deltaTime;
+            currMana += Time.deltaTime * manaRegen;
+            if (currMana > maxMana) currMana = maxMana;
+            if (clock <= 0f) return;
             if (time > clock)
             {
                 time -= clock;
-                ProcessSpells();
             }
+            float angle = time / clock * 360f;
+            if (clockHand != null) clockHand.transform.localRotation = Quaternion.Euler(0f, 0f, -angle);
         }
 
         public ref float GetTime()
@@ -111,8 +112,9 @@ namespace Assets.Scripts
         // type: 100, 200 ,300, 400
         public void MakeMove(int r, int c, int type)
         {
+            if (!GridHelper.IsInBounds(grid, r, c)) return;
             if (grid[r, c] != 0 && grid[r, c] % 100 != 11) return;
-            float manaCost = Indexing.INSTANCE.manaCosts[type];
+            if (!Indexing.INSTANCE.manaCosts.TryGetValue(type, out float manaCost)) return;
             if (currMana - manaCost < 0) return;
             currMana -= manaCost;
             grid[r, c] = type;
@@ -121,16 +123,28 @@ namespace Assets.Scripts
 
         public void ProcessSpells()
         {
+            if (currMana < ProcessSpellsManaCost) return;
+            currMana -= ProcessSpellsManaCost;
+
             grid = HandleFading(grid);
             int[,] beforeRxn = (int[,])grid.Clone();
             grid = HandleSpells(grid);
             grid = HandleOverlap(grid, beforeRxn);
             UpdateTiles();
+            if (MobHandler.INSTANCE != null) MobHandler.INSTANCE.HandleUpdate();
         }
 
         private int[,] HandleFading(int[,] g)
         {
             int[,] newGrid = (int[,])g.Clone();
+            // Clear the old spent effects before any fading tile writes new effects.
+            for (int i = 0; i < g.GetLength(0); i++)
+            {
+                for (int j = 0; j < g.GetLength(1); j++)
+                {
+                    if (g[i, j] >= 100 && g[i, j] % 100 == 11) newGrid[i, j] = 0;
+                }
+            }
             
             for (int i = 0; i < g.GetLength(0); i++)
             {
@@ -139,7 +153,6 @@ namespace Assets.Scripts
                     if (g[i,j] < 100) continue; // paranoia
 
                     // Normal stuff
-                    if (g[i,j] % 100 == 11) newGrid[i, j] = 0;
                     if (g[i,j] % 100 == 10) // Is fading block
                     {
                         Indexing.INSTANCE.ModifyFade(Indexing.INSTANCE.fadeMap[g[i,j]], i, j, g[i,j], g, ref newGrid); // cursed af
@@ -230,7 +243,7 @@ namespace Assets.Scripts
                 int targetRow = r + requirement.y;
                 int targetCol = c + requirement.x;
 
-                if (!IsInBounds(g, targetRow, targetCol) ||
+                if (!GridHelper.IsInBounds(g, targetRow, targetCol) ||
                     !requirement.Matches(g[targetRow, targetCol]))
                 {
                     return false;
@@ -269,7 +282,7 @@ namespace Assets.Scripts
                 int targetRow = originRow + output.y;
                 int targetCol = originCol + output.x;
 
-                if (!IsInBounds(grid, targetRow, targetCol))
+                if (!GridHelper.IsInBounds(grid, targetRow, targetCol))
                 {
                     continue;
                 }
@@ -279,38 +292,41 @@ namespace Assets.Scripts
                     targetCol,
                     output.type,
                     output.priority,
-                    insertionOrder++));
+                    insertionOrder++,
+                    originRow,
+                    originCol));
             }
         }
 
         private static void ApplyQueuedChanges(SortedSet<Change> changeQueue, ref int[,] grid)
         {
+            int[,] walls = GridHelper.INSTANCE.ExtractWalls(grid);
             while (changeQueue.Count > 0)
             {
                 Change change = changeQueue.Min;
                 changeQueue.Remove(change);
+                if (!GridHelper.INSTANCE.TestForWalls(walls,
+                    change.SourceRow, change.SourceCol, change.Row, change.Col)) continue;
                 grid[change.Row, change.Col] = change.Type;
             }
-        }
-
-        private static bool IsInBounds(int[,] grid, int row, int col)
-        {
-            return row >= 0 && row < grid.GetLength(0) &&
-                   col >= 0 && col < grid.GetLength(1);
         }
 
         public class Change : IComparable<Change>
         {
             public int Row { get; }
             public int Col { get; }
+            public int SourceRow { get; }
+            public int SourceCol { get; }
             public int Type { get; }
             public int Priority { get; }
             private int InsertionOrder { get; }
 
-            public Change(int row, int col, int type, int priority, int insertionOrder)
+            public Change(int row, int col, int type, int priority, int insertionOrder, int sourceRow, int sourceCol)
             {
                 Row = row;
                 Col = col;
+                SourceRow = sourceRow;
+                SourceCol = sourceCol;
                 Type = type;
                 Priority = priority;
                 InsertionOrder = insertionOrder;

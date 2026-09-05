@@ -10,11 +10,14 @@ public class Selector : MonoBehaviour, IPointerClickHandler
     public static Selector INSTANCE { get; private set; }
     [SerializeField] private SpriteRenderer spriteRenderer;
     private int currentType;
-    public bool spacePressed;
     
     void Start()
     {
-        if (INSTANCE != null) Destroy(this);
+        if (INSTANCE != null)
+        {
+            Destroy(this);
+            return;
+        }
         INSTANCE = this;
         currentType = 0;
         ChangeType();
@@ -46,7 +49,10 @@ public class Selector : MonoBehaviour, IPointerClickHandler
     void Update()
     {
         if (Keyboard.current == null) return;
-        spacePressed = Keyboard.current.spaceKey.IsPressed();
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            GameLogic.INSTANCE.ProcessSpells();
+        }
 
         if (Keyboard.current.digit1Key.wasPressedThisFrame)
         {

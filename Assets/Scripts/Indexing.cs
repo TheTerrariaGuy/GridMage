@@ -11,6 +11,7 @@ public class Indexing : MonoBehaviour
     [NonSerialized] public Dictionary<int, HashSet<Offset>> fadeMap;
     [NonSerialized] public Dictionary<int, Color32> colorMap; // temp, change to sprite/scriptable object later
     [NonSerialized] public Dictionary<int, float> manaCosts;
+    [NonSerialized] public Dictionary<int, float> damageMap;
 
     /*
      * IDS:
@@ -76,16 +77,7 @@ I (0,0,400*) O (0,0,0,0) (0,0,410,56) D (0,1,2,3) E
 
 WATER
 I (1,0,200) O (1,0,0,0) (1,0,201,51) (2,0,201,51) (3,0,201,51) (4,0,201,51) D (0,1,2,3) E
-I (1,1,200) O (1,1,0,0) (1,2,203,50) (2,1,203,50) (2,2,203,50) D (0,1,2,3) E
-I (0,0,201) O (0,0,202,-1) D (0) E
-I (0,0,202) O (0,0,203,-1) D (0) E
-I (0,0,203) O (0,0,204,-1) D (0) E
-I (0,0,204) O (0,0,205,-1) D (0) E
-I (0,0,205) O (0,0,206,-1) D (0) E
-I (0,0,206) O (0,0,207,-1) D (0) E
-I (0,0,207) O (0,0,0,-1) D (0) E
-
-
+I (1,1,200) O (1,1,0,0) (1,2,201,50) (2,1,201,50) (2,2,201,50) D (0,1,2,3) E
 
 ELECTRICITY
 I (1,0,300) O (1,0,0,0) (2,1,301,50) (3,2,302,50) (4,3,302,50) (2,-1,301,50) (3,-2,302,50) (4,-3,302,50) D (0,1,2,3) E
@@ -99,7 +91,19 @@ I (1,1,200*) O (0,0,0,0) (1,1,211,53) (2,2,301,53) (3,3,301,53) D (0,1,2,3) E
 
 END
 ";
-// maybe: I (0,0,300*) O (2,2,310,52) (3,3,310,52) (-2,2,310,52) (-3,3,310,52) (2,-2,310,52) (3,-3,310,52) (-2,-2,310,52) (-3,-3,310,52) D (0,1,2,3) E
+
+    /* UNUSED
+    I (0,0,300*) O (2,2,310,52) (3,3,310,52) (-2,2,310,52) (-3,3,310,52) (2,-2,310,52) (3,-3,310,52) (-2,-2,310,52) (-3,-3,310,52) D (0,1,2,3) E
+
+    I (0,0,201) O (0,0,202,-1) D (0) E
+    I (0,0,202) O (0,0,203,-1) D (0) E
+    I (0,0,203) O (0,0,204,-1) D (0) E
+    I (0,0,204) O (0,0,205,-1) D (0) E
+    I (0,0,205) O (0,0,206,-1) D (0) E
+    I (0,0,206) O (0,0,207,-1) D (0) E
+    I (0,0,207) O (0,0,0,-1) D (0) E
+
+    */
 
     private void Awake()
     {
@@ -176,7 +180,7 @@ END
 
             [300] = new Color32(85, 37, 134, 255),
             [301] = new Color32(128, 79, 179, 255),
-            [302] = new Color32(128, 79, 179, 128),
+            [302] = new Color32(128, 79, 179, 200),
             [310] = new Color32(153, 105, 199, 255),
             [311] = new Color32(181, 137, 214, 255),
 
@@ -196,6 +200,25 @@ END
             [400] = 2f,
         };
 
+        damageMap = new Dictionary<int, float>
+        {
+            [100] = 10f,
+            [101] = 10f,
+
+            [200] = 4f,
+            [201] = 4f,
+            [210] = 16f,
+            [211] = 8f,
+
+            [300] = 1f,
+            [301] = 1f,
+            [302] = 1f,
+            [310] = 4f,
+            [311] = 2f,
+
+            [410] = 20f,
+            [411] = 16f,
+        };
 
         // Parsing spells
         string[] tokens = CastingInfo.Split(
@@ -329,7 +352,7 @@ END
     {
         foreach (Offset offset in o)
         {
-            if (r + offset.y < 0 || r + offset.y >= g.GetLength(0) || c + offset.x < 0 || c + offset.x >= g.GetLength(1))
+            if (!Assets.Scripts.GridHelper.IsInBounds(g, r + offset.y, c + offset.x))
             {
                 continue;
             }
