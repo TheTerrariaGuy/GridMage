@@ -1,0 +1,1484 @@
+fileFormatVersion: 2
+guid: 15db36f8d6c017144b374ee1e41fbdee
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1154002384360128948
+    second: BridgesAndStairs_0
+  - first:
+      213: -5499872751385177124
+    second: BridgesAndStairs_1
+  - first:
+      213: -583763091774121550
+    second: BridgesAndStairs_2
+  - first:
+      213: -1381824912249902919
+    second: BridgesAndStairs_3
+  - first:
+      213: -5448137489198983683
+    second: BridgesAndStairs_4
+  - first:
+      213: -5249895169992396717
+    second: BridgesAndStairs_5
+  - first:
+      213: -821577486263786334
+    second: BridgesAndStairs_6
+  - first:
+      213: -1803695493535658689
+    second: BridgesAndStairs_7
+  - first:
+      213: -1402334114687311176
+    second: BridgesAndStairs_8
+  - first:
+      213: -456247339075847920
+    second: BridgesAndStairs_9
+  - first:
+      213: -7420096402739567410
+    second: BridgesAndStairs_10
+  - first:
+      213: -4112252420108501009
+    second: BridgesAndStairs_11
+  - first:
+      213: 4579513105596195476
+    second: BridgesAndStairs_12
+  - first:
+      213: -6569401892513049613
+    second: BridgesAndStairs_13
+  - first:
+      213: 3519364951183106622
+    second: BridgesAndStairs_14
+  - first:
+      213: 5820547240635541638
+    second: BridgesAndStairs_15
+  - first:
+      213: 235013378860928981
+    second: BridgesAndStairs_16
+  - first:
+      213: 1208010184110907000
+    second: BridgesAndStairs_17
+  - first:
+      213: 5111044119445169752
+    second: BridgesAndStairs_18
+  - first:
+      213: 414593025832408685
+    second: BridgesAndStairs_19
+  - first:
+      213: -5188257243642969430
+    second: BridgesAndStairs_20
+  - first:
+      213: 4601607859322049181
+    second: BridgesAndStairs_21
+  - first:
+      213: 875400401647907450
+    second: BridgesAndStairs_22
+  - first:
+      213: -2330079432519618639
+    second: BridgesAndStairs_23
+  - first:
+      213: 6679930504042946343
+    second: BridgesAndStairs_24
+  - first:
+      213: 6204600097735955597
+    second: BridgesAndStairs_25
+  - first:
+      213: 580355002905216726
+    second: BridgesAndStairs_26
+  - first:
+      213: -3254121607621537770
+    second: BridgesAndStairs_27
+  - first:
+      213: 5261078576258150242
+    second: BridgesAndStairs_28
+  - first:
+      213: 7158515902881053033
+    second: BridgesAndStairs_29
+  - first:
+      213: 6162554122609687716
+    second: BridgesAndStairs_30
+  - first:
+      213: 1777288990948524677
+    second: BridgesAndStairs_31
+  - first:
+      213: 5085291629641309745
+    second: BridgesAndStairs_32
+  - first:
+      213: 6227014898920036249
+    second: BridgesAndStairs_33
+  - first:
+      213: 561511737794483975
+    second: BridgesAndStairs_34
+  - first:
+      213: -5563564046139676661
+    second: BridgesAndStairs_35
+  - first:
+      213: 6551777696137791089
+    second: BridgesAndStairs_36
+  - first:
+      213: -5694793133723919872
+    second: BridgesAndStairs_37
+  - first:
+      213: 5567374579213138189
+    second: BridgesAndStairs_38
+  - first:
+      213: -8931089210069083652
+    second: BridgesAndStairs_39
+  - first:
+      213: -5810018380323531853
+    second: BridgesAndStairs_40
+  - first:
+      213: 1498413339542474483
+    second: BridgesAndStairs_41
+  - first:
+      213: -9136360760956106737
+    second: BridgesAndStairs_42
+  - first:
+      213: -6245905385515165644
+    second: BridgesAndStairs_43
+  - first:
+      213: 3233424433831798469
+    second: BridgesAndStairs_44
+  - first:
+      213: 6494594160828240578
+    second: BridgesAndStairs_45
+  - first:
+      213: -3787921600221958985
+    second: BridgesAndStairs_46
+  - first:
+      213: -8794165491313002811
+    second: BridgesAndStairs_47
+  - first:
+      213: -2849783917253381355
+    second: BridgesAndStairs_48
+  - first:
+      213: -7090280816646876883
+    second: BridgesAndStairs_49
+  - first:
+      213: 2478201066106035096
+    second: BridgesAndStairs_50
+  - first:
+      213: -2799944065101626577
+    second: BridgesAndStairs_51
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BridgesAndStairs_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 146
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b14dbded07d30010800000000000000
+      internalID: 1154002384360128948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 145
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd316d74fd68ca3b0800000000000000
+      internalID: -5499872751385177124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_2
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 144
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b9d1d99f8e06e7f0800000000000000
+      internalID: -583763091774121550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_3
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 144
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b82f834095c2dce0800000000000000
+      internalID: -1381824912249902919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 144
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df55ecca1d35464b0800000000000000
+      internalID: -5448137489198983683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_5
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 144
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35070947820a427b0800000000000000
+      internalID: -5249895169992396717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_6
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 144
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a4e9cf01ab2994f0800000000000000
+      internalID: -821577486263786334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_7
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 144
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3d85d8418cf7f6e0800000000000000
+      internalID: -1803695493535658689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_8
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 144
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b2a6a57d88e98ce0800000000000000
+      internalID: -1402334114687311176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_9
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 145
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 019baa066751ba9f0800000000000000
+      internalID: -456247339075847920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_10
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 146
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec4ed8392a5860990800000000000000
+      internalID: -7420096402739567410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_11
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 153
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fef31b826385ee6c0800000000000000
+      internalID: -4112252420108501009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_12
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 148
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 492ae4ff7e2bd8f30800000000000000
+      internalID: 4579513105596195476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_13
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 153
+        width: 32
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f31bf1f8cbc4d4a0800000000000000
+      internalID: -6569401892513049613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_14
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 148
+        width: 30
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e32aa36d6cb47d030800000000000000
+      internalID: 3519364951183106622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_15
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 143
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 688267470ecb6c050800000000000000
+      internalID: 5820547240635541638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_16
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 138
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5df48744c6fe24300800000000000000
+      internalID: 235013378860928981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_17
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 143
+        width: 28
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87e1cf4bcd6b3c010800000000000000
+      internalID: 1208010184110907000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_18
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 138
+        width: 28
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 856e0e21c831ee640800000000000000
+      internalID: 5111044119445169752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_19
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 105
+        width: 8
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d66581f092ee0c500800000000000000
+      internalID: 414593025832408685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_20
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 104
+        width: 6
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa24055868b9ff7b0800000000000000
+      internalID: -5188257243642969430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_21
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 103
+        width: 6
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d92598ab7f13cdf30800000000000000
+      internalID: 4601607859322049181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_22
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 103
+        width: 6
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a723578f60c062c00800000000000000
+      internalID: 875400401647907450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_23
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 103
+        width: 6
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bf6936f915e9afd0800000000000000
+      internalID: -2330079432519618639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_24
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 103
+        width: 6
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72f96c1d661e3bc50800000000000000
+      internalID: 6679930504042946343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_25
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 103
+        width: 6
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d84d7ee5aea2b1650800000000000000
+      internalID: 6204600097735955597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_26
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 103
+        width: 6
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d649cfdcc5dd0800800000000000000
+      internalID: 580355002905216726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_27
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 103
+        width: 6
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6109bc193a907d2d0800000000000000
+      internalID: -3254121607621537770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_28
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 104
+        width: 6
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26fe849371b130940800000000000000
+      internalID: 5261078576258150242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_29
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 105
+        width: 8
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 969b5364948285360800000000000000
+      internalID: 7158515902881053033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_30
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 133
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4acf44be25ac58550800000000000000
+      internalID: 6162554122609687716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_31
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 128
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58203b8bbe23aa810800000000000000
+      internalID: 1777288990948524677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_32
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 133
+        width: 28
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13e990c4bc5929640800000000000000
+      internalID: 5085291629641309745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_33
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 128
+        width: 28
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9979135fe0dca6650800000000000000
+      internalID: 6227014898920036249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_34
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 122
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 707d37453f3eac700800000000000000
+      internalID: 561511737794483975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_35
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 117
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b08a5b02aff3ac2b0800000000000000
+      internalID: -5563564046139676661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_36
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 122
+        width: 28
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 176ce911a179cea50800000000000000
+      internalID: 6551777696137791089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_37
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 117
+        width: 28
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00a5d0331d708f0b0800000000000000
+      internalID: -5694793133723919872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_38
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 112
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d09f98dbea9434d40800000000000000
+      internalID: 5567374579213138189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_39
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 107
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf91280bea56e0480800000000000000
+      internalID: -8931089210069083652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_40
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 112
+        width: 28
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b3535ed01bae5fa0800000000000000
+      internalID: -5810018380323531853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_41
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 107
+        width: 28
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fec22e4efe6bc410800000000000000
+      internalID: 1498413339542474483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_42
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 97
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f08c46f5b40253180800000000000000
+      internalID: -9136360760956106737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_43
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 102
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4385ba3e4261259a0800000000000000
+      internalID: -6245905385515165644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_44
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 97
+        width: 30
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c6ec92246e6fdc20800000000000000
+      internalID: 3233424433831798469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_45
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 102
+        width: 28
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c25e7cbafe612a50800000000000000
+      internalID: 6494594160828240578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_46
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 90
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bcadb5bf599e6bc0800000000000000
+      internalID: -3787921600221958985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_47
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 90
+        width: 32
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c63a424419d4f580800000000000000
+      internalID: -8794165491313002811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_48
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 63
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 513bd7540a88378d0800000000000000
+      internalID: -2849783917253381355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_49
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 73
+        width: 34
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d211ff5c9234a9d90800000000000000
+      internalID: -7090280816646876883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_50
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 47
+        width: 34
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89b9e335db6546220800000000000000
+      internalID: 2478201066106035096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BridgesAndStairs_51
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 57
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2387a025b99429d0800000000000000
+      internalID: -2799944065101626577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BridgesAndStairs_0: 1154002384360128948
+      BridgesAndStairs_1: -5499872751385177124
+      BridgesAndStairs_10: -7420096402739567410
+      BridgesAndStairs_11: -4112252420108501009
+      BridgesAndStairs_12: 4579513105596195476
+      BridgesAndStairs_13: -6569401892513049613
+      BridgesAndStairs_14: 3519364951183106622
+      BridgesAndStairs_15: 5820547240635541638
+      BridgesAndStairs_16: 235013378860928981
+      BridgesAndStairs_17: 1208010184110907000
+      BridgesAndStairs_18: 5111044119445169752
+      BridgesAndStairs_19: 414593025832408685
+      BridgesAndStairs_2: -583763091774121550
+      BridgesAndStairs_20: -5188257243642969430
+      BridgesAndStairs_21: 4601607859322049181
+      BridgesAndStairs_22: 875400401647907450
+      BridgesAndStairs_23: -2330079432519618639
+      BridgesAndStairs_24: 6679930504042946343
+      BridgesAndStairs_25: 6204600097735955597
+      BridgesAndStairs_26: 580355002905216726
+      BridgesAndStairs_27: -3254121607621537770
+      BridgesAndStairs_28: 5261078576258150242
+      BridgesAndStairs_29: 7158515902881053033
+      BridgesAndStairs_3: -1381824912249902919
+      BridgesAndStairs_30: 6162554122609687716
+      BridgesAndStairs_31: 1777288990948524677
+      BridgesAndStairs_32: 5085291629641309745
+      BridgesAndStairs_33: 6227014898920036249
+      BridgesAndStairs_34: 561511737794483975
+      BridgesAndStairs_35: -5563564046139676661
+      BridgesAndStairs_36: 6551777696137791089
+      BridgesAndStairs_37: -5694793133723919872
+      BridgesAndStairs_38: 5567374579213138189
+      BridgesAndStairs_39: -8931089210069083652
+      BridgesAndStairs_4: -5448137489198983683
+      BridgesAndStairs_40: -5810018380323531853
+      BridgesAndStairs_41: 1498413339542474483
+      BridgesAndStairs_42: -9136360760956106737
+      BridgesAndStairs_43: -6245905385515165644
+      BridgesAndStairs_44: 3233424433831798469
+      BridgesAndStairs_45: 6494594160828240578
+      BridgesAndStairs_46: -3787921600221958985
+      BridgesAndStairs_47: -8794165491313002811
+      BridgesAndStairs_48: -2849783917253381355
+      BridgesAndStairs_49: -7090280816646876883
+      BridgesAndStairs_5: -5249895169992396717
+      BridgesAndStairs_50: 2478201066106035096
+      BridgesAndStairs_51: -2799944065101626577
+      BridgesAndStairs_6: -821577486263786334
+      BridgesAndStairs_7: -1803695493535658689
+      BridgesAndStairs_8: -1402334114687311176
+      BridgesAndStairs_9: -456247339075847920
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -31,7 +31,7 @@ public class MobScript : MonoBehaviour
         maxAcceleration = data.maxAcceleration;
         lastVisitedTile = spawnTile;
 
-        transform.position = lastVisitedTile.transform.position + new Vector3(0,0,-1); // be on top of the tilemap
+        transform.position = lastVisitedTile.transform.position;
 
         currVelocity = Vector3.zero;
         maxVelocity = Vector3.one * speed;
@@ -63,6 +63,7 @@ public class MobScript : MonoBehaviour
     public void TakeDamage()
     {
         if (!GridHelper.INSTANCE.TryGetTileOn(transform.position, out Tile currentTile)) return;
+        int damagedElements = 0;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 int row = currentTile.row + i - 1, col = currentTile.col + j - 1;
@@ -72,9 +73,14 @@ public class MobScript : MonoBehaviour
                     Indexing.INSTANCE.damageMap.TryGetValue(tile.type, out float tileDamage))
                 {
                     currentHp -= tileDamage;
+                    int element = tile.type / 100;
+                    if (tileDamage > 0f && element >= 1 && element <= 4) damagedElements |= 1 << element;
                 }
             }
         }
+        for (int element = 1; element <= 4; element++)
+            if ((damagedElements & (1 << element)) != 0) ParticleVFX.INSTANCE?.PlayDamage(transform, element);
+        if (currentHp < 0f) Destroy(gameObject);
     }
 
     public void RefreshPath(bool force = false, int maxSteps = 2)

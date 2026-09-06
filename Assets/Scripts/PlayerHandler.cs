@@ -21,7 +21,7 @@ namespace Assets.Scripts
             }
             INSTANCE = this;
             Vector3 tilePosition = GridHelper.INSTANCE.GetTileTransform(r, c).position;
-            transform.position = new Vector3(tilePosition.x, tilePosition.y, -1f);
+            transform.position = tilePosition;
         }
 
         public void TakeDamage(float damage)

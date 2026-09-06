@@ -51,7 +51,7 @@ public class Selector : MonoBehaviour, IPointerClickHandler
         if (Keyboard.current == null) return;
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            GameLogic.INSTANCE.ProcessSpells();
+            GameLogic.INSTANCE.SubmitQueuedSpells();
         }
 
         if (Keyboard.current.digit1Key.wasPressedThisFrame)

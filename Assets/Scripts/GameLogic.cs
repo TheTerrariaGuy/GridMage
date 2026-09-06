@@ -20,6 +20,7 @@ namespace Assets.Scripts
         [SerializeField] private float clock;
         [SerializeField] private GameObject clockHand;
         [SerializeField] public float maxMana, manaRegen;
+        [SerializeField, Min(0f)] private float placementManaRegenMultiplier = 0.5f;
 
 
         //[SerializeField] public GameObject playerPoint;
@@ -27,7 +28,14 @@ namespace Assets.Scripts
         private int currentSelection;
         public float time;
         public float currMana;
-        private const float ProcessSpellsManaCost = 5f;
+        private const float SubmitQueueManaCost = 5f;
+        private readonly Dictionary<(int row, int col), (int type, float cost)> queuedSpells = new();
+        private readonly List<ParticleVFX.Burst> visuals = new();
+        private readonly Dictionary<Vector2Int, ParticleVFX.Burst> visualOwners = new();
+        private float reservedMana;
+        public bool IsPlacementMode => queuedSpells.Count > 0;
+        public float AvailableMana => Mathf.Max(0f, currMana - reservedMana);
+        public int CurrentSelection => currentSelection;
 
         // Use this for initialization
 
@@ -46,6 +54,16 @@ namespace Assets.Scripts
 
         public void InitializedGrid()
         {
+            ParticleVFX.INSTANCE?.ClearBursts();
+            if (tilesSet != null)
+                foreach (Tile oldTile in tilesSet)
+                {
+                    oldTile.ReleaseParticles();
+                    oldTile.gameObject.SetActive(false);
+                    Destroy(oldTile.gameObject);
+                }
+            queuedSpells.Clear();
+            reservedMana = 0f;
             grid = new int[rows, cols];
             tilesGrid = new Tile[rows, cols];
             tilesSet = new HashSet<Tile>();
@@ -66,12 +84,13 @@ namespace Assets.Scripts
         void Update()
         {
             time += Time.deltaTime;
-            currMana += Time.deltaTime * manaRegen;
+            currMana += Time.deltaTime * manaRegen * (IsPlacementMode ? placementManaRegenMultiplier : 1f);
             if (currMana > maxMana) currMana = maxMana;
             if (clock <= 0f) return;
-            if (time > clock)
+            while (time >= clock)
             {
                 time -= clock;
+                TickCombat();
             }
             float angle = time / clock * 360f;
             if (clockHand != null) clockHand.transform.localRotation = Quaternion.Euler(0f, 0f, -angle);
@@ -112,25 +131,73 @@ namespace Assets.Scripts
         // type: 100, 200 ,300, 400
         public void MakeMove(int r, int c, int type)
         {
-            if (!GridHelper.IsInBounds(grid, r, c)) return;
-            if (grid[r, c] != 0 && grid[r, c] % 100 != 11) return;
-            if (!Indexing.INSTANCE.manaCosts.TryGetValue(type, out float manaCost)) return;
-            if (currMana - manaCost < 0) return;
-            currMana -= manaCost;
-            grid[r, c] = type;
-            UpdateTile(r, c);
+            if (!CanQueueSpell(r, c, type)) return;
+            float manaCost = Indexing.INSTANCE.manaCosts[type];
+            queuedSpells.Add((r, c), (type, manaCost));
+            reservedMana += manaCost;
+            tilesGrid[r, c].ShowQueuedSpell(type);
         }
 
-        public void ProcessSpells()
+        public bool CanQueueSpell(int r, int c, int type)
         {
-            if (currMana < ProcessSpellsManaCost) return;
-            currMana -= ProcessSpellsManaCost;
+            return CanCastAt(r, c) && !queuedSpells.ContainsKey((r, c)) &&
+                Indexing.INSTANCE.manaCosts.TryGetValue(type, out float manaCost) &&
+                AvailableMana >= manaCost;
+        }
 
+        private bool CanCastAt(int r, int c)
+        {
+            return GridHelper.IsInBounds(grid, r, c) &&
+                (grid[r, c] == 0 || grid[r, c] % 100 == 11);
+        }
+
+        public void RemoveQueuedSpell(int r, int c)
+        {
+            if (!queuedSpells.TryGetValue((r, c), out var spell)) return;
+            queuedSpells.Remove((r, c));
+            reservedMana = queuedSpells.Count == 0 ? 0f : reservedMana - spell.cost;
+            tilesGrid[r, c].ClearQueuedSpell();
+        }
+
+        private void RemoveInvalidQueuedSpells()
+        {
+            var invalidCells = new List<(int row, int col)>();
+            foreach (var cell in queuedSpells.Keys)
+            {
+                if (!CanCastAt(cell.row, cell.col)) invalidCells.Add(cell);
+            }
+            foreach (var cell in invalidCells) RemoveQueuedSpell(cell.row, cell.col);
+        }
+
+        public void SubmitQueuedSpells()
+        {
+            RemoveInvalidQueuedSpells();
+            if (!IsPlacementMode || AvailableMana < SubmitQueueManaCost) return;
+            currMana -= reservedMana + SubmitQueueManaCost;
+            foreach (var entry in queuedSpells)
+            {
+                var cell = entry.Key;
+                grid[cell.row, cell.col] = entry.Value.type;
+                tilesGrid[cell.row, cell.col].ClearQueuedSpell();
+                UpdateTile(cell.row, cell.col);
+            }
+            queuedSpells.Clear();
+            reservedMana = 0f;
+        }
+
+        private void TickCombat()
+        {
+            visuals.Clear();
+            visualOwners.Clear();
             grid = HandleFading(grid);
+            RemoveInvalidQueuedSpells();
             int[,] beforeRxn = (int[,])grid.Clone();
             grid = HandleSpells(grid);
+            RemoveInvalidQueuedSpells();
             grid = HandleOverlap(grid, beforeRxn);
+            RemoveInvalidQueuedSpells();
             UpdateTiles();
+            foreach (var visual in visuals) ParticleVFX.INSTANCE?.Play(visual, clock);
             if (MobHandler.INSTANCE != null) MobHandler.INSTANCE.HandleUpdate();
         }
 
@@ -155,7 +222,11 @@ namespace Assets.Scripts
                     // Normal stuff
                     if (g[i,j] % 100 == 10) // Is fading block
                     {
-                        Indexing.INSTANCE.ModifyFade(Indexing.INSTANCE.fadeMap[g[i,j]], i, j, g[i,j], g, ref newGrid); // cursed af
+                        string id = g[i,j] switch { 110 => "Fire_Flare_Decay", 210 => "Water_Steam_Decay",
+                            310 => "Electricity_Charge_Decay", 410 => "Lava_Cooling_Decay", _ => null };
+                        var visual = NewVisual(id, i, j);
+                        Indexing.INSTANCE.ModifyFade(Indexing.INSTANCE.fadeMap[g[i,j]], i, j, g[i,j], g, ref newGrid,
+                            (r, c) => TrackVisual(r, c, visual));
                     }
                 }
             }
@@ -184,7 +255,7 @@ namespace Assets.Scripts
                             {
                                 QueueChanges(
                                     changeQueue,
-                                    reaction.Outputs,
+                                    reaction,
                                     i,
                                     j,
                                     ref insertionOrder,
@@ -221,7 +292,7 @@ namespace Assets.Scripts
                             {
                                 QueueChanges(
                                     changeQueue,
-                                    reaction.Outputs,
+                                    reaction,
                                     i,
                                     j,
                                     ref insertionOrder,
@@ -269,15 +340,16 @@ namespace Assets.Scripts
             return false;
         }
 
-        private static void QueueChanges(
+        private void QueueChanges(
             SortedSet<Change> changeQueue,
-            IReadOnlyCollection<Offset> outputs,
+            Reaction reaction,
             int originRow,
             int originCol,
             ref int insertionOrder,
             int[,] grid)
         {
-            foreach (Offset output in outputs)
+            var visual = NewVisual(reaction.Effect, originRow, originCol, reaction.Direction);
+            foreach (Offset output in reaction.Outputs)
             {
                 int targetRow = originRow + output.y;
                 int targetCol = originCol + output.x;
@@ -294,11 +366,11 @@ namespace Assets.Scripts
                     output.priority,
                     insertionOrder++,
                     originRow,
-                    originCol));
+                    originCol, visual));
             }
         }
 
-        private static void ApplyQueuedChanges(SortedSet<Change> changeQueue, ref int[,] grid)
+        private void ApplyQueuedChanges(SortedSet<Change> changeQueue, ref int[,] grid)
         {
             int[,] walls = GridHelper.INSTANCE.ExtractWalls(grid);
             while (changeQueue.Count > 0)
@@ -306,9 +378,27 @@ namespace Assets.Scripts
                 Change change = changeQueue.Min;
                 changeQueue.Remove(change);
                 if (!GridHelper.INSTANCE.TestForWalls(walls,
-                    change.SourceRow, change.SourceCol, change.Row, change.Col)) continue;
+                    change.SourceRow, change.SourceCol, change.Row, change.Col, change.Type == 410)) continue;
                 grid[change.Row, change.Col] = change.Type;
+                TrackVisual(change.Row, change.Col, change.Visual);
             }
+        }
+
+        private ParticleVFX.Burst NewVisual(string id, int row, int col, int direction = 0)
+        {
+            if (id == null) return null;
+            var visual = new ParticleVFX.Burst(id, row, col, direction);
+            visuals.Add(visual);
+            return visual;
+        }
+
+        private void TrackVisual(int row, int col, ParticleVFX.Burst visual)
+        {
+            var cell = new Vector2Int(col, row);
+            if (visualOwners.Remove(cell, out var previous)) previous.cells.Remove(cell);
+            if (visual == null) return;
+            visualOwners[cell] = visual;
+            visual.cells.Add(cell);
         }
 
         public class Change : IComparable<Change>
@@ -319,9 +409,11 @@ namespace Assets.Scripts
             public int SourceCol { get; }
             public int Type { get; }
             public int Priority { get; }
+            public ParticleVFX.Burst Visual { get; }
             private int InsertionOrder { get; }
 
-            public Change(int row, int col, int type, int priority, int insertionOrder, int sourceRow, int sourceCol)
+            public Change(int row, int col, int type, int priority, int insertionOrder, int sourceRow, int sourceCol,
+                ParticleVFX.Burst visual = null)
             {
                 Row = row;
                 Col = col;
@@ -330,6 +422,7 @@ namespace Assets.Scripts
                 Type = type;
                 Priority = priority;
                 InsertionOrder = insertionOrder;
+                Visual = visual;
             }
 
             public int CompareTo(Change other)

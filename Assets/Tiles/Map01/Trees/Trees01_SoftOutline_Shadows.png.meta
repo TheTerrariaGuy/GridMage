@@ -1,0 +1,5618 @@
+fileFormatVersion: 2
+guid: 0f926ba2cac5fe94393d45c62bd971a3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2464031926163868244
+    second: Trees01_SoftOutline_Shadows_0
+  - first:
+      213: 3163191664604733161
+    second: Trees01_SoftOutline_Shadows_1
+  - first:
+      213: 2897828338613145642
+    second: Trees01_SoftOutline_Shadows_2
+  - first:
+      213: -90501187267843002
+    second: Trees01_SoftOutline_Shadows_3
+  - first:
+      213: -7317791619444629301
+    second: Trees01_SoftOutline_Shadows_4
+  - first:
+      213: -2211928111067787045
+    second: Trees01_SoftOutline_Shadows_5
+  - first:
+      213: 981659571615530512
+    second: Trees01_SoftOutline_Shadows_6
+  - first:
+      213: -8426191911120009241
+    second: Trees01_SoftOutline_Shadows_7
+  - first:
+      213: -4663898668551585114
+    second: Trees01_SoftOutline_Shadows_8
+  - first:
+      213: 9034090535710786629
+    second: Trees01_SoftOutline_Shadows_9
+  - first:
+      213: -7490006283502115758
+    second: Trees01_SoftOutline_Shadows_10
+  - first:
+      213: -8587833352323876551
+    second: Trees01_SoftOutline_Shadows_11
+  - first:
+      213: -3071662916873412605
+    second: Trees01_SoftOutline_Shadows_12
+  - first:
+      213: -1056277562237415540
+    second: Trees01_SoftOutline_Shadows_13
+  - first:
+      213: -4998368745666924765
+    second: Trees01_SoftOutline_Shadows_14
+  - first:
+      213: -3334854751284611829
+    second: Trees01_SoftOutline_Shadows_15
+  - first:
+      213: -1118123199559985409
+    second: Trees01_SoftOutline_Shadows_16
+  - first:
+      213: 6528906535102779126
+    second: Trees01_SoftOutline_Shadows_17
+  - first:
+      213: -1600494803368706116
+    second: Trees01_SoftOutline_Shadows_18
+  - first:
+      213: -6479286449664043238
+    second: Trees01_SoftOutline_Shadows_19
+  - first:
+      213: -195478695276506739
+    second: Trees01_SoftOutline_Shadows_20
+  - first:
+      213: -7618957892371104027
+    second: Trees01_SoftOutline_Shadows_21
+  - first:
+      213: -230211458598735366
+    second: Trees01_SoftOutline_Shadows_22
+  - first:
+      213: -3940555232503686061
+    second: Trees01_SoftOutline_Shadows_23
+  - first:
+      213: 4923931663540511147
+    second: Trees01_SoftOutline_Shadows_24
+  - first:
+      213: -6518031672120325448
+    second: Trees01_SoftOutline_Shadows_25
+  - first:
+      213: 6704967885636350540
+    second: Trees01_SoftOutline_Shadows_26
+  - first:
+      213: 3151783212622480840
+    second: Trees01_SoftOutline_Shadows_27
+  - first:
+      213: -1182717793243675827
+    second: Trees01_SoftOutline_Shadows_28
+  - first:
+      213: -5755737713090248977
+    second: Trees01_SoftOutline_Shadows_29
+  - first:
+      213: 7075746945479875713
+    second: Trees01_SoftOutline_Shadows_30
+  - first:
+      213: -5788323585264055117
+    second: Trees01_SoftOutline_Shadows_31
+  - first:
+      213: -8847114621370060917
+    second: Trees01_SoftOutline_Shadows_32
+  - first:
+      213: -5015445028865787403
+    second: Trees01_SoftOutline_Shadows_33
+  - first:
+      213: -941590623698960892
+    second: Trees01_SoftOutline_Shadows_34
+  - first:
+      213: -6142430054183375603
+    second: Trees01_SoftOutline_Shadows_35
+  - first:
+      213: 981351928975148666
+    second: Trees01_SoftOutline_Shadows_36
+  - first:
+      213: 6354496956034788973
+    second: Trees01_SoftOutline_Shadows_37
+  - first:
+      213: -2302447578732356189
+    second: Trees01_SoftOutline_Shadows_38
+  - first:
+      213: -7077495351411654924
+    second: Trees01_SoftOutline_Shadows_39
+  - first:
+      213: 8903611939718003329
+    second: Trees01_SoftOutline_Shadows_40
+  - first:
+      213: 8537168448964890968
+    second: Trees01_SoftOutline_Shadows_41
+  - first:
+      213: 3347280534324463080
+    second: Trees01_SoftOutline_Shadows_42
+  - first:
+      213: 5778008575526683171
+    second: Trees01_SoftOutline_Shadows_43
+  - first:
+      213: -1285942335801840013
+    second: Trees01_SoftOutline_Shadows_44
+  - first:
+      213: -288576912525491148
+    second: Trees01_SoftOutline_Shadows_45
+  - first:
+      213: -2573078243997501564
+    second: Trees01_SoftOutline_Shadows_46
+  - first:
+      213: 4470355146525034128
+    second: Trees01_SoftOutline_Shadows_47
+  - first:
+      213: -4760138520101921658
+    second: Trees01_SoftOutline_Shadows_48
+  - first:
+      213: 841274960561536403
+    second: Trees01_SoftOutline_Shadows_49
+  - first:
+      213: -2574816188862107083
+    second: Trees01_SoftOutline_Shadows_50
+  - first:
+      213: 5330360538183732315
+    second: Trees01_SoftOutline_Shadows_51
+  - first:
+      213: -8708179832809017214
+    second: Trees01_SoftOutline_Shadows_52
+  - first:
+      213: -8545328801939889267
+    second: Trees01_SoftOutline_Shadows_53
+  - first:
+      213: -124344038533844342
+    second: Trees01_SoftOutline_Shadows_54
+  - first:
+      213: 2234365142532214602
+    second: Trees01_SoftOutline_Shadows_55
+  - first:
+      213: 6348589503130570848
+    second: Trees01_SoftOutline_Shadows_56
+  - first:
+      213: -1467002223507347715
+    second: Trees01_SoftOutline_Shadows_57
+  - first:
+      213: 1962323417123615383
+    second: Trees01_SoftOutline_Shadows_58
+  - first:
+      213: 456315826382996201
+    second: Trees01_SoftOutline_Shadows_59
+  - first:
+      213: -1382668333071784501
+    second: Trees01_SoftOutline_Shadows_60
+  - first:
+      213: 4115333606251952577
+    second: Trees01_SoftOutline_Shadows_61
+  - first:
+      213: 7342997263785185747
+    second: Trees01_SoftOutline_Shadows_62
+  - first:
+      213: 5767989968679502469
+    second: Trees01_SoftOutline_Shadows_63
+  - first:
+      213: -2379594925870022025
+    second: Trees01_SoftOutline_Shadows_64
+  - first:
+      213: -3936620128015100654
+    second: Trees01_SoftOutline_Shadows_65
+  - first:
+      213: -7037170744610569028
+    second: Trees01_SoftOutline_Shadows_66
+  - first:
+      213: 400780664047003325
+    second: Trees01_SoftOutline_Shadows_67
+  - first:
+      213: -3140416948333455631
+    second: Trees01_SoftOutline_Shadows_68
+  - first:
+      213: -344453390122600689
+    second: Trees01_SoftOutline_Shadows_69
+  - first:
+      213: 2310358120973017187
+    second: Trees01_SoftOutline_Shadows_70
+  - first:
+      213: -6110752339150932099
+    second: Trees01_SoftOutline_Shadows_71
+  - first:
+      213: -2396612867530582807
+    second: Trees01_SoftOutline_Shadows_72
+  - first:
+      213: 8131917482440281632
+    second: Trees01_SoftOutline_Shadows_73
+  - first:
+      213: 6555899938258485185
+    second: Trees01_SoftOutline_Shadows_74
+  - first:
+      213: 7590890848029376107
+    second: Trees01_SoftOutline_Shadows_75
+  - first:
+      213: -3474838887213941596
+    second: Trees01_SoftOutline_Shadows_76
+  - first:
+      213: -1145952290135531609
+    second: Trees01_SoftOutline_Shadows_77
+  - first:
+      213: -5170006269801246758
+    second: Trees01_SoftOutline_Shadows_78
+  - first:
+      213: -8279165390666532188
+    second: Trees01_SoftOutline_Shadows_79
+  - first:
+      213: -1814771841793768676
+    second: Trees01_SoftOutline_Shadows_80
+  - first:
+      213: 927523110799013170
+    second: Trees01_SoftOutline_Shadows_81
+  - first:
+      213: 3586933318981067818
+    second: Trees01_SoftOutline_Shadows_82
+  - first:
+      213: 6790702716186470040
+    second: Trees01_SoftOutline_Shadows_83
+  - first:
+      213: 6217859183670829383
+    second: Trees01_SoftOutline_Shadows_84
+  - first:
+      213: -94466564009077656
+    second: Trees01_SoftOutline_Shadows_85
+  - first:
+      213: 1067541003128540856
+    second: Trees01_SoftOutline_Shadows_86
+  - first:
+      213: 7723754733475217383
+    second: Trees01_SoftOutline_Shadows_87
+  - first:
+      213: -1568367404605843036
+    second: Trees01_SoftOutline_Shadows_88
+  - first:
+      213: -4267777305737237067
+    second: Trees01_SoftOutline_Shadows_89
+  - first:
+      213: -8128140330106619179
+    second: Trees01_SoftOutline_Shadows_90
+  - first:
+      213: -4558798317027417308
+    second: Trees01_SoftOutline_Shadows_91
+  - first:
+      213: 8405976886235032522
+    second: Trees01_SoftOutline_Shadows_92
+  - first:
+      213: -2827398549968511431
+    second: Trees01_SoftOutline_Shadows_93
+  - first:
+      213: 925274044962538924
+    second: Trees01_SoftOutline_Shadows_94
+  - first:
+      213: -1134778607639190276
+    second: Trees01_SoftOutline_Shadows_95
+  - first:
+      213: -1589001547989683313
+    second: Trees01_SoftOutline_Shadows_96
+  - first:
+      213: -9107118333372150609
+    second: Trees01_SoftOutline_Shadows_97
+  - first:
+      213: -4767469209881240701
+    second: Trees01_SoftOutline_Shadows_98
+  - first:
+      213: 2015491670017693985
+    second: Trees01_SoftOutline_Shadows_99
+  - first:
+      213: -5364207759242952038
+    second: Trees01_SoftOutline_Shadows_100
+  - first:
+      213: 2131306295266966243
+    second: Trees01_SoftOutline_Shadows_101
+  - first:
+      213: -7632340765024380284
+    second: Trees01_SoftOutline_Shadows_102
+  - first:
+      213: -1673640425485458629
+    second: Trees01_SoftOutline_Shadows_103
+  - first:
+      213: -890748080535135009
+    second: Trees01_SoftOutline_Shadows_104
+  - first:
+      213: 5556885475989064963
+    second: Trees01_SoftOutline_Shadows_105
+  - first:
+      213: -8676930554001504879
+    second: Trees01_SoftOutline_Shadows_106
+  - first:
+      213: -4213325374027158614
+    second: Trees01_SoftOutline_Shadows_107
+  - first:
+      213: 3808351450663972202
+    second: Trees01_SoftOutline_Shadows_108
+  - first:
+      213: -5344806716387444016
+    second: Trees01_SoftOutline_Shadows_109
+  - first:
+      213: -3824292601314763073
+    second: Trees01_SoftOutline_Shadows_110
+  - first:
+      213: 5766731045847864936
+    second: Trees01_SoftOutline_Shadows_111
+  - first:
+      213: 131738809191020930
+    second: Trees01_SoftOutline_Shadows_112
+  - first:
+      213: -5425848065975949840
+    second: Trees01_SoftOutline_Shadows_113
+  - first:
+      213: 2965025329493959971
+    second: Trees01_SoftOutline_Shadows_114
+  - first:
+      213: -5417027772230136596
+    second: Trees01_SoftOutline_Shadows_115
+  - first:
+      213: 1511642350424478142
+    second: Trees01_SoftOutline_Shadows_116
+  - first:
+      213: -9097135430101594762
+    second: Trees01_SoftOutline_Shadows_117
+  - first:
+      213: -7725572453217985127
+    second: Trees01_SoftOutline_Shadows_118
+  - first:
+      213: 8571032274903780282
+    second: Trees01_SoftOutline_Shadows_119
+  - first:
+      213: -7751747361284027980
+    second: Trees01_SoftOutline_Shadows_120
+  - first:
+      213: -3044339450574957366
+    second: Trees01_SoftOutline_Shadows_121
+  - first:
+      213: -4582865696969487782
+    second: Trees01_SoftOutline_Shadows_122
+  - first:
+      213: 2173539727336903033
+    second: Trees01_SoftOutline_Shadows_123
+  - first:
+      213: -8158999669016462374
+    second: Trees01_SoftOutline_Shadows_124
+  - first:
+      213: 3981116089645678828
+    second: Trees01_SoftOutline_Shadows_125
+  - first:
+      213: -4141479238093151955
+    second: Trees01_SoftOutline_Shadows_126
+  - first:
+      213: 4292604606510615473
+    second: Trees01_SoftOutline_Shadows_127
+  - first:
+      213: 1895718872277872522
+    second: Trees01_SoftOutline_Shadows_128
+  - first:
+      213: 4753342108234761319
+    second: Trees01_SoftOutline_Shadows_129
+  - first:
+      213: -906287971322622101
+    second: Trees01_SoftOutline_Shadows_130
+  - first:
+      213: 8187147786221194609
+    second: Trees01_SoftOutline_Shadows_131
+  - first:
+      213: 8065461695184877516
+    second: Trees01_SoftOutline_Shadows_132
+  - first:
+      213: -7803721180143774293
+    second: Trees01_SoftOutline_Shadows_133
+  - first:
+      213: 8499071266516622803
+    second: Trees01_SoftOutline_Shadows_134
+  - first:
+      213: 1469234224124380979
+    second: Trees01_SoftOutline_Shadows_135
+  - first:
+      213: -7985405849481113765
+    second: Trees01_SoftOutline_Shadows_136
+  - first:
+      213: 719966736402629741
+    second: Trees01_SoftOutline_Shadows_137
+  - first:
+      213: -8318761905332010697
+    second: Trees01_SoftOutline_Shadows_138
+  - first:
+      213: 4004094178205211522
+    second: Trees01_SoftOutline_Shadows_139
+  - first:
+      213: -5211962479933460436
+    second: Trees01_SoftOutline_Shadows_140
+  - first:
+      213: -8476630557483516226
+    second: Trees01_SoftOutline_Shadows_141
+  - first:
+      213: -1865207728564948794
+    second: Trees01_SoftOutline_Shadows_142
+  - first:
+      213: -1690842305497352333
+    second: Trees01_SoftOutline_Shadows_143
+  - first:
+      213: -7015691720898615333
+    second: Trees01_SoftOutline_Shadows_144
+  - first:
+      213: -1428783492432057888
+    second: Trees01_SoftOutline_Shadows_145
+  - first:
+      213: 7947666919937234524
+    second: Trees01_SoftOutline_Shadows_146
+  - first:
+      213: -7611205513582332288
+    second: Trees01_SoftOutline_Shadows_147
+  - first:
+      213: 110334416673107863
+    second: Trees01_SoftOutline_Shadows_148
+  - first:
+      213: 3997621457467229788
+    second: Trees01_SoftOutline_Shadows_149
+  - first:
+      213: 7377787148462305493
+    second: Trees01_SoftOutline_Shadows_150
+  - first:
+      213: 8075499955641798861
+    second: Trees01_SoftOutline_Shadows_151
+  - first:
+      213: 1281161580152495599
+    second: Trees01_SoftOutline_Shadows_152
+  - first:
+      213: -3332984717171139348
+    second: Trees01_SoftOutline_Shadows_153
+  - first:
+      213: -3327403718212272529
+    second: Trees01_SoftOutline_Shadows_154
+  - first:
+      213: -5060874068444030272
+    second: Trees01_SoftOutline_Shadows_155
+  - first:
+      213: -8652962085934576013
+    second: Trees01_SoftOutline_Shadows_156
+  - first:
+      213: 1143536050596222843
+    second: Trees01_SoftOutline_Shadows_157
+  - first:
+      213: 4422872949956548268
+    second: Trees01_SoftOutline_Shadows_158
+  - first:
+      213: 2257634380110510126
+    second: Trees01_SoftOutline_Shadows_159
+  - first:
+      213: 4624123127083302207
+    second: Trees01_SoftOutline_Shadows_160
+  - first:
+      213: 6743370704633530875
+    second: Trees01_SoftOutline_Shadows_161
+  - first:
+      213: -1682680096277177655
+    second: Trees01_SoftOutline_Shadows_162
+  - first:
+      213: 4761932600786492089
+    second: Trees01_SoftOutline_Shadows_163
+  - first:
+      213: 7585410682530941699
+    second: Trees01_SoftOutline_Shadows_164
+  - first:
+      213: 1678856525417999175
+    second: Trees01_SoftOutline_Shadows_165
+  - first:
+      213: -3845871760414651377
+    second: Trees01_SoftOutline_Shadows_166
+  - first:
+      213: 2941530580535123232
+    second: Trees01_SoftOutline_Shadows_167
+  - first:
+      213: 5560591424529967132
+    second: Trees01_SoftOutline_Shadows_168
+  - first:
+      213: 8386823881438095622
+    second: Trees01_SoftOutline_Shadows_169
+  - first:
+      213: 3369059314016106544
+    second: Trees01_SoftOutline_Shadows_170
+  - first:
+      213: 1540843440608061023
+    second: Trees01_SoftOutline_Shadows_171
+  - first:
+      213: -1759267559496113250
+    second: Trees01_SoftOutline_Shadows_172
+  - first:
+      213: 134475214735702237
+    second: Trees01_SoftOutline_Shadows_173
+  - first:
+      213: -1914032332698018305
+    second: Trees01_SoftOutline_Shadows_174
+  - first:
+      213: 8215309285395608405
+    second: Trees01_SoftOutline_Shadows_175
+  - first:
+      213: -1539851650553761112
+    second: Trees01_SoftOutline_Shadows_176
+  - first:
+      213: -7848294816288471014
+    second: Trees01_SoftOutline_Shadows_177
+  - first:
+      213: -8722179348861177552
+    second: Trees01_SoftOutline_Shadows_178
+  - first:
+      213: -3506677504039148688
+    second: Trees01_SoftOutline_Shadows_179
+  - first:
+      213: -1339216166813591640
+    second: Trees01_SoftOutline_Shadows_180
+  - first:
+      213: -7784941939528237842
+    second: Trees01_SoftOutline_Shadows_181
+  - first:
+      213: -3509174435439562992
+    second: Trees01_SoftOutline_Shadows_182
+  - first:
+      213: 3109518376079162940
+    second: Trees01_SoftOutline_Shadows_183
+  - first:
+      213: 8649880236491962324
+    second: Trees01_SoftOutline_Shadows_184
+  - first:
+      213: 1190994771040707731
+    second: Trees01_SoftOutline_Shadows_185
+  - first:
+      213: 7934070987464057682
+    second: Trees01_SoftOutline_Shadows_186
+  - first:
+      213: -3040764948487035918
+    second: Trees01_SoftOutline_Shadows_187
+  - first:
+      213: -2884641308422545432
+    second: Trees01_SoftOutline_Shadows_188
+  - first:
+      213: 5879270784434002104
+    second: Trees01_SoftOutline_Shadows_189
+  - first:
+      213: -3768425809058794447
+    second: Trees01_SoftOutline_Shadows_190
+  - first:
+      213: -8523191753544619218
+    second: Trees01_SoftOutline_Shadows_191
+  - first:
+      213: 8761249507508775363
+    second: Trees01_SoftOutline_Shadows_192
+  - first:
+      213: -6334988638312297548
+    second: Trees01_SoftOutline_Shadows_193
+  - first:
+      213: -3014243052704727533
+    second: Trees01_SoftOutline_Shadows_194
+  - first:
+      213: -3595116565579208591
+    second: Trees01_SoftOutline_Shadows_195
+  - first:
+      213: -1636100902762202392
+    second: Trees01_SoftOutline_Shadows_196
+  - first:
+      213: -4681768119940252253
+    second: Trees01_SoftOutline_Shadows_197
+  - first:
+      213: 4886722471538223321
+    second: Trees01_SoftOutline_Shadows_198
+  - first:
+      213: 2694264354029661028
+    second: Trees01_SoftOutline_Shadows_199
+  - first:
+      213: 5746769546629397184
+    second: Trees01_SoftOutline_Shadows_200
+  - first:
+      213: 3929398966846935623
+    second: Trees01_SoftOutline_Shadows_201
+  - first:
+      213: 8650201538107731557
+    second: Trees01_SoftOutline_Shadows_202
+  - first:
+      213: 7411025341157507413
+    second: Trees01_SoftOutline_Shadows_203
+  - first:
+      213: 1583623625067323572
+    second: Trees01_SoftOutline_Shadows_204
+  - first:
+      213: 204914577368465904
+    second: Trees01_SoftOutline_Shadows_205
+  - first:
+      213: 1017185869908350260
+    second: Trees01_SoftOutline_Shadows_206
+  - first:
+      213: -3417365896101141211
+    second: Trees01_SoftOutline_Shadows_207
+  - first:
+      213: 2533921374724867193
+    second: Trees01_SoftOutline_Shadows_208
+  - first:
+      213: 1352243545144725612
+    second: Trees01_SoftOutline_Shadows_209
+  - first:
+      213: -5878716292556161320
+    second: Trees01_SoftOutline_Shadows_210
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 527
+        width: 24
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca5f7c5a4000ecdd0800000000000000
+      internalID: -2464031926163868244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 527
+        width: 18
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eedd354f0ae5eb20800000000000000
+      internalID: 3163191664604733161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_2
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 479
+        width: 40
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a20d8174587273820800000000000000
+      internalID: 2897828338613145642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_3
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 528
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64c262156a97ebef0800000000000000
+      internalID: -90501187267843002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_4
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 528
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc02cae1b4bf17a90800000000000000
+      internalID: -7317791619444629301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_5
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 528
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd09a1f2a17ad41e0800000000000000
+      internalID: -2211928111067787045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_6
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 528
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01e7188ed2e8f9d00800000000000000
+      internalID: 981659571615530512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_7
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 528
+        width: 23
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e70c68c917201b80800000000000000
+      internalID: -8426191911120009241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_8
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 528
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a2c0901fd0864fb0800000000000000
+      internalID: -4663898668551585114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_9
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 527
+        width: 22
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54482c14a798f5d70800000000000000
+      internalID: 9034090535710786629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_10
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 528
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 254a96a08f62e0890800000000000000
+      internalID: -7490006283502115758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_11
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 543
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 939bb7cf013e1d880800000000000000
+      internalID: -8587833352323876551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_12
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 559
+        width: 24
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 300250af9d24f55d0800000000000000
+      internalID: -3071662916873412605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_13
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 559
+        width: 28
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8f8f9e47295751f0800000000000000
+      internalID: -1056277562237415540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_14
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 543
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32fab1abb1a32aab0800000000000000
+      internalID: -4998368745666924765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_15
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 559
+        width: 24
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b053824c54738b1d0800000000000000
+      internalID: -3334854751284611829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_16
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 559
+        width: 28
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff69a13cfd0ab70f0800000000000000
+      internalID: -1118123199559985409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_17
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 527
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fe078ce6e55b9a50800000000000000
+      internalID: 6528906535102779126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_18
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 527
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbf7954c476e9c9e0800000000000000
+      internalID: -1600494803368706116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_19
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 527
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a17d5c18d43f416a0800000000000000
+      internalID: -6479286449664043238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_20
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 528
+        width: 12
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8113ee8925894df0800000000000000
+      internalID: -195478695276506739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_21
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 528
+        width: 12
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5eebf82f926044690800000000000000
+      internalID: -7618957892371104027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_22
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 543
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af17ffae5ef1eccf0800000000000000
+      internalID: -230211458598735366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_23
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 543
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35c9fccd4e55059c0800000000000000
+      internalID: -3940555232503686061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_24
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 543
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba161a782c1555440800000000000000
+      internalID: 4923931663540511147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_25
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 543
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bac58c6abc4b85a0800000000000000
+      internalID: -6518031672120325448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_26
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 479
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c42b1cd74c4dc0d50800000000000000
+      internalID: 6704967885636350540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_27
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 479
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c5076d02226dbb20800000000000000
+      internalID: 3151783212622480840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_28
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 479
+        width: 42
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d434d20fe64269fe0800000000000000
+      internalID: -1182717793243675827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_29
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 479
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feebfee8b038f10b0800000000000000
+      internalID: -5755737713090248977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_30
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 479
+        width: 33
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18c12e5ab5a123260800000000000000
+      internalID: 7075746945479875713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_31
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 479
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bc0257fd5ebbafa0800000000000000
+      internalID: -5788323585264055117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_32
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 527
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8fa21a302cb83580800000000000000
+      internalID: -8847114621370060917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_33
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 527
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f9b4f7b15f856ab0800000000000000
+      internalID: -5015445028865787403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_34
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 527
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40eb596015ccee2f0800000000000000
+      internalID: -941590623698960892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_35
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 527
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0d67b2e864b1caa0800000000000000
+      internalID: -6142430054183375603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_36
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 527
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a76453641667e9d00800000000000000
+      internalID: 981351928975148666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_37
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 527
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6e21ce5055bf2850800000000000000
+      internalID: 6354496956034788973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_38
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 527
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ad13b340201c00e0800000000000000
+      internalID: -2302447578732356189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_39
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 527
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fe31afd97fa7cd90800000000000000
+      internalID: -7077495351411654924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_40
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 479
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18a71d4c2ebff8b70800000000000000
+      internalID: 8903611939718003329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_41
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 479
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8519934f87d1a7670800000000000000
+      internalID: 8537168448964890968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_42
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 479
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e54dfb49ede37e20800000000000000
+      internalID: 3347280534324463080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_43
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 479
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 322cd6daf2c9f2050800000000000000
+      internalID: 5778008575526683171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_44
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 495
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37e25e0424a672ee0800000000000000
+      internalID: -1285942335801840013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_45
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 511
+        width: 24
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4340a86b3d4cefbf0800000000000000
+      internalID: -288576912525491148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_46
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 511
+        width: 28
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4873e3748f69a4cd0800000000000000
+      internalID: -2573078243997501564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_47
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 495
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 096c6702254e90e30800000000000000
+      internalID: 4470355146525034128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_48
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 511
+        width: 24
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68cdbab7c3790fdb0800000000000000
+      internalID: -4760138520101921658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_49
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 511
+        width: 28
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39d73be8e1fccab00800000000000000
+      internalID: 841274960561536403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_50
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 495
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 532f2f4715a644cd0800000000000000
+      internalID: -2574816188862107083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_51
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 495
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5c83330bae39f940800000000000000
+      internalID: 5330360538183732315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_52
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 495
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 280b2397494562780800000000000000
+      internalID: -8708179832809017214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_53
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 495
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d83657fcab4e86980800000000000000
+      internalID: -8545328801939889267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_54
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 479
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a82b04971cd364ef0800000000000000
+      internalID: -124344038533844342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_55
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 479
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4fc52b424f020f10800000000000000
+      internalID: 2234365142532214602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_56
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 479
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0601fde4488ba1850800000000000000
+      internalID: 6348589503130570848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_57
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 479
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df6e22f004924abe0800000000000000
+      internalID: -1467002223507347715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_58
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 479
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 792751440c29b3b10800000000000000
+      internalID: 1962323417123615383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_59
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 479
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e282f093d8255600800000000000000
+      internalID: 456315826382996201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_60
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 479
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc5231d0a76cfcce0800000000000000
+      internalID: -1382668333071784501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_61
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 479
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c9ffd46c1a9c1930800000000000000
+      internalID: 4115333606251952577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_62
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 431
+        width: 24
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d1d4964b1197e560800000000000000
+      internalID: 7342997263785185747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_63
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 431
+        width: 18
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 582882ff0540c0050800000000000000
+      internalID: 5767989968679502469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_64
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 383
+        width: 40
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7720236c50bf9fed0800000000000000
+      internalID: -2379594925870022025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_65
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 432
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 215d106c9d05e59c0800000000000000
+      internalID: -3936620128015100654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_66
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 432
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb447b70e72f65e90800000000000000
+      internalID: -7037170744610569028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_67
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 432
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db6ed59f3ebdf8500800000000000000
+      internalID: 400780664047003325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_68
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 432
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f6d7f39c6ffa64d0800000000000000
+      internalID: -3140416948333455631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_69
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 432
+        width: 23
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0730187771483bf0800000000000000
+      internalID: -344453390122600689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_70
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 432
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3602980687a001020800000000000000
+      internalID: 2310358120973017187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_71
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 431
+        width: 22
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d77758aaf1f323ba0800000000000000
+      internalID: -6110752339150932099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_72
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 432
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e495b67b458dbed0800000000000000
+      internalID: -2396612867530582807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_73
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 447
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02e44a39ddf5ad070800000000000000
+      internalID: 8131917482440281632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_74
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 463
+        width: 24
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cff6ea524c3bfa50800000000000000
+      internalID: 6555899938258485185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_75
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 463
+        width: 28
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6efd8d0203485960800000000000000
+      internalID: 7590890848029376107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_76
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 447
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ac36eb4174e6cfc0800000000000000
+      internalID: -3474838887213941596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_77
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 463
+        width: 24
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7af1de0b672c810f0800000000000000
+      internalID: -1145952290135531609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_78
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 463
+        width: 28
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adf44f180b27048b0800000000000000
+      internalID: -5170006269801246758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_79
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 431
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aafc9c21fe7a1d80800000000000000
+      internalID: -8279165390666532188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_80
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 431
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c13408dff92a0d6e0800000000000000
+      internalID: -1814771841793768676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_81
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 431
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 235f324ea593fdc00800000000000000
+      internalID: 927523110799013170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_82
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 432
+        width: 12
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2421e669d857c130800000000000000
+      internalID: 3586933318981067818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_83
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 432
+        width: 12
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8962395442c6d3e50800000000000000
+      internalID: 6790702716186470040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_84
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 447
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 741a912ebf54a4650800000000000000
+      internalID: 6217859183670829383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_85
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 447
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8645619192360bef0800000000000000
+      internalID: -94466564009077656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_86
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 447
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8be04a2e2eaa0de00800000000000000
+      internalID: 1067541003128540856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_87
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 447
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ef3805020a403b60800000000000000
+      internalID: 7723754733475217383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_88
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 383
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a9da23b72a0c3ae0800000000000000
+      internalID: -1568367404605843036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_89
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 383
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bdee0fe62fc5c4c0800000000000000
+      internalID: -4267777305737237067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_90
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 383
+        width: 42
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5daf77b3f6b033f80800000000000000
+      internalID: -8128140330106619179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_91
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 383
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 423aeee8515ebb0c0800000000000000
+      internalID: -4558798317027417308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_92
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 383
+        width: 33
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acbee26f07708a470800000000000000
+      internalID: 8405976886235032522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_93
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 383
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93e1caebfff03c8d0800000000000000
+      internalID: -2827398549968511431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_94
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 431
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca581e177db37dc00800000000000000
+      internalID: 925274044962538924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_95
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 431
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf424f06ed47040f0800000000000000
+      internalID: -1134778607639190276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_96
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 431
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f837780d28bb2f9e0800000000000000
+      internalID: -1589001547989683313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_97
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 431
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: facc7eb90240d9180800000000000000
+      internalID: -9107118333372150609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_98
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 431
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38b9a63430c86ddb0800000000000000
+      internalID: -4767469209881240701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_99
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 431
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 129d92fcef678fb10800000000000000
+      internalID: 2015491670017693985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_100
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 431
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a920ee8b6718e85b0800000000000000
+      internalID: -5364207759242952038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_101
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 431
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eaf0fc88cbe39d10800000000000000
+      internalID: 2131306295266966243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_102
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 383
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48a1df7138a741690800000000000000
+      internalID: -7632340765024380284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_103
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 383
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b33a43d76e806c8e0800000000000000
+      internalID: -1673640425485458629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_104
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 383
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdc9753175d63a3f0800000000000000
+      internalID: -890748080535135009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_105
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 383
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30d0bd516e50e1d40800000000000000
+      internalID: 5556885475989064963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_106
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 383
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 195c10c22a9559780800000000000000
+      internalID: -8676930554001504879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_107
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 335
+        width: 24
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaba8fd35e24785c0800000000000000
+      internalID: -4213325374027158614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_108
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 335
+        width: 18
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6d6ba4877bf9d430800000000000000
+      internalID: 3808351450663972202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_109
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 287
+        width: 40
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0daba940c9e63d5b0800000000000000
+      internalID: -5344806716387444016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_110
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 335
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbe9a7d14226deac0800000000000000
+      internalID: -3824292601314763073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_111
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 287
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8669afe255b870050800000000000000
+      internalID: 5766731045847864936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_112
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 335
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 289b6fcbfb704d100800000000000000
+      internalID: 131738809191020930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_113
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 335
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f5634e6ee383b4b0800000000000000
+      internalID: -5425848065975949840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_114
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 336
+        width: 12
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 325e58ae3d2e52920800000000000000
+      internalID: 2965025329493959971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_115
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 336
+        width: 12
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cec0cc911f9d2d4b0800000000000000
+      internalID: -5417027772230136596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_116
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 336
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb1dc7c65be6af410800000000000000
+      internalID: 1511642350424478142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_117
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 336
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67d8c27668b70c180800000000000000
+      internalID: -9097135430101594762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_118
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 336
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99d166f19c049c490800000000000000
+      internalID: -7725572453217985127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_119
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 336
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abb4c08517c62f670800000000000000
+      internalID: 8571032274903780282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_120
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 336
+        width: 23
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b9081e68d24c6490800000000000000
+      internalID: -7751747361284027980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_121
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 287
+        width: 42
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac495c8366550c5d0800000000000000
+      internalID: -3044339450574957366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_122
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 336
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a8fcefde36660c0800000000000000
+      internalID: -4582865696969487782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_123
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 335
+        width: 22
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9719d19bdd6f92e10800000000000000
+      internalID: 2173539727336903033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_124
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 336
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adb7ebd770965ce80800000000000000
+      internalID: -8158999669016462374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_125
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 287
+        width: 33
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce04cec9df3cf3730800000000000000
+      internalID: 3981116089645678828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_126
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 287
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d216dc053928686c0800000000000000
+      internalID: -4141479238093151955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_127
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 287
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bb454c7525629b30800000000000000
+      internalID: 4292604606510615473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_128
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 287
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8f60283542fe4a10800000000000000
+      internalID: 1895718872277872522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_129
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 287
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7644d31967347f140800000000000000
+      internalID: 4753342108234761319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_130
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 287
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6f0b1d44e73c63f0800000000000000
+      internalID: -906287971322622101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_131
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 287
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17d0751c8879e9170800000000000000
+      internalID: 8187147786221194609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_132
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 287
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc7b30bdda64eef60800000000000000
+      internalID: 8065461695184877516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_133
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 239
+        width: 24
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba5965bbeec93b390800000000000000
+      internalID: -7803721180143774293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_134
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 239
+        width: 18
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ddd3717944c2f570800000000000000
+      internalID: 8499071266516622803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_135
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 191
+        width: 40
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 337c7c41eb4c36410800000000000000
+      internalID: 1469234224124380979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_136
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 239
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5f0a5a30b32e2190800000000000000
+      internalID: -7985405849481113765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_137
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 191
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d644065aee5ddf900800000000000000
+      internalID: 719966736402629741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_138
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 239
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73142ad2f12dd8c80800000000000000
+      internalID: -8318761905332010697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_139
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 239
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28b9123c076619730800000000000000
+      internalID: 4004094178205211522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_140
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 240
+        width: 12
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c20f6e81db36ba7b0800000000000000
+      internalID: -5211962479933460436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_141
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 240
+        width: 12
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebe39f84b65fc5a80800000000000000
+      internalID: -8476630557483516226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_142
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 240
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c0b29204737d16e0800000000000000
+      internalID: -1865207728564948794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_143
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 240
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 377b0a1b1ebe888e0800000000000000
+      internalID: -1690842305497352333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_144
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 240
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd76032fc8143ae90800000000000000
+      internalID: -7015691720898615333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_145
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 240
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e925a0dbf0fb2ce0800000000000000
+      internalID: -1428783492432057888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_146
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 240
+        width: 23
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c565bf384f8cb4e60800000000000000
+      internalID: 7947666919937234524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_147
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 191
+        width: 42
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0863e6a49e09f5690800000000000000
+      internalID: -7611205513582332288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_148
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 240
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79fec40419cf78100800000000000000
+      internalID: 110334416673107863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_149
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 239
+        width: 22
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5640d609876a7730800000000000000
+      internalID: 3997621457467229788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_150
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 240
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d0b984825a236660800000000000000
+      internalID: 7377787148462305493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_151
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 191
+        width: 33
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc056bf7c60f11070800000000000000
+      internalID: 8075499955641798861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_152
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 191
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fed1ed45ba997c110800000000000000
+      internalID: 1281161580152495599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_153
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 191
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cec55330f0cdeb1d0800000000000000
+      internalID: -3332984717171139348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_154
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 191
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6eb4a792ffa2d1d0800000000000000
+      internalID: -3327403718212272529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_155
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 191
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ca586139d924c9b0800000000000000
+      internalID: -5060874068444030272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_156
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 191
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37e42f404d08ae780800000000000000
+      internalID: -8652962085934576013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_157
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 191
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7714a3baf7aedf00800000000000000
+      internalID: 1143536050596222843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_158
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 191
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca618dcb383316d30800000000000000
+      internalID: 4422872949956548268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_159
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 143
+        width: 24
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e28323bd18ab45f10800000000000000
+      internalID: 2257634380110510126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_160
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 143
+        width: 18
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3df7730c7f2c2040800000000000000
+      internalID: 4624123127083302207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_161
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 95
+        width: 40
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf9057e8de3459d50800000000000000
+      internalID: 6743370704633530875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_162
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 143
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ca57ce1e5be5a8e0800000000000000
+      internalID: -1682680096277177655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_163
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 95
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ba1b3a7878c51240800000000000000
+      internalID: 4761932600786492089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_164
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 143
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30bc5b793dac44960800000000000000
+      internalID: 7585410682530941699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_165
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 143
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74be26a6d1f7c4710800000000000000
+      internalID: 1678856525417999175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_166
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 144
+        width: 12
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0c47cc9208b0aac0800000000000000
+      internalID: -3845871760414651377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_167
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 144
+        width: 12
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02d9eb46a7a62d820800000000000000
+      internalID: 2941530580535123232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_168
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 144
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c18213870703b2d40800000000000000
+      internalID: 5560591424529967132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_169
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 144
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60961e682ebf36470800000000000000
+      internalID: 8386823881438095622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_170
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 144
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 038b627989d41ce20800000000000000
+      internalID: 3369059314016106544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_171
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 144
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f562feb02fc226510800000000000000
+      internalID: 1540843440608061023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_172
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 144
+        width: 23
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e93ad53c973d597e0800000000000000
+      internalID: -1759267559496113250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_173
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 95
+        width: 42
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd87a6dce70cdd100800000000000000
+      internalID: 134475214735702237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_174
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 144
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffd1ce00cbdff65e0800000000000000
+      internalID: -1914032332698018305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_175
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 143
+        width: 22
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55339fbb444a20270800000000000000
+      internalID: 8215309285395608405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_176
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 144
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a2b1f1151951aae0800000000000000
+      internalID: -1539851650553761112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_177
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 95
+        width: 33
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1806965271451390800000000000000
+      internalID: -7848294816288471014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_178
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 95
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 031b1e3281894f680800000000000000
+      internalID: -8722179348861177552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_179
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 95
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 073a4e5a367c55fc0800000000000000
+      internalID: -3506677504039148688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_180
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 95
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a79d93edf52a6de0800000000000000
+      internalID: -1339216166813591640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_181
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 95
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eecf0696d8456f390800000000000000
+      internalID: -7784941939528237842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_182
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 95
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01f2eb08178ec4fc0800000000000000
+      internalID: -3509174435439562992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_183
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 95
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3e7fb4fc7a372b20800000000000000
+      internalID: 3109518376079162940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_184
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 95
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d776cdfe3c8a0870800000000000000
+      internalID: 8649880236491962324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_185
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 47
+        width: 24
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 394aa312f63478010800000000000000
+      internalID: 1190994771040707731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_186
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 47
+        width: 18
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 253278ec68b7b1e60800000000000000
+      internalID: 7934070987464057682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_187
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 40
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f3a8f7d3680dc5d0800000000000000
+      internalID: -3040764948487035918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_188
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 47
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ef5e037302b7f7d0800000000000000
+      internalID: -2884641308422545432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_189
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 40
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b85584f0ad579150800000000000000
+      internalID: 5879270784434002104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_190
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 47
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 134f2a051bcd3bbc0800000000000000
+      internalID: -3768425809058794447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_191
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 47
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2b2f69024a87b980800000000000000
+      internalID: -8523191753544619218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_192
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 48
+        width: 12
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c960ab0206369970800000000000000
+      internalID: 8761249507508775363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_193
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 48
+        width: 12
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bb824dc5699518a0800000000000000
+      internalID: -6334988638312297548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_194
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 48
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31e78d8e9e14b26d0800000000000000
+      internalID: -3014243052704727533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_195
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 48
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 178678608849b1ec0800000000000000
+      internalID: -3595116565579208591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_196
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 48
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eab92ab5e66b49e0800000000000000
+      internalID: -1636100902762202392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_197
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 48
+        width: 12
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ad763233b4070fb0800000000000000
+      internalID: -4681768119940252253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_198
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 48
+        width: 23
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d864f7623021d340800000000000000
+      internalID: 4886722471538223321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_199
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 0
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46b6fe8b723f36520800000000000000
+      internalID: 2694264354029661028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_200
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 48
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cab0e87470a0cf40800000000000000
+      internalID: 5746769546629397184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_201
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 47
+        width: 22
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 742d2bf9a87088630800000000000000
+      internalID: 3929398966846935623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_202
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 48
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56ee27ad770bb0870800000000000000
+      internalID: 8650201538107731557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_203
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 33
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5518c11584049d660800000000000000
+      internalID: 7411025341157507413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_204
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 0
+        width: 45
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b0ed0eeb492af510800000000000000
+      internalID: 1583623625067323572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_205
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 47
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f1c851f8b008d200800000000000000
+      internalID: 204914577368465904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_206
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 47
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4351f6ec825cd1e00800000000000000
+      internalID: 1017185869908350260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_207
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 47
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5256b5fc2d31390d0800000000000000
+      internalID: -3417365896101141211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_208
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 47
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 974ce35a01c4a2320800000000000000
+      internalID: 2533921374724867193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_209
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 0
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c609a2ef65224c210800000000000000
+      internalID: 1352243545144725612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees01_SoftOutline_Shadows_210
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 0
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8de73eebdaa9a6ea0800000000000000
+      internalID: -5878716292556161320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Trees01_SoftOutline_Shadows_0: -2464031926163868244
+      Trees01_SoftOutline_Shadows_1: 3163191664604733161
+      Trees01_SoftOutline_Shadows_10: -7490006283502115758
+      Trees01_SoftOutline_Shadows_100: -5364207759242952038
+      Trees01_SoftOutline_Shadows_101: 2131306295266966243
+      Trees01_SoftOutline_Shadows_102: -7632340765024380284
+      Trees01_SoftOutline_Shadows_103: -1673640425485458629
+      Trees01_SoftOutline_Shadows_104: -890748080535135009
+      Trees01_SoftOutline_Shadows_105: 5556885475989064963
+      Trees01_SoftOutline_Shadows_106: -8676930554001504879
+      Trees01_SoftOutline_Shadows_107: -4213325374027158614
+      Trees01_SoftOutline_Shadows_108: 3808351450663972202
+      Trees01_SoftOutline_Shadows_109: -5344806716387444016
+      Trees01_SoftOutline_Shadows_11: -8587833352323876551
+      Trees01_SoftOutline_Shadows_110: -3824292601314763073
+      Trees01_SoftOutline_Shadows_111: 5766731045847864936
+      Trees01_SoftOutline_Shadows_112: 131738809191020930
+      Trees01_SoftOutline_Shadows_113: -5425848065975949840
+      Trees01_SoftOutline_Shadows_114: 2965025329493959971
+      Trees01_SoftOutline_Shadows_115: -5417027772230136596
+      Trees01_SoftOutline_Shadows_116: 1511642350424478142
+      Trees01_SoftOutline_Shadows_117: -9097135430101594762
+      Trees01_SoftOutline_Shadows_118: -7725572453217985127
+      Trees01_SoftOutline_Shadows_119: 8571032274903780282
+      Trees01_SoftOutline_Shadows_12: -3071662916873412605
+      Trees01_SoftOutline_Shadows_120: -7751747361284027980
+      Trees01_SoftOutline_Shadows_121: -3044339450574957366
+      Trees01_SoftOutline_Shadows_122: -4582865696969487782
+      Trees01_SoftOutline_Shadows_123: 2173539727336903033
+      Trees01_SoftOutline_Shadows_124: -8158999669016462374
+      Trees01_SoftOutline_Shadows_125: 3981116089645678828
+      Trees01_SoftOutline_Shadows_126: -4141479238093151955
+      Trees01_SoftOutline_Shadows_127: 4292604606510615473
+      Trees01_SoftOutline_Shadows_128: 1895718872277872522
+      Trees01_SoftOutline_Shadows_129: 4753342108234761319
+      Trees01_SoftOutline_Shadows_13: -1056277562237415540
+      Trees01_SoftOutline_Shadows_130: -906287971322622101
+      Trees01_SoftOutline_Shadows_131: 8187147786221194609
+      Trees01_SoftOutline_Shadows_132: 8065461695184877516
+      Trees01_SoftOutline_Shadows_133: -7803721180143774293
+      Trees01_SoftOutline_Shadows_134: 8499071266516622803
+      Trees01_SoftOutline_Shadows_135: 1469234224124380979
+      Trees01_SoftOutline_Shadows_136: -7985405849481113765
+      Trees01_SoftOutline_Shadows_137: 719966736402629741
+      Trees01_SoftOutline_Shadows_138: -8318761905332010697
+      Trees01_SoftOutline_Shadows_139: 4004094178205211522
+      Trees01_SoftOutline_Shadows_14: -4998368745666924765
+      Trees01_SoftOutline_Shadows_140: -5211962479933460436
+      Trees01_SoftOutline_Shadows_141: -8476630557483516226
+      Trees01_SoftOutline_Shadows_142: -1865207728564948794
+      Trees01_SoftOutline_Shadows_143: -1690842305497352333
+      Trees01_SoftOutline_Shadows_144: -7015691720898615333
+      Trees01_SoftOutline_Shadows_145: -1428783492432057888
+      Trees01_SoftOutline_Shadows_146: 7947666919937234524
+      Trees01_SoftOutline_Shadows_147: -7611205513582332288
+      Trees01_SoftOutline_Shadows_148: 110334416673107863
+      Trees01_SoftOutline_Shadows_149: 3997621457467229788
+      Trees01_SoftOutline_Shadows_15: -3334854751284611829
+      Trees01_SoftOutline_Shadows_150: 7377787148462305493
+      Trees01_SoftOutline_Shadows_151: 8075499955641798861
+      Trees01_SoftOutline_Shadows_152: 1281161580152495599
+      Trees01_SoftOutline_Shadows_153: -3332984717171139348
+      Trees01_SoftOutline_Shadows_154: -3327403718212272529
+      Trees01_SoftOutline_Shadows_155: -5060874068444030272
+      Trees01_SoftOutline_Shadows_156: -8652962085934576013
+      Trees01_SoftOutline_Shadows_157: 1143536050596222843
+      Trees01_SoftOutline_Shadows_158: 4422872949956548268
+      Trees01_SoftOutline_Shadows_159: 2257634380110510126
+      Trees01_SoftOutline_Shadows_16: -1118123199559985409
+      Trees01_SoftOutline_Shadows_160: 4624123127083302207
+      Trees01_SoftOutline_Shadows_161: 6743370704633530875
+      Trees01_SoftOutline_Shadows_162: -1682680096277177655
+      Trees01_SoftOutline_Shadows_163: 4761932600786492089
+      Trees01_SoftOutline_Shadows_164: 7585410682530941699
+      Trees01_SoftOutline_Shadows_165: 1678856525417999175
+      Trees01_SoftOutline_Shadows_166: -3845871760414651377
+      Trees01_SoftOutline_Shadows_167: 2941530580535123232
+      Trees01_SoftOutline_Shadows_168: 5560591424529967132
+      Trees01_SoftOutline_Shadows_169: 8386823881438095622
+      Trees01_SoftOutline_Shadows_17: 6528906535102779126
+      Trees01_SoftOutline_Shadows_170: 3369059314016106544
+      Trees01_SoftOutline_Shadows_171: 1540843440608061023
+      Trees01_SoftOutline_Shadows_172: -1759267559496113250
+      Trees01_SoftOutline_Shadows_173: 134475214735702237
+      Trees01_SoftOutline_Shadows_174: -1914032332698018305
+      Trees01_SoftOutline_Shadows_175: 8215309285395608405
+      Trees01_SoftOutline_Shadows_176: -1539851650553761112
+      Trees01_SoftOutline_Shadows_177: -7848294816288471014
+      Trees01_SoftOutline_Shadows_178: -8722179348861177552
+      Trees01_SoftOutline_Shadows_179: -3506677504039148688
+      Trees01_SoftOutline_Shadows_18: -1600494803368706116
+      Trees01_SoftOutline_Shadows_180: -1339216166813591640
+      Trees01_SoftOutline_Shadows_181: -7784941939528237842
+      Trees01_SoftOutline_Shadows_182: -3509174435439562992
+      Trees01_SoftOutline_Shadows_183: 3109518376079162940
+      Trees01_SoftOutline_Shadows_184: 8649880236491962324
+      Trees01_SoftOutline_Shadows_185: 1190994771040707731
+      Trees01_SoftOutline_Shadows_186: 7934070987464057682
+      Trees01_SoftOutline_Shadows_187: -3040764948487035918
+      Trees01_SoftOutline_Shadows_188: -2884641308422545432
+      Trees01_SoftOutline_Shadows_189: 5879270784434002104
+      Trees01_SoftOutline_Shadows_19: -6479286449664043238
+      Trees01_SoftOutline_Shadows_190: -3768425809058794447
+      Trees01_SoftOutline_Shadows_191: -8523191753544619218
+      Trees01_SoftOutline_Shadows_192: 8761249507508775363
+      Trees01_SoftOutline_Shadows_193: -6334988638312297548
+      Trees01_SoftOutline_Shadows_194: -3014243052704727533
+      Trees01_SoftOutline_Shadows_195: -3595116565579208591
+      Trees01_SoftOutline_Shadows_196: -1636100902762202392
+      Trees01_SoftOutline_Shadows_197: -4681768119940252253
+      Trees01_SoftOutline_Shadows_198: 4886722471538223321
+      Trees01_SoftOutline_Shadows_199: 2694264354029661028
+      Trees01_SoftOutline_Shadows_2: 2897828338613145642
+      Trees01_SoftOutline_Shadows_20: -195478695276506739
+      Trees01_SoftOutline_Shadows_200: 5746769546629397184
+      Trees01_SoftOutline_Shadows_201: 3929398966846935623
+      Trees01_SoftOutline_Shadows_202: 8650201538107731557
+      Trees01_SoftOutline_Shadows_203: 7411025341157507413
+      Trees01_SoftOutline_Shadows_204: 1583623625067323572
+      Trees01_SoftOutline_Shadows_205: 204914577368465904
+      Trees01_SoftOutline_Shadows_206: 1017185869908350260
+      Trees01_SoftOutline_Shadows_207: -3417365896101141211
+      Trees01_SoftOutline_Shadows_208: 2533921374724867193
+      Trees01_SoftOutline_Shadows_209: 1352243545144725612
+      Trees01_SoftOutline_Shadows_21: -7618957892371104027
+      Trees01_SoftOutline_Shadows_210: -5878716292556161320
+      Trees01_SoftOutline_Shadows_22: -230211458598735366
+      Trees01_SoftOutline_Shadows_23: -3940555232503686061
+      Trees01_SoftOutline_Shadows_24: 4923931663540511147
+      Trees01_SoftOutline_Shadows_25: -6518031672120325448
+      Trees01_SoftOutline_Shadows_26: 6704967885636350540
+      Trees01_SoftOutline_Shadows_27: 3151783212622480840
+      Trees01_SoftOutline_Shadows_28: -1182717793243675827
+      Trees01_SoftOutline_Shadows_29: -5755737713090248977
+      Trees01_SoftOutline_Shadows_3: -90501187267843002
+      Trees01_SoftOutline_Shadows_30: 7075746945479875713
+      Trees01_SoftOutline_Shadows_31: -5788323585264055117
+      Trees01_SoftOutline_Shadows_32: -8847114621370060917
+      Trees01_SoftOutline_Shadows_33: -5015445028865787403
+      Trees01_SoftOutline_Shadows_34: -941590623698960892
+      Trees01_SoftOutline_Shadows_35: -6142430054183375603
+      Trees01_SoftOutline_Shadows_36: 981351928975148666
+      Trees01_SoftOutline_Shadows_37: 6354496956034788973
+      Trees01_SoftOutline_Shadows_38: -2302447578732356189
+      Trees01_SoftOutline_Shadows_39: -7077495351411654924
+      Trees01_SoftOutline_Shadows_4: -7317791619444629301
+      Trees01_SoftOutline_Shadows_40: 8903611939718003329
+      Trees01_SoftOutline_Shadows_41: 8537168448964890968
+      Trees01_SoftOutline_Shadows_42: 3347280534324463080
+      Trees01_SoftOutline_Shadows_43: 5778008575526683171
+      Trees01_SoftOutline_Shadows_44: -1285942335801840013
+      Trees01_SoftOutline_Shadows_45: -288576912525491148
+      Trees01_SoftOutline_Shadows_46: -2573078243997501564
+      Trees01_SoftOutline_Shadows_47: 4470355146525034128
+      Trees01_SoftOutline_Shadows_48: -4760138520101921658
+      Trees01_SoftOutline_Shadows_49: 841274960561536403
+      Trees01_SoftOutline_Shadows_5: -2211928111067787045
+      Trees01_SoftOutline_Shadows_50: -2574816188862107083
+      Trees01_SoftOutline_Shadows_51: 5330360538183732315
+      Trees01_SoftOutline_Shadows_52: -8708179832809017214
+      Trees01_SoftOutline_Shadows_53: -8545328801939889267
+      Trees01_SoftOutline_Shadows_54: -124344038533844342
+      Trees01_SoftOutline_Shadows_55: 2234365142532214602
+      Trees01_SoftOutline_Shadows_56: 6348589503130570848
+      Trees01_SoftOutline_Shadows_57: -1467002223507347715
+      Trees01_SoftOutline_Shadows_58: 1962323417123615383
+      Trees01_SoftOutline_Shadows_59: 456315826382996201
+      Trees01_SoftOutline_Shadows_6: 981659571615530512
+      Trees01_SoftOutline_Shadows_60: -1382668333071784501
+      Trees01_SoftOutline_Shadows_61: 4115333606251952577
+      Trees01_SoftOutline_Shadows_62: 7342997263785185747
+      Trees01_SoftOutline_Shadows_63: 5767989968679502469
+      Trees01_SoftOutline_Shadows_64: -2379594925870022025
+      Trees01_SoftOutline_Shadows_65: -3936620128015100654
+      Trees01_SoftOutline_Shadows_66: -7037170744610569028
+      Trees01_SoftOutline_Shadows_67: 400780664047003325
+      Trees01_SoftOutline_Shadows_68: -3140416948333455631
+      Trees01_SoftOutline_Shadows_69: -344453390122600689
+      Trees01_SoftOutline_Shadows_7: -8426191911120009241
+      Trees01_SoftOutline_Shadows_70: 2310358120973017187
+      Trees01_SoftOutline_Shadows_71: -6110752339150932099
+      Trees01_SoftOutline_Shadows_72: -2396612867530582807
+      Trees01_SoftOutline_Shadows_73: 8131917482440281632
+      Trees01_SoftOutline_Shadows_74: 6555899938258485185
+      Trees01_SoftOutline_Shadows_75: 7590890848029376107
+      Trees01_SoftOutline_Shadows_76: -3474838887213941596
+      Trees01_SoftOutline_Shadows_77: -1145952290135531609
+      Trees01_SoftOutline_Shadows_78: -5170006269801246758
+      Trees01_SoftOutline_Shadows_79: -8279165390666532188
+      Trees01_SoftOutline_Shadows_8: -4663898668551585114
+      Trees01_SoftOutline_Shadows_80: -1814771841793768676
+      Trees01_SoftOutline_Shadows_81: 927523110799013170
+      Trees01_SoftOutline_Shadows_82: 3586933318981067818
+      Trees01_SoftOutline_Shadows_83: 6790702716186470040
+      Trees01_SoftOutline_Shadows_84: 6217859183670829383
+      Trees01_SoftOutline_Shadows_85: -94466564009077656
+      Trees01_SoftOutline_Shadows_86: 1067541003128540856
+      Trees01_SoftOutline_Shadows_87: 7723754733475217383
+      Trees01_SoftOutline_Shadows_88: -1568367404605843036
+      Trees01_SoftOutline_Shadows_89: -4267777305737237067
+      Trees01_SoftOutline_Shadows_9: 9034090535710786629
+      Trees01_SoftOutline_Shadows_90: -8128140330106619179
+      Trees01_SoftOutline_Shadows_91: -4558798317027417308
+      Trees01_SoftOutline_Shadows_92: 8405976886235032522
+      Trees01_SoftOutline_Shadows_93: -2827398549968511431
+      Trees01_SoftOutline_Shadows_94: 925274044962538924
+      Trees01_SoftOutline_Shadows_95: -1134778607639190276
+      Trees01_SoftOutline_Shadows_96: -1589001547989683313
+      Trees01_SoftOutline_Shadows_97: -9107118333372150609
+      Trees01_SoftOutline_Shadows_98: -4767469209881240701
+      Trees01_SoftOutline_Shadows_99: 2015491670017693985
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

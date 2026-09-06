@@ -1,0 +1,98 @@
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Assets.Scripts
+{
+    public class TextureHandler : MonoBehaviour
+    {
+        public static TextureHandler INSTANCE { get; private set; }
+
+        [Tooltip("Key = tile type * 100 + variant. 0: default surface; 1: default front; 2-48: stone neighbor shapes; 49-52: front ends. See Docs/StoneSpriteMap.md.")]
+        [SerializeField] public Dictionary<int, Sprite> spriteMap = new();
+        [SerializeField] private Sprite fallbackSprite;
+        [Tooltip("Height of the wall front in tile-local units.")]
+        [SerializeField, Min(0f)] private float wallHeight = 0.25f;
+
+        private void Awake()
+        {
+            if (INSTANCE != null && INSTANCE != this)
+            {
+                Destroy(this);
+                return;
+            }
+            INSTANCE = this;
+        }
+
+        private void OnDestroy()
+        {
+            if (INSTANCE == this) INSTANCE = null;
+        }
+
+        public void UpdateTexture(Tile tile)
+        {
+            ApplyTexture(tile);
+
+            // Corners and front endpoints can change in any of the eight neighbors.
+            Tile[,] tiles = tile.gameLogic != null ? tile.gameLogic.tilesGrid : null;
+            for (int dr = -1; dr <= 1; dr++)
+            {
+                for (int dc = -1; dc <= 1; dc++)
+                {
+                    if (dr == 0 && dc == 0) continue;
+                    int row = tile.row + dr, col = tile.col + dc;
+                    if (!GridHelper.IsInBounds(tiles, row, col)) continue;
+                    Tile neighbor = tiles[row, col];
+                    if (neighbor != null) ApplyTexture(neighbor);
+                }
+            }
+        }
+
+        private void ApplyTexture(Tile tile)
+        {
+            int[,] grid = tile.gameLogic != null ? tile.gameLogic.grid : null;
+            // Combat replaces the grid before refreshing Tile.type on each cell.
+            // Read the current grid so neighbor refreshes never use a stale type.
+            int type = GridHelper.IsInBounds(grid, tile.row, tile.col) ? grid[tile.row, tile.col] : tile.type;
+            bool wall = StoneTileLayout.IsWall(type);
+            float height = wall ? Mathf.Max(0f, wallHeight) : 0f;
+            tile.SetWallSorting(wall);
+            int surfaceVariant = wall ? StoneTileLayout.SurfaceVariant(grid, tile.row, tile.col) : 0;
+            SetSprite(tile, tile.SurfaceRenderer, GetSprite(type, surfaceVariant), 1f, 1f, height);
+
+            SpriteRenderer front = tile.WallFrontRenderer;
+            if (front == null) return;
+            bool wallBelow = StoneTileLayout.HasWall(grid, tile.row + 1, tile.col);
+            front.enabled = wall && height > 0f && !wallBelow;
+            if (!front.enabled) return;
+            front.color = Color.white;
+            SetSprite(tile, front, GetSprite(type, StoneTileLayout.FrontVariant(grid, tile.row, tile.col)), 1f, height,
+                -0.5f + height * 0.5f);
+        }
+
+        private Sprite GetSprite(int type, int variant)
+        {
+            if (spriteMap.TryGetValue(type * 100 + variant, out Sprite sprite) && sprite != null)
+                return sprite;
+            if (variant >= 49 && spriteMap.TryGetValue(type * 100 + 1, out sprite) && sprite != null)
+                return sprite;
+            if (variant != 0 && spriteMap.TryGetValue(type * 100, out sprite) && sprite != null)
+                return sprite;
+            return fallbackSprite;
+        }
+
+        private static void SetSprite(Tile tile, SpriteRenderer renderer, Sprite sprite,
+            float width, float height, float y)
+        {
+            if (renderer == null) return;
+            renderer.sprite = sprite;
+            if (sprite == null) return;
+            // Fit the artwork without scaling the tile's collider, preview, or particles.
+            Vector3 size = sprite.bounds.size;
+            Vector3 scale = new Vector3(width / size.x, height / size.y, 1f);
+            renderer.transform.localScale = scale;
+            Vector3 tilePosition = new Vector3(0f, y, 0f) - Vector3.Scale(sprite.bounds.center, scale);
+            renderer.transform.position = tile.transform.TransformPoint(tilePosition);
+        }
+    }
+}

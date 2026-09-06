@@ -66,7 +66,7 @@ namespace Assets.Scripts
             {
                 for (int j = 0; j < grid.GetLength(1); j++)
                 {
-                    walls[i, j] = grid[i, j] / 100 == 4 ? 1 : 0;
+                    walls[i, j] = grid[i, j] / 100 == 4 && grid[i, j] % 100 < 10 ? 1 : 0;
                 }
             }
             return walls;
@@ -95,7 +95,7 @@ namespace Assets.Scripts
             return tile != null;
         }
 
-        public bool TestForWalls(int[,] walls, int r1, int c1, int r2, int c2)
+        public bool TestForWalls(int[,] walls, int r1, int c1, int r2, int c2, bool allowTarget = false)
         {
             if (!IsInBounds(walls, r1, c1) || !IsInBounds(walls, r2, c2)) return false;
             int dr = System.Math.Abs(r2 - r1), dc = System.Math.Abs(c2 - c1);
@@ -116,7 +116,8 @@ namespace Assets.Scripts
                     c1 += stepC;
                     crossedC++;
                 }
-                if (!IsInBounds(walls, r1, c1) || walls[r1, c1] != 0) return false;
+                if (!IsInBounds(walls, r1, c1) ||
+                    (walls[r1, c1] != 0 && !(allowTarget && r1 == r2 && c1 == c2))) return false;
             }
             return true;
         }

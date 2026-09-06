@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce803d9447204d58a51dc5b1f0bc89d5, type: 3}
+  m_Name: ParticleCatalog
+  m_EditorClassIdentifier: Assembly-CSharp::ParticleCatalog
+  tiles:
+  - type: 100
+    prefab: {fileID: 8439320169657138568, guid: b1e337fc5e1c37d42b38d3415eb6606c, type: 3}
+  - type: 101
+    prefab: {fileID: 7257299985040253246, guid: 9b83b66cf35d927469711267fa2f2ad2, type: 3}
+  - type: 102
+    prefab: {fileID: 7375635519131540328, guid: fb9c532ab6dc02d41bf8719b355b01e8, type: 3}
+  - type: 103
+    prefab: {fileID: 6112882115726176004, guid: cc524b06baef929429b81815e5fa9faf, type: 3}
+  - type: 104
+    prefab: {fileID: 3359350948371994798, guid: 4fd247f07de331748889fdd9b355e13a, type: 3}
+  - type: 105
+    prefab: {fileID: 8717523186837929321, guid: 506ca63bed90023438f2fb0458ee4a55, type: 3}
+  - type: 106
+    prefab: {fileID: 157877848303311755, guid: 5eb2d6736a15adf4f870e92a0eb5f96f, type: 3}
+  - type: 107
+    prefab: {fileID: 9143336508270410264, guid: 1a20561cb06a1424a8d4b687e891a8ec, type: 3}
+  - type: 110
+    prefab: {fileID: 2734376166052598922, guid: 86fb30f3d2e6d3b418ab5996207a99e3, type: 3}
+  - type: 111
+    prefab: {fileID: 2108170849470461482, guid: afac37e36d03125439122c50cb2a548f, type: 3}
+  - type: 200
+    prefab: {fileID: 6074530815496433174, guid: 9135820e88a3cba4482b32469cd3b83a, type: 3}
+  - type: 201
+    prefab: {fileID: 6536533940445298400, guid: f56aaac0cf87e114e96466836fd07663, type: 3}
+  - type: 202
+    prefab: {fileID: 3277735203153734313, guid: d8de66f44867a3940b9647e9fcda5dbd, type: 3}
+  - type: 203
+    prefab: {fileID: 4429010410326679085, guid: 21c3383185e2c2242a05f5b91c30540e, type: 3}
+  - type: 204
+    prefab: {fileID: 5314654564242505292, guid: c7971dd3b3555ff4888622567c6ba804, type: 3}
+  - type: 205
+    prefab: {fileID: 1129611167259189232, guid: 4e5de60e4b49b544fae9ed6b0bbb9d75, type: 3}
+  - type: 206
+    prefab: {fileID: 122332446422255757, guid: b5a2f2ee083d8c74288971f6857edc7a, type: 3}
+  - type: 207
+    prefab: {fileID: 3759919930554598068, guid: fe357a8d1c0ac0e4b98a3b4eb7831cd6, type: 3}
+  - type: 210
+    prefab: {fileID: 2485007040725185306, guid: 0998eb3e81eeb714eb94955021d7dd54, type: 3}
+  - type: 211
+    prefab: {fileID: 729691324299957023, guid: a17d8a6ba5e5e754f84681f981c9b1c0, type: 3}
+  - type: 300
+    prefab: {fileID: 55664063404498807, guid: 221fd2be39bb9574ca14f510ebb8f438, type: 3}
+  - type: 301
+    prefab: {fileID: 460961752704886315, guid: c57a55d688b3798409d0d760b3d8cbed, type: 3}
+  - type: 302
+    prefab: {fileID: 137178360981431757, guid: 0066e10b7ab2cce42a6549a4ccb72408, type: 3}
+  - type: 310
+    prefab: {fileID: 1364172790582312742, guid: 83865b0e032174844bcf681b891bc45d, type: 3}
+  - type: 311
+    prefab: {fileID: 4079704808621927001, guid: 41cd05dc5f6cdc74caa7ea1d97838911, type: 3}
+  - type: 410
+    prefab: {fileID: 804954503719038669, guid: 4fd0ef77786f33440a67c7e33f401cf4, type: 3}
+  - type: 411
+    prefab: {fileID: 3000177480058170921, guid: fb6c11f49f651294e94a150740e3dd0e, type: 3}
+  reactions:
+  - id: Electricity_Charge_Decay
+    prefab: {fileID: 2712972557123432257, guid: c53c9e38724c06d4cbd184f62a4da726, type: 3}
+  - id: Electricity_Discharge
+    prefab: {fileID: 1430905563994789366, guid: 01bb4a98e9a5a444b8a382ca1955527d, type: 3}
+  - id: Electricity_Electricity_Cardinal_Chain
+    prefab: {fileID: 6075430201877905393, guid: 41fd32457c7f1f442ae8bc731ae986c5, type: 3}
+  - id: Electricity_Electricity_Diagonal_Chain
+    prefab: {fileID: 1110075500954565593, guid: 2a3091667965113438e98f4544da177a, type: 3}
+  - id: Electricity_Water_Cardinal_Conduction
+    prefab: {fileID: 4598798641758955016, guid: c38e6e9a37c930b42a97999a2ca99d37, type: 3}
+  - id: Electricity_Water_Diagonal_Conduction
+    prefab: {fileID: 7584707391805575218, guid: a7cd6e67337185040a6d57a077a814b8, type: 3}
+  - id: Fire_Burnout
+    prefab: {fileID: 781200919088860816, guid: 9588b985ae79cd44fbb65078832a2c99, type: 3}
+  - id: Fire_Electricity_Cardinal_PlasmaFork
+    prefab: {fileID: 8063650978779773579, guid: 477aa0d3981459e47992c7c63d834c7c, type: 3}
+  - id: Fire_Electricity_Overlap_PlasmaCross
+    prefab: {fileID: 3147649927792324145, guid: c30e50bd2435f374e8133365ff78ea1e, type: 3}
+  - id: Fire_Fire_Cardinal_Spread
+    prefab: {fileID: 4138920166380682531, guid: f49aeba95fa7bf249b18deb315a03dfb, type: 3}
+  - id: Fire_Fire_Diagonal_Spread
+    prefab: {fileID: 3506922902063206998, guid: ddab1acb96ba2f94a95d906b318347cf, type: 3}
+  - id: Fire_Flare_Decay
+    prefab: {fileID: 798629931669473351, guid: 445816e381d1cb142a3eb443551b8633, type: 3}
+  - id: Fire_Stone_Cardinal_LavaFlow
+    prefab: {fileID: 245611232736220100, guid: d5471a92e4b0f5d43bfbb50f68beca90, type: 3}
+  - id: Fire_Stone_Overlap_LavaEruption
+    prefab: {fileID: 3848610499500019171, guid: 881a1fcda9b353c4d88c42ffedbed0f0, type: 3}
+  - id: Fire_Water_Cardinal_Geyser
+    prefab: {fileID: 737518093498615970, guid: c738552297495b94c9c3cf5f064a9f1d, type: 3}
+  - id: Fire_Water_Overlap_SteamRing
+    prefab: {fileID: 5327248932509364404, guid: 22e2822fc8720b549938229d7f36d6ef, type: 3}
+  - id: Lava_Cooling_Decay
+    prefab: {fileID: 8939146302490251979, guid: 5f0cacc1985520d43af0e9ae418f1fb2, type: 3}
+  - id: Water_Steam_Decay
+    prefab: {fileID: 8938256999324936087, guid: 27fec2c602c223d4e8a23c47950c0ed4, type: 3}
+  - id: Water_Water_Cardinal_Surge
+    prefab: {fileID: 5348295096369193593, guid: ed4e5915640bd5e4f9a0295cceaffc1e, type: 3}
+  - id: Water_Water_Diagonal_Splash
+    prefab: {fileID: 5153633605979764210, guid: 867a199fabdae0049a7708ed31ad8a05, type: 3}
+  damage:
+  - element: 1
+    prefab: {fileID: 4500993939970876213, guid: be4182cc6f971d04e8b3f0db5014a563, type: 3}
+  - element: 2
+    prefab: {fileID: 5574834042082007148, guid: 676327a6e54e0fe489f132436cd210b6, type: 3}
+  - element: 3
+    prefab: {fileID: 8474550707206478261, guid: dedc6781f46f7524f9552aabc417cfd2, type: 3}
+  - element: 4
+    prefab: {fileID: 5281936261040128585, guid: 3e82a49a15357c045ac2bde86087ee09, type: 3}
