@@ -79,14 +79,14 @@ WATER
 V Water_Water_Cardinal_Surge I (1,0,200) O (1,0,0,0) (1,0,201,51) (2,0,201,51) (3,0,201,51) (4,0,201,51) D (0,1,2,3) E
 
 ELECTRICITY
-V Electricity_Electricity_Cardinal_Chain I (1,0,300) O (1,0,0,0) (2,1,301,50) (3,2,302,50) (4,3,302,50) (2,-1,301,50) (3,-2,302,50) (4,-3,302,50) D (0,1,2,3) E
-V Electricity_Electricity_Diagonal_Chain I (1,1,300) O (1,1,0,0) (1,2,301,55) (1,3,302,55) (2,1,301,55) (3,1,302,55) D (0,1,2,3) E
+V Electricity_Electricity_Cardinal_Chain I (1,0,300) O (1,0,0,0) (2,1,301,56) (3,2,302,55) (4,3,302,55) (2,-1,301,56) (3,-2,302,55) (4,-3,302,55) D (0,1,2,3) E
+V Electricity_Electricity_Diagonal_Chain I (1,1,300) O (1,1,0,0) (1,2,301,56) (1,3,302,55) (2,1,301,56) (3,1,302,55) D (0,1,2,3) E
 
 I (0,0,301) O (0,0,302,-1) D (0) E
 V Electricity_Discharge I (0,0,302) O (0,0,0,-1) D (0) E
 
-V Electricity_Water_Cardinal_Conduction I (1,0,200*) O (0,0,0,0) (1,0,211,51) (2,0,301,51) (3,0,301,51) D (0,1,2,3) E
-V Electricity_Water_Diagonal_Conduction I (1,1,200*) O (0,0,0,0) (1,1,211,53) (2,2,301,53) (3,3,301,53) D (0,1,2,3) E
+V Electricity_Water_Cardinal_Conduction I (1,0,200*) O (0,0,0,0) (1,0,211,51) (2,0,301,53) (3,0,301,53) D (0,1,2,3) E
+V Electricity_Water_Diagonal_Conduction I (1,1,200*) O (0,0,0,0) (1,1,211,51) (2,2,301,53) (3,3,301,53) D (0,1,2,3) E
 
 END
 ";
@@ -177,8 +177,8 @@ END
             [205] = new Color32(255, 255, 255, 142),
             [206] = new Color32(255, 255, 255, 113),
             [207] = new Color32(255, 255, 255, 85),
-            [210] = new Color32(255, 255, 255, 255),
-            [211] = new Color32(255, 255, 255, 170),
+            [210] = new Color32(255, 255, 255, 180),
+            [211] = new Color32(255, 255, 255, 120),
 
             [300] = new Color32(255, 255, 255, 255),
             [301] = new Color32(255, 255, 255, 240),

@@ -214,8 +214,8 @@ public static class WorldRenderingChecks
             Require(overlay.color.a == 0f, "Clearing a queue must hide its preview.");
 
             SetTile(4, 4, 0);
-            Require(tile.SurfaceRenderer.sprite.name == sheet + (type == 200 ? "_7" : type == 400 ? "_4" : "_1"),
-                "Removing a diagonal must refresh water/stone and leave fire/lightning corners unchanged.");
+            Require(tile.SurfaceRenderer.sprite.name == sheet + (type == 200 ? "_10" : type == 400 ? "_4" : "_1"),
+                "Removing a diagonal must refresh stone while water keeps its thick L and fire/lightning corners remain unchanged.");
             // Refresh against a replaced gameplay grid while Tile.type is still stale.
             game.grid[3, 3] = type + 1;
             textures.UpdateTexture(game.tilesGrid[4, 3]);
