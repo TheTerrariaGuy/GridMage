@@ -4,6 +4,6 @@
     <TargetFramework>net10.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="../../Assets/Scripts/StoneTileLayout.cs" Link="StoneTileLayout.cs" />
+    <Compile Include="../../Assets/Scripts/TileSpriteLayout.cs" Link="TileSpriteLayout.cs" />
   </ItemGroup>
 </Project>

@@ -8,7 +8,7 @@ namespace Assets.Scripts
     {
         public static TextureHandler INSTANCE { get; private set; }
 
-        [Tooltip("Key = tile type * 100 + variant. 0: default surface; 1: default front; 2-48: stone neighbor shapes; 49-52: front ends. See Docs/StoneSpriteMap.md.")]
+        [Tooltip("Key = tile type * 100 + variant. 0: default surface; 1: default front; 2-48: neighbor shapes (2 = isolated preview); 49-52: stone fronts. See Docs/ElementSpriteMap.md.")]
         [SerializeField] public Dictionary<int, Sprite> spriteMap = new();
         [SerializeField] private Sprite fallbackSprite;
         [Tooltip("Height of the wall front in tile-local units.")]
@@ -54,25 +54,38 @@ namespace Assets.Scripts
             // Combat replaces the grid before refreshing Tile.type on each cell.
             // Read the current grid so neighbor refreshes never use a stale type.
             int type = GridHelper.IsInBounds(grid, tile.row, tile.col) ? grid[tile.row, tile.col] : tile.type;
-            bool wall = StoneTileLayout.IsWall(type);
+            bool wall = TileSpriteLayout.IsWall(type);
             float height = wall ? Mathf.Max(0f, wallHeight) : 0f;
             tile.SetWallSorting(wall);
-            int surfaceVariant = wall ? StoneTileLayout.SurfaceVariant(grid, tile.row, tile.col) : 0;
+            int surfaceVariant = TileSpriteLayout.SurfaceVariant(grid, tile.row, tile.col, type);
+            tile.SurfaceRenderer.color = Indexing.INSTANCE.colorMap.TryGetValue(type, out Color32 color) ? color : Color.white;
             SetSprite(tile, tile.SurfaceRenderer, GetSprite(type, surfaceVariant), 1f, 1f, height);
 
             SpriteRenderer front = tile.WallFrontRenderer;
             if (front == null) return;
-            bool wallBelow = StoneTileLayout.HasWall(grid, tile.row + 1, tile.col);
+            bool wallBelow = TileSpriteLayout.HasWall(grid, tile.row + 1, tile.col);
             front.enabled = wall && height > 0f && !wallBelow;
             if (!front.enabled) return;
-            front.color = Color.white;
-            SetSprite(tile, front, GetSprite(type, StoneTileLayout.FrontVariant(grid, tile.row, tile.col)), 1f, height,
+            front.color = tile.SurfaceRenderer.color;
+            SetSprite(tile, front, GetSprite(type, TileSpriteLayout.FrontVariant(grid, tile.row, tile.col)), 1f, height,
                 -0.5f + height * 0.5f);
+        }
+
+        public Sprite GetPreviewSprite(int type) => GetSprite(type, 2);
+
+        public void UpdatePreview(Tile tile, SpriteRenderer renderer, int type, float alpha)
+        {
+            SetSprite(tile, renderer, GetPreviewSprite(type), 1f, 1f, 0f);
+            renderer.color = new Color(1f, 1f, 1f, Mathf.Clamp01(alpha));
         }
 
         private Sprite GetSprite(int type, int variant)
         {
             if (spriteMap.TryGetValue(type * 100 + variant, out Sprite sprite) && sprite != null)
+                return sprite;
+            // Base/spent/fading stages share shapes unless a stage has an explicit override.
+            if (TileSpriteLayout.Connects(type) &&
+                spriteMap.TryGetValue(type / 100 * 10000 + variant, out sprite) && sprite != null)
                 return sprite;
             if (variant >= 49 && spriteMap.TryGetValue(type * 100 + 1, out sprite) && sprite != null)
                 return sprite;

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ public class Indexing : MonoBehaviour
     public static Indexing INSTANCE;
     private Dictionary<int, List<Reaction>> reactionMap;
     [NonSerialized] public Dictionary<int, HashSet<Offset>> fadeMap;
-    [NonSerialized] public Dictionary<int, Color32> colorMap; // temp, change to sprite/scriptable object later
+    [NonSerialized] public Dictionary<int, Color32> colorMap; // White RGB preserves sprite artwork; alpha communicates stages.
     [NonSerialized] public Dictionary<int, float> manaCosts;
     [NonSerialized] public Dictionary<int, float> damageMap;
 
@@ -158,38 +158,38 @@ END
 
         colorMap = new Dictionary<int, Color32>()
         {
-            [100] = new Color32(179, 54, 6, 255),
-            [101] = new Color32(226, 121, 30, 255),
-            [102] = new Color32(226, 121, 30, 227),
-            [103] = new Color32(226, 121, 30, 198),
-            [104] = new Color32(226, 121, 30, 170),
-            [105] = new Color32(226, 121, 30, 142),
-            [106] = new Color32(226, 121, 30, 113),
-            [107] = new Color32(226, 121, 30, 85),
-            [110] = new Color32(232, 158, 49, 255),
-            [111] = new Color32(248, 220, 85, 255),
+            [100] = new Color32(255, 255, 255, 255),
+            [101] = new Color32(255, 255, 255, 240),
+            [102] = new Color32(255, 255, 255, 227),
+            [103] = new Color32(255, 255, 255, 198),
+            [104] = new Color32(255, 255, 255, 170),
+            [105] = new Color32(255, 255, 255, 142),
+            [106] = new Color32(255, 255, 255, 113),
+            [107] = new Color32(255, 255, 255, 85),
+            [110] = new Color32(255, 255, 255, 255),
+            [111] = new Color32(255, 255, 255, 170),
 
-            [200] = new Color32(47, 108, 217, 255),
-            [201] = new Color32(73, 178, 242, 255),
-            [202] = new Color32(73, 178, 242, 227),
-            [203] = new Color32(73, 178, 242, 198),
-            [204] = new Color32(73, 178, 242, 170),
-            [205] = new Color32(73, 178, 242, 142),
-            [206] = new Color32(73, 178, 242, 113),
-            [207] = new Color32(73, 178, 242, 85),
-            [210] = new Color32(146, 208, 233, 255),
-            [211] = new Color32(220, 243, 249, 255),
+            [200] = new Color32(255, 255, 255, 255),
+            [201] = new Color32(255, 255, 255, 240),
+            [202] = new Color32(255, 255, 255, 227),
+            [203] = new Color32(255, 255, 255, 198),
+            [204] = new Color32(255, 255, 255, 170),
+            [205] = new Color32(255, 255, 255, 142),
+            [206] = new Color32(255, 255, 255, 113),
+            [207] = new Color32(255, 255, 255, 85),
+            [210] = new Color32(255, 255, 255, 255),
+            [211] = new Color32(255, 255, 255, 170),
 
-            [300] = new Color32(85, 37, 134, 255),
-            [301] = new Color32(128, 79, 179, 255),
-            [302] = new Color32(128, 79, 179, 200),
-            [310] = new Color32(153, 105, 199, 255),
-            [311] = new Color32(181, 137, 214, 255),
+            [300] = new Color32(255, 255, 255, 255),
+            [301] = new Color32(255, 255, 255, 240),
+            [302] = new Color32(255, 255, 255, 200),
+            [310] = new Color32(255, 255, 255, 255),
+            [311] = new Color32(255, 255, 255, 170),
 
             [400] = new Color32(255, 255, 255, 255),
-            [401] = new Color32(255, 255, 255, 255),
-            [410] = new Color32(255, 154, 60, 255),
-            [411] = new Color32(255, 111, 60, 255),
+            [401] = new Color32(255, 255, 255, 170),
+            [410] = new Color32(255, 255, 255, 255),
+            [411] = new Color32(255, 255, 255, 170),
 
             [0] = new Color32(255, 255, 255, 255),
         };

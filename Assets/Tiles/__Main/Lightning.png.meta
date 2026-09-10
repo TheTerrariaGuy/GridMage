@@ -1,43 +1,19 @@
 fileFormatVersion: 2
-guid: 04ea16c03f0e5b44884c1259c79e4421
+guid: 9f00f85c675ba804ab20b11ea1c9d8a4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5380237423685108026
-    second: TX Struct_0
+      213: -894095381526335850
+    second: Lightning_0
   - first:
-      213: 141675554456027117
-    second: TX Struct_1
+      213: 1757268892636325777
+    second: Lightning_1
   - first:
-      213: 5869078902113103909
-    second: TX Struct_2
+      213: -3844808008048746940
+    second: Lightning_2
   - first:
-      213: -7381738133999487609
-    second: TX Struct_3
-  - first:
-      213: -510105923369629673
-    second: TX Struct_4
-  - first:
-      213: -2677049488981355681
-    second: TX Struct_5
-  - first:
-      213: -3684389700825655485
-    second: TX Struct_6
-  - first:
-      213: -5664187630041763615
-    second: TX Struct_7
-  - first:
-      213: -5738710736683564370
-    second: TX Struct_8
-  - first:
-      213: -7037961563414481546
-    second: TX Struct_9
-  - first:
-      213: -8057005470267399406
-    second: TX Struct_10
-  - first:
-      213: 458263882440149975
-    second: TX Struct_11
+      213: 2027566014926527852
+    second: Lightning_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -70,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -110,7 +86,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -148,265 +124,353 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TX Struct_0
+      name: Lightning_0
       rect:
         serializedVersion: 2
-        x: 31
-        y: 383
-        width: 66
-        height: 98
+        x: 0
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6ce7cf1a19e8555b0800000000000000
-      internalID: -5380237423685108026
+      spriteID: 69e2ec4dcf88793f0800000000000000
+      internalID: -894095381526335850
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Struct_1
+      name: Lightning_1
       rect:
         serializedVersion: 2
-        x: 127
-        y: 383
-        width: 67
-        height: 98
+        x: 16
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: def35b88a2557f100800000000000000
-      internalID: 141675554456027117
+      spriteID: 197ae685fb2136810800000000000000
+      internalID: 1757268892636325777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Struct_2
+      name: Lightning_2
       rect:
         serializedVersion: 2
-        x: 223
-        y: 383
-        width: 67
-        height: 98
+        x: 32
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 520f03f6a28237150800000000000000
-      internalID: 5869078902113103909
+      spriteID: 44e5da2cc7f74aac0800000000000000
+      internalID: -3844808008048746940
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Struct_3
+      name: Lightning_3
       rect:
         serializedVersion: 2
-        x: 407
-        y: 420
-        width: 82
-        height: 66
+        x: 48
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 785710af64cce8990800000000000000
-      internalID: -7381738133999487609
+      spriteID: c6d995e4c8c532c10800000000000000
+      internalID: 2027566014926527852
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Struct_4
+      name: Lightning_4
       rect:
         serializedVersion: 2
-        x: 31
-        y: 255
-        width: 66
-        height: 98
+        x: 0
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7180bb78d5dbbe8f0800000000000000
-      internalID: -510105923369629673
+      spriteID: ed7fb205b0f4cc64ab821f06a4babaf7
+      internalID: 1019743613
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Struct_5
+      name: Lightning_5
       rect:
         serializedVersion: 2
-        x: 127
-        y: 255
-        width: 67
-        height: 98
+        x: 16
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f5310236ca539dad0800000000000000
-      internalID: -2677049488981355681
+      spriteID: 80a6724d311da6542842df176d13717a
+      internalID: 474586703
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Struct_6
+      name: Lightning_6
       rect:
         serializedVersion: 2
-        x: 223
-        y: 255
-        width: 67
-        height: 98
+        x: 32
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 347dd2c761b6edcc0800000000000000
-      internalID: -3684389700825655485
+      spriteID: 77dfaa01cc3f9d8439802498e292ca94
+      internalID: -778953786
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Struct_7
+      name: Lightning_7
       rect:
         serializedVersion: 2
-        x: 415
-        y: 319
-        width: 66
-        height: 66
+        x: 48
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1e0f2325c53c461b0800000000000000
-      internalID: -5664187630041763615
+      spriteID: f67acb3c2fd2ac9439d5d5bf2db83d86
+      internalID: 481833188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Struct_8
+      name: Lightning_8
       rect:
         serializedVersion: 2
-        x: 47
-        y: 127
-        width: 92
-        height: 98
+        x: 0
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ea2814f6df00c50b0800000000000000
-      internalID: -5738710736683564370
+      spriteID: 8fa91bd77726700499e4eb8fd94d1ffe
+      internalID: 963887471
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Struct_9
+      name: Lightning_9
       rect:
         serializedVersion: 2
-        x: 55
-        y: 31
-        width: 90
-        height: 98
+        x: 16
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 675b3dd2f33245e90800000000000000
-      internalID: -7037961563414481546
+      spriteID: 87c8d7500004f054abba0787fda8c943
+      internalID: -1086088379
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Struct_10
+      name: Lightning_10
       rect:
         serializedVersion: 2
-        x: 175
-        y: 127
-        width: 92
-        height: 98
+        x: 32
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 213255f6634cf2090800000000000000
-      internalID: -8057005470267399406
+      spriteID: 4bd4bacd9d851bb4e88e3612f80550e2
+      internalID: -1295071772
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Struct_11
+      name: Lightning_11
       rect:
         serializedVersion: 2
-        x: 183
-        y: 31
-        width: 90
-        height: 98
+        x: 48
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7db8c36b2941c5600800000000000000
-      internalID: 458263882440149975
+      spriteID: 8445860b70dbdb046a8228f5b652d0b5
+      internalID: 1656397802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd4ccfc32caa8db46858e458a5ac581f
+      internalID: 1411445258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_13
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd0c93e8d2de36249adbd4d3ece82cae
+      internalID: 897516551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_14
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 319b686f95646434bbb0ec17f46acfc7
+      internalID: 294451654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_15
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f888c35063f4e040be1808292f23204
+      internalID: 2072475030
       vertices: []
       indices: 
       edges: []
@@ -415,7 +479,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 675255afc20fb0945ba2bdae596ac2b9
     internalID: 0
     vertices: []
     indices: 
@@ -423,20 +487,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      TX Struct_0: -5380237423685108026
-      TX Struct_1: 141675554456027117
-      TX Struct_10: -8057005470267399406
-      TX Struct_11: 458263882440149975
-      TX Struct_2: 5869078902113103909
-      TX Struct_3: -7381738133999487609
-      TX Struct_4: -510105923369629673
-      TX Struct_5: -2677049488981355681
-      TX Struct_6: -3684389700825655485
-      TX Struct_7: -5664187630041763615
-      TX Struct_8: -5738710736683564370
-      TX Struct_9: -7037961563414481546
+      Lightning_0: -894095381526335850
+      Lightning_1: 1757268892636325777
+      Lightning_10: -1295071772
+      Lightning_11: 1656397802
+      Lightning_12: 1411445258
+      Lightning_13: 897516551
+      Lightning_14: 294451654
+      Lightning_15: 2072475030
+      Lightning_2: -3844808008048746940
+      Lightning_3: 2027566014926527852
+      Lightning_4: 1019743613
+      Lightning_5: 474586703
+      Lightning_6: -778953786
+      Lightning_7: 481833188
+      Lightning_8: 963887471
+      Lightning_9: -1086088379
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

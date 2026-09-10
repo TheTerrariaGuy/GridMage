@@ -146,6 +146,7 @@ public static class WorldRenderingChecks
 
     private static void ValidateScene()
     {
+        ValidateElementSprites();
         Require(pipeline != null && pipeline.Texture != null, "Pixel world pipeline must create its render target.");
         Require(pipeline.Texture.filterMode == FilterMode.Point && pipeline.Texture.height == 400, "World target must use the configured point-filtered pixel resolution.");
         int world = LayerMask.GetMask("Default", "PixelVFX");
@@ -160,8 +161,10 @@ public static class WorldRenderingChecks
         SetTile(5, 6, 400);
         var tile = GameLogic.INSTANCE.tilesGrid[5, 6];
         var group = tile.SurfaceRenderer.GetComponentInParent<SortingGroup>(true);
-        Require(group == tile.WallFrontRenderer.GetComponentInParent<SortingGroup>(true) && group.sortingLayerName == WorldSorting.World,
-            "Wall top and front must share a world anchor.");
+        Require(group.sortingLayerName == WorldSorting.World, "Walls must use a world anchor.");
+        if (tile.WallFrontRenderer != null)
+            Require(group == tile.WallFrontRenderer.GetComponentInParent<SortingGroup>(true),
+                "An optional wall front must share the top's world anchor.");
         Require(Mathf.Abs(group.transform.position.y - tile.transform.TransformPoint(new Vector3(0, -.5f, 0)).y) < .001f,
             "Wall anchor must remain at its ground contact, independent of the raised artwork.");
         SetTile(5, 6, 0);
@@ -176,6 +179,70 @@ public static class WorldRenderingChecks
             "Returning fire to grass must release its particle effect.");
         SetTile(6, 6, 100);
         Require(flame == GameLogic.INSTANCE.tilesGrid[6, 6].GetComponentInChildren<ParticleSystem>(), "Particle pooling must survive anchor creation.");
+    }
+
+    private static void ValidateElementSprites()
+    {
+        var game = GameLogic.INSTANCE;
+        var textures = TextureHandler.INSTANCE;
+        var tile = game.tilesGrid[3, 3];
+        var overlay = (SpriteRenderer)new SerializedObject(tile).FindProperty("overlay").objectReferenceValue;
+        foreach (var entry in Indexing.INSTANCE.colorMap)
+            Require(entry.Value.r == 255 && entry.Value.g == 255 && entry.Value.b == 255,
+                $"Stage {entry.Key} must preserve sprite RGB.");
+
+        foreach (int type in new[] { 100, 200, 300, 400 })
+        {
+            string sheet = type == 100 ? "Fire" : type == 200 ? "Water" : type == 300 ? "Lightning" : "RockWall";
+            string isolated = sheet + (type == 200 ? "_0" : type == 400 ? "_34" : "_12");
+            Require(textures.GetPreviewSprite(type)?.name == isolated, $"Wrong isolated preview for {type}.");
+            SetTile(3, 3, type);
+            Require(tile.SurfaceRenderer.sprite.name == isolated, "An isolated placed tile must use its blob.");
+            SetTile(3, 4, type + 1);
+            SetTile(4, 3, type);
+            SetTile(4, 4, type + 1);
+            string squareCorner = sheet + (type == 200 ? "_10" : type == 400 ? "_0" : "_1");
+            Require(tile.SurfaceRenderer.sprite.name == squareCorner, $"Wrong 2x2 corner for {type}.");
+            var colliderBounds = tile.GetComponent<Collider2D>().bounds;
+            tile.ShowQueuedSpell(type);
+            Require(overlay.sprite.name == isolated && Mathf.Abs(overlay.color.a - .75f) < .001f,
+                "Queued previews must stay isolated and use queued opacity.");
+            Require(Vector3.Distance(overlay.bounds.size, tile.SurfaceRenderer.bounds.size) < .001f,
+                "Preview must fit one tile despite sprite import scale.");
+            Require(tile.GetComponent<Collider2D>().bounds == colliderBounds, "Artwork must not resize the tile collider.");
+            tile.ClearQueuedSpell();
+            Require(overlay.color.a == 0f, "Clearing a queue must hide its preview.");
+
+            SetTile(4, 4, 0);
+            Require(tile.SurfaceRenderer.sprite.name == sheet + (type == 200 ? "_7" : type == 400 ? "_4" : "_1"),
+                "Removing a diagonal must refresh water/stone and leave fire/lightning corners unchanged.");
+            // Refresh against a replaced gameplay grid while Tile.type is still stale.
+            game.grid[3, 3] = type + 1;
+            textures.UpdateTexture(game.tilesGrid[4, 3]);
+            Require(((Color32)tile.SurfaceRenderer.color).Equals(Indexing.INSTANCE.colorMap[type + 1]),
+                "Neighbor refresh must apply the current grid stage alpha.");
+            for (int r = 3; r <= 4; r++)
+                for (int c = 3; c <= 4; c++) SetTile(r, c, 0);
+        }
+        float mana = game.currMana;
+        int selection = game.CurrentSelection;
+        game.currMana = game.maxMana;
+        foreach (int type in new[] { 100, 200, 300, 400 })
+        {
+            game.UpdateSelection(type);
+            tile.SetHovered(true);
+            Require(overlay.sprite == textures.GetPreviewSprite(type) && Mathf.Abs(overlay.color.a - .5f) < .001f,
+                "Hover previews must follow selection and use hover opacity.");
+        }
+        tile.SetHovered(false);
+        game.UpdateSelection(selection);
+        game.currMana = mana;
+        var selector = Object.FindAnyObjectByType<Selector>();
+        Require(selector.GetComponent<Collider2D>().transform.localScale == Vector3.one,
+            "Selector artwork must not scale the click target.");
+        Require(selector.GetComponentsInChildren<SpriteRenderer>().Single(r => r.enabled).sprite == textures.GetPreviewSprite(selection),
+            "Selector must display its selected element's isolated sprite.");
+        Debug.Log("ELEMENT SPRITE CHECKS PASSED: scene mappings, 2x2 rules, previews, white stage alpha, neighbor refresh, and collider sizes.");
     }
 
     private static void ValidateParticles()

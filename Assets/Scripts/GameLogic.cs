@@ -87,7 +87,8 @@ namespace Assets.Scripts
         {
             time += Time.deltaTime;
             currMana += Time.deltaTime * manaRegen * (IsPlacementMode ? placementManaRegenMultiplier : 1f);
-            if (currMana > maxMana) currMana = maxMana;
+            // Queued spells hold their cost separately so spendable mana can still regenerate.
+            currMana = Mathf.Min(currMana, maxMana + reservedMana);
             if (clock <= 0f) return;
             while (time >= clock)
             {
@@ -170,6 +171,7 @@ namespace Assets.Scripts
             if (!queuedSpells.TryGetValue((r, c), out var spell)) return;
             queuedSpells.Remove((r, c));
             reservedMana = queuedSpells.Count == 0 ? 0f : reservedMana - spell.cost;
+            currMana = Mathf.Min(currMana, maxMana + reservedMana);
             tilesGrid[r, c].ClearQueuedSpell();
         }
 

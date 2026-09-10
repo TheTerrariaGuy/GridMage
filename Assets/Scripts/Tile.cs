@@ -119,10 +119,9 @@ public class Tile : MonoBehaviour
             alpha = hoverAlpha;
         }
 
-        if (previewType != 0 && Indexing.INSTANCE.colorMap.TryGetValue(previewType, out Color32 color))
+        if (previewType != 0 && TextureHandler.INSTANCE != null)
         {
-            color.a = (byte)Mathf.RoundToInt(Mathf.Clamp01(alpha) * 255f);
-            overlay.color = color;
+            TextureHandler.INSTANCE.UpdatePreview(this, overlay, previewType, alpha);
         }
         else overlay.color = new Color32(255, 255, 255, 0);
     }

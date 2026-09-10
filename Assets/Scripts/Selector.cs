@@ -10,6 +10,7 @@ public class Selector : MonoBehaviour, IPointerClickHandler
     public static Selector INSTANCE { get; private set; }
     [SerializeField] private SpriteRenderer spriteRenderer;
     private int currentType;
+    private Vector3 spriteSize;
     
     void Start()
     {
@@ -19,30 +20,37 @@ public class Selector : MonoBehaviour, IPointerClickHandler
             return;
         }
         INSTANCE = this;
+        spriteSize = spriteRenderer.sprite.bounds.size;
+        // Resize only the artwork; the selector's renderer shares its object with the click collider.
+        var artwork = new GameObject("Selection artwork");
+        artwork.layer = spriteRenderer.gameObject.layer;
+        artwork.transform.SetParent(spriteRenderer.transform, false);
+        artwork.transform.localPosition = spriteRenderer.sprite.bounds.center;
+        var preview = artwork.AddComponent<SpriteRenderer>();
+        preview.sharedMaterial = spriteRenderer.sharedMaterial;
+        preview.sortingLayerID = spriteRenderer.sortingLayerID;
+        preview.sortingOrder = spriteRenderer.sortingOrder;
+        spriteRenderer.enabled = false;
+        spriteRenderer = preview;
         currentType = 0;
         ChangeType();
     }
     
     private void ChangeType()
     {
-        currentType += 100;
-        if (currentType > 400)
-        {
-            currentType = 100;
-        }
-        GameLogic.INSTANCE.UpdateSelection(currentType);
-        if (Indexing.INSTANCE.colorMap.TryGetValue(currentType, out Color32 color))
-        {
-            spriteRenderer.color = color;
-        }
+        ChangeType(currentType >= 400 ? 100 : currentType + 100);
     }
     private void ChangeType(int type)
     {
         currentType = type;
         GameLogic.INSTANCE.UpdateSelection(currentType);
-        if (Indexing.INSTANCE.colorMap.TryGetValue(currentType, out Color32 color))
+        Sprite sprite = TextureHandler.INSTANCE.GetPreviewSprite(currentType);
+        spriteRenderer.sprite = sprite;
+        spriteRenderer.color = Color.white;
+        if (sprite != null)
         {
-            spriteRenderer.color = color;
+            spriteRenderer.transform.localScale = new Vector3(
+                spriteSize.x / sprite.bounds.size.x, spriteSize.y / sprite.bounds.size.y, 1f);
         }
     }
 
