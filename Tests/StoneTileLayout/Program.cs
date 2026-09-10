@@ -85,12 +85,36 @@ static class Program
             var square = new int[,] { { type, type + 1 }, { type + 1, type } };
             Equal(type == 200 || type == 400 ? 12 : 9, TileSpriteLayout.SurfaceVariant(square, 0, 0, type), "2x2 corner behavior");
             Equal(2, TileSpriteLayout.SurfaceVariant(new int[,] { { type } }, 0, 0, type), "Element boundary");
-            foreach (int neighbor in new[] { 0, 100, 200, 300, 400, 110, 210, 310, 410 })
+            foreach (int neighbor in new[] { 0, 100, 200, 300, 400, 110, 111, 210, 211, 310, 311, 410, 411 })
             {
                 if (neighbor == type) continue;
-                Equal(2, TileSpriteLayout.SurfaceVariant(new int[,] { { type, neighbor } }, 0, 0, type), "Different elements and reactions do not connect");
+                Equal(2, TileSpriteLayout.SurfaceVariant(new int[,] { { type, neighbor } }, 0, 0, type), "Base stages stay separate from reactions and other elements");
             }
         }
+        foreach (int type in new[] { 100, 200, 300 })
+        {
+            for (int stage = 0; stage <= 11; stage++)
+            {
+                foreach (int reaction in new[] { type + 10, type + 11 })
+                {
+                    var pair = new int[,] { { type + stage, reaction } };
+                    Equal(stage >= 10 ? 4 : 2, TileSpriteLayout.SurfaceVariant(pair, 0, 0, type + stage), "Only reaction stages join reactions to the east");
+                    Equal(stage >= 10 ? 15 : 2, TileSpriteLayout.SurfaceVariant(pair, 0, 1, reaction), "Reactions only join reaction stages to the west");
+                }
+            }
+            var square = new int[,] { { type + 10, type + 11 }, { type + 11, type + 10 } };
+            Equal(type == 200 ? 12 : 9, TileSpriteLayout.SurfaceVariant(square, 0, 0, type + 10), "Mixed reaction stages preserve corner behavior");
+            square[1, 1] = type;
+            Equal(9, TileSpriteLayout.SurfaceVariant(square, 0, 0, type + 10), "Base diagonal does not fill a reaction corner");
+            foreach (int neighbor in new[] { 110, 111, 210, 211, 310, 311, 410, 411 })
+            {
+                if (neighbor / 100 == type / 100) continue;
+                foreach (int reaction in new[] { type + 10, type + 11 })
+                    Equal(2, TileSpriteLayout.SurfaceVariant(new int[,] { { reaction, neighbor } }, 0, 0, reaction), "Reactions of different elements stay separate");
+            }
+        }
+        foreach (int type in new[] { 112, 212, 312, 410, 411 })
+            Equal(0, TileSpriteLayout.SurfaceVariant(new int[,] { { type, type / 100 * 100 } }, 0, 0, type), "Excluded stages remain unconnected");
         Console.WriteLine("Passed: 256 neighborhoods per element, water/stone 47 shapes, fire/lightning 16 shapes, 2x2 merging rules, stages, family separation, wall fronts, and boundaries.");
     }
 }

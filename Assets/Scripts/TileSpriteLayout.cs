@@ -16,12 +16,14 @@ namespace Assets.Scripts
 
         public static bool IsWall(int type) => type / 100 == 4 && type % 100 < 10;
 
-        public static bool Connects(int type) => type >= 100 && type < 410 && type % 100 < 10;
+        public static bool Connects(int type) =>
+            type >= 100 && type < 410 && type % 100 < (type < 400 ? 12 : 10);
 
         private static bool HasElement(int[,] grid, int row, int col, int type) =>
             grid != null && row >= 0 && col >= 0 &&
             row < grid.GetLength(0) && col < grid.GetLength(1) &&
-            Connects(grid[row, col]) && grid[row, col] / 100 == type / 100;
+            // Each element's reaction stages (10/11) form a separate connection group.
+            Connects(grid[row, col]) && grid[row, col] / 10 == type / 10;
 
         public static bool HasWall(int[,] grid, int row, int col) =>
             grid != null && row >= 0 && col >= 0 &&
