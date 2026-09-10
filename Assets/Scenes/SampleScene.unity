@@ -160,7 +160,7 @@ MonoBehaviour:
   clock: 1
   clockHand: {fileID: 1782137552}
   maxMana: 100
-  manaRegen: 5
+  manaRegen: 50
   placementManaRegenMultiplier: 0.5
   time: 0
   currMana: 50

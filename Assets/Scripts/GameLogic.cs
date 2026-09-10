@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using static Indexing;
 
@@ -21,6 +22,7 @@ namespace Assets.Scripts
         [SerializeField] private GameObject clockHand;
         [SerializeField] public float maxMana, manaRegen;
         [SerializeField, Min(0f)] private float placementManaRegenMultiplier = 0.5f;
+        private bool[,] placeableMap; 
 
 
         //[SerializeField] public GameObject playerPoint;
@@ -147,6 +149,18 @@ namespace Assets.Scripts
 
         private bool CanCastAt(int r, int c)
         {
+            //bool hasWater = false;
+            //for (int i = -1; i <= 1; i++)
+            //{
+            //    for (int j = -1; j <= 1; j ++)
+            //    {
+            //        if (i == 0 && j == 0 || ! GridHelper.IsInBounds(grid, r + i, c + j))
+            //        {
+            //            continue;
+            //        }
+                    
+            //    }
+            //}
             return GridHelper.IsInBounds(grid, r, c) &&
                 (grid[r, c] == 0 || grid[r, c] % 100 == 11);
         }

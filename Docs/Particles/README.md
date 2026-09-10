@@ -1,8 +1,8 @@
 # Tile and reaction particles
 
-`Assets/Particle` contains 27 looping tile prefabs, 20 one-shot reaction prefabs and four enemy damage prefabs, authored for the XY grid. All visible children use layer `PixelVFX` (6), which renders alongside sprites through `PixelWorldCamera`. The separate, pre-existing explosion is at `Assets/Prefabs/Explosion.prefab`.
+`Assets/Particle` contains seven looping tile family prefabs (27 catalog stages), 20 one-shot reaction prefabs and four enemy damage prefabs, authored for the XY grid. All visible children use layer `PixelVFX` (6), which renders alongside sprites through `PixelWorldCamera`. The separate, pre-existing explosion is at `Assets/Prefabs/Explosion.prefab`.
 
-Shared meshes, materials, shader and catalog live in `Assets/Rendering/Particles`. Authoring and validation scripts live in `Assets/Editor/Particles`. Documentation and previews live here in `Docs/Particles`. None of the authoring tools or previews are required for playback.
+Shared meshes, materials, shader and catalog live in `Assets/Rendering/Particles`. Authoring and validation scripts live in `Assets/Editor/Rendering`. Documentation and previews live here in `Docs/Particles`. None of the authoring tools or previews are required for playback.
 
 Preview sheets: [tiles](Previews/Tiles.png), [tiles at the current pixel density](Previews/Tiles_Pixel.png), [reactions](Previews/Reactions.png). Entries run left to right, top to bottom, in filename order; matching `.txt` files list each entry. Captured using the project's URP 2D renderer. The historical pixel sheet uses 10 pixels per world unit, matching the former 200-pixel-high texture and camera orthographic size 10. The shared world pipeline now defaults to a 400-pixel-high texture.
 
@@ -14,22 +14,19 @@ Grass (tile type 0) intentionally has no particle catalog entry. Returning an el
 
 ## Tiles
 
-| Tile ID | Prefab under `Assets/Particle/` | Appearance |
+| Tile IDs | Shared prefab under `Assets/Particle/` | Appearance |
 | --- | --- | --- |
 | 0 | No prefab | Grass uses its tile sprite without particles |
-| 100 | `Tile_100_Fire` | Flame bed, hot cores, rising embers |
-| 101–107 | `Tile_<ID>_Fire_Spent_<1–7>` | Progressively weaker orange fire |
-| 110, 111 | `Tile_110_Fire_Flare`, `Tile_111_Fire_Flare_Fading` | Golden flare and its fading state |
-| 200 | `Tile_200_Water` | Wavelets, small ripples, surface glints |
-| 201–207 | `Tile_<ID>_Water_Spent_<1–7>` | Progressively quieter water |
-| 210, 211 | `Tile_210_Steam_Geyser`, `Tile_211_Steam_Fading` | Steam wisps and boiling droplets |
-| 300 | `Tile_300_Electricity` | Violet arcs and pale ion sparks |
-| 301, 302 | `Tile_301_Electricity_Spent`, `Tile_302_Electricity_Spent_Fading` | Decreasing arc activity |
-| 310, 311 | `Tile_310_Electricity_Charged`, `Tile_311_Electricity_Charged_Fading` | Pink plasma wisps, violet coronas, bright filaments and white-hot knots |
-| 410, 411 | `Tile_410_Lava`, `Tile_411_Lava_Cooling` | Orange molten pools, bubbling currents and growing dark crust |
+| 100–107 | `Tile_100_Fire` | Flame bed, hot cores and embers, progressively fading |
+| 110, 111 | `Tile_110_Fire_Flare` | Golden flare and its fading state |
+| 200–207 | `Tile_200_Water` | Wavelets, ripples and glints, progressively fading |
+| 210, 211 | `Tile_210_Steam_Geyser` | Steam wisps and boiling droplets |
+| 300–302 | `Tile_300_Electricity` | Violet arcs and pale ion sparks, progressively fading |
+| 310, 311 | `Tile_310_Electricity_Charged` | Pink plasma wisps, violet coronas, bright filaments and white-hot knots |
+| 410, 411 | `Tile_410_Lava` | Orange molten pools, bubbling currents and growing dark crust |
 | 400, 401 | No prefab | Ordinary stone emits no particles |
 
-All IDs in `Indexing.colorMap` are covered or explicitly omitted above. Water 202–207 and fire 110–111 are provided because the tile definitions exist, even though their production/decay rules are currently unused or unreachable. Steam is an interpretation of fire heating water; tile 211 also results from electricity hitting water, so its shared visual stays pale and watery. Fire + electricity is confirmed as plasma; fire + stone is confirmed as lava. The plasma tile assets retain their existing 310/311 filenames and GUIDs so assigned references remain valid.
+Historical preview labels refer to the original per-stage prefabs. Those stages now live in `ParticleCatalog`; the seven base prefab filenames and GUIDs are retained.
 
 ## Reactions
 
@@ -92,7 +89,7 @@ The `damage` entries in `ParticleCatalog` map element families to these prefabs.
 
 `SampleScene/GameHandler` has a `ParticleVFX` component linked to `Assets/Rendering/Particles/ParticleCatalog.asset`. Press Play to use the effects. `PixelWorldRenderer` on the main camera renders particles, characters and tiles together before upscaling; the HUD renders afterward. Particle destinations and one-cell links have separate world-Y sorting anchors. See [World rendering](../WorldRendering.md) for the camera, sorting and input setup.
 
-`Tile.ChangeType` maintains one pooled tile effect. Unchanged tiles keep playing; fading stages update emission and color on the existing systems. Queued spells use the existing overlay until submitted. Ordinary stone has no effect. Effects follow their tile's active state; resetting the grid releases and reuses them before removing the old tiles.
+`Tile.ChangeType` maintains one pooled tile effect through an opaque handle. Each catalog tile entry selects a shared family prefab and stores root scale plus named emitter settings (start color, lifetime color, emission rate and particle limit). Emitter names must be unique within a tile prefab and match the stage entries. All stages of a family share one pool, including effects first spawned at a faded stage. Unchanged tiles keep playing; fading stages update emission and color on the existing systems. Queued spells use the existing overlay until submitted. Ordinary stone has no effect. Effects follow their tile's active state; resetting the grid releases and reuses them before removing the old tiles.
 
 Reaction rules carry a `V` effect name and direction in `Indexing.CastingInfo`. `GameLogic` tracks the owner of each accepted write across fading, normal reactions and overlaps. Only surviving outputs play at the end of the tick. This also removes duplicate symmetric bursts. The four spread/fade effects follow the cells actually accepted by `ModifyFade`.
 
@@ -106,10 +103,10 @@ Reaction effects play once and finish within 2.8 authored seconds. Their simulat
 
 ## Authoring
 
-`Tools > Grid Mage > Particles > Rebuild authored prefabs` regenerates these assets using `Assets/Editor/Particles/ElementParticleBuilder.cs`, retaining existing asset GUIDs and refreshing the catalog. Rebuilding preserves the flat folder layout and overwrites edits to generated prefabs, materials and meshes. It does not run automatically on import. `Refresh catalog` updates just the catalog after adding assets. `Validate authored prefabs` checks all 48 assets, references, layers, looping, particle emission, tile bounds over eight simulated seconds, and one-shot completion. The builder does not touch scenes, gameplay scripts or the original Explosion prefab.
+Edit shared emitter geometry and motion in the seven tile prefabs; edit stage scale, colors, particle limits and emission rates in `ParticleCatalog`. Add new stages by referencing a family prefab and supplying settings for each named emitter.
 
-Preview sheets are authoring snapshots and are not regenerated by the rebuild menu.
+Sorting anchors are saved in every catalog prefab. `ParticlePrefabAuthoring.Bake` builds anchors for a newly authored hierarchy: tile systems share a center anchor, reaction parts use destination or link-midpoint anchors, and damage effects use a single anchor with a `Visuals` child. The enemy damage builder calls this before saving its prefabs. Runtime playback does not create or rearrange sorting groups. When editing a reaction layout, keep its saved anchors aligned with `ParticlePattern` cells.
 
-Historical validation before grass removal, in Unity 6000.6.0f1: all 48 prefabs / 391 ParticleSystems passed reference, layer, looping, emission, square tile bounds and completion checks. The sparse grass effect is sampled for 64 seconds; other tile effects are sampled for eight seconds. All effects rendered using the project's URP 17.6 2D renderer. Grass previews show a moment when a blade is present; individual blades can disappear at the pixel filter's resolution. Current tile coverage omits grass 0 and ordinary stone 400/401. No reaction themes remain unresolved.
+Run `WorldRenderingChecks.Run` in an isolated project using `-batchmode -executeMethod WorldRenderingChecks.Run -logFile Validation.log` (omit `-quit`; checks exit Unity themselves). Checks cover all 27 tile stages and seven shared pools, saved anchors, rotated reactions, upright geysers, damage effects, movement, lethal hits, cleanup, particle/sprite occlusion, tile picking and grid reset. Results and screenshots are saved under `WorldRenderingChecks` in that project.
 
-`ParticleIntegrationChecks.Run` is a batch Play Mode test entry point. Run it in an isolated copy with `-batchmode -executeMethod ParticleIntegrationChecks.Run -logFile Integration.log` (omit `-quit`; the checks exit Unity themselves). It exercises the saved scene, tile continuity, spell queueing, bounds/wall masking, priority winners, overlap deduplication, lava conversion, pool reuse/cleanup, grid reset and the pixel camera. It never saves the test scene. These checks passed in Unity 6000.6.0f1, including normal playback to completion and capture of the scene's pixel-camera output.
+Preview sheets are historical authoring snapshots and are not regenerated by the damage rebuild menu.

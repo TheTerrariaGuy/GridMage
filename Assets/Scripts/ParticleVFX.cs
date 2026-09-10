@@ -8,12 +8,11 @@ public class ParticleVFX : MonoBehaviour
 {
     public static ParticleVFX INSTANCE;
     [SerializeField] private ParticleCatalog catalog;
-    private readonly Dictionary<int, ParticleSystem> tiles = new();
+    private readonly Dictionary<int, ParticleCatalog.TileEntry> tiles = new();
     private readonly Dictionary<string, ParticleSystem> reactions = new();
     private readonly Dictionary<int, ParticleSystem> damage = new();
-    private readonly Dictionary<ParticleSystem, Stack<Effect>> pools = new();
-    private readonly Dictionary<ParticleSystem, ParticleSystem[]> templates = new();
-    private readonly List<Effect> bursts = new();
+    private readonly Dictionary<ParticleSystem, Stack<Instance>> pools = new();
+    private readonly List<Instance> bursts = new();
     private Transform storage;
 
     public class Burst
@@ -28,14 +27,18 @@ public class ParticleVFX : MonoBehaviour
         }
     }
 
-    public class Effect
+    // Tiles retain an opaque handle; only this manager owns playback and pool state.
+    public abstract class Effect { }
+
+    private sealed class Instance : Effect
     {
         public ParticleSystem root, prefab;
         public ParticleSystem[] systems;
         public ParticlePattern pattern;
         public int type;
         public Transform followTarget;
-        public SortingGroup[] groups;
+        public Transform anchor;
+        public readonly Dictionary<string, ParticleSystem> emitters = new();
     }
 
     private void Awake()
@@ -45,59 +48,50 @@ public class ParticleVFX : MonoBehaviour
         storage.SetParent(transform, false);
         storage.gameObject.SetActive(false);
         if (catalog == null) return;
-        foreach (var entry in catalog.tiles) tiles[entry.type] = entry.prefab;
+        foreach (var entry in catalog.tiles) tiles[entry.type] = entry;
         foreach (var entry in catalog.reactions) reactions[entry.id] = entry.prefab;
         foreach (var entry in catalog.damage) damage[entry.element] = entry.prefab;
     }
 
-    public void SetTile(Transform tile, int type, ref Effect effect)
+    public void SetTile(Transform tile, int type, ref Effect handle)
     {
-        if (!tiles.TryGetValue(type, out ParticleSystem prefab) || prefab == null)
+        var effect = (Instance)handle;
+        if (!tiles.TryGetValue(type, out var stage) || stage.prefab == null)
         {
             Release(effect);
-            effect = null;
+            handle = null;
             return;
         }
         if (effect != null && effect.type == type) return;
-        if (effect != null && Family(effect.type) == Family(type))
+        if (effect != null && effect.prefab == stage.prefab)
         {
-            SetStage(effect, prefab);
+            SetStage(effect, stage);
             effect.type = type;
             return;
         }
         Release(effect);
-        effect = Rent(prefab);
+        handle = effect = Rent(stage.prefab);
         effect.type = type;
         effect.root.transform.SetParent(tile, false);
         effect.root.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
-        SetStage(effect, prefab);
+        SetStage(effect, stage);
         effect.root.gameObject.SetActive(true);
         effect.root.Play(true);
     }
 
-    private static int Family(int type) => type < 100 ? type : type / 100 * 100 + (type % 100 >= 10 ? 10 : 0);
-
-    private void SetStage(Effect effect, ParticleSystem prefab)
+    private static void SetStage(Instance effect, ParticleCatalog.TileEntry stage)
     {
-        effect.root.transform.localScale = prefab.transform.localScale;
-        if (!templates.TryGetValue(prefab, out ParticleSystem[] source))
-            templates[prefab] = source = prefab.GetComponentsInChildren<ParticleSystem>(true);
-        for (int i = 0; i < effect.systems.Length; i++)
-        {
-            var main = effect.systems[i].main;
-            main.startColor = source[i].main.startColor;
-            main.maxParticles = source[i].main.maxParticles;
-            var color = effect.systems[i].colorOverLifetime;
-            color.color = source[i].colorOverLifetime.color;
-            var emission = effect.systems[i].emission;
-            emission.rateOverTime = source[i].emission.rateOverTime;
-        }
+        if (effect.emitters.Count == 0)
+            foreach (var system in effect.systems)
+                if (system != effect.root) effect.emitters.Add(system.name, system);
+        effect.root.transform.localScale = stage.scale;
+        foreach (var part in stage.parts) part.Apply(effect.emitters[part.emitter]);
     }
 
     public void Play(Burst burst, float tickDuration)
     {
         if (burst.cells.Count == 0 || !reactions.TryGetValue(burst.id, out ParticleSystem prefab) || prefab == null) return;
-        Effect effect = Rent(prefab);
+        Instance effect = Rent(prefab);
         GameLogic game = GameLogic.INSTANCE;
         Transform t = effect.root.transform;
         t.SetParent(game.gridParent, false);
@@ -123,7 +117,7 @@ public class ParticleVFX : MonoBehaviour
     public void PlayDamage(Transform enemy, int element)
     {
         if (enemy == null || !damage.TryGetValue(element, out var prefab) || prefab == null) return;
-        Effect effect = Rent(prefab);
+        Instance effect = Rent(prefab);
         effect.followTarget = enemy;
         Transform root = effect.root.transform;
         root.SetParent(transform, false);
@@ -135,32 +129,29 @@ public class ParticleVFX : MonoBehaviour
         Vector3 ground = feet != null ? feet.transform.position : enemy.position;
         ground.y -= .001f;
         Vector3 anchor = root.InverseTransformPoint(ground);
-        foreach (var group in effect.groups)
-        {
-            Vector3 delta = anchor - group.transform.localPosition;
-            group.transform.localPosition = anchor;
-            foreach (Transform child in group.transform) child.localPosition -= delta;
-        }
+        effect.anchor.localPosition = anchor;
+        effect.anchor.GetChild(0).localPosition = -anchor; // Visuals remain centered on the victim.
         effect.root.gameObject.SetActive(true);
         effect.root.Play(true);
         bursts.Add(effect);
     }
 
-    private Effect Rent(ParticleSystem prefab)
+    private Instance Rent(ParticleSystem prefab)
     {
-        if (!pools.TryGetValue(prefab, out Stack<Effect> pool)) pools[prefab] = pool = new();
+        if (!pools.TryGetValue(prefab, out Stack<Instance> pool)) pools[prefab] = pool = new();
         if (pool.Count > 0) return pool.Pop();
         ParticleSystem root = Instantiate(prefab, storage);
         root.gameObject.SetActive(false);
         var systems = root.GetComponentsInChildren<ParticleSystem>(true);
-        var pattern = root.GetComponent<ParticlePattern>();
-        WorldSorting.ConfigureParticles(root, systems, pattern);
-        return new Effect { root = root, prefab = prefab, systems = systems, pattern = pattern,
-            groups = root.GetComponentsInChildren<SortingGroup>(true) };
+        var effect = new Instance { root = root, prefab = prefab, systems = systems,
+            pattern = root.GetComponent<ParticlePattern>(),
+            anchor = root.GetComponentInChildren<SortingGroup>(true).transform };
+        return effect;
     }
 
-    public void Release(Effect effect)
+    public void Release(Effect handle)
     {
+        var effect = (Instance)handle;
         if (effect == null || effect.root == null) return;
         effect.followTarget = null;
         effect.root.gameObject.SetActive(false);
@@ -177,7 +168,7 @@ public class ParticleVFX : MonoBehaviour
     {
         for (int i = bursts.Count - 1; i >= 0; i--)
         {
-            Effect effect = bursts[i];
+            Instance effect = bursts[i];
             bool alive = false;
             foreach (ParticleSystem system in effect.systems)
                 if (system != effect.root && system.gameObject.activeInHierarchy && system.IsAlive(false))
@@ -190,13 +181,13 @@ public class ParticleVFX : MonoBehaviour
 
     private void LateUpdate()
     {
-        foreach (Effect effect in bursts)
+        foreach (Instance effect in bursts)
             if (effect.followTarget != null) effect.root.transform.position = effect.followTarget.position;
     }
 
     public void ClearBursts()
     {
-        foreach (Effect effect in bursts) Release(effect);
+        foreach (Instance effect in bursts) Release(effect);
         bursts.Clear();
     }
 

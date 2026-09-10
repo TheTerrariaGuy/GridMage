@@ -78,6 +78,7 @@ public static class WorldRenderingChecks
                     pipeline = Camera.main.GetComponent<PixelWorldRenderer>();
                     ValidateScene();
                     ValidateParticles();
+                    ValidateTileStages();
                     ValidateGeysers();
                     EnemyDamageChecks.Begin();
                     SetTile(5, 6, 400);
@@ -180,13 +181,13 @@ public static class WorldRenderingChecks
     private static void ValidateParticles()
     {
         var catalog = AssetDatabase.LoadAssetAtPath<ParticleCatalog>("Assets/Rendering/Particles/ParticleCatalog.asset");
-        foreach (var prefab in catalog.tiles.Select(t => t.prefab).Concat(catalog.reactions.Select(r => r.prefab)))
+        foreach (var prefab in catalog.tiles.Select(t => t.prefab).Concat(catalog.reactions.Select(r => r.prefab))
+            .Concat(catalog.damage.Select(d => d.prefab)).Distinct())
         {
             var root = Object.Instantiate(prefab);
             root.gameObject.SetActive(false);
             var systems = root.GetComponentsInChildren<ParticleSystem>(true);
             var pattern = root.GetComponent<ParticlePattern>();
-            WorldSorting.ConfigureParticles(root, systems, pattern);
             foreach (var system in systems.Where(s => s != root))
                 Require(system.GetComponentInParent<SortingGroup>(true)?.sortingLayerName == WorldSorting.World,
                     prefab.name + " contains an unanchored particle renderer.");
@@ -207,6 +208,41 @@ public static class WorldRenderingChecks
                     }
                 }
             Object.Destroy(root.gameObject);
+        }
+    }
+
+    private static void ValidateTileStages()
+    {
+        var catalog = AssetDatabase.LoadAssetAtPath<ParticleCatalog>("Assets/Rendering/Particles/ParticleCatalog.asset");
+        Require(catalog.tiles.Length == 27 && catalog.tiles.Select(t => t.prefab).Distinct().Count() == 7,
+            "All 27 tile stages must share seven family prefabs.");
+        foreach (var family in catalog.tiles.GroupBy(t => t.prefab))
+        {
+            SetTile(6, 6, family.Last().type);
+            var root = GameLogic.INSTANCE.tilesGrid[6, 6].GetComponentInChildren<ParticleSystem>();
+            SetTile(6, 6, 0);
+            foreach (var stage in family.Concat(family.Reverse()))
+            {
+                SetTile(6, 6, stage.type);
+                var current = GameLogic.INSTANCE.tilesGrid[6, 6].GetComponentInChildren<ParticleSystem>();
+                Require(current == root, "Starting at a faded stage must reuse the same family pool and preserve stage continuity.");
+                Require(current.transform.localScale == stage.scale, "Tile stage scale was not restored.");
+                var systems = current.GetComponentsInChildren<ParticleSystem>().Where(p => p != current).ToDictionary(p => p.name);
+                Require(systems.Count == stage.parts.Length, "Tile stages must describe every named emitter.");
+                foreach (var part in stage.parts)
+                {
+                    var system = systems[part.emitter];
+                    Require(system.main.maxParticles == part.maxParticles &&
+                        system.main.startColor.Evaluate(.5f, .5f) == part.startColor.Evaluate(.5f, .5f) &&
+                        system.colorOverLifetime.color.Evaluate(.5f, .5f) == part.colorOverLifetime.Evaluate(.5f, .5f) &&
+                        Mathf.Approximately(system.emission.rateOverTime.Evaluate(.5f, .5f), part.rateOverTime.Evaluate(.5f, .5f)),
+                        "Pooled stage settings were not restored for " + stage.type + "/" + part.emitter +
+                        $": count {system.main.maxParticles}/{part.maxParticles}, start {system.main.startColor.Evaluate(.5f, .5f):F6}/{part.startColor.Evaluate(.5f, .5f):F6}," +
+                        $" lifetime {system.colorOverLifetime.color.Evaluate(.5f, .5f):F6}/{part.colorOverLifetime.Evaluate(.5f, .5f):F6}," +
+                        $" rate {system.emission.rateOverTime.Evaluate(.5f, .5f)}/{part.rateOverTime.Evaluate(.5f, .5f)}");
+                }
+            }
+            SetTile(6, 6, 0);
         }
     }
 

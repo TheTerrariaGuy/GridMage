@@ -57,6 +57,7 @@ public static class EnemyDamageParticleBuilder
                         new Color(1, .3f, .015f), new Color(1, .7f, .08f), 0, 0, 0, 0, 0, 2);
                     break;
             }
+            ParticlePrefabAuthoring.Bake(container, damage: true);
             var saved = PrefabUtility.SaveAsPrefabAsset(root, "Assets/Particle/" + root.name + ".prefab");
             entries[i] = new ParticleCatalog.DamageEntry { element = i + 1, prefab = saved.GetComponent<ParticleSystem>() };
             UnityEngine.Object.DestroyImmediate(root);

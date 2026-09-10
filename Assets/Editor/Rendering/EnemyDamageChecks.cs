@@ -49,9 +49,19 @@ public static class EnemyDamageChecks
             hit.Simulate(2, true, true);
             Require(hit.GetComponentsInChildren<ParticleSystem>().All(p => !p.main.loop && p.particleCount == 0),
                 hit.name + " must finish its particles without looping.");
+            var emitters = hit.GetComponentsInChildren<ParticleSystem>().Where(p => p != hit).ToArray();
+            var positions = emitters.Select(p => p.transform.position).ToArray();
             ParticleVFX.INSTANCE.ClearBursts();
+            Vector3 feetPosition = feet.transform.localPosition;
+            feet.transform.localPosition += new Vector3(0, -.2f, 0);
             follower.TakeDamage();
             Require(Hits().Single() == hit, "Completed damage effects must be reusable from the pool.");
+            Require(Mathf.Abs(anchor.transform.position.y - feet.transform.position.y + .001f) < .0001f,
+                "Reusing damage effects must reposition their feet anchor.");
+            for (int j = 0; j < emitters.Length; j++)
+                Require(Vector3.Distance(emitters[j].transform.position, positions[j]) < .0001f,
+                    "Changing the victim's feet offset must not shift damage emitters.");
+            feet.transform.localPosition = feetPosition;
             ParticleVFX.INSTANCE.ClearBursts();
         }
         SetTile(9, 9, 0);
