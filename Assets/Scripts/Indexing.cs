@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +9,9 @@ public class Indexing : MonoBehaviour
     public static Indexing INSTANCE;
     private Dictionary<int, List<Reaction>> reactionMap;
     [NonSerialized] public Dictionary<int, HashSet<Offset>> fadeMap;
-    [NonSerialized] public Dictionary<int, Color32> colorMap; // temp, change to sprite/scriptable object later
+    [NonSerialized] public Dictionary<int, Color32> colorMap; // White RGB preserves sprite artwork; alpha communicates stages.
     [NonSerialized] public Dictionary<int, float> manaCosts;
+    [NonSerialized] public Dictionary<int, float> damageMap;
 
     /*
      * IDS:
@@ -52,11 +53,11 @@ public class Indexing : MonoBehaviour
 
     // Input types ending in * match every reaction-capable state in that element family.
     // Plain input types are exact matches. Outputs are always exact tile types.
-    // I = Input (x,y,type), O = Output (x,y,type,priority), D = Directions, E = End
+    // V = Visual, I = Input (x,y,type), O = Output (x,y,type,priority), D = Directions, E = End
     private const string CastingInfo = @"START
 FIRE
-I (1,0,100) O (1,0,0,0) (1,0,101,50) (1,1,104,50) (1,-1,104,50) (2,0,104,50) D (0,1,2,3) E
-I (1,1,100) O (1,1,0,0) (2,1,104,54) (1,2,104,54) (0,1,101,54) (1,0,101,54) D (0,1,2,3) E
+V Fire_Fire_Cardinal_Spread I (1,0,100) O (1,0,0,0) (1,0,101,51) (1,1,104,50) (1,-1,104,50) (2,0,104,50) D (0,1,2,3) E
+V Fire_Fire_Diagonal_Spread I (1,1,100) O (1,1,0,0) (2,1,104,54) (1,2,104,54) (0,1,101,55) (1,0,101,55) D (0,1,2,3) E
 
 I (0,0,101) O (0,0,102,-1) D (0) E
 I (0,0,102) O (0,0,103,-1) D (0) E
@@ -64,42 +65,47 @@ I (0,0,103) O (0,0,104,-1) D (0) E
 I (0,0,104) O (0,0,105,-1) D (0) E
 I (0,0,105) O (0,0,106,-1) D (0) E
 I (0,0,106) O (0,0,107,-1) D (0) E
-I (0,0,107) O (0,0,0,-1) D (0) E
+V Fire_Burnout I (0,0,107) O (0,0,0,-1) D (0) E
 
-I (1,0,200*) O (0,0,0,0) (1,0,210,51) (2,0,210,51) (3,0,210,51) (4,0,210,51) (5,0,210,51) D (0,1,2,3) E
-I (1,0,300*) O (0,0,0,0) (1,0,310,52) (2,1,310,52) (2,-1,310,52) D (0,1,2,3) E
-I (1,0,400*) O (0,0,0,0) (1,0,410,53) (1,1,410,53) (1,-1,410,53) D (0,1,2,3) E
+V Fire_Water_Cardinal_Geyser I (1,0,200*) O (0,0,0,0) (1,0,210,51) (2,0,210,51) (3,0,210,51) (4,0,210,51) (5,0,210,51) D (0,1,2,3) E
+V Fire_Electricity_Cardinal_PlasmaFork I (1,0,300*) O (0,0,0,0) (1,0,310,52) (2,1,310,52) (2,-1,310,52) D (0,1,2,3) E
+V Fire_Stone_Cardinal_LavaFlow I (1,0,400*) O (0,0,0,0) (1,0,410,53) (1,1,410,53) (1,-1,410,53) D (0,1,2,3) E
 
-I (0,0,200*) O (0,0,0,0) (2,0,210,55) (1,1,210,55) (0,2,210,55) (-1,1,210,55) (1,-1,210,55) (-2,0,210,55) (-1,-1,210,55) (0,-2,210,55) D (0,1,2,3) E
-I (0,0,300*) O (0,0,0,0) (3,0,310,56) (4,0,310,56) (0,3,310,56) (0,4,310,56) (-3,0,310,56) (-4,0,310,56) (0,-3,310,56) (0,-4,310,56) D (0,1,2,3) E
-I (0,0,400*) O (0,0,0,0) (0,0,410,56) D (0,1,2,3) E
+V Fire_Water_Overlap_SteamRing I (0,0,200*) O (0,0,0,0) (2,0,210,55) (1,1,210,55) (0,2,210,55) (-1,1,210,55) (1,-1,210,55) (-2,0,210,55) (-1,-1,210,55) (0,-2,210,55) D (0,1,2,3) E
+V Fire_Electricity_Overlap_PlasmaCross I (0,0,300*) O (0,0,0,0) (3,0,310,56) (4,0,311,56) (0,3,310,56) (0,4,311,56) (-3,0,310,56) (-4,0,311,56) (0,-3,310,56) (0,-4,311,56) D (0,1,2,3) E
+V Fire_Stone_Overlap_LavaEruption I (0,0,400*) O (0,0,0,0) (0,0,410,56) D (0,1,2,3) E
 
 WATER
-I (1,0,200) O (1,0,0,0) (1,0,201,51) (2,0,201,51) (3,0,201,51) (4,0,201,51) D (0,1,2,3) E
-I (1,1,200) O (1,1,0,0) (1,2,203,50) (2,1,203,50) (2,2,203,50) D (0,1,2,3) E
-I (0,0,201) O (0,0,202,-1) D (0) E
-I (0,0,202) O (0,0,203,-1) D (0) E
-I (0,0,203) O (0,0,204,-1) D (0) E
-I (0,0,204) O (0,0,205,-1) D (0) E
-I (0,0,205) O (0,0,206,-1) D (0) E
-I (0,0,206) O (0,0,207,-1) D (0) E
-I (0,0,207) O (0,0,0,-1) D (0) E
-
-
+V Water_Water_Cardinal_Surge I (1,0,200) O (1,0,0,0) (1,0,201,51) (2,0,201,51) (3,0,201,51) (4,0,201,51) D (0,1,2,3) E
 
 ELECTRICITY
-I (1,0,300) O (1,0,0,0) (2,1,301,50) (3,2,302,50) (4,3,302,50) (2,-1,301,50) (3,-2,302,50) (4,-3,302,50) D (0,1,2,3) E
-I (1,1,300) O (1,1,0,0) (1,2,301,55) (1,3,302,55) (2,1,301,55) (3,1,302,55) D (0,1,2,3) E
+V Electricity_Electricity_Cardinal_Chain I (1,0,300) O (1,0,0,0) (2,1,301,50) (3,2,302,50) (4,3,302,50) (2,-1,301,50) (3,-2,302,50) (4,-3,302,50) D (0,1,2,3) E
+V Electricity_Electricity_Diagonal_Chain I (1,1,300) O (1,1,0,0) (1,2,301,55) (1,3,302,55) (2,1,301,55) (3,1,302,55) D (0,1,2,3) E
 
 I (0,0,301) O (0,0,302,-1) D (0) E
-I (0,0,302) O (0,0,0,-1) D (0) E
+V Electricity_Discharge I (0,0,302) O (0,0,0,-1) D (0) E
 
-I (1,0,200*) O (0,0,0,0) (1,0,211,51) (2,0,301,51) (3,0,301,51) D (0,1,2,3) E
-I (1,1,200*) O (0,0,0,0) (1,1,211,53) (2,2,301,53) (3,3,301,53) D (0,1,2,3) E
+V Electricity_Water_Cardinal_Conduction I (1,0,200*) O (0,0,0,0) (1,0,211,51) (2,0,301,51) (3,0,301,51) D (0,1,2,3) E
+V Electricity_Water_Diagonal_Conduction I (1,1,200*) O (0,0,0,0) (1,1,211,53) (2,2,301,53) (3,3,301,53) D (0,1,2,3) E
 
 END
 ";
-// maybe: I (0,0,300*) O (2,2,310,52) (3,3,310,52) (-2,2,310,52) (-3,3,310,52) (2,-2,310,52) (3,-3,310,52) (-2,-2,310,52) (-3,-3,310,52) D (0,1,2,3) E
+
+    /* UNUSED
+    I (0,0,300*) O (2,2,310,52) (3,3,310,52) (-2,2,310,52) (-3,3,310,52) (2,-2,310,52) (3,-3,310,52) (-2,-2,310,52) (-3,-3,310,52) D (0,1,2,3) E
+
+    I (0,0,201) O (0,0,202,-1) D (0) E
+    I (0,0,202) O (0,0,203,-1) D (0) E
+    I (0,0,203) O (0,0,204,-1) D (0) E
+    I (0,0,204) O (0,0,205,-1) D (0) E
+    I (0,0,205) O (0,0,206,-1) D (0) E
+    I (0,0,206) O (0,0,207,-1) D (0) E
+    I (0,0,207) O (0,0,0,-1) D (0) E
+
+    V Water_Water_Diagonal_Splash I (1,1,200) O (1,1,0,0) (1,2,201,50) (2,1,201,50) (2,2,201,50) D (0,1,2,3) E
+
+
+    */
 
     private void Awake()
     {
@@ -152,40 +158,40 @@ END
 
         colorMap = new Dictionary<int, Color32>()
         {
-            [100] = new Color32(179, 54, 6, 255),
-            [101] = new Color32(226, 121, 30, 255),
-            [102] = new Color32(226, 121, 30, 227),
-            [103] = new Color32(226, 121, 30, 198),
-            [104] = new Color32(226, 121, 30, 170),
-            [105] = new Color32(226, 121, 30, 142),
-            [106] = new Color32(226, 121, 30, 113),
-            [107] = new Color32(226, 121, 30, 85),
-            [110] = new Color32(232, 158, 49, 255),
-            [111] = new Color32(248, 220, 85, 255),
+            [100] = new Color32(255, 255, 255, 255),
+            [101] = new Color32(255, 255, 255, 240),
+            [102] = new Color32(255, 255, 255, 227),
+            [103] = new Color32(255, 255, 255, 198),
+            [104] = new Color32(255, 255, 255, 170),
+            [105] = new Color32(255, 255, 255, 142),
+            [106] = new Color32(255, 255, 255, 113),
+            [107] = new Color32(255, 255, 255, 85),
+            [110] = new Color32(255, 255, 255, 255),
+            [111] = new Color32(255, 255, 255, 170),
 
-            [200] = new Color32(47, 108, 217, 255),
-            [201] = new Color32(73, 178, 242, 255),
-            [202] = new Color32(73, 178, 242, 227),
-            [203] = new Color32(73, 178, 242, 198),
-            [204] = new Color32(73, 178, 242, 170),
-            [205] = new Color32(73, 178, 242, 142),
-            [206] = new Color32(73, 178, 242, 113),
-            [207] = new Color32(73, 178, 242, 85),
-            [210] = new Color32(146, 208, 233, 255),
-            [211] = new Color32(186, 231, 243, 255),
+            [200] = new Color32(255, 255, 255, 255),
+            [201] = new Color32(255, 255, 255, 240),
+            [202] = new Color32(255, 255, 255, 227),
+            [203] = new Color32(255, 255, 255, 198),
+            [204] = new Color32(255, 255, 255, 170),
+            [205] = new Color32(255, 255, 255, 142),
+            [206] = new Color32(255, 255, 255, 113),
+            [207] = new Color32(255, 255, 255, 85),
+            [210] = new Color32(255, 255, 255, 255),
+            [211] = new Color32(255, 255, 255, 170),
 
-            [300] = new Color32(85, 37, 134, 255),
-            [301] = new Color32(128, 79, 179, 255),
-            [302] = new Color32(128, 79, 179, 128),
-            [310] = new Color32(153, 105, 199, 255),
-            [311] = new Color32(181, 137, 214, 255),
+            [300] = new Color32(255, 255, 255, 255),
+            [301] = new Color32(255, 255, 255, 240),
+            [302] = new Color32(255, 255, 255, 200),
+            [310] = new Color32(255, 255, 255, 255),
+            [311] = new Color32(255, 255, 255, 170),
 
-            [400] = new Color32(139, 143, 142, 255),
-            [401] = new Color32(166, 159, 148, 255),
-            [410] = new Color32(255, 154, 60, 255),
-            [411] = new Color32(255, 111, 60, 255),
+            [400] = new Color32(255, 255, 255, 255),
+            [401] = new Color32(255, 255, 255, 170),
+            [410] = new Color32(255, 255, 255, 255),
+            [411] = new Color32(255, 255, 255, 170),
 
-            [0] = new Color32(200, 200, 200, 255),
+            [0] = new Color32(255, 255, 255, 255),
         };
 
         manaCosts = new Dictionary<int, float>
@@ -196,12 +202,38 @@ END
             [400] = 2f,
         };
 
+        damageMap = new Dictionary<int, float>
+        {
+            [100] = 10f,
+            [101] = 10f,
+            [102] = 10f,
+            [103] = 10f,
+            [104] = 10f,
+            [105] = 10f,
+            [106] = 10f,
+            [107] = 10f,
+
+            [200] = 4f,
+            [201] = 4f,
+            [210] = 16f,
+            [211] = 8f,
+
+            [300] = 1f,
+            [301] = 1f,
+            [302] = 1f,
+            [310] = 4f,
+            [311] = 2f,
+
+            [410] = 20f,
+            [411] = 16f,
+        };
 
         // Parsing spells
         string[] tokens = CastingInfo.Split(
             new char[] { ' ', '\t', '\r', '\n' },
             StringSplitOptions.RemoveEmptyEntries);
         int curr = 0;
+        string effect = null;
         List<Requirement> input = new List<Requirement>();
         List<Offset> output = new List<Offset>();
         for (int i = 0; i < tokens.Length; i++)
@@ -210,6 +242,9 @@ END
             
             switch (t)
             {
+                case "V":
+                    effect = tokens[++i];
+                    continue;
                 case "START" or "END":
                     continue;
                 case "FIRE":
@@ -280,12 +315,13 @@ END
                         int x = int.Parse(part);
                         reactionMap[curr].Add(new Reaction(
                             input.Select(o => Rotate(o, x)),
-                            output.Select(o => Rotate(o, x))));
+                            output.Select(o => Rotate(o, x)), effect, x));
                     }
-
+                    effect = null;
                     continue;
 
                 case "E":
+                    effect = null;
                     continue;
             }
         }
@@ -325,44 +361,27 @@ END
     }
 
     // I split up the logic here but whatever 
-    public void ModifyFade(HashSet<Offset> o, int r, int c, int type, int[,] before, ref int[,] g)
+    public void ModifyFade(HashSet<Offset> o, int r, int c, int type, int[,] before, ref int[,] g,
+        Action<int, int> changed = null)
     {
         foreach (Offset offset in o)
         {
-            if (r + offset.y < 0 || r + offset.y >= g.GetLength(0) || c + offset.x < 0 || c + offset.x >= g.GetLength(1))
+            if (!Assets.Scripts.GridHelper.IsInBounds(g, r + offset.y, c + offset.x))
             {
                 continue;
             }
             int target = before[r + offset.y, c + offset.x];
-            switch (type) {
-                case 110:
-                    if (target % 100 > 10 || target < 100) // fire
-                    {
-                        g[r + offset.y, c + offset.x] = 111;
-                    }
-                    continue;
-                case 210:
-                    if (target % 100 > 10 || target < 100 || target / 100 == 1) // water replaces fire
-                    {
-                        g[r + offset.y, c + offset.x] = 211;
-                    }
-                    continue;
-                case 310:
-                    if (target % 100 > 10 || target < 100 || target / 100 == 2) // electricity replaces water
-                    {
-                        g[r + offset.y, c + offset.x] = 311;
-                    }
-                    continue;
-                case 410:
-                    if (target % 100 > 10 || target < 100) // stone
-                    {
-                        g[r + offset.y, c + offset.x] = 411;
-                    }
-                    continue;
+            bool replace = target % 100 > 10 || target < 100 ||
+                (type == 210 && target / 100 == 1) || (type == 310 && target / 100 == 2);
+            if (replace)
+            {
+                g[r + offset.y, c + offset.x] = type + 1;
+                changed?.Invoke(r + offset.y, c + offset.x);
             }
             
         }
         g[r, c] = 0;
+        changed?.Invoke(r, c);
     }
 
 
@@ -371,13 +390,17 @@ END
     {
         public IReadOnlyCollection<Requirement> Requirements { get; }
         public IReadOnlyCollection<Offset> Outputs { get; }
+        public string Effect { get; }
+        public int Direction { get; }
 
         public Reaction(
             IEnumerable<Requirement> requirements,
-            IEnumerable<Offset> outputs)
+            IEnumerable<Offset> outputs, string effect = null, int direction = 0)
         {
             Requirements = requirements.Distinct().ToArray();
             Outputs = outputs.Distinct().ToArray();
+            Effect = effect;
+            Direction = direction;
         }
     }
 

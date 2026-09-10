@@ -12,3 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd1927ae31c376e4d81359b1603d91d6, type: 3}
   m_Name: Normal
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.ScriptableObjects.EnemyData
+  type: 1
+  maxHp: 10
+  speed: 1
+  damage: 5
+  maxAcceleration: 1
+  wander: 0.1
+  instability: 0.1
+  cornerCut: 0.2

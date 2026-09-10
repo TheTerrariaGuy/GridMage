@@ -1,0 +1,5592 @@
+fileFormatVersion: 2
+guid: f0dd73fdcffbb0b4f998ef3a29f1f513
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2322159278053714332
+    second: Rocks01_SoftOutline_0
+  - first:
+      213: 5685921396815172818
+    second: Rocks01_SoftOutline_1
+  - first:
+      213: 8381953616907005229
+    second: Rocks01_SoftOutline_2
+  - first:
+      213: -5536386604126567820
+    second: Rocks01_SoftOutline_3
+  - first:
+      213: 3858199090135751971
+    second: Rocks01_SoftOutline_4
+  - first:
+      213: 330427412228127595
+    second: Rocks01_SoftOutline_5
+  - first:
+      213: -2549764228287737426
+    second: Rocks01_SoftOutline_6
+  - first:
+      213: -6870282094425313306
+    second: Rocks01_SoftOutline_7
+  - first:
+      213: -3916915388366302993
+    second: Rocks01_SoftOutline_8
+  - first:
+      213: -8228601142714220654
+    second: Rocks01_SoftOutline_9
+  - first:
+      213: -5103619542510157717
+    second: Rocks01_SoftOutline_10
+  - first:
+      213: 8124734458417548881
+    second: Rocks01_SoftOutline_11
+  - first:
+      213: 490258620968580318
+    second: Rocks01_SoftOutline_12
+  - first:
+      213: -2375499723929133855
+    second: Rocks01_SoftOutline_13
+  - first:
+      213: 3469552170654973498
+    second: Rocks01_SoftOutline_14
+  - first:
+      213: 1115054687900940029
+    second: Rocks01_SoftOutline_15
+  - first:
+      213: 6121490229620772841
+    second: Rocks01_SoftOutline_16
+  - first:
+      213: -7711597047591171995
+    second: Rocks01_SoftOutline_17
+  - first:
+      213: 4770054486184396530
+    second: Rocks01_SoftOutline_18
+  - first:
+      213: 8702673844187196036
+    second: Rocks01_SoftOutline_19
+  - first:
+      213: 8758175447535697130
+    second: Rocks01_SoftOutline_20
+  - first:
+      213: 3957809688432433338
+    second: Rocks01_SoftOutline_21
+  - first:
+      213: 7896126731913670676
+    second: Rocks01_SoftOutline_22
+  - first:
+      213: 5723054737207345208
+    second: Rocks01_SoftOutline_23
+  - first:
+      213: -929051007494670891
+    second: Rocks01_SoftOutline_24
+  - first:
+      213: -1788181702604245466
+    second: Rocks01_SoftOutline_25
+  - first:
+      213: 3301343868482889269
+    second: Rocks01_SoftOutline_26
+  - first:
+      213: 4611681033066171679
+    second: Rocks01_SoftOutline_27
+  - first:
+      213: -6512408711769128846
+    second: Rocks01_SoftOutline_28
+  - first:
+      213: 7333349386552678697
+    second: Rocks01_SoftOutline_29
+  - first:
+      213: -768718799792272464
+    second: Rocks01_SoftOutline_30
+  - first:
+      213: 2184328379010115876
+    second: Rocks01_SoftOutline_31
+  - first:
+      213: -5538041967170266642
+    second: Rocks01_SoftOutline_32
+  - first:
+      213: 724300204829508470
+    second: Rocks01_SoftOutline_33
+  - first:
+      213: 1627049747271496971
+    second: Rocks01_SoftOutline_34
+  - first:
+      213: 5465869450417943651
+    second: Rocks01_SoftOutline_35
+  - first:
+      213: 6808284596441844470
+    second: Rocks01_SoftOutline_36
+  - first:
+      213: -2720727010626338265
+    second: Rocks01_SoftOutline_37
+  - first:
+      213: -6486446503255860231
+    second: Rocks01_SoftOutline_38
+  - first:
+      213: 2161884041221369889
+    second: Rocks01_SoftOutline_39
+  - first:
+      213: 176879085954371753
+    second: Rocks01_SoftOutline_40
+  - first:
+      213: 4934883524525182452
+    second: Rocks01_SoftOutline_41
+  - first:
+      213: -6111264502749471134
+    second: Rocks01_SoftOutline_42
+  - first:
+      213: -3584412626228050748
+    second: Rocks01_SoftOutline_43
+  - first:
+      213: 6937532522148468396
+    second: Rocks01_SoftOutline_44
+  - first:
+      213: 7191337238865041681
+    second: Rocks01_SoftOutline_45
+  - first:
+      213: -5188313980624651617
+    second: Rocks01_SoftOutline_46
+  - first:
+      213: -3070219867291695104
+    second: Rocks01_SoftOutline_47
+  - first:
+      213: -5380529284910018648
+    second: Rocks01_SoftOutline_48
+  - first:
+      213: -3276002887636106927
+    second: Rocks01_SoftOutline_49
+  - first:
+      213: 6478965889623329182
+    second: Rocks01_SoftOutline_50
+  - first:
+      213: -4077021454125392217
+    second: Rocks01_SoftOutline_51
+  - first:
+      213: 9177424426701481608
+    second: Rocks01_SoftOutline_52
+  - first:
+      213: 8628274270617381170
+    second: Rocks01_SoftOutline_53
+  - first:
+      213: -7776909870054940368
+    second: Rocks01_SoftOutline_54
+  - first:
+      213: 2821755434974972152
+    second: Rocks01_SoftOutline_55
+  - first:
+      213: -7633170284500602160
+    second: Rocks01_SoftOutline_56
+  - first:
+      213: -1885925399139522036
+    second: Rocks01_SoftOutline_57
+  - first:
+      213: -7910697138252406908
+    second: Rocks01_SoftOutline_58
+  - first:
+      213: -1432748475008373900
+    second: Rocks01_SoftOutline_59
+  - first:
+      213: -1875700287510008262
+    second: Rocks01_SoftOutline_60
+  - first:
+      213: -7370904548945143173
+    second: Rocks01_SoftOutline_61
+  - first:
+      213: 7993891434175209603
+    second: Rocks01_SoftOutline_62
+  - first:
+      213: -9003666646765783311
+    second: Rocks01_SoftOutline_63
+  - first:
+      213: -6042895669266706245
+    second: Rocks01_SoftOutline_64
+  - first:
+      213: -8476783269301561403
+    second: Rocks01_SoftOutline_65
+  - first:
+      213: -3073726610291281143
+    second: Rocks01_SoftOutline_66
+  - first:
+      213: 5854428714031286424
+    second: Rocks01_SoftOutline_67
+  - first:
+      213: -2053046388736759565
+    second: Rocks01_SoftOutline_68
+  - first:
+      213: -817838315878002430
+    second: Rocks01_SoftOutline_69
+  - first:
+      213: 7171990723096022944
+    second: Rocks01_SoftOutline_70
+  - first:
+      213: -2415595848764057392
+    second: Rocks01_SoftOutline_71
+  - first:
+      213: -542143505648219498
+    second: Rocks01_SoftOutline_72
+  - first:
+      213: -3343017703606219718
+    second: Rocks01_SoftOutline_73
+  - first:
+      213: 4523330210751638917
+    second: Rocks01_SoftOutline_74
+  - first:
+      213: 7394302372501445537
+    second: Rocks01_SoftOutline_75
+  - first:
+      213: -2155070555961262038
+    second: Rocks01_SoftOutline_76
+  - first:
+      213: -6702997389951644145
+    second: Rocks01_SoftOutline_77
+  - first:
+      213: -1753461107451813504
+    second: Rocks01_SoftOutline_78
+  - first:
+      213: -3767554538621729302
+    second: Rocks01_SoftOutline_79
+  - first:
+      213: 2436539731446823284
+    second: Rocks01_SoftOutline_80
+  - first:
+      213: -2098293518465564132
+    second: Rocks01_SoftOutline_81
+  - first:
+      213: 1209287441446451197
+    second: Rocks01_SoftOutline_82
+  - first:
+      213: -4787369221461192159
+    second: Rocks01_SoftOutline_83
+  - first:
+      213: -9137479461466285927
+    second: Rocks01_SoftOutline_84
+  - first:
+      213: -3850739027426114010
+    second: Rocks01_SoftOutline_85
+  - first:
+      213: -2634908074720725793
+    second: Rocks01_SoftOutline_86
+  - first:
+      213: -5837885523268642292
+    second: Rocks01_SoftOutline_87
+  - first:
+      213: 8982792186051414589
+    second: Rocks01_SoftOutline_88
+  - first:
+      213: 3203308266547491235
+    second: Rocks01_SoftOutline_89
+  - first:
+      213: -1619810498360489569
+    second: Rocks01_SoftOutline_90
+  - first:
+      213: 6017885367344298130
+    second: Rocks01_SoftOutline_91
+  - first:
+      213: 7998237972715952599
+    second: Rocks01_SoftOutline_92
+  - first:
+      213: -75043679027181630
+    second: Rocks01_SoftOutline_93
+  - first:
+      213: -5234534153481522782
+    second: Rocks01_SoftOutline_94
+  - first:
+      213: 1456749193391028850
+    second: Rocks01_SoftOutline_95
+  - first:
+      213: -6438922950701023631
+    second: Rocks01_SoftOutline_96
+  - first:
+      213: -401708717400709931
+    second: Rocks01_SoftOutline_97
+  - first:
+      213: 1621179620088684424
+    second: Rocks01_SoftOutline_98
+  - first:
+      213: 6862696778656926421
+    second: Rocks01_SoftOutline_99
+  - first:
+      213: 1723709910750897016
+    second: Rocks01_SoftOutline_100
+  - first:
+      213: 6076813673925017638
+    second: Rocks01_SoftOutline_101
+  - first:
+      213: -63222418811695687
+    second: Rocks01_SoftOutline_102
+  - first:
+      213: -1130929523970543921
+    second: Rocks01_SoftOutline_103
+  - first:
+      213: -7934068191901508248
+    second: Rocks01_SoftOutline_104
+  - first:
+      213: -8033409705244162464
+    second: Rocks01_SoftOutline_105
+  - first:
+      213: -2375252444392686841
+    second: Rocks01_SoftOutline_106
+  - first:
+      213: -4617368644230513130
+    second: Rocks01_SoftOutline_107
+  - first:
+      213: -3069389961651157768
+    second: Rocks01_SoftOutline_108
+  - first:
+      213: 8018721169603217904
+    second: Rocks01_SoftOutline_109
+  - first:
+      213: -6929679004700845748
+    second: Rocks01_SoftOutline_110
+  - first:
+      213: 8613240006356842491
+    second: Rocks01_SoftOutline_111
+  - first:
+      213: 4194938548634750148
+    second: Rocks01_SoftOutline_112
+  - first:
+      213: -8207949557115629595
+    second: Rocks01_SoftOutline_113
+  - first:
+      213: 3297559339260633674
+    second: Rocks01_SoftOutline_114
+  - first:
+      213: 5739372736931234067
+    second: Rocks01_SoftOutline_115
+  - first:
+      213: -5452443545639418467
+    second: Rocks01_SoftOutline_116
+  - first:
+      213: -6684458526065257417
+    second: Rocks01_SoftOutline_117
+  - first:
+      213: -4482004655248173768
+    second: Rocks01_SoftOutline_118
+  - first:
+      213: -4653574883069354963
+    second: Rocks01_SoftOutline_119
+  - first:
+      213: -2526774401720154626
+    second: Rocks01_SoftOutline_120
+  - first:
+      213: 3601246954494576298
+    second: Rocks01_SoftOutline_121
+  - first:
+      213: -1361137482002404867
+    second: Rocks01_SoftOutline_122
+  - first:
+      213: -2561262679533005340
+    second: Rocks01_SoftOutline_123
+  - first:
+      213: -1479128718702089759
+    second: Rocks01_SoftOutline_124
+  - first:
+      213: -2470432188954282163
+    second: Rocks01_SoftOutline_125
+  - first:
+      213: 6551937339251761869
+    second: Rocks01_SoftOutline_126
+  - first:
+      213: 8256963264333426467
+    second: Rocks01_SoftOutline_127
+  - first:
+      213: -4953939766630599254
+    second: Rocks01_SoftOutline_128
+  - first:
+      213: -4539773425021045010
+    second: Rocks01_SoftOutline_129
+  - first:
+      213: -3389481005917891652
+    second: Rocks01_SoftOutline_130
+  - first:
+      213: -1085666791871987620
+    second: Rocks01_SoftOutline_131
+  - first:
+      213: -4687512309726375684
+    second: Rocks01_SoftOutline_132
+  - first:
+      213: 3818805569296101371
+    second: Rocks01_SoftOutline_133
+  - first:
+      213: -3692725548837012443
+    second: Rocks01_SoftOutline_134
+  - first:
+      213: -2099413678222316061
+    second: Rocks01_SoftOutline_135
+  - first:
+      213: 3475880436349178517
+    second: Rocks01_SoftOutline_136
+  - first:
+      213: 5788053034877230860
+    second: Rocks01_SoftOutline_137
+  - first:
+      213: 4801281058129288690
+    second: Rocks01_SoftOutline_138
+  - first:
+      213: -9142636452911266109
+    second: Rocks01_SoftOutline_139
+  - first:
+      213: -4838406312521851034
+    second: Rocks01_SoftOutline_140
+  - first:
+      213: -7649941499020441908
+    second: Rocks01_SoftOutline_141
+  - first:
+      213: 7088822299045406029
+    second: Rocks01_SoftOutline_142
+  - first:
+      213: -3771107664503054678
+    second: Rocks01_SoftOutline_143
+  - first:
+      213: -8685310560744857997
+    second: Rocks01_SoftOutline_144
+  - first:
+      213: 6242671686405259658
+    second: Rocks01_SoftOutline_145
+  - first:
+      213: 8670692098062435427
+    second: Rocks01_SoftOutline_146
+  - first:
+      213: -7951457201643788525
+    second: Rocks01_SoftOutline_147
+  - first:
+      213: 4910196264628554738
+    second: Rocks01_SoftOutline_148
+  - first:
+      213: -9132421324255203617
+    second: Rocks01_SoftOutline_149
+  - first:
+      213: -6914435266698537881
+    second: Rocks01_SoftOutline_150
+  - first:
+      213: 1808972676239170452
+    second: Rocks01_SoftOutline_151
+  - first:
+      213: -190845898684266362
+    second: Rocks01_SoftOutline_152
+  - first:
+      213: 3666862616952543386
+    second: Rocks01_SoftOutline_153
+  - first:
+      213: 9185603727505240115
+    second: Rocks01_SoftOutline_154
+  - first:
+      213: -7687208921905043621
+    second: Rocks01_SoftOutline_155
+  - first:
+      213: -4691213287589396111
+    second: Rocks01_SoftOutline_156
+  - first:
+      213: 6920197252103657922
+    second: Rocks01_SoftOutline_157
+  - first:
+      213: -2230578735283056971
+    second: Rocks01_SoftOutline_158
+  - first:
+      213: -847326253145113164
+    second: Rocks01_SoftOutline_159
+  - first:
+      213: 8508525095894473700
+    second: Rocks01_SoftOutline_160
+  - first:
+      213: 6368044190428557939
+    second: Rocks01_SoftOutline_161
+  - first:
+      213: 8153988401674673785
+    second: Rocks01_SoftOutline_162
+  - first:
+      213: 502482295574518465
+    second: Rocks01_SoftOutline_163
+  - first:
+      213: -3769531117522302450
+    second: Rocks01_SoftOutline_164
+  - first:
+      213: -1590241285684820734
+    second: Rocks01_SoftOutline_165
+  - first:
+      213: -5075156692118251398
+    second: Rocks01_SoftOutline_166
+  - first:
+      213: 7291945576174709772
+    second: Rocks01_SoftOutline_167
+  - first:
+      213: 8712282458874463450
+    second: Rocks01_SoftOutline_168
+  - first:
+      213: -3664581019436799503
+    second: Rocks01_SoftOutline_169
+  - first:
+      213: -2839577124907687558
+    second: Rocks01_SoftOutline_170
+  - first:
+      213: -8606015626512595683
+    second: Rocks01_SoftOutline_171
+  - first:
+      213: 5436937917919228571
+    second: Rocks01_SoftOutline_172
+  - first:
+      213: 8115896863012849582
+    second: Rocks01_SoftOutline_173
+  - first:
+      213: 4967580844824869096
+    second: Rocks01_SoftOutline_174
+  - first:
+      213: -9048015934037711151
+    second: Rocks01_SoftOutline_175
+  - first:
+      213: -2975349094925201371
+    second: Rocks01_SoftOutline_176
+  - first:
+      213: 4595007227405321658
+    second: Rocks01_SoftOutline_177
+  - first:
+      213: -303002046050447670
+    second: Rocks01_SoftOutline_178
+  - first:
+      213: -4221858598029496177
+    second: Rocks01_SoftOutline_179
+  - first:
+      213: 6821497797555917653
+    second: Rocks01_SoftOutline_180
+  - first:
+      213: -6181615557614012329
+    second: Rocks01_SoftOutline_181
+  - first:
+      213: -20639134059174882
+    second: Rocks01_SoftOutline_182
+  - first:
+      213: 1476353289565439493
+    second: Rocks01_SoftOutline_183
+  - first:
+      213: 1384168874150282094
+    second: Rocks01_SoftOutline_184
+  - first:
+      213: -4632379866494325551
+    second: Rocks01_SoftOutline_185
+  - first:
+      213: -4162152007710442938
+    second: Rocks01_SoftOutline_186
+  - first:
+      213: 5307253389280491106
+    second: Rocks01_SoftOutline_187
+  - first:
+      213: -6692826889399138867
+    second: Rocks01_SoftOutline_188
+  - first:
+      213: -2859135065650934080
+    second: Rocks01_SoftOutline_189
+  - first:
+      213: 2543290396397716921
+    second: Rocks01_SoftOutline_190
+  - first:
+      213: -6488971181767260620
+    second: Rocks01_SoftOutline_191
+  - first:
+      213: 4605030517280845032
+    second: Rocks01_SoftOutline_192
+  - first:
+      213: 5580913025482230028
+    second: Rocks01_SoftOutline_193
+  - first:
+      213: -8237471240157845764
+    second: Rocks01_SoftOutline_194
+  - first:
+      213: 1087829028721159653
+    second: Rocks01_SoftOutline_195
+  - first:
+      213: 3752374304410749992
+    second: Rocks01_SoftOutline_196
+  - first:
+      213: -6553965623174742795
+    second: Rocks01_SoftOutline_197
+  - first:
+      213: -2333455979920740975
+    second: Rocks01_SoftOutline_198
+  - first:
+      213: -8087079245690116998
+    second: Rocks01_SoftOutline_199
+  - first:
+      213: -1579400288110730955
+    second: Rocks01_SoftOutline_200
+  - first:
+      213: -3279013445971303532
+    second: Rocks01_SoftOutline_201
+  - first:
+      213: 3857954957316170000
+    second: Rocks01_SoftOutline_202
+  - first:
+      213: 4576599279488408114
+    second: Rocks01_SoftOutline_203
+  - first:
+      213: -7299394976376851055
+    second: Rocks01_SoftOutline_204
+  - first:
+      213: 3122764704641142662
+    second: Rocks01_SoftOutline_205
+  - first:
+      213: 8081689511909211939
+    second: Rocks01_SoftOutline_206
+  - first:
+      213: -3904013451202465185
+    second: Rocks01_SoftOutline_207
+  - first:
+      213: 3251442342961600774
+    second: Rocks01_SoftOutline_208
+  - first:
+      213: 5458584450849845729
+    second: Rocks01_SoftOutline_209
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 463
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4661bbf907806cfd0800000000000000
+      internalID: -2322159278053714332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 463
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d416f5926378ee40800000000000000
+      internalID: 5685921396815172818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_2
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 465
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2dea83b76ea25470800000000000000
+      internalID: 8381953616907005229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_3
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 465
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4720ec177bdca23b0800000000000000
+      internalID: -5536386604126567820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_4
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 465
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32dd64081a31b8530800000000000000
+      internalID: 3858199090135751971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_5
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 465
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6bb8e11bf9e59400800000000000000
+      internalID: 330427412228127595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_6
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 465
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea159ef81fa6d9cd0800000000000000
+      internalID: -2549764228287737426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_7
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 465
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ef6d0fd5dad7a0a0800000000000000
+      internalID: -6870282094425313306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_8
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 465
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe05a2df43254a9c0800000000000000
+      internalID: -3916915388366302993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_9
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 449
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29f35229bd22ecd80800000000000000
+      internalID: -8228601142714220654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_10
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 449
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b60c0f3f01d4c29b0800000000000000
+      internalID: -5103619542510157717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_11
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 449
+        width: 26
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15e8a5871fad0c070800000000000000
+      internalID: 8124734458417548881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_12
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 449
+        width: 26
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed4b7e64e9fbdc600800000000000000
+      internalID: 490258620968580318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_13
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 417
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ec5a274697880fd0800000000000000
+      internalID: -2375499723929133855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_14
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 417
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3e33951153562030800000000000000
+      internalID: 3469552170654973498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_15
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 416
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df63871b458797f00800000000000000
+      internalID: 1115054687900940029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_16
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 416
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ef02984ee6e3f450800000000000000
+      internalID: 6121490229620772841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_17
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 418
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 568806fc757eaf490800000000000000
+      internalID: -7711597047591171995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_18
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 418
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f687484843a23240800000000000000
+      internalID: 4770054486184396530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48a6cd6a0cb16c870800000000000000
+      internalID: 8702673844187196036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_20
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 400
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aecb9eeaa2a4b8970800000000000000
+      internalID: 8758175447535697130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_21
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 406
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab85d9731f6fce630800000000000000
+      internalID: 3957809688432433338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_22
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 406
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4103e2d5d6da49d60800000000000000
+      internalID: 7896126731913670676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_23
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 400
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8304c5126ff5c6f40800000000000000
+      internalID: 5723054737207345208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_24
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 400
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d5bf00f7095b13f0800000000000000
+      internalID: -929051007494670891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_25
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 400
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 626bb66373a1f27e0800000000000000
+      internalID: -1788181702604245466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_26
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 407
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5362652d1cab0dd20800000000000000
+      internalID: 3301343868482889269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_27
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 401
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1dc051477bffff30800000000000000
+      internalID: 4611681033066171679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_28
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 401
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27087d6e7c64f95a0800000000000000
+      internalID: -6512408711769128846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_29
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 407
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9291d4fc96a45c560800000000000000
+      internalID: 7333349386552678697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_30
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 400
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bb873e0356f455f0800000000000000
+      internalID: -768718799792272464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_31
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 408
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 429e3bf661b405e10800000000000000
+      internalID: 2184328379010115876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_32
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 405
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee95c933c2ce423b0800000000000000
+      internalID: -5538041967170266642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_33
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 402
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6730b93e23b3d0a00800000000000000
+      internalID: 724300204829508470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_34
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 407
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b05b10aef11749610800000000000000
+      internalID: 1627049747271496971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 383
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36432d44e4baadb40800000000000000
+      internalID: 5465869450417943651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_36
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 383
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fa0ea4c4c2eb7e50800000000000000
+      internalID: 6808284596441844470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_37
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 385
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7228ec8e2390e3ad0800000000000000
+      internalID: -2720727010626338265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_38
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 385
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fb1cde95438bf5a0800000000000000
+      internalID: -6486446503255860231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_39
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 385
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 120f592d41e800e10800000000000000
+      internalID: 2161884041221369889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_40
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 385
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a0918e6796647200800000000000000
+      internalID: 176879085954371753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_41
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 385
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fd404f5b6a3c7440800000000000000
+      internalID: 4934883524525182452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_42
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 385
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26ed929405d603ba0800000000000000
+      internalID: -6111264502749471134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_43
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 385
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c4804d15bb914ec0800000000000000
+      internalID: -3584412626228050748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_44
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 369
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca611608211174060800000000000000
+      internalID: 6937532522148468396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_45
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 369
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 119d69e0e13ccc360800000000000000
+      internalID: 7191337238865041681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_46
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 369
+        width: 26
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9abca96ce76ff7b0800000000000000
+      internalID: -5188313980624651617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_47
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 369
+        width: 26
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0084bb32c436465d0800000000000000
+      internalID: -3070219867291695104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_48
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 337
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8af0a556f158455b0800000000000000
+      internalID: -5380529284910018648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_49
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 337
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 151cb4f0bbc4982d0800000000000000
+      internalID: -3276002887636106927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_50
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 336
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e990fda4629e9e950800000000000000
+      internalID: 6478965889623329182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_51
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 336
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ae9535a6928b67c0800000000000000
+      internalID: -4077021454125392217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_52
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 338
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 886e88a54e2cc5f70800000000000000
+      internalID: 9177424426701481608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_53
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 338
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 239aacc0cb9cdb770800000000000000
+      internalID: 8628274270617381170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03165215dadd21490800000000000000
+      internalID: -7776909870054940368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_55
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 320
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f806b82e93e82720800000000000000
+      internalID: 2821755434974972152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_56
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 326
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d2364a8118811690800000000000000
+      internalID: -7633170284500602160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_57
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 326
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0ae66f67d8d3d5e0800000000000000
+      internalID: -1885925399139522036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_58
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48f14cc8dde873290800000000000000
+      internalID: -7910697138252406908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_59
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 320
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47ba4ae5adadd1ce0800000000000000
+      internalID: -1432748475008373900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_60
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 320
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3e2ed1c68c28f5e0800000000000000
+      internalID: -1875700287510008262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_61
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 327
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7a50de8d5945b990800000000000000
+      internalID: -7370904548945143173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_62
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 321
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3802d0be7e100fe60800000000000000
+      internalID: 7993891434175209603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_63
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 321
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f63e7363ec8c0380800000000000000
+      internalID: -9003666646765783311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_64
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 327
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb09c9ac762532ca0800000000000000
+      internalID: -6042895669266706245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_65
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 320
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c75e4b478a6c5a80800000000000000
+      internalID: -8476783269301561403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_66
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 328
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9033ce8eeede755d0800000000000000
+      internalID: -3073726610291281143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_67
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 325
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8988ea6b5eb1f3150800000000000000
+      internalID: 5854428714031286424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_68
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 322
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f862fbdf2d1283e0800000000000000
+      internalID: -2053046388736759565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_69
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 327
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2015362826476a4f0800000000000000
+      internalID: -817838315878002430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 303
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0af09865097088360800000000000000
+      internalID: 7171990723096022944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_71
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 303
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d89289bf541a7ed0800000000000000
+      internalID: -2415595848764057392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_72
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 305
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69a8d80aa5be978f0800000000000000
+      internalID: -542143505648219498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_73
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 305
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3c85b25c173b91d0800000000000000
+      internalID: -3343017703606219718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_74
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 305
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58de4ad6cd816ce30800000000000000
+      internalID: 4523330210751638917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_75
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 305
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1abd6c2c4d6dd9660800000000000000
+      internalID: 7394302372501445537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_76
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 305
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2086065fb6a712e0800000000000000
+      internalID: -2155070555961262038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_77
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 305
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0ecf89436b2af2a0800000000000000
+      internalID: -6702997389951644145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_78
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 305
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0812fdab9647aa7e0800000000000000
+      internalID: -1753461107451813504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_79
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 289
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae58a85cb15f6bbc0800000000000000
+      internalID: -3767554538621729302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_80
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 289
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4797306f9f350d120800000000000000
+      internalID: 2436539731446823284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_81
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 289
+        width: 26
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c120b55892d51e2e0800000000000000
+      internalID: -2098293518465564132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_82
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 289
+        width: 26
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df7b1ca558048c010800000000000000
+      internalID: 1209287441446451197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_83
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 257
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 122da22ce09df8db0800000000000000
+      internalID: -4787369221461192159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_84
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 257
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 998dfdc97d6213180800000000000000
+      internalID: -9137479461466285927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_85
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 256
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6268883b14d6f8ac0800000000000000
+      internalID: -3850739027426114010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_86
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 256
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd4767ef01dee6bd0800000000000000
+      internalID: -2634908074720725793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_87
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 258
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0a5d2a0c0aabfea0800000000000000
+      internalID: -5837885523268642292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_88
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 258
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3acfbc76e949ac70800000000000000
+      internalID: 8982792186051414589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_89
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a1b2a585ef647c20800000000000000
+      internalID: 3203308266547491235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_90
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9946c11fe64589e0800000000000000
+      internalID: -1619810498360489569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_91
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 246
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 298f3938bd2d38350800000000000000
+      internalID: 6017885367344298130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_92
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 246
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d956c84f037ffe60800000000000000
+      internalID: 7998237972715952599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_93
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 240
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c742f8eb2465fef0800000000000000
+      internalID: -75043679027181630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_94
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 240
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a17511dbe23b57b0800000000000000
+      internalID: -5234534153481522782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_95
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 240
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27ab8e65ca9673410800000000000000
+      internalID: 1456749193391028850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_96
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 247
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17efa53f0b954a6a0800000000000000
+      internalID: -6438922950701023631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_97
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 241
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d42724cc08dc6af0800000000000000
+      internalID: -401708717400709931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_98
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 241
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88f1d7c66469f7610800000000000000
+      internalID: 1621179620088684424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_99
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 247
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5da401d2c523d3f50800000000000000
+      internalID: 6862696778656926421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_100
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 240
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 873a02ef709dbe710800000000000000
+      internalID: 1723709910750897016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_101
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 248
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 620898017dd255450800000000000000
+      internalID: 6076813673925017638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_102
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 245
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bd43e88b836f1ff0800000000000000
+      internalID: -63222418811695687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_103
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 242
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fceebb107912e40f0800000000000000
+      internalID: -1130929523970543921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_104
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 247
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86d1cf5140784e190800000000000000
+      internalID: -7934068191901508248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_105
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 223
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0660fb79f68938090800000000000000
+      internalID: -8033409705244162464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_106
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 223
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70b78188c78690fd0800000000000000
+      internalID: -2375252444392686841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_107
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 225
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61efc939eafcbefb0800000000000000
+      internalID: -4617368644230513130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_108
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 225
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f402aa97165765d0800000000000000
+      internalID: -3069389961651157768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_109
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 225
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f9ca133b68384f60800000000000000
+      internalID: 8018721169603217904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_110
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 225
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c49d25509a5d4df90800000000000000
+      internalID: -6929679004700845748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_111
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 225
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf73510a620688770800000000000000
+      internalID: 8613240006356842491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_112
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 225
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cc87fd526a673a30800000000000000
+      internalID: 4194938548634750148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_113
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 225
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ef4cc98d51871e80800000000000000
+      internalID: -8207949557115629595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_114
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 209
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a42e6627fb843cd20800000000000000
+      internalID: 3297559339260633674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_115
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 209
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3110952881956af40800000000000000
+      internalID: 5739372736931234067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_116
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 209
+        width: 26
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d958a48cb770554b0800000000000000
+      internalID: -5452443545639418467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_117
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 209
+        width: 26
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7349c06e2680c33a0800000000000000
+      internalID: -6684458526065257417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_118
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 177
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83519424388bcc1c0800000000000000
+      internalID: -4482004655248173768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_119
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 177
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2c98feac4e2b6fb0800000000000000
+      internalID: -4653574883069354963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_120
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 176
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef58beda1181fecd0800000000000000
+      internalID: -2526774401720154626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_121
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 176
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa64b1f56033af130800000000000000
+      internalID: 3601246954494576298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_122
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 178
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df9e6c6fba44c1de0800000000000000
+      internalID: -1361137482002404867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_123
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 178
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e558f1c921947cd0800000000000000
+      internalID: -2561262679533005340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_124
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e9eea06444197be0800000000000000
+      internalID: -1479128718702089759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_125
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4770b7530347bdd0800000000000000
+      internalID: -2470432188954282163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_126
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 166
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc228b0eb482dea50800000000000000
+      internalID: 6551937339251761869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_127
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 166
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32f2b067750a69270800000000000000
+      internalID: 8256963264333426467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_128
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa53d438702104bb0800000000000000
+      internalID: -4953939766630599254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_129
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 160
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee6bcd86f1c7ff0c0800000000000000
+      internalID: -4539773425021045010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_130
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb3945dbbf426f0d0800000000000000
+      internalID: -3389481005917891652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_131
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 167
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c50480e0ecfeee0f0800000000000000
+      internalID: -1085666791871987620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_132
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 161
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf01d7ac36c92feb0800000000000000
+      internalID: -4687512309726375684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_133
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 161
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bff6d20be6f1ff430800000000000000
+      internalID: 3818805569296101371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_134
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 167
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52c7f80adadc0ccc0800000000000000
+      internalID: -3692725548837012443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_135
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 160
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ed66f002626dd2e0800000000000000
+      internalID: -2099413678222316061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_136
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 168
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 592925247decc3030800000000000000
+      internalID: 3475880436349178517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_137
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 165
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0f9afc919b435050800000000000000
+      internalID: 5788053034877230860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_138
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 162
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fd9b902fa391a240800000000000000
+      internalID: 4801281058129288690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_139
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 167
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c6cfa9f594de1180800000000000000
+      internalID: -9142636452911266109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_140
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 143
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66f902ff7178adcb0800000000000000
+      internalID: -4838406312521851034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_141
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 143
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc60e5edcb2f5d590800000000000000
+      internalID: -7649941499020441908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_142
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 145
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d452872a25e806260800000000000000
+      internalID: 7088822299045406029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_143
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 145
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaeda8f2f855aabc0800000000000000
+      internalID: -3771107664503054678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_144
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 145
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37e9adecf04977780800000000000000
+      internalID: -8685310560744857997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_145
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 145
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a81039dd2dc62a650800000000000000
+      internalID: 6242671686405259658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_146
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 145
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3644ccd168c745870800000000000000
+      internalID: 8670692098062435427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_147
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 145
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 317ec41cdcfb6a190800000000000000
+      internalID: -7951457201643788525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_148
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 145
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fb82a2cc75842440800000000000000
+      internalID: 4910196264628554738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_149
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 129
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdee094f03f134180800000000000000
+      internalID: -9132421324255203617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_150
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 129
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 764100a52cdfa00a0800000000000000
+      internalID: -6914435266698537881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_151
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 129
+        width: 26
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49b9f9f8013ca1910800000000000000
+      internalID: 1808972676239170452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_152
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 129
+        width: 26
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68885129aaaf95df0800000000000000
+      internalID: -190845898684266362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_153
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 97
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a989d9b4f1053e230800000000000000
+      internalID: 3666862616952543386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_154
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 97
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33034793ce1d97f70800000000000000
+      internalID: 9185603727505240115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_155
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 96
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b57e2afc63c815590800000000000000
+      internalID: -7687208921905043621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_156
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 96
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17144abbe5675eeb0800000000000000
+      internalID: -4691213287589396111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_157
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 98
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c9d54b6cba790060800000000000000
+      internalID: 6920197252103657922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_158
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 98
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bec9e755746b01e0800000000000000
+      internalID: -2230578735283056971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_159
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bd3c681341bd34f0800000000000000
+      internalID: -847326253145113164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_160
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eb594f9e7a541670800000000000000
+      internalID: 8508525095894473700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_161
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 86
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 372fb7ca376df5850800000000000000
+      internalID: 6368044190428557939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_162
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 86
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97e5978ef39c82170800000000000000
+      internalID: 8153988401674673785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_163
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ca54ad4cfc29f600800000000000000
+      internalID: 502482295574518465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_164
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 80
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0a4d42ab6fefabc0800000000000000
+      internalID: -3769531117522302450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_165
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 80
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2058893e9f35ee9e0800000000000000
+      internalID: -1590241285684820734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_166
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 87
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7858dab0eb6199b0800000000000000
+      internalID: -5075156692118251398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_167
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 81
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0cef5dfdd1323560800000000000000
+      internalID: 7291945576174709772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_168
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 81
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad444189cbe38e870800000000000000
+      internalID: 8712282458874463450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_169
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 87
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f9a4d58afac42dc0800000000000000
+      internalID: -3664581019436799503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_170
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 80
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a716d8d46abc798d0800000000000000
+      internalID: -2839577124907687558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_171
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 88
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d158142626a419880800000000000000
+      internalID: -8606015626512595683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_172
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 85
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b927d6fea32e37b40800000000000000
+      internalID: 5436937917919228571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_173
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 82
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea78691723571a070800000000000000
+      internalID: 8115896863012849582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_174
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 87
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e832d0857460f440800000000000000
+      internalID: 4967580844824869096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_175
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d6ab99427dfe6280800000000000000
+      internalID: -9048015934037711151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_176
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 63
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 520143223cf65b6d0800000000000000
+      internalID: -2975349094925201371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_177
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 65
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab5c8d95abeb4cf30800000000000000
+      internalID: 4595007227405321658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_178
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 65
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ace42f69e358bcbf0800000000000000
+      internalID: -303002046050447670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_179
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 65
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f80f58439f1f865c0800000000000000
+      internalID: -4221858598029496177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_180
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 65
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5531e63ea14daae50800000000000000
+      internalID: 6821497797555917653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_181
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 65
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7587366e66d763aa0800000000000000
+      internalID: -6181615557614012329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_182
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 65
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e146ee121dca6bff0800000000000000
+      internalID: -20639134059174882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_183
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 65
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 506078bae7f0d7410800000000000000
+      internalID: 1476353289565439493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_184
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 49
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6341e4e14e853310800000000000000
+      internalID: 1384168874150282094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_185
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 49
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dc2fe80e0b76bfb0800000000000000
+      internalID: -4632379866494325551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_186
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 49
+        width: 26
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64a7d3f0dc01d36c0800000000000000
+      internalID: -4162152007710442938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_187
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 49
+        width: 26
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2663d09a6d627a940800000000000000
+      internalID: 5307253389280491106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_188
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 17
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc58e2a776d4e13a0800000000000000
+      internalID: -6692826889399138867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_189
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 17
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ce430f5ecf4258d0800000000000000
+      internalID: -2859135065650934080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_190
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 16
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b5c2fdf3259b4320800000000000000
+      internalID: 2543290396397716921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_191
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 16
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4360409171b82f5a0800000000000000
+      internalID: -6488971181767260620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_192
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 18
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ecab526bda58ef30800000000000000
+      internalID: 4605030517280845032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_193
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 18
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c090836e3d2637d40800000000000000
+      internalID: 5580913025482230028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_194
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf625e21d8f9ead80800000000000000
+      internalID: -8237471240157845764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_195
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ed6841fcbeb81f00800000000000000
+      internalID: 1087829028721159653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_196
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 6
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82cc4b68c8c131430800000000000000
+      internalID: 3752374304410749992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_197
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 6
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fc3c887df2ab05a0800000000000000
+      internalID: -6553965623174742795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_198
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19d20d14626ed9fd0800000000000000
+      internalID: -2333455979920740975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_199
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 0
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a74e432f54ce4cf80800000000000000
+      internalID: -8087079245690116998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_200
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 531a2055ec7d41ae0800000000000000
+      internalID: -1579400288110730955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_201
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 7
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 493a623d4aa9e72d0800000000000000
+      internalID: -3279013445971303532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_202
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 1
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 011a946e7953a8530800000000000000
+      internalID: 3857954957316170000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_203
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23a173dfbc8538f30800000000000000
+      internalID: 4576599279488408114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_204
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 7
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19579cd51f653ba90800000000000000
+      internalID: -7299394976376851055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_205
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 0
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68f434924f9465b20800000000000000
+      internalID: 3122764704641142662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_206
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 8
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32f395edacde72070800000000000000
+      internalID: 8081689511909211939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_207
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 5
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f52fab2537822d9c0800000000000000
+      internalID: -3904013451202465185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_208
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 2
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 609d3e385917f1d20800000000000000
+      internalID: 3251442342961600774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocks01_SoftOutline_209
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 7
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e1306123a9c0cb40800000000000000
+      internalID: 5458584450849845729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Rocks01_SoftOutline_0: -2322159278053714332
+      Rocks01_SoftOutline_1: 5685921396815172818
+      Rocks01_SoftOutline_10: -5103619542510157717
+      Rocks01_SoftOutline_100: 1723709910750897016
+      Rocks01_SoftOutline_101: 6076813673925017638
+      Rocks01_SoftOutline_102: -63222418811695687
+      Rocks01_SoftOutline_103: -1130929523970543921
+      Rocks01_SoftOutline_104: -7934068191901508248
+      Rocks01_SoftOutline_105: -8033409705244162464
+      Rocks01_SoftOutline_106: -2375252444392686841
+      Rocks01_SoftOutline_107: -4617368644230513130
+      Rocks01_SoftOutline_108: -3069389961651157768
+      Rocks01_SoftOutline_109: 8018721169603217904
+      Rocks01_SoftOutline_11: 8124734458417548881
+      Rocks01_SoftOutline_110: -6929679004700845748
+      Rocks01_SoftOutline_111: 8613240006356842491
+      Rocks01_SoftOutline_112: 4194938548634750148
+      Rocks01_SoftOutline_113: -8207949557115629595
+      Rocks01_SoftOutline_114: 3297559339260633674
+      Rocks01_SoftOutline_115: 5739372736931234067
+      Rocks01_SoftOutline_116: -5452443545639418467
+      Rocks01_SoftOutline_117: -6684458526065257417
+      Rocks01_SoftOutline_118: -4482004655248173768
+      Rocks01_SoftOutline_119: -4653574883069354963
+      Rocks01_SoftOutline_12: 490258620968580318
+      Rocks01_SoftOutline_120: -2526774401720154626
+      Rocks01_SoftOutline_121: 3601246954494576298
+      Rocks01_SoftOutline_122: -1361137482002404867
+      Rocks01_SoftOutline_123: -2561262679533005340
+      Rocks01_SoftOutline_124: -1479128718702089759
+      Rocks01_SoftOutline_125: -2470432188954282163
+      Rocks01_SoftOutline_126: 6551937339251761869
+      Rocks01_SoftOutline_127: 8256963264333426467
+      Rocks01_SoftOutline_128: -4953939766630599254
+      Rocks01_SoftOutline_129: -4539773425021045010
+      Rocks01_SoftOutline_13: -2375499723929133855
+      Rocks01_SoftOutline_130: -3389481005917891652
+      Rocks01_SoftOutline_131: -1085666791871987620
+      Rocks01_SoftOutline_132: -4687512309726375684
+      Rocks01_SoftOutline_133: 3818805569296101371
+      Rocks01_SoftOutline_134: -3692725548837012443
+      Rocks01_SoftOutline_135: -2099413678222316061
+      Rocks01_SoftOutline_136: 3475880436349178517
+      Rocks01_SoftOutline_137: 5788053034877230860
+      Rocks01_SoftOutline_138: 4801281058129288690
+      Rocks01_SoftOutline_139: -9142636452911266109
+      Rocks01_SoftOutline_14: 3469552170654973498
+      Rocks01_SoftOutline_140: -4838406312521851034
+      Rocks01_SoftOutline_141: -7649941499020441908
+      Rocks01_SoftOutline_142: 7088822299045406029
+      Rocks01_SoftOutline_143: -3771107664503054678
+      Rocks01_SoftOutline_144: -8685310560744857997
+      Rocks01_SoftOutline_145: 6242671686405259658
+      Rocks01_SoftOutline_146: 8670692098062435427
+      Rocks01_SoftOutline_147: -7951457201643788525
+      Rocks01_SoftOutline_148: 4910196264628554738
+      Rocks01_SoftOutline_149: -9132421324255203617
+      Rocks01_SoftOutline_15: 1115054687900940029
+      Rocks01_SoftOutline_150: -6914435266698537881
+      Rocks01_SoftOutline_151: 1808972676239170452
+      Rocks01_SoftOutline_152: -190845898684266362
+      Rocks01_SoftOutline_153: 3666862616952543386
+      Rocks01_SoftOutline_154: 9185603727505240115
+      Rocks01_SoftOutline_155: -7687208921905043621
+      Rocks01_SoftOutline_156: -4691213287589396111
+      Rocks01_SoftOutline_157: 6920197252103657922
+      Rocks01_SoftOutline_158: -2230578735283056971
+      Rocks01_SoftOutline_159: -847326253145113164
+      Rocks01_SoftOutline_16: 6121490229620772841
+      Rocks01_SoftOutline_160: 8508525095894473700
+      Rocks01_SoftOutline_161: 6368044190428557939
+      Rocks01_SoftOutline_162: 8153988401674673785
+      Rocks01_SoftOutline_163: 502482295574518465
+      Rocks01_SoftOutline_164: -3769531117522302450
+      Rocks01_SoftOutline_165: -1590241285684820734
+      Rocks01_SoftOutline_166: -5075156692118251398
+      Rocks01_SoftOutline_167: 7291945576174709772
+      Rocks01_SoftOutline_168: 8712282458874463450
+      Rocks01_SoftOutline_169: -3664581019436799503
+      Rocks01_SoftOutline_17: -7711597047591171995
+      Rocks01_SoftOutline_170: -2839577124907687558
+      Rocks01_SoftOutline_171: -8606015626512595683
+      Rocks01_SoftOutline_172: 5436937917919228571
+      Rocks01_SoftOutline_173: 8115896863012849582
+      Rocks01_SoftOutline_174: 4967580844824869096
+      Rocks01_SoftOutline_175: -9048015934037711151
+      Rocks01_SoftOutline_176: -2975349094925201371
+      Rocks01_SoftOutline_177: 4595007227405321658
+      Rocks01_SoftOutline_178: -303002046050447670
+      Rocks01_SoftOutline_179: -4221858598029496177
+      Rocks01_SoftOutline_18: 4770054486184396530
+      Rocks01_SoftOutline_180: 6821497797555917653
+      Rocks01_SoftOutline_181: -6181615557614012329
+      Rocks01_SoftOutline_182: -20639134059174882
+      Rocks01_SoftOutline_183: 1476353289565439493
+      Rocks01_SoftOutline_184: 1384168874150282094
+      Rocks01_SoftOutline_185: -4632379866494325551
+      Rocks01_SoftOutline_186: -4162152007710442938
+      Rocks01_SoftOutline_187: 5307253389280491106
+      Rocks01_SoftOutline_188: -6692826889399138867
+      Rocks01_SoftOutline_189: -2859135065650934080
+      Rocks01_SoftOutline_19: 8702673844187196036
+      Rocks01_SoftOutline_190: 2543290396397716921
+      Rocks01_SoftOutline_191: -6488971181767260620
+      Rocks01_SoftOutline_192: 4605030517280845032
+      Rocks01_SoftOutline_193: 5580913025482230028
+      Rocks01_SoftOutline_194: -8237471240157845764
+      Rocks01_SoftOutline_195: 1087829028721159653
+      Rocks01_SoftOutline_196: 3752374304410749992
+      Rocks01_SoftOutline_197: -6553965623174742795
+      Rocks01_SoftOutline_198: -2333455979920740975
+      Rocks01_SoftOutline_199: -8087079245690116998
+      Rocks01_SoftOutline_2: 8381953616907005229
+      Rocks01_SoftOutline_20: 8758175447535697130
+      Rocks01_SoftOutline_200: -1579400288110730955
+      Rocks01_SoftOutline_201: -3279013445971303532
+      Rocks01_SoftOutline_202: 3857954957316170000
+      Rocks01_SoftOutline_203: 4576599279488408114
+      Rocks01_SoftOutline_204: -7299394976376851055
+      Rocks01_SoftOutline_205: 3122764704641142662
+      Rocks01_SoftOutline_206: 8081689511909211939
+      Rocks01_SoftOutline_207: -3904013451202465185
+      Rocks01_SoftOutline_208: 3251442342961600774
+      Rocks01_SoftOutline_209: 5458584450849845729
+      Rocks01_SoftOutline_21: 3957809688432433338
+      Rocks01_SoftOutline_22: 7896126731913670676
+      Rocks01_SoftOutline_23: 5723054737207345208
+      Rocks01_SoftOutline_24: -929051007494670891
+      Rocks01_SoftOutline_25: -1788181702604245466
+      Rocks01_SoftOutline_26: 3301343868482889269
+      Rocks01_SoftOutline_27: 4611681033066171679
+      Rocks01_SoftOutline_28: -6512408711769128846
+      Rocks01_SoftOutline_29: 7333349386552678697
+      Rocks01_SoftOutline_3: -5536386604126567820
+      Rocks01_SoftOutline_30: -768718799792272464
+      Rocks01_SoftOutline_31: 2184328379010115876
+      Rocks01_SoftOutline_32: -5538041967170266642
+      Rocks01_SoftOutline_33: 724300204829508470
+      Rocks01_SoftOutline_34: 1627049747271496971
+      Rocks01_SoftOutline_35: 5465869450417943651
+      Rocks01_SoftOutline_36: 6808284596441844470
+      Rocks01_SoftOutline_37: -2720727010626338265
+      Rocks01_SoftOutline_38: -6486446503255860231
+      Rocks01_SoftOutline_39: 2161884041221369889
+      Rocks01_SoftOutline_4: 3858199090135751971
+      Rocks01_SoftOutline_40: 176879085954371753
+      Rocks01_SoftOutline_41: 4934883524525182452
+      Rocks01_SoftOutline_42: -6111264502749471134
+      Rocks01_SoftOutline_43: -3584412626228050748
+      Rocks01_SoftOutline_44: 6937532522148468396
+      Rocks01_SoftOutline_45: 7191337238865041681
+      Rocks01_SoftOutline_46: -5188313980624651617
+      Rocks01_SoftOutline_47: -3070219867291695104
+      Rocks01_SoftOutline_48: -5380529284910018648
+      Rocks01_SoftOutline_49: -3276002887636106927
+      Rocks01_SoftOutline_5: 330427412228127595
+      Rocks01_SoftOutline_50: 6478965889623329182
+      Rocks01_SoftOutline_51: -4077021454125392217
+      Rocks01_SoftOutline_52: 9177424426701481608
+      Rocks01_SoftOutline_53: 8628274270617381170
+      Rocks01_SoftOutline_54: -7776909870054940368
+      Rocks01_SoftOutline_55: 2821755434974972152
+      Rocks01_SoftOutline_56: -7633170284500602160
+      Rocks01_SoftOutline_57: -1885925399139522036
+      Rocks01_SoftOutline_58: -7910697138252406908
+      Rocks01_SoftOutline_59: -1432748475008373900
+      Rocks01_SoftOutline_6: -2549764228287737426
+      Rocks01_SoftOutline_60: -1875700287510008262
+      Rocks01_SoftOutline_61: -7370904548945143173
+      Rocks01_SoftOutline_62: 7993891434175209603
+      Rocks01_SoftOutline_63: -9003666646765783311
+      Rocks01_SoftOutline_64: -6042895669266706245
+      Rocks01_SoftOutline_65: -8476783269301561403
+      Rocks01_SoftOutline_66: -3073726610291281143
+      Rocks01_SoftOutline_67: 5854428714031286424
+      Rocks01_SoftOutline_68: -2053046388736759565
+      Rocks01_SoftOutline_69: -817838315878002430
+      Rocks01_SoftOutline_7: -6870282094425313306
+      Rocks01_SoftOutline_70: 7171990723096022944
+      Rocks01_SoftOutline_71: -2415595848764057392
+      Rocks01_SoftOutline_72: -542143505648219498
+      Rocks01_SoftOutline_73: -3343017703606219718
+      Rocks01_SoftOutline_74: 4523330210751638917
+      Rocks01_SoftOutline_75: 7394302372501445537
+      Rocks01_SoftOutline_76: -2155070555961262038
+      Rocks01_SoftOutline_77: -6702997389951644145
+      Rocks01_SoftOutline_78: -1753461107451813504
+      Rocks01_SoftOutline_79: -3767554538621729302
+      Rocks01_SoftOutline_8: -3916915388366302993
+      Rocks01_SoftOutline_80: 2436539731446823284
+      Rocks01_SoftOutline_81: -2098293518465564132
+      Rocks01_SoftOutline_82: 1209287441446451197
+      Rocks01_SoftOutline_83: -4787369221461192159
+      Rocks01_SoftOutline_84: -9137479461466285927
+      Rocks01_SoftOutline_85: -3850739027426114010
+      Rocks01_SoftOutline_86: -2634908074720725793
+      Rocks01_SoftOutline_87: -5837885523268642292
+      Rocks01_SoftOutline_88: 8982792186051414589
+      Rocks01_SoftOutline_89: 3203308266547491235
+      Rocks01_SoftOutline_9: -8228601142714220654
+      Rocks01_SoftOutline_90: -1619810498360489569
+      Rocks01_SoftOutline_91: 6017885367344298130
+      Rocks01_SoftOutline_92: 7998237972715952599
+      Rocks01_SoftOutline_93: -75043679027181630
+      Rocks01_SoftOutline_94: -5234534153481522782
+      Rocks01_SoftOutline_95: 1456749193391028850
+      Rocks01_SoftOutline_96: -6438922950701023631
+      Rocks01_SoftOutline_97: -401708717400709931
+      Rocks01_SoftOutline_98: 1621179620088684424
+      Rocks01_SoftOutline_99: 6862696778656926421
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
