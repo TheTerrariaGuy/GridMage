@@ -5,12 +5,15 @@ using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using static UnityEngine.Rendering.DebugUI.Table;
 
-public class Selector : MonoBehaviour, IPointerClickHandler
+public class Selector : MonoBehaviour
 {
     public static Selector INSTANCE { get; private set; }
     [SerializeField] private SpriteRenderer spriteRenderer;
     private int currentType;
     private Vector3 spriteSize;
+    private float t;
+    private Vector3 initPos;
+
     
     void Start()
     {
@@ -19,6 +22,7 @@ public class Selector : MonoBehaviour, IPointerClickHandler
             Destroy(this);
             return;
         }
+        initPos = transform.localPosition;
         INSTANCE = this;
         spriteSize = spriteRenderer.sprite.bounds.size;
         // Resize only the artwork; the selector's renderer shares its object with the click collider.
@@ -56,6 +60,8 @@ public class Selector : MonoBehaviour, IPointerClickHandler
 
     void Update()
     {
+        HandleAnimations();
+        
         if (Keyboard.current == null) return;
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
@@ -79,10 +85,20 @@ public class Selector : MonoBehaviour, IPointerClickHandler
             ChangeType(400);
         }
     }
-
-    public void OnPointerClick(PointerEventData eventData)
+    private void HandleAnimations()
     {
-        ChangeType();
-    }
+        t += Time.deltaTime;
 
+        if (t > 1f)
+        {
+            t -= 1f;
+        }
+
+        transform.localPosition = initPos + 0.15f * Vector3.up * Mathf.Pow(Floaty(t * 2f - 0.5f), 2);
+
+    }
+    private float Floaty(float x)
+    {
+        return Mathf.Sin(x * Mathf.PI);
+    }
 }

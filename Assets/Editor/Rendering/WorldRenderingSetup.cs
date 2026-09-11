@@ -12,7 +12,28 @@ using Object = UnityEngine.Object;
 
 public static class WorldRenderingSetup
 {
-    [MenuItem("Tools/Grid Mage/Rendering/Configure Y-sorted pixel world")]
+    public static void ConfigureHoverOverlay(GridPointer pointer, Transform gridParent)
+    {
+        var hover = gridParent.Find("Hover");
+        if (hover == null)
+        {
+            hover = new GameObject("Hover", typeof(SpriteRenderer)).transform;
+            hover.SetParent(gridParent, false);
+        }
+        var overlay = hover.GetComponent<SpriteRenderer>();
+        var tile = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Tile.prefab").GetComponent<Tile>();
+        overlay.sharedMaterial = tile.SurfaceRenderer.sharedMaterial;
+        overlay.sortingLayerName = WorldSorting.Foreground;
+        overlay.sortingOrder = 1;
+        overlay.enabled = false;
+        var data = new SerializedObject(pointer);
+        overlay.sprite = (Sprite)data.FindProperty("borderSprite").objectReferenceValue;
+        overlay.color = new Color(1f, 1f, 1f, data.FindProperty("hoverAlpha").floatValue);
+        data.FindProperty("hoverOverlay").objectReferenceValue = overlay;
+        data.ApplyModifiedPropertiesWithoutUndo();
+    }
+
+    [MenuItem("Tools/Grid Mage/Rendering/Configure Y-sorted world")]
     public static void Configure()
     {
         ConfigureLayers();
@@ -23,47 +44,21 @@ public static class WorldRenderingSetup
 
         var scene = EditorSceneManager.OpenScene("Assets/Scenes/SampleScene.unity");
         Camera view = Camera.main;
-        Camera world = Object.FindObjectsByType<Camera>().Single(c => c != view);
-        world.name = "PixelWorldCamera";
-        world.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "PixelVFX", "Lighting");
-        world.clearFlags = CameraClearFlags.SolidColor;
-        world.backgroundColor = view.backgroundColor;
-        world.depth = view.depth - 1;
-        world.eventMask = 0;
-        world.targetTexture = null;
-        var extraRaycaster = world.GetComponent<Physics2DRaycaster>();
-        if (extraRaycaster != null) Object.DestroyImmediate(extraRaycaster);
-        view.cullingMask = LayerMask.GetMask("UI", "Lighting");
+        view.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "PixelVFX", "Lighting", "UI");
+        view.targetTexture = null;
         view.eventMask = LayerMask.GetMask("UI");
         view.GetComponent<Physics2DRaycaster>().eventMask = LayerMask.GetMask("UI");
-        view.transparencySortMode = world.transparencySortMode = TransparencySortMode.CustomAxis;
-        view.transparencySortAxis = world.transparencySortAxis = Vector3.up;
-
-        var image = Object.FindObjectsByType<RawImage>().Single();
-        image.name = "PixelWorldOutput";
-        image.texture = null;
-        image.raycastTarget = false;
-        var canvas = image.canvas;
-        canvas.name = "PixelWorldCanvas";
-        canvas.renderMode = RenderMode.ScreenSpaceCamera;
-        canvas.worldCamera = view;
-        canvas.planeDistance = 1f;
-        canvas.sortingLayerName = WorldSorting.Ground;
-        canvas.sortingOrder = short.MinValue;
-        var graphicRaycaster = canvas.GetComponent<GraphicRaycaster>();
-        if (graphicRaycaster != null) Object.DestroyImmediate(graphicRaycaster);
-
-        var pipeline = view.GetComponent<PixelWorldRenderer>() ?? view.gameObject.AddComponent<PixelWorldRenderer>();
-        var pipelineData = new SerializedObject(pipeline);
-        pipelineData.FindProperty("worldCamera").objectReferenceValue = world;
-        pipelineData.FindProperty("output").objectReferenceValue = image;
-        pipelineData.FindProperty("pixelHeight").intValue = 400;
-        pipelineData.ApplyModifiedPropertiesWithoutUndo();
+        view.transparencySortMode = TransparencySortMode.CustomAxis;
+        view.transparencySortAxis = Vector3.up;
+        if (view.GetComponent<ParticlePixelation>() == null) view.gameObject.AddComponent<ParticlePixelation>();
         var game = Object.FindAnyObjectByType<Assets.Scripts.GameLogic>();
         var pointer = game.GetComponent<GridPointer>() ?? game.gameObject.AddComponent<GridPointer>();
         var pointerData = new SerializedObject(pointer);
         pointerData.FindProperty("viewCamera").objectReferenceValue = view;
+        pointerData.FindProperty("borderSprite").objectReferenceValue = AssetDatabase.LoadAllAssetsAtPath("Assets/Textures/__Player/Border.png").OfType<Sprite>().First();
+        pointerData.FindProperty("teleportSprite").objectReferenceValue = AssetDatabase.LoadAllAssetsAtPath("Assets/Textures/__Player/TeleportTo.png").OfType<Sprite>().First();
         pointerData.ApplyModifiedPropertiesWithoutUndo();
+        ConfigureHoverOverlay(pointer, game.gridParent);
 
         foreach (string name in new[] { "ManaBar", "Button", "Clock", "Mana Label" })
         {
@@ -106,7 +101,7 @@ public static class WorldRenderingSetup
         PrefabUtility.SaveAsPrefabAsset(tile, tilePath);
         PrefabUtility.UnloadPrefabContents(tile);
         AssetDatabase.SaveAssets();
-        Debug.Log("World rendering configured: shared world texture, Y anchors, separate HUD and view-space picking.");
+        Debug.Log("World rendering configured: native-resolution world, particle-only screen grid, Y anchors and view-space picking.");
     }
 
     private static void ConfigureActor(GameObject actor)

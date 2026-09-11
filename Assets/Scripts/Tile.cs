@@ -13,9 +13,7 @@ public class Tile : MonoBehaviour
     public SpriteRenderer SurfaceRenderer => spriteRenderer;
     public SpriteRenderer WallFrontRenderer => wallFront;
     [SerializeField] private SpriteRenderer overlay;
-    [SerializeField] private float hoverAlpha;
     [SerializeField] private float queuedAlpha;
-    private bool isHovered;
     private int queuedSpellType;
     private ParticleVFX.Effect particles;
     private SortingGroup surfaceGroup;
@@ -69,17 +67,6 @@ public class Tile : MonoBehaviour
         ParticleVFX.INSTANCE?.SetTile(transform, t, ref particles);
     }
 
-    public void SetHovered(bool hovered)
-    {
-        isHovered = hovered;
-        RefreshOverlay();
-    }
-
-    private void OnDisable()
-    {
-        isHovered = false;
-    }
-
     public void ReleaseParticles()
     {
         ParticleVFX.INSTANCE?.Release(particles);
@@ -89,11 +76,6 @@ public class Tile : MonoBehaviour
     private void OnEnable()
     {
         if (gameLogic != null) ChangeType(type);
-    }
-
-    private void LateUpdate()
-    {
-        RefreshOverlay();
     }
 
     public void ShowQueuedSpell(int spellType)
@@ -111,18 +93,11 @@ public class Tile : MonoBehaviour
     private void RefreshOverlay()
     {
         if (overlay == null) return;
-        int previewType = queuedSpellType;
-        float alpha = queuedAlpha;
-        if (previewType == 0 && isHovered && gameLogic.CanQueueSpell(row, col, gameLogic.CurrentSelection))
+        if (queuedSpellType != 0 && TextureHandler.INSTANCE != null)
         {
-            previewType = gameLogic.CurrentSelection;
-            alpha = hoverAlpha;
-        }
-
-        if (previewType != 0 && TextureHandler.INSTANCE != null)
-        {
-            TextureHandler.INSTANCE.UpdatePreview(this, overlay, previewType, alpha);
+            TextureHandler.INSTANCE.UpdatePreview(this, overlay, queuedSpellType, queuedAlpha);
         }
         else overlay.color = new Color32(255, 255, 255, 0);
+
     }
 }

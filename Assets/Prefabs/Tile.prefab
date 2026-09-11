@@ -57,7 +57,6 @@ MonoBehaviour:
   spriteRenderer: {fileID: 325887224080908873}
   wallFront: {fileID: 0}
   overlay: {fileID: 6709292948018929229}
-  hoverAlpha: 0.5
   queuedAlpha: 0.75
 --- !u!61 &4635381565973463216
 BoxCollider2D:

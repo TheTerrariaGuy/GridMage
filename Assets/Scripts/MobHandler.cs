@@ -64,6 +64,24 @@ namespace Assets.Scripts
             }
         }
 
+        public bool IsOccupied(int row, int col)
+        {
+            if (mobs == null) return false;
+            foreach (MobScript mob in mobs)
+                if (mob != null && mob.isActiveAndEnabled &&
+                    GridHelper.INSTANCE.TryGetTileOn(mob.transform.position, out Tile occupied) &&
+                    occupied.row == row && occupied.col == col) return true;
+            return false;
+        }
+
+        public void RefreshAfterPlayerMove()
+        {
+            UpdateBestPath(PlayerHandler.INSTANCE.r, PlayerHandler.INSTANCE.c);
+            if (mobs == null) return;
+            foreach (MobScript mob in mobs)
+                if (mob != null && mob.isActiveAndEnabled) mob.RetargetAfterPlayerMove();
+        }
+
         public void SummonAt(int r, int c, int type, int pathChannel = -1)
         {
             if (pathChannel < 0)

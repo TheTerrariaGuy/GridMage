@@ -171,6 +171,14 @@ public class MobScript : MonoBehaviour
         SetTargetFromPath();
     }
 
+    public void RetargetAfterPlayerMove()
+    {
+        if (path == null || !GridHelper.INSTANCE.TryGetTileOn(transform.position, out Tile currentTile)) return;
+        lastVisitedTile = currentTile;
+        RefreshPath(force: true);
+        SetTargetFromPath();
+    }
+
     public void CalculateDisagreement()
     {
         Queue<NextStep> start = new Queue<NextStep>(path);

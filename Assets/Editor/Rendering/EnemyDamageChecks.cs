@@ -144,7 +144,6 @@ public static class EnemyDamageChecks
     private static void Capture(string output)
     {
         var view = Camera.main;
-        var pipeline = view.GetComponent<PixelWorldRenderer>();
         Vector3 position = view.transform.position;
         float size = view.orthographicSize, aspect = view.aspect;
         var previews = new GameObject("Damage previews");
@@ -160,22 +159,13 @@ public static class EnemyDamageChecks
             ParticleVFX.INSTANCE.PlayDamage(enemy.transform, i + 1);
         }
         foreach (var hit in Hits()) hit.Simulate(.12f, true, true);
-        pipeline.Synchronize();
-        RenderPipeline.SubmitRenderRequest(pipeline.WorldCamera,
-            new UnityEngine.Rendering.Universal.UniversalRenderPipeline.SingleCameraRequest { destination = pipeline.Texture });
-        var previous = RenderTexture.active;
-        RenderTexture.active = pipeline.Texture;
-        var image = new Texture2D(pipeline.Texture.width, pipeline.Texture.height, TextureFormat.RGBA32, false);
-        image.ReadPixels(new Rect(0, 0, image.width, image.height), 0, 0);
-        image.Apply();
+        var image = WorldRenderingChecks.RenderCamera(view, 1600, 400);
         File.WriteAllBytes(Path.Combine(output, "EnemyDamage.png"), image.EncodeToPNG());
-        RenderTexture.active = previous;
         Object.Destroy(image);
         ParticleVFX.INSTANCE.ClearBursts();
         Object.Destroy(previews);
         view.transform.position = position;
         view.orthographicSize = size;
         view.aspect = aspect;
-        pipeline.Synchronize();
     }
 }

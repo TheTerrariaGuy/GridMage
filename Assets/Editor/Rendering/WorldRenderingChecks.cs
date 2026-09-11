@@ -15,12 +15,11 @@ public static class WorldRenderingChecks
     private const string PendingPlay = "GridMage.WorldRenderingChecks.PendingPlay";
     private static int phase, nextFrame;
     private static double started;
-    private static PixelWorldRenderer pipeline;
     private static Transform redAnchor, blueAnchor, redVisual, blueVisual;
     private static Vector3 originalPosition;
     private static float originalSize;
     private static bool failed;
-    private static string Output => Path.GetFullPath("WorldRenderingChecks");
+    private static string Output => Path.GetFullPath("Temp/WorldRenderingChecks");
 
     static WorldRenderingChecks()
     {
@@ -29,6 +28,8 @@ public static class WorldRenderingChecks
 
     public static void Run()
     {
+        phase = nextFrame = 0;
+        failed = false;
         UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/Scenes/SampleScene.unity");
         // A fresh CLI import can still have a domain reload queued. Let startup settle
         // before entering play, so it cannot reset gameplay singletons mid-frame.
@@ -75,7 +76,6 @@ public static class WorldRenderingChecks
             {
                 case 0:
                     Directory.CreateDirectory(Output);
-                    pipeline = Camera.main.GetComponent<PixelWorldRenderer>();
                     ValidateScene();
                     ValidateParticles();
                     ValidateTileStages();
@@ -112,15 +112,9 @@ public static class WorldRenderingChecks
                     nextFrame = Time.frameCount + 10;
                     break;
                 case 4:
-                    Require(pipeline.Texture.width == pipeline.Texture.height, "Texture must follow the view aspect ratio.");
-                    Require(pipeline.WorldCamera.projectionMatrix == Camera.main.projectionMatrix, "World and picking projections diverged after zoom.");
                     var tile = GameLogic.INSTANCE.tilesGrid[6, 6];
                     var screen = Camera.main.WorldToScreenPoint(tile.transform.position);
                     Require(Object.FindAnyObjectByType<GridPointer>().Pick(screen) == tile, "Tile picking must match the displayed camera after zoom/resize.");
-                    pipeline.enabled = false;
-                    Require(!pipeline.WorldCamera.enabled && pipeline.Texture == null, "Disabling the pipeline must stop world rendering and release its texture.");
-                    pipeline.enabled = true;
-                    Require(pipeline.WorldCamera.enabled && pipeline.Texture != null, "Re-enabling the pipeline must restore world rendering.");
                     GameLogic.INSTANCE.InitializedGrid();
                     nextFrame = Time.frameCount + 10;
                     break;
@@ -131,7 +125,7 @@ public static class WorldRenderingChecks
                         "Reset grass tiles must not create particle effects.");
                     File.WriteAllText(Path.Combine(Output, "Results.txt"),
                         "PASS: scene wiring, grass without particles, ground/wall transitions, all catalog anchors, stage continuity, pool reuse, rotated multi-cell reactions, " +
-                        "upright geysers in every cast direction and pooled reuse, enemy damage effects for every element, particle/sprite occlusion in both Y orders, camera zoom/aspect synchronization, screen-space tile picking and grid reset.\n");
+                        "upright geysers in every cast direction and pooled reuse, enemy damage effects for every element, particle/sprite occlusion in both Y orders, camera zoom/aspect changes, screen-space tile picking and grid reset.\n");
                     Debug.Log("WORLD RENDERING CHECKS PASSED: " + Output);
                     Stop(0);
                     break;
@@ -147,12 +141,11 @@ public static class WorldRenderingChecks
     private static void ValidateScene()
     {
         ValidateElementSprites();
-        Require(pipeline != null && pipeline.Texture != null, "Pixel world pipeline must create its render target.");
-        Require(pipeline.Texture.filterMode == FilterMode.Point && pipeline.Texture.height == 400, "World target must use the configured point-filtered pixel resolution.");
-        int world = LayerMask.GetMask("Default", "PixelVFX");
-        Require((pipeline.WorldCamera.cullingMask & world) == world, "Sprites and VFX must share the world camera.");
-        Require((Camera.main.cullingMask & world) == 0, "The presentation camera must not render the world again.");
-        Require((pipeline.WorldCamera.cullingMask & LayerMask.GetMask("UI")) == 0, "The world camera must exclude the HUD.");
+        Require(Camera.main.GetComponent<ParticlePixelation>() != null, "Camera needs shared particle pixel settings.");
+        Require(Camera.main.targetTexture == null, "World must render directly at display resolution.");
+        int world = LayerMask.GetMask("Default", "PixelVFX", "UI");
+        Require((Camera.main.cullingMask & world) == world, "One camera must render sprites, particles and HUD.");
+        Require(Object.FindObjectsByType<Camera>().Length == 1, "The old compositor camera must be removed.");
         var clock = Object.FindObjectsByType<Transform>(FindObjectsInactive.Include).First(t => t.name == "Clock");
         Require(clock.GetComponentsInChildren<Transform>(true).All(t => t.gameObject.layer == LayerMask.NameToLayer("UI")),
             "Inactive HUD elements must also be migrated so enabling them does not put them in the world render.");
@@ -227,14 +220,17 @@ public static class WorldRenderingChecks
         float mana = game.currMana;
         int selection = game.CurrentSelection;
         game.currMana = game.maxMana;
-        foreach (int type in new[] { 100, 200, 300, 400 })
+        var pointer = Object.FindAnyObjectByType<GridPointer>();
+        foreach (bool teleport in new[] { false, true, false })
         {
-            game.UpdateSelection(type);
-            tile.SetHovered(true);
-            Require(overlay.sprite == textures.GetPreviewSprite(type) && Mathf.Abs(overlay.color.a - .5f) < .001f,
-                "Hover previews must follow selection and use hover opacity.");
+            pointer.SetHovered(tile, teleport);
+            var hover = game.gridParent.Find("Hover").GetComponent<SpriteRenderer>();
+            bool inRange = PlayerHandler.INSTANCE.IsInBlinkRange(tile) && game.Castable(tile.row, tile.col);
+            var expected = (Sprite)new SerializedObject(pointer).FindProperty(teleport && inRange ? "teleportSprite" : "borderSprite").objectReferenceValue;
+            Require(expected != null && hover.sprite == expected && Mathf.Abs(hover.color.a - .5f) < .001f,
+                "Hover must switch between border and teleport sprites at half opacity.");
         }
-        tile.SetHovered(false);
+        pointer.SetHovered(null);
         game.UpdateSelection(selection);
         game.currMana = mana;
         var selector = Object.FindAnyObjectByType<Selector>();
@@ -396,7 +392,7 @@ public static class WorldRenderingChecks
         var sprite = new GameObject("Blue sprite").AddComponent<SpriteRenderer>();
         sprite.sprite = Sprite.Create(Texture2D.whiteTexture, new Rect(0, 0, Texture2D.whiteTexture.width, Texture2D.whiteTexture.height), Vector2.one * .5f, 1);
         sprite.color = Color.blue;
-        sprite.sharedMaterial = material;
+        sprite.sharedMaterial = new Material(Shader.Find("Sprites/Default"));
         sprite.transform.position = parent.position;
         WorldSorting.Include(blue, sprite, 0);
         blueVisual = sprite.transform;
@@ -411,13 +407,33 @@ public static class WorldRenderingChecks
 
     private static Texture2D ReadWorld()
     {
+        return RenderCamera(Camera.main, Mathf.RoundToInt(800 * Camera.main.aspect), 800);
+    }
+
+    public static Texture2D RenderCamera(Camera camera, int width, int height)
+    {
         var previous = RenderTexture.active;
-        RenderTexture.active = pipeline.Texture;
-        var result = new Texture2D(pipeline.Texture.width, pipeline.Texture.height, TextureFormat.RGBA32, false);
-        result.ReadPixels(new Rect(0, 0, result.width, result.height), 0, 0);
-        result.Apply();
-        RenderTexture.active = previous;
-        return result;
+        var previousTarget = camera.targetTexture;
+        var target = new RenderTexture(width, height, 24);
+        target.Create();
+        try
+        {
+            camera.targetTexture = target;
+            RenderPipeline.SubmitRenderRequest(camera,
+                new UnityEngine.Rendering.Universal.UniversalRenderPipeline.SingleCameraRequest { destination = target });
+            RenderTexture.active = target;
+            var result = new Texture2D(width, height, TextureFormat.RGBA32, false);
+            result.ReadPixels(new Rect(0, 0, width, height), 0, 0);
+            result.Apply();
+            return result;
+        }
+        finally
+        {
+            camera.targetTexture = previousTarget;
+            RenderTexture.active = previous;
+            target.Release();
+            Object.DestroyImmediate(target);
+        }
     }
 
     private static void AssertCenter(Color expected, string message)
@@ -454,7 +470,7 @@ public static class WorldRenderingChecks
         Vector3 uv = view.WorldToViewportPoint(button.transform.position);
         Color hud = pixels.GetPixel(Mathf.RoundToInt(uv.x * pixels.width), Mathf.RoundToInt(uv.y * pixels.height));
         Require(Vector3.Distance(new Vector3(hud.r, hud.g, hud.b), new Vector3(view.backgroundColor.r, view.backgroundColor.g, view.backgroundColor.b)) > .2f,
-            "HUD sprites must be visible over the world compositor.");
+            "HUD sprites must be visible over the world.");
         File.WriteAllBytes(Path.Combine(Output, "WorldWithHUD.png"), pixels.EncodeToPNG());
         view.targetTexture = previousTarget;
         RenderTexture.active = previousActive;
@@ -469,6 +485,7 @@ public static class WorldRenderingChecks
         SessionState.SetBool(Running, false);
         EditorApplication.update -= Update;
         Application.logMessageReceived -= OnLog;
-        EditorApplication.Exit(code);
+        if (Application.isBatchMode) EditorApplication.Exit(code);
+        else EditorApplication.isPlaying = false;
     }
 }

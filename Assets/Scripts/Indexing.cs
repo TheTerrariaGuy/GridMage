@@ -7,6 +7,9 @@ using UnityEngine;
 public class Indexing : MonoBehaviour
 {
     public static Indexing INSTANCE;
+    [Min(0f)] public float blinkCooldown = .25f;
+    [Min(1)] public int blinkRange = 3;
+    [Min(0)] public int castRange = 3;
     private Dictionary<int, List<Reaction>> reactionMap;
     [NonSerialized] public Dictionary<int, HashSet<Offset>> fadeMap;
     [NonSerialized] public Dictionary<int, Color32> colorMap; // White RGB preserves sprite artwork; alpha communicates stages.

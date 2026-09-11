@@ -21,8 +21,9 @@ namespace Assets.Scripts
         [SerializeField] private float clock;
         [SerializeField] private GameObject clockHand;
         [SerializeField] public float maxMana, manaRegen;
+        [SerializeField, Min(0f)] private float blinkManaCost = 4f;
         [SerializeField, Min(0f)] private float placementManaRegenMultiplier = 0.5f;
-        private bool[,] placeableMap; 
+        [NonSerialized] public bool[,] castableGrid;
 
 
         //[SerializeField] public GameObject playerPoint;
@@ -67,6 +68,7 @@ namespace Assets.Scripts
             queuedSpells.Clear();
             reservedMana = 0f;
             grid = new int[rows, cols];
+            castableGrid = new bool[rows, cols];
             tilesGrid = new Tile[rows, cols];
             tilesSet = new HashSet<Tile>();
             for (int i = 0; i < grid.GetLength(0); i++)
@@ -81,6 +83,23 @@ namespace Assets.Scripts
                     tilesSet.Add(tileScript);
                 }
             }
+            MakeCastable();
+        }
+
+        public bool Castable(int r, int c) =>
+            GridHelper.IsInBounds(castableGrid, r, c) && castableGrid[r, c];
+
+        public void MakeCastable()
+        {
+            if (castableGrid == null) return;
+            Array.Clear(castableGrid, 0, castableGrid.Length);
+            PlayerHandler player = PlayerHandler.INSTANCE;
+            if (player == null || Indexing.INSTANCE == null || !GridHelper.IsInBounds(grid, player.r, player.c)) return;
+            int range = Mathf.Max(0, Indexing.INSTANCE.castRange);
+            int[,] walls = GridHelper.INSTANCE.ExtractWalls();
+            for (int row = Mathf.Max(0, player.r - range); row <= Mathf.Min(rows - 1, player.r + range); row++)
+                for (int col = Mathf.Max(0, player.c - range); col <= Mathf.Min(cols - 1, player.c + range); col++)
+                    castableGrid[row, col] = BlinkRules.CanReach(walls, player.r, player.c, row, col, range);
         }
 
         void Update()
@@ -130,6 +149,19 @@ namespace Assets.Scripts
             MakeMove(t.row, t.col, currentSelection);
         }
 
+        public bool TryCastBlink(Tile target)
+        {
+            PlayerHandler player = PlayerHandler.INSTANCE;
+            if (player == null || !player.isActiveAndEnabled || target == null ||
+                !GridHelper.IsInBounds(tilesGrid, target.row, target.col) ||
+                tilesGrid[target.row, target.col] != target ||
+                AvailableMana < blinkManaCost ||
+                (MobHandler.INSTANCE != null && MobHandler.INSTANCE.IsOccupied(target.row, target.col))) return false;
+            if (!player.BlinkTo(target)) return false;
+            currMana -= blinkManaCost;
+            return true;
+        }
+
 
         // type: 100, 200 ,300, 400
         public void MakeMove(int r, int c, int type)
@@ -143,25 +175,14 @@ namespace Assets.Scripts
 
         public bool CanQueueSpell(int r, int c, int type)
         {
-            return CanCastAt(r, c) && !queuedSpells.ContainsKey((r, c)) &&
+            return Castable(r, c) && CanCastAt(r, c) && !queuedSpells.ContainsKey((r, c)) &&
                 Indexing.INSTANCE.manaCosts.TryGetValue(type, out float manaCost) &&
                 AvailableMana >= manaCost;
         }
 
         private bool CanCastAt(int r, int c)
         {
-            //bool hasWater = false;
-            //for (int i = -1; i <= 1; i++)
-            //{
-            //    for (int j = -1; j <= 1; j ++)
-            //    {
-            //        if (i == 0 && j == 0 || ! GridHelper.IsInBounds(grid, r + i, c + j))
-            //        {
-            //            continue;
-            //        }
-                    
-            //    }
-            //}
+            // Queued spells only recheck terrain, not the player's current range or sight.
             return GridHelper.IsInBounds(grid, r, c) &&
                 (grid[r, c] == 0 || grid[r, c] % 100 == 11);
         }
@@ -220,7 +241,7 @@ namespace Assets.Scripts
         private int[,] HandleFading(int[,] g)
         {
             int[,] newGrid = (int[,])g.Clone();
-            // Clear the old spent effects before any fading tile writes new effects.
+            // Clear the old spent effects before any fading tile writes new effects
             for (int i = 0; i < g.GetLength(0); i++)
             {
                 for (int j = 0; j < g.GetLength(1); j++)

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Blink.Checks/1.0.0": {
+        "runtime": {
+          "Blink.Checks.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Blink.Checks/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

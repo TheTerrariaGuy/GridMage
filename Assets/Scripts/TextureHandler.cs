@@ -75,7 +75,12 @@ namespace Assets.Scripts
 
         public void UpdatePreview(Tile tile, SpriteRenderer renderer, int type, float alpha)
         {
-            SetSprite(tile, renderer, GetPreviewSprite(type), 1f, 1f, 0f);
+            UpdatePreview(tile, renderer, GetPreviewSprite(type), alpha);
+        }
+
+        public void UpdatePreview(Tile tile, SpriteRenderer renderer, Sprite sprite, float alpha)
+        {
+            SetSprite(tile, renderer, sprite, 1f, 1f, 0f);
             renderer.color = new Color(1f, 1f, 1f, Mathf.Clamp01(alpha));
         }
 

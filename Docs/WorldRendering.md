@@ -1,8 +1,12 @@
 # World rendering and Y sorting
 
-Tiles, walls, characters and particles render together through `PixelWorldCamera` into a point-filtered texture. `PixelWorldRenderer` on `Main Camera` owns this runtime texture and synchronizes the world camera with the displayed view. The texture is 400 pixels high; its width follows the view aspect ratio. Camera movement and zoom use the same projection for rendering and input. Point filtering preserves the pixelated appearance; noninteger display scaling can produce uneven screen-pixel widths.
+`Main Camera` renders tiles, walls, characters, particles and the HUD directly at display resolution. Only particles use screen-space pixelation. The old low-resolution camera, render texture, output canvas and `PixelWorldRenderer` have been removed.
 
-`Main Camera` renders the world image on a screen-space-camera canvas, followed by the HUD on the UI layer. It does not render world objects a second time. The world image does not receive pointer events. `GridPointer` raycasts through the full-resolution view for tile hover and placement, while the main camera's `Physics2DRaycaster` handles HUD sprites. The world camera has no input raycaster.
+`ParticlePixelation` on `Main Camera` controls **Pixel Size**, measured in game pixels (component default **6**, current scene **4**). **Pixels Per Unit** defaults to **16**, matching the 16-pixel artwork fitted to one-unit tiles. A cell's world size is `Pixel Size / Pixels Per Unit`; its displayed size follows the rendering camera's orthographic zoom and target resolution, including Scene View previews. Fractional screen sizes are preserved, with a one-screen-pixel minimum. Set Pixel Size to 1 for one artwork pixel per cell, or disable the component for native-resolution particles. The grid stays screen-aligned while objects rotate or move. Sprites and the HUD retain their normal shaders and resolution. `GridPointer` raycasts through this same camera for tile hover and placement; its `Physics2DRaycaster` handles HUD sprites.
+
+The effects use solid, planar XY meshes. Their shader expands each triangle's raster coverage to whole screen cells, tests the original triangle at each cell center, and interpolates color/alpha at that point. A half-open edge rule prevents double blending on internal mesh edges. This pixelates silhouettes as well as interiors, without a separate particle pass or render target. Unity retains control of sorting and blending. A particle smaller than one cell can disappear when it misses all cell centers, as with point-sampled pixelation.
+
+This implementation uses a geometry shader and targets the project's Windows Direct3D configuration. Geometry-shader support is required; Metal and WebGL require a different mesh-expansion implementation. See [Unity shader target requirements](https://docs.unity3d.com/Manual/SL-ShaderCompileTargets.html). The current URP asset uses render scale 1 and no MSAA. Cell size uses the shader's render-target dimensions and projection, so it follows target resolution automatically. Projection and depth handling assume the existing orthographic camera and planar XY effects.
 
 [Validated scene with the HUD](Rendering/WorldWithHUD.png)
 
@@ -14,7 +18,7 @@ Sorting layers, back to front:
 
 | Layer | Contents |
 | --- | --- |
-| Ground | Tile bases and flat surfaces; the world-image canvas is behind these within this layer |
+| Ground | Tile bases and flat surfaces |
 | Default | Internal renderer order inside a sorting group |
 | World | Walls, characters and particle effects |
 | Foreground | Tile hover and queued-spell indicators |
@@ -34,11 +38,15 @@ Enemy damage bursts follow their victim while remaining independently pooled. Th
 
 - `ParticleVFX`: effect playback, stage changes, lifetime and pooling.
 - `WorldSorting`: creation and membership of ground-contact sorting groups.
-- `PixelWorldRenderer`: render target lifetime and camera/view synchronization.
+- `ParticlePixelation`: shared game-pixel cell size for the particle shader.
 - `GridPointer`: tile picking and pointer interaction.
 - `TextureHandler`: artwork placement and ground/wall classification.
 
-`Tools > Grid Mage > Rendering > Configure Y-sorted pixel world` migrates the saved sample scene, mob prefab, tile Z offsets and renderer settings. The checked-in assets are already configured.
+`Tools > Grid Mage > Rendering > Configure Y-sorted world` configures the saved sample scene, mob prefab, tile Z offsets and renderer settings. The checked-in assets are already configured.
+
+`ParticlePixelationChecks.Run` checks GPU output for full cells at game-pixel sizes 1, 4, 6 and 9, two rotations and zoom levels, and three resolutions (including a doubled resolution and fractional cell sizes). Its 48 grid/alpha cases also check alpha seams; additional checks cover disabled pixelation, native sprite edges and both sprite/particle sorting orders. Captures and results go to `Temp/ParticlePixelationChecks`.
+
+[Rotated particle on the 6-pixel grid](Rendering/Particle6px.png)
 
 For CLI validation, use an isolated copy of the project:
 
@@ -46,4 +54,4 @@ For CLI validation, use an isolated copy of the project:
 & 'C:/Program Files/Unity/Hub/Editor/6000.6.0f1/Editor/Unity.exe' -batchmode -projectPath '<isolated-project>' -executeMethod WorldRenderingChecks.Run -logFile '<log-path>'
 ```
 
-The checks open `Assets/Scenes/SampleScene.unity`; use `WorldRenderingSetup.ConfigureAndCheck` to migrate it first as well. Omit `-quit`: the checks enter Play Mode and exit Unity when finished. They cover both rendered particle/sprite occlusion orders, catalog anchors at all four rotations, wall transitions, effect continuity and reuse, camera zoom/resize, tile picking and grid reset. Images and results are saved in the copy's `WorldRenderingChecks` directory.
+The checks open `Assets/Scenes/SampleScene.unity`; use `WorldRenderingSetup.ConfigureAndCheck` to configure it first as well. Omit `-quit`: the checks enter Play Mode and exit batch Unity when finished (an interactive editor returns to Edit Mode). They cover both rendered particle/sprite occlusion orders, catalog anchors at all four rotations, wall transitions, effect continuity and reuse, camera zoom/resize, tile picking and grid reset. Images and results are saved in `Temp/WorldRenderingChecks`.

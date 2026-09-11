@@ -1,0 +1,15 @@
+C:\Users\samso\Coding\Grid Mage\Tests\Blink\bin\Debug\net10.0\Blink.Checks.exe
+C:\Users\samso\Coding\Grid Mage\Tests\Blink\bin\Debug\net10.0\Blink.Checks.deps.json
+C:\Users\samso\Coding\Grid Mage\Tests\Blink\bin\Debug\net10.0\Blink.Checks.runtimeconfig.json
+C:\Users\samso\Coding\Grid Mage\Tests\Blink\bin\Debug\net10.0\Blink.Checks.dll
+C:\Users\samso\Coding\Grid Mage\Tests\Blink\bin\Debug\net10.0\Blink.Checks.pdb
+C:\Users\samso\Coding\Grid Mage\Tests\Blink\obj\Debug\net10.0\Blink.Checks.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\samso\Coding\Grid Mage\Tests\Blink\obj\Debug\net10.0\Blink.Checks.AssemblyInfoInputs.cache
+C:\Users\samso\Coding\Grid Mage\Tests\Blink\obj\Debug\net10.0\Blink.Checks.AssemblyInfo.cs
+C:\Users\samso\Coding\Grid Mage\Tests\Blink\obj\Debug\net10.0\Blink.Checks.csproj.CoreCompileInputs.cache
+C:\Users\samso\Coding\Grid Mage\Tests\Blink\obj\Debug\net10.0\Blink.Checks.sourcelink.json
+C:\Users\samso\Coding\Grid Mage\Tests\Blink\obj\Debug\net10.0\Blink.Checks.dll
+C:\Users\samso\Coding\Grid Mage\Tests\Blink\obj\Debug\net10.0\refint\Blink.Checks.dll
+C:\Users\samso\Coding\Grid Mage\Tests\Blink\obj\Debug\net10.0\Blink.Checks.pdb
+C:\Users\samso\Coding\Grid Mage\Tests\Blink\obj\Debug\net10.0\Blink.Checks.genruntimeconfig.cache
+C:\Users\samso\Coding\Grid Mage\Tests\Blink\obj\Debug\net10.0\ref\Blink.Checks.dll
