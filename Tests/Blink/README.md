@@ -1,10 +1,10 @@
 Run range and line-of-sight checks with:
 
 ```powershell
-dotnet run --project Tests/Blink/Blink.Checks.csproj
+unity command eval_file --file Tests/Blink/Program.cs --json
 ```
 
-`Integration.cs` is a Unity Pipeline evaluation script, excluded from the .NET project. With SampleScene open, compile the scripts and start a fresh Play session, then run:
+The checks run through Unity so they exercise the methods in `PlayerHandler` directly. With SampleScene open, compile the scripts and start a fresh Play session, then run:
 
 ```powershell
 unity command eval_file --file Tests/Blink/Castable.cs --json

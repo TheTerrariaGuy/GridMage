@@ -1,6 +1,6 @@
 # World rendering and Y sorting
 
-`Main Camera` renders tiles, walls, characters, particles and the HUD directly at display resolution. Only particles use screen-space pixelation. The old low-resolution camera, render texture, output canvas and `PixelWorldRenderer` have been removed.
+`Main Camera` renders tiles, walls, characters, particles and the HUD directly at display resolution. Particles and the castable-area outline use screen-space pixelation. The old low-resolution camera, render texture, output canvas and `PixelWorldRenderer` have been removed.
 
 `ParticlePixelation` on `Main Camera` controls **Pixel Size**, measured in game pixels (component default **6**, current scene **4**). **Pixels Per Unit** defaults to **16**, matching the 16-pixel artwork fitted to one-unit tiles. A cell's world size is `Pixel Size / Pixels Per Unit`; its displayed size follows the rendering camera's orthographic zoom and target resolution, including Scene View previews. Fractional screen sizes are preserved, with a one-screen-pixel minimum. Set Pixel Size to 1 for one artwork pixel per cell, or disable the component for native-resolution particles. The grid stays screen-aligned while objects rotate or move. Sprites and the HUD retain their normal shaders and resolution. `GridPointer` raycasts through this same camera for tile hover and placement; its `Physics2DRaycaster` handles HUD sprites.
 
@@ -21,7 +21,7 @@ Sorting layers, back to front:
 | Ground | Tile bases and flat surfaces |
 | Default | Internal renderer order inside a sorting group |
 | World | Walls, characters and particle effects |
-| Foreground | Tile hover and queued-spell indicators |
+| Foreground | Castable outline (-1), queued-spell indicators (0), tile hover (1) |
 | UI | HUD sprites and text, rendered at display resolution |
 
 Wall tops and fronts share a `SortingGroup` anchored at the tile's bottom edge. Changing a wall back to a flat tile moves its group to Ground. Artwork height does not change its sorting anchor. Characters have a `Feet Y anchor` child at the bottom of their sprite. Gameplay transforms remain at the tile center; they no longer use Z offsets to force draw order.
@@ -34,12 +34,23 @@ The two fire/water geyser reactions enable `ParticlePattern.keepEmittersUpright`
 
 Enemy damage bursts follow their victim while remaining independently pooled. Their anchor sits just in front of the victim's feet in world Y, keeping the hit visible on the enemy while allowing foreground world objects to occlude it. The particles finish at the last known position after a lethal hit.
 
+## Castable-area outline
+
+The saved `Castable Outline` child of the grid contains one `MeshFilter`, `MeshRenderer` and `CastableOutline` component. `GameLogic.MakeCastable()` rebuilds its reusable mesh after grid initialization, player initialization and Blink arrival, including clearing it when there is no valid range. It reads the existing `castableGrid`; queued previews retain their existing behavior after the player moves.
+
+`CastableOutline` traces exposed tile edges into joined loops, including holes and separate islands. Each loop has a solid border and eight inward fade bands using vertex alpha. There are no borders between adjacent castable cells. Widths are fractions of a tile, with their sum clamped below half a tile to avoid overlapping bands in narrow passages. The defaults are a cyan highlight, 50% opacity, a 1/16-tile solid border, a 1/4-tile fade and falloff 1. These controls are on the scene component; Inspector changes refresh the current mesh without a per-frame rebuild.
+
+`CastableOutline.mat` uses the existing `Grid Mage/Element Particle` shader with white tint and zero sway. The outline shares `Main Camera`'s `ParticlePixelation` settings, including pixelated silhouettes and fade, without another camera, render target or postprocessing pass. Queued previews and the hover sprite sort above it. Disabling the component hides the renderer; re-enabling rebuilds from the latest cache, and destroying it releases its mesh.
+
+`Tools > Grid Mage > Rendering > Check castable outline` validates all 512 three-by-three grid masks, samples joined-band coverage for holes, concavities, diagonal contacts and narrow passages, and checks GPU fade, pixel cells, alpha seams, indicator sorting and mesh lifetime. Images and results go to `Temp/CastableOutlineChecks`. `CastableOutlineChecks.CheckLifecycle()` runs in a fresh Play session to check the scene reference, initialization, grid reset, Blink rebuild and empty-range clearing; stop Play afterward to discard the test board.
+
 ## Responsibilities and validation
 
 - `ParticleVFX`: effect playback, stage changes, lifetime and pooling.
 - `WorldSorting`: creation and membership of ground-contact sorting groups.
 - `ParticlePixelation`: shared game-pixel cell size for the particle shader.
 - `GridPointer`: tile picking and pointer interaction.
+- `CastableOutline`: one reusable area mesh driven by the cached castability grid.
 - `TextureHandler`: artwork placement and ground/wall classification.
 
 `Tools > Grid Mage > Rendering > Configure Y-sorted world` configures the saved sample scene, mob prefab, tile Z offsets and renderer settings. The checked-in assets are already configured.

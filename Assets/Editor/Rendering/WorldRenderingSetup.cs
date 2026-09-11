@@ -12,6 +12,41 @@ using Object = UnityEngine.Object;
 
 public static class WorldRenderingSetup
 {
+    public static void ConfigureCastableOutline(Assets.Scripts.GameLogic game)
+    {
+        const string materialPath = "Assets/Rendering/CastableOutline.mat";
+        var material = AssetDatabase.LoadAssetAtPath<Material>(materialPath);
+        if (material == null)
+        {
+            material = new Material(Shader.Find("Grid Mage/Element Particle"));
+            AssetDatabase.CreateAsset(material, materialPath);
+        }
+        material.SetColor("_Tint", Color.white);
+        material.SetFloat("_Sway", 0f);
+        EditorUtility.SetDirty(material);
+        var root = game.gridParent.Find("Castable Outline");
+        if (root == null)
+        {
+            root = new GameObject("Castable Outline").transform;
+            root.SetParent(game.gridParent, false);
+        }
+        root.localPosition = Vector3.zero;
+        root.localRotation = Quaternion.identity;
+        root.localScale = Vector3.one;
+        root.gameObject.layer = game.gridParent.gameObject.layer;
+        var outline = root.GetComponent<CastableOutline>() ?? root.gameObject.AddComponent<CastableOutline>();
+        var renderer = root.GetComponent<MeshRenderer>();
+        renderer.sharedMaterial = material;
+        renderer.sortingLayerName = WorldSorting.Foreground;
+        renderer.sortingOrder = -1;
+        renderer.shadowCastingMode = ShadowCastingMode.Off;
+        renderer.receiveShadows = false;
+        var data = new SerializedObject(game);
+        data.FindProperty("castableOutline").objectReferenceValue = outline;
+        data.ApplyModifiedPropertiesWithoutUndo();
+        outline.Rebuild(game.castableGrid, game.spacing, game.offset);
+    }
+
     public static void ConfigureHoverOverlay(GridPointer pointer, Transform gridParent)
     {
         var hover = gridParent.Find("Hover");
@@ -59,6 +94,7 @@ public static class WorldRenderingSetup
         pointerData.FindProperty("teleportSprite").objectReferenceValue = AssetDatabase.LoadAllAssetsAtPath("Assets/Textures/__Player/TeleportTo.png").OfType<Sprite>().First();
         pointerData.ApplyModifiedPropertiesWithoutUndo();
         ConfigureHoverOverlay(pointer, game.gridParent);
+        ConfigureCastableOutline(game);
 
         foreach (string name in new[] { "ManaBar", "Button", "Clock", "Mana Label" })
         {

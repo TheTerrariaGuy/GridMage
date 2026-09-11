@@ -24,6 +24,7 @@ namespace Assets.Scripts
         [SerializeField, Min(0f)] private float blinkManaCost = 4f;
         [SerializeField, Min(0f)] private float placementManaRegenMultiplier = 0.5f;
         [NonSerialized] public bool[,] castableGrid;
+        [SerializeField] private CastableOutline castableOutline;
 
 
         //[SerializeField] public GameObject playerPoint;
@@ -91,15 +92,20 @@ namespace Assets.Scripts
 
         public void MakeCastable()
         {
-            if (castableGrid == null) return;
-            Array.Clear(castableGrid, 0, castableGrid.Length);
-            PlayerHandler player = PlayerHandler.INSTANCE;
-            if (player == null || Indexing.INSTANCE == null || !GridHelper.IsInBounds(grid, player.r, player.c)) return;
-            int range = Mathf.Max(0, Indexing.INSTANCE.castRange);
-            int[,] walls = GridHelper.INSTANCE.ExtractWalls();
-            for (int row = Mathf.Max(0, player.r - range); row <= Mathf.Min(rows - 1, player.r + range); row++)
-                for (int col = Mathf.Max(0, player.c - range); col <= Mathf.Min(cols - 1, player.c + range); col++)
-                    castableGrid[row, col] = BlinkRules.CanReach(walls, player.r, player.c, row, col, range);
+            if (castableGrid != null)
+            {
+                Array.Clear(castableGrid, 0, castableGrid.Length);
+                PlayerHandler player = PlayerHandler.INSTANCE;
+                if (player != null && Indexing.INSTANCE != null && GridHelper.IsInBounds(grid, player.r, player.c))
+                {
+                    int range = Mathf.Max(0, Indexing.INSTANCE.castRange);
+                    int[,] walls = GridHelper.INSTANCE.ExtractWalls();
+                    for (int row = Mathf.Max(0, player.r - range); row <= Mathf.Min(rows - 1, player.r + range); row++)
+                        for (int col = Mathf.Max(0, player.c - range); col <= Mathf.Min(cols - 1, player.c + range); col++)
+                            castableGrid[row, col] = PlayerHandler.CanReach(walls, player.r, player.c, row, col, range);
+                }
+            }
+            castableOutline?.Rebuild(castableGrid, spacing, offset);
         }
 
         void Update()
