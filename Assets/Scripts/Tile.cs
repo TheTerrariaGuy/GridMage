@@ -43,10 +43,15 @@ public class Tile : MonoBehaviour
         spacing = s;
         offset = o;
         transform.parent = GridHelper.INSTANCE.GetAnchor();
-        transform.localScale = new Vector3(1,1,1);
+        transform.localScale = new Vector3(s, s, 1f);
         row = r; col = c;
         GoToPosition();
         gameLogic = GameLogic.INSTANCE;
+        // Keep colliders, spell artwork, and previews; the authored map supplies the floor.
+        if (gameLogic.HasBackground)
+            foreach (var renderer in GetComponentsInChildren<SpriteRenderer>())
+                if (renderer != spriteRenderer && renderer != wallFront && renderer != overlay)
+                    renderer.enabled = false;
         ChangeType(0);
         ClearQueuedSpell();
     }

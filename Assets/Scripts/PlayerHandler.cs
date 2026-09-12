@@ -27,6 +27,23 @@ namespace Assets.Scripts
                 return;
             }
             INSTANCE = this;
+            ResetForLevel();
+        }
+
+        public void ResetForLevel()
+        {
+            StopAllCoroutines();
+            isBlinking = false;
+            blinkReadyAt = 0f;
+            var game = GameLogic.INSTANCE;
+            if (game == null || game.grid == null) return;
+            if (game.LevelLayout != null)
+            {
+                r = game.LevelLayout.player.y;
+                c = game.LevelLayout.player.x;
+            }
+            if (!game.CanWalk(r, c))
+                throw new InvalidOperationException($"Player spawn ({r}, {c}) is not a walkable cell.");
             Vector3 tilePosition = GridHelper.INSTANCE.GetTileTransform(r, c).position;
             transform.position = tilePosition;
             GameLogic.INSTANCE.MakeCastable();
@@ -74,7 +91,7 @@ namespace Assets.Scripts
         public bool BlinkTo(Tile target)
         {
             if (!isActiveAndEnabled || isBlinking || Time.time < blinkReadyAt || !IsInBlinkRange(target) ||
-                !GameLogic.INSTANCE.Castable(target.row, target.col))
+                !GameLogic.INSTANCE.CanBlinkTo(target.row, target.col))
                 return false;
             isBlinking = true;
             blinkReadyAt = Time.time + Indexing.INSTANCE.blinkCooldown;

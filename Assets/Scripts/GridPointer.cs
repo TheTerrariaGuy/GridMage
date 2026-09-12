@@ -46,7 +46,7 @@ public sealed class GridPointer : MonoBehaviour
         hoverOverlay.enabled = hovered != null;
         if (hovered == null) return;
         teleport = teleport && PlayerHandler.INSTANCE != null && PlayerHandler.INSTANCE.IsInBlinkRange(hovered) &&
-            GameLogic.INSTANCE.Castable(hovered.row, hovered.col);
+            GameLogic.INSTANCE.CanBlinkTo(hovered.row, hovered.col);
         TextureHandler.INSTANCE.UpdatePreview(hovered, hoverOverlay,
             teleport ? teleportSprite : borderSprite, hoverAlpha);
     }

@@ -365,11 +365,12 @@ END
 
     // I split up the logic here but whatever 
     public void ModifyFade(HashSet<Offset> o, int r, int c, int type, int[,] before, ref int[,] g,
-        Action<int, int> changed = null)
+        Action<int, int> changed = null, Func<int, int, bool> canWrite = null)
     {
         foreach (Offset offset in o)
         {
-            if (!Assets.Scripts.GridHelper.IsInBounds(g, r + offset.y, c + offset.x))
+            if (!Assets.Scripts.GridHelper.IsInBounds(g, r + offset.y, c + offset.x) ||
+                (canWrite != null && !canWrite(r + offset.y, c + offset.x)))
             {
                 continue;
             }
@@ -383,8 +384,11 @@ END
             }
             
         }
-        g[r, c] = 0;
-        changed?.Invoke(r, c);
+        if (canWrite == null || canWrite(r, c))
+        {
+            g[r, c] = 0;
+            changed?.Invoke(r, c);
+        }
     }
 
 

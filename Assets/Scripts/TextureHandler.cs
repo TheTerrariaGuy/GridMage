@@ -54,6 +54,7 @@ namespace Assets.Scripts
             // Combat replaces the grid before refreshing Tile.type on each cell.
             // Read the current grid so neighbor refreshes never use a stale type.
             int type = GridHelper.IsInBounds(grid, tile.row, tile.col) ? grid[tile.row, tile.col] : tile.type;
+            tile.SurfaceRenderer.enabled = type != 0 || tile.gameLogic == null || !tile.gameLogic.HasBackground;
             bool wall = TileSpriteLayout.IsWall(type);
             float height = wall ? Mathf.Max(0f, wallHeight) : 0f;
             tile.SetWallSorting(wall);
@@ -108,7 +109,10 @@ namespace Assets.Scripts
             // Fit the artwork without scaling the tile's collider, preview, or particles.
             Vector3 size = sprite.bounds.size;
             Vector3 scale = new Vector3(width / size.x, height / size.y, 1f);
-            renderer.transform.localScale = scale;
+            Vector3 parentScale = renderer.transform.parent != null ? renderer.transform.parent.lossyScale : Vector3.one;
+            Vector3 tileScale = tile.transform.lossyScale;
+            renderer.transform.localScale = Vector3.Scale(scale,
+                new Vector3(tileScale.x / parentScale.x, tileScale.y / parentScale.y, tileScale.z / parentScale.z));
             Vector3 tilePosition = new Vector3(0f, y, 0f) - Vector3.Scale(sprite.bounds.center, scale);
             renderer.transform.position = tile.transform.TransformPoint(tilePosition);
         }

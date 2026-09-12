@@ -15,6 +15,7 @@ namespace Assets.Scripts
         private HashSet<MobScript> mobs;
         [SerializeField] private int pathChannelCount;
         private NextStep[,,] optimalPath; // [channel, row, col]
+        private readonly List<(TilemapLevel.Spawn spawn, float next)> spawners = new();
         private static readonly (int r, int c)[] Directions =
         {
             (1, 0), (-1, 0), (0, 1), (0, -1)
@@ -43,8 +44,28 @@ namespace Assets.Scripts
                 }
                 enemyData.Add(data.type, data);
             }
+            ResetForLevel();
+        }
+
+        public void ResetForLevel()
+        {
+            if (mobs != null)
+                foreach (MobScript mob in mobs)
+                    if (mob != null) { mob.gameObject.SetActive(false); Destroy(mob.gameObject); }
             mobs = new HashSet<MobScript>();
+            spawners.Clear();
+            var game = GameLogic.INSTANCE;
+            if (game == null || game.grid == null || PlayerHandler.INSTANCE == null) return;
             UpdateBestPath(PlayerHandler.INSTANCE.r, PlayerHandler.INSTANCE.c);
+            if (game.LevelLayout != null)
+            {
+                foreach (var spawn in game.LevelLayout.enemies)
+                {
+                    SummonAt(spawn.row, spawn.col, spawn.enemy);
+                    if (spawn.interval > 0f) spawners.Add((spawn, Time.time + spawn.interval));
+                }
+                return;
+            }
             SummonAt(10, 10, 1);
             SummonAt(15, 10, 1);
             SummonAt(10, 15, 1);
@@ -52,8 +73,20 @@ namespace Assets.Scripts
             SummonAt(10, 13, 1);
         }
 
+        private void Update()
+        {
+            for (int i = 0; i < spawners.Count; i++)
+            {
+                var entry = spawners[i];
+                if (Time.time < entry.next) continue;
+                SummonAt(entry.spawn.row, entry.spawn.col, entry.spawn.enemy);
+                spawners[i] = (entry.spawn, Time.time + entry.spawn.interval);
+            }
+        }
+
         public void HandleUpdate()
         {
+            if (mobs == null || PlayerHandler.INSTANCE == null) return;
             UpdateBestPath(PlayerHandler.INSTANCE.r, PlayerHandler.INSTANCE.c);
             mobs.RemoveWhere(m => m == null);
             foreach (MobScript m in mobs)
@@ -84,17 +117,24 @@ namespace Assets.Scripts
 
         public void SummonAt(int r, int c, int type, int pathChannel = -1)
         {
+            if (enemyData.TryGetValue(type, out EnemyData data)) SummonAt(r, c, data, pathChannel);
+        }
+
+        public void SummonAt(int r, int c, EnemyData data, int pathChannel = -1)
+        {
+            if (data == null || mobs == null || GameLogic.INSTANCE == null ||
+                !GameLogic.INSTANCE.CanWalk(r, c) || IsOccupied(r, c) ||
+                (PlayerHandler.INSTANCE != null && PlayerHandler.INSTANCE.r == r && PlayerHandler.INSTANCE.c == c)) return;
             if (pathChannel < 0)
             {
                 pathChannel = (int)(UnityEngine.Random.value * pathChannelCount);
                 
             }
-            pathChannel = Math.Min(pathChannel, pathChannelCount - 1);
+            pathChannel = Mathf.Clamp(pathChannel, 0, Math.Max(1, pathChannelCount) - 1);
 
-            if (!GridHelper.IsInBounds(GameLogic.INSTANCE.tilesGrid, r, c)) return;
+            if (!IsReachable(r, c, pathChannel)) return;
             GameObject enemy = Instantiate(enemyPrefab, GridHelper.INSTANCE.GetAnchor());
             MobScript mobScript = enemy.GetComponent<MobScript>();
-            EnemyData data = enemyData[type];
             mobScript.Init(data, GameLogic.INSTANCE.tilesGrid[r,c], pathChannel);
             mobs.Add(mobScript);
         }
@@ -156,8 +196,9 @@ namespace Assets.Scripts
 
         public void UpdateBestPath(int targetR, int targetC)
         {
-            int[,] walls = GridHelper.INSTANCE.ExtractWalls();
+            int[,] walls = GridHelper.INSTANCE.ExtractMovementWalls();
             optimalPath = new NextStep[Math.Max(1, pathChannelCount), walls.GetLength(0), walls.GetLength(1)];
+            if (!GameLogic.INSTANCE.CanWalk(targetR, targetC)) return;
             for (int channel = 0; channel < optimalPath.GetLength(0); channel++)
                 BuildChannel(channel, targetR, targetC, (int[,])walls.Clone());
         }
@@ -200,6 +241,11 @@ namespace Assets.Scripts
             }
 
             return values;
+        }
+
+        private void OnDestroy()
+        {
+            if (INSTANCE == this) INSTANCE = null;
         }
         
         public class NextStep

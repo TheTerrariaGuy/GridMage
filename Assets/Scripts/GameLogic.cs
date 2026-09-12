@@ -14,6 +14,12 @@ namespace Assets.Scripts
         [NonSerialized] public int[,] grid;
         [NonSerialized] public Tile[,] tilesGrid;
         [NonSerialized] public HashSet<Tile> tilesSet;
+        [NonSerialized] public bool[,] cellExists;
+        [SerializeField] private TilemapLevel level;
+        public TilemapLevel Level => level;
+        public TilemapLevel.Layout LevelLayout { get; private set; }
+        public Vector3 GridTranslation { get; private set; }
+        public bool HasBackground => level != null && level.background != null;
         [SerializeField] private GameObject tile;
         [SerializeField] private int rows, cols;
         [SerializeField] public Transform gridParent;
@@ -24,6 +30,7 @@ namespace Assets.Scripts
         [SerializeField, Min(0f)] private float blinkManaCost = 4f;
         [SerializeField, Min(0f)] private float placementManaRegenMultiplier = 0.5f;
         [NonSerialized] public bool[,] castableGrid;
+        private bool[,] visibleGrid;
         [SerializeField] private CastableOutline castableOutline;
 
 
@@ -58,24 +65,40 @@ namespace Assets.Scripts
 
         public void InitializedGrid()
         {
+            // Validate before disposing the previous board.
+            TilemapLevel.Layout layout = level != null ? level.Read(gridParent) : null;
             ParticleVFX.INSTANCE?.ClearBursts();
             if (tilesSet != null)
                 foreach (Tile oldTile in tilesSet)
                 {
+                    if (oldTile == null) continue;
                     oldTile.ReleaseParticles();
                     oldTile.gameObject.SetActive(false);
                     Destroy(oldTile.gameObject);
                 }
             queuedSpells.Clear();
             reservedMana = 0f;
+            LevelLayout = layout;
+            GridTranslation = Vector3.zero;
+            if (layout != null)
+            {
+                rows = layout.exists.GetLength(0);
+                cols = layout.exists.GetLength(1);
+                spacing = layout.spacing;
+                GridTranslation = layout.origin - new Vector3(offset, offset, 0f);
+            }
             grid = new int[rows, cols];
+            cellExists = layout != null ? layout.exists : new bool[rows, cols];
             castableGrid = new bool[rows, cols];
+            visibleGrid = new bool[rows, cols];
             tilesGrid = new Tile[rows, cols];
             tilesSet = new HashSet<Tile>();
             for (int i = 0; i < grid.GetLength(0); i++)
             {
                 for (int j = 0; j < grid.GetLength(1); j++)
                 {
+                    if (layout == null) cellExists[i, j] = true;
+                    if (!cellExists[i, j]) continue;
                     grid[i,j] = 0;
                     GameObject t = Instantiate(tile, new Vector3(0, 0, 0), Quaternion.identity);
                     Tile tileScript = t.GetComponent<Tile>();
@@ -84,25 +107,50 @@ namespace Assets.Scripts
                     tilesSet.Add(tileScript);
                 }
             }
+            if (castableOutline != null) castableOutline.transform.localPosition = GridTranslation;
+            if (layout != null) level.HideMarkers();
+            if (PlayerHandler.INSTANCE != null) PlayerHandler.INSTANCE.ResetForLevel();
+            if (MobHandler.INSTANCE != null) MobHandler.INSTANCE.ResetForLevel();
             MakeCastable();
         }
 
+        public bool HasCell(int r, int c) => GridHelper.IsInBounds(grid, r, c) &&
+            (cellExists == null || cellExists[r, c]);
+
+        public bool AllowsSpells(int r, int c) => HasCell(r, c) &&
+            (LevelLayout == null || LevelLayout.allowsSpells[r, c]);
+
+        public bool CanWalk(int r, int c) => HasCell(r, c) &&
+            (LevelLayout == null || LevelLayout.walkable[r, c]) && !TileSpriteLayout.IsWall(grid[r, c]);
+
+        public bool BlocksSight(int r, int c) => !HasCell(r, c) ||
+            (LevelLayout != null && LevelLayout.blocksSight[r, c]);
+
         public bool Castable(int r, int c) =>
-            GridHelper.IsInBounds(castableGrid, r, c) && castableGrid[r, c];
+            AllowsSpells(r, c) && GridHelper.IsInBounds(castableGrid, r, c) && castableGrid[r, c];
+
+        public bool CanBlinkTo(int r, int c)
+        {
+            return CanWalk(r, c) && GridHelper.IsInBounds(visibleGrid, r, c) && visibleGrid[r, c];
+        }
 
         public void MakeCastable()
         {
             if (castableGrid != null)
             {
                 Array.Clear(castableGrid, 0, castableGrid.Length);
+                Array.Clear(visibleGrid, 0, visibleGrid.Length);
                 PlayerHandler player = PlayerHandler.INSTANCE;
-                if (player != null && Indexing.INSTANCE != null && GridHelper.IsInBounds(grid, player.r, player.c))
+                if (player != null && Indexing.INSTANCE != null && HasCell(player.r, player.c))
                 {
                     int range = Mathf.Max(0, Indexing.INSTANCE.castRange);
                     int[,] walls = GridHelper.INSTANCE.ExtractWalls();
                     for (int row = Mathf.Max(0, player.r - range); row <= Mathf.Min(rows - 1, player.r + range); row++)
                         for (int col = Mathf.Max(0, player.c - range); col <= Mathf.Min(cols - 1, player.c + range); col++)
-                            castableGrid[row, col] = PlayerHandler.CanReach(walls, player.r, player.c, row, col, range);
+                        {
+                            visibleGrid[row, col] = HasCell(row, col) && PlayerHandler.CanReach(walls, player.r, player.c, row, col, range);
+                            castableGrid[row, col] = AllowsSpells(row, col) && visibleGrid[row, col];
+                        }
                 }
             }
             castableOutline?.Rebuild(castableGrid, spacing, offset);
@@ -110,6 +158,7 @@ namespace Assets.Scripts
 
         void Update()
         {
+            if (grid == null) return;
             time += Time.deltaTime;
             currMana += Time.deltaTime * manaRegen * (IsPlacementMode ? placementManaRegenMultiplier : 1f);
             // Queued spells hold their cost separately so spendable mana can still regenerate.
@@ -142,7 +191,7 @@ namespace Assets.Scripts
 
         public void UpdateTile(int r, int c)
         {
-            tilesGrid[r, c].ChangeType(grid[r, c]);
+            if (HasCell(r, c) && tilesGrid[r, c] != null) tilesGrid[r, c].ChangeType(grid[r, c]);
         }
         
         public void UpdateSelection(int newSelection)
@@ -159,7 +208,7 @@ namespace Assets.Scripts
         {
             PlayerHandler player = PlayerHandler.INSTANCE;
             if (player == null || !player.isActiveAndEnabled || target == null ||
-                !GridHelper.IsInBounds(tilesGrid, target.row, target.col) ||
+                !CanWalk(target.row, target.col) ||
                 tilesGrid[target.row, target.col] != target ||
                 AvailableMana < blinkManaCost ||
                 (MobHandler.INSTANCE != null && MobHandler.INSTANCE.IsOccupied(target.row, target.col))) return false;
@@ -189,7 +238,7 @@ namespace Assets.Scripts
         private bool CanCastAt(int r, int c)
         {
             // Queued spells only recheck terrain, not the player's current range or sight.
-            return GridHelper.IsInBounds(grid, r, c) &&
+            return AllowsSpells(r, c) &&
                 (grid[r, c] == 0 || grid[r, c] % 100 == 11);
         }
 
@@ -252,7 +301,7 @@ namespace Assets.Scripts
             {
                 for (int j = 0; j < g.GetLength(1); j++)
                 {
-                    if (g[i, j] >= 100 && g[i, j] % 100 == 11) newGrid[i, j] = 0;
+                    if (HasCell(i, j) && g[i, j] >= 100 && g[i, j] % 100 == 11) newGrid[i, j] = 0;
                 }
             }
             
@@ -260,7 +309,7 @@ namespace Assets.Scripts
             {
                 for (int j = 0; j < g.GetLength(1); j++)
                 {
-                    if (g[i,j] < 100) continue; // paranoia
+                    if (!AllowsSpells(i, j) || g[i,j] < 100) continue;
 
                     // Normal stuff
                     if (g[i,j] % 100 == 10) // Is fading block
@@ -269,7 +318,7 @@ namespace Assets.Scripts
                             310 => "Electricity_Charge_Decay", 410 => "Lava_Cooling_Decay", _ => null };
                         var visual = NewVisual(id, i, j);
                         Indexing.INSTANCE.ModifyFade(Indexing.INSTANCE.fadeMap[g[i,j]], i, j, g[i,j], g, ref newGrid,
-                            (r, c) => TrackVisual(r, c, visual));
+                            (r, c) => TrackVisual(r, c, visual), AllowsSpells);
                     }
                 }
             }
@@ -286,7 +335,7 @@ namespace Assets.Scripts
             {
                 for (int j = 0; j < g.GetLength(1); j++)
                 {
-                    if (g[i, j] < 100) continue;
+                    if (!AllowsSpells(i, j) || g[i, j] < 100) continue;
                     if (g[i, j] % 100 != 11 && (g[i,j] % 100)/10 == 0) // indices 0-10 are the rxn-able ids
                     {
                         int elementType = g[i, j] - g[i, j] % 100;
@@ -323,7 +372,7 @@ namespace Assets.Scripts
             {
                 for (int j = 0; j < g.GetLength(1); j++)
                 {
-                    if (g[i,j] % 100 < 10 && before[i,j] % 100 < 10 && g[i,j] / 100 != before[i,j] / 100) // explodable
+                    if (AllowsSpells(i, j) && g[i,j] % 100 < 10 && before[i,j] % 100 < 10 && g[i,j] / 100 != before[i,j] / 100) // explodable
                     {
                         int previousElementType = before[i, j] - before[i, j] % 100;
                         int incomingType = g[i, j];
@@ -357,7 +406,7 @@ namespace Assets.Scripts
                 int targetRow = r + requirement.y;
                 int targetCol = c + requirement.x;
 
-                if (!GridHelper.IsInBounds(g, targetRow, targetCol) ||
+                if (!HasCell(targetRow, targetCol) ||
                     !requirement.Matches(g[targetRow, targetCol]))
                 {
                     return false;
@@ -397,7 +446,7 @@ namespace Assets.Scripts
                 int targetRow = originRow + output.y;
                 int targetCol = originCol + output.x;
 
-                if (!GridHelper.IsInBounds(grid, targetRow, targetCol))
+                if (!AllowsSpells(targetRow, targetCol))
                 {
                     continue;
                 }
@@ -420,6 +469,7 @@ namespace Assets.Scripts
             {
                 Change change = changeQueue.Min;
                 changeQueue.Remove(change);
+                if (!AllowsSpells(change.Row, change.Col)) continue;
                 if (!GridHelper.INSTANCE.TestForWalls(walls,
                     change.SourceRow, change.SourceCol, change.Row, change.Col, change.Type == 410)) continue;
                 grid[change.Row, change.Col] = change.Type;
@@ -442,6 +492,11 @@ namespace Assets.Scripts
             if (visual == null) return;
             visualOwners[cell] = visual;
             visual.cells.Add(cell);
+        }
+
+        private void OnDestroy()
+        {
+            if (INSTANCE == this) INSTANCE = null;
         }
 
         public class Change : IComparable<Change>
