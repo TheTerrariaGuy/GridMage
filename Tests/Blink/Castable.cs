@@ -41,8 +41,13 @@ try
     game.grid[5, 6] = 400;
     require(game.Castable(5, 7), "Castable must read the cache, not run another ray test.");
     game.MakeCastable();
-    require(!game.Castable(5, 6) && !game.Castable(5, 7) && !game.Castable(6, 6),
-        "Wall graph must block destinations, tiles behind walls, and diagonal corners.");
+    require(!game.Castable(5, 6) && !game.Castable(5, 7) && game.Castable(6, 6),
+        "Walls block destinations and cells behind them, but a single corner wall allows passage.");
+    game.grid[6, 5] = 400;
+    game.MakeCastable();
+    require(!game.Castable(6, 6), "Two corner walls block passage.");
+    game.grid[6, 5] = 0;
+    game.MakeCastable();
     game.currMana = 30f;
     require(!game.CanQueueSpell(5, 7, 100) && !game.TryCastBlink(game.tilesGrid[5, 7]),
         "Normal spells and Blink must both respect cached line of sight.");

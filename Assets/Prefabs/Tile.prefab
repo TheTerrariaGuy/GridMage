@@ -55,7 +55,6 @@ MonoBehaviour:
   col: 0
   gameLogic: {fileID: 0}
   spriteRenderer: {fileID: 325887224080908873}
-  wallFront: {fileID: 0}
   overlay: {fileID: 6709292948018929229}
   queuedAlpha: 0.75
 --- !u!61 &4635381565973463216

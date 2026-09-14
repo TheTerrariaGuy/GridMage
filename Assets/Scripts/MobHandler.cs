@@ -161,6 +161,7 @@ namespace Assets.Scripts
             int count = 0;
             foreach ((int i, int j) in Directions)
             {
+                if (!GameLogic.INSTANCE.CanStep(r, c, r + i, c + j)) continue;
                 // check bounds, no backtrack
                 NextStep neighbor = getBestPath(r + i, c + j, pathChannel);
                 bool isBest = b.r == i && b.c == j;
@@ -216,7 +217,8 @@ namespace Assets.Scripts
                 foreach ((int i, int j) in Directions)
                 {
                     int newR = r + i, newC = c + j;
-                    if (GridHelper.IsInBounds(walls, newR, newC) && walls[newR, newC] == 0 && optimalPath[channel, newR, newC] == null)
+                    if (GridHelper.IsInBounds(walls, newR, newC) && walls[newR, newC] == 0 &&
+                        GameLogic.INSTANCE.CanStep(r, c, newR, newC) && optimalPath[channel, newR, newC] == null)
                     {
                         toAdd.Add((newR, newC));
                     }

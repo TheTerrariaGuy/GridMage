@@ -155,9 +155,6 @@ public static class WorldRenderingChecks
         var tile = GameLogic.INSTANCE.tilesGrid[5, 6];
         var group = tile.SurfaceRenderer.GetComponentInParent<SortingGroup>(true);
         Require(group.sortingLayerName == WorldSorting.World, "Walls must use a world anchor.");
-        if (tile.WallFrontRenderer != null)
-            Require(group == tile.WallFrontRenderer.GetComponentInParent<SortingGroup>(true),
-                "An optional wall front must share the top's world anchor.");
         Require(Mathf.Abs(group.transform.position.y - tile.transform.TransformPoint(new Vector3(0, -.5f, 0)).y) < .001f,
             "Wall anchor must remain at its ground contact, independent of the raised artwork.");
         SetTile(5, 6, 0);

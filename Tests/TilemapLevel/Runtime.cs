@@ -9,7 +9,8 @@ int checks = 0;
 System.Action<bool, string> require = (value, message) => { checks++; if (!value) throw new System.Exception(message); };
 var level = game.Level;
 require(level != null && !level.logic.GetComponent<UnityEngine.Tilemaps.TilemapRenderer>().enabled, "Markers hidden on startup.");
-require(level.background.GetComponent<UnityEngine.Tilemaps.TilemapRenderer>().enabled, "Background visible on startup.");
+var background = level.transform.Find("Background").GetComponent<UnityEngine.Tilemaps.TilemapRenderer>();
+require(background.enabled, "Background visible on startup.");
 require(player.r == game.LevelLayout.player.y && player.c == game.LevelLayout.player.x, "Player uses authored spawn.");
 require(!game.tilesGrid[player.r, player.c].SurfaceRenderer.enabled, "Runtime floor must not cover the background.");
 

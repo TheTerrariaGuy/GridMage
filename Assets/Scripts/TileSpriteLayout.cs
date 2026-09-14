@@ -25,10 +25,6 @@ namespace Assets.Scripts
             // Each element's reaction stages (10/11) form a separate connection group.
             Connects(grid[row, col]) && grid[row, col] / 10 == type / 10;
 
-        public static bool HasWall(int[,] grid, int row, int col) =>
-            grid != null && row >= 0 && col >= 0 &&
-            row < grid.GetLength(0) && col < grid.GetLength(1) && IsWall(grid[row, col]);
-
         public static int SurfaceVariant(int[,] grid, int row, int col, int type = 400)
         {
             if (!Connects(type)) return 0;
@@ -46,17 +42,6 @@ namespace Assets.Scripts
                 if (w && n && HasElement(grid, row - 1, col - 1, type)) mask |= 128;
             }
             return 2 + Array.BinarySearch(surfaceMasks, mask);
-        }
-
-        public static bool HasFront(int[,] grid, int row, int col) =>
-            HasWall(grid, row, col) && !HasWall(grid, row + 1, col);
-
-        public static int FrontVariant(int[,] grid, int row, int col)
-        {
-            // Only exposed fronts join; a covered neighboring wall ends this face.
-            bool left = HasFront(grid, row, col - 1);
-            bool right = HasFront(grid, row, col + 1);
-            return 49 + (left ? 1 : 0) + (right ? 2 : 0);
         }
     }
 }

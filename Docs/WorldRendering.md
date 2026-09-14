@@ -24,7 +24,7 @@ Sorting layers, back to front:
 | Foreground | Castable outline (-1), queued-spell indicators (0), tile hover (1) |
 | UI | HUD sprites and text, rendered at display resolution |
 
-Wall tops and fronts share a `SortingGroup` anchored at the tile's bottom edge. Changing a wall back to a flat tile moves its group to Ground. Artwork height does not change its sorting anchor. Characters have a `Feet Y anchor` child at the bottom of their sprite. Gameplay transforms remain at the tile center; they no longer use Z offsets to force draw order.
+Wall artwork uses a `SortingGroup` anchored at the tile's bottom edge. The sprite includes its own front face. Changing a wall back to a flat tile moves its group to Ground. Artwork height does not change its sorting anchor. Characters have a `Feet Y anchor` child at the bottom of their sprite. Gameplay transforms remain at the tile center; they no longer use Z offsets to force draw order.
 
 `ParticlePrefabAuthoring.Bake` creates anchors in the editor and saves them into particle prefabs. Playback uses the authored hierarchy directly. A tile effect's systems share the tile-center anchor. A reaction's destination systems share an anchor at that destination; each link sorts at its midpoint. The existing reaction links are already split into one-cell edges, including diagonal edges. Rotation and grid scale apply to these anchors along with the effect. Internal prefab sorting orders preserve the arrangement of flame bodies, cores and sparks.
 

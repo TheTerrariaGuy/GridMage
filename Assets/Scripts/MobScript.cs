@@ -136,7 +136,7 @@ public class MobScript : MonoBehaviour
         if (path == null || path.Count == 0) return;
         NextStep next = path.Peek();
         if (next == null) return;
-        if (!GameLogic.INSTANCE.CanWalk(
+        if (!GameLogic.INSTANCE.CanStep(lastVisitedTile.row, lastVisitedTile.col,
             lastVisitedTile.row + next.r, lastVisitedTile.col + next.c)) return;
         Tile targetTile = GameLogic.INSTANCE.tilesGrid[lastVisitedTile.row + next.r, lastVisitedTile.col + next.c];
         target = targetTile.transform.localPosition;
@@ -145,7 +145,8 @@ public class MobScript : MonoBehaviour
         bool nearBoundary = false;
         for (int dr = -1; dr <= 1; dr++)
             for (int dc = -1; dc <= 1; dc++)
-                if (!GameLogic.INSTANCE.CanWalk(targetTile.row + dr, targetTile.col + dc)) nearBoundary = true;
+                if (!GameLogic.INSTANCE.CanStep(targetTile.row, targetTile.col,
+                    targetTile.row + dr, targetTile.col + dc)) nearBoundary = true;
         if (!nearBoundary)
         {
             float jitter = Mathf.Clamp(instability, 0f, .9f) * GameLogic.INSTANCE.spacing;
@@ -159,6 +160,13 @@ public class MobScript : MonoBehaviour
         if (next.r * next2.r + next.c * next2.c != 0) return; // dot product: want 90 degree angle
         // Cutting this corner would cross the fourth cell of the 2x2 square.
         if (!GameLogic.INSTANCE.CanWalk(lastVisitedTile.row + next2.r, lastVisitedTile.col + next2.c)) return;
+        // Smooth motion must not skip an intermediate half-step or cut across a cliff.
+        int endR = targetTile.row + next2.r, endC = targetTile.col + next2.c;
+        int sideR = lastVisitedTile.row + next2.r, sideC = lastVisitedTile.col + next2.c;
+        if (!GameLogic.INSTANCE.CanStep(targetTile.row, targetTile.col, endR, endC) ||
+            !GameLogic.INSTANCE.CanStep(lastVisitedTile.row, lastVisitedTile.col, sideR, sideC) ||
+            !GameLogic.INSTANCE.CanStep(sideR, sideC, endR, endC) ||
+            !GridHelper.INSTANCE.TestElevationLine(lastVisitedTile.row, lastVisitedTile.col, endR, endC)) return;
 
         Vector3 incoming = new Vector3(next.c, -next.r, 0f);
         Vector3 outgoing = new Vector3(next2.c, -next2.r, 0f);

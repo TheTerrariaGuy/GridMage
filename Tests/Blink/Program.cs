@@ -21,7 +21,10 @@ foreach (int wall in new[] { 1 })
     grid[4, 5] = wall;
     Require(!Assets.Scripts.PlayerHandler.CanReach(grid, 4, 4, 4, 5, 3), "Wall destination");
     Require(!Assets.Scripts.PlayerHandler.CanReach(grid, 4, 4, 4, 7, 3), "Wall along path");
-    Require(!Assets.Scripts.PlayerHandler.CanReach(grid, 4, 4, 5, 5, 3), "Wall touching diagonal corner");
+    Require(Assets.Scripts.PlayerHandler.CanReach(grid, 4, 4, 5, 5, 3), "One wall touching diagonal corner allows passage");
+    grid[5, 4] = wall;
+    Require(!Assets.Scripts.PlayerHandler.CanReach(grid, 4, 4, 5, 5, 3), "Two walls touching diagonal corner block passage");
+    grid[5, 4] = 0;
 }
 foreach (int floor in new[] { 0 })
 {

@@ -5,6 +5,60 @@ Open Unity's Tile Palette window and select **Level Palette**. The palette conta
 left to right: Floor, Wall, Player Spawn, Enemy Spawn, Enemy Spawner, Background Floor.
 The corresponding assets live in `Assets/Levels`.
 
+## Elevation
+
+SampleScene now uses numbered elevation tiles on **Logic** in place of the flat Floor
+markers. Select **Elevation Palette** to paint heights. White `n` means `n`; blue `n`
+means `n + 0.5`. The assets in `Assets/Levels/Elevation` cover 1 through 8.5.
+The sheet rows are white 1–4, blue 1–4, white 5–8, blue 5–8. The palette groups
+white 1–8 on its first row and blue 1–8 on its second row.
+Numbered base floor cells and default spawn markers start at 1; paint ramps and cliffs as needed. Background artwork
+and spawn locations are preserved. Logic numbers remain editor markers, hidden in Play mode.
+
+Every Level Marker, including a spawn or wall marker, has an **Elevation** property.
+Use finite multiples of 0.5. Duplicate a spawn marker to give a particular spawn a
+different height without changing other cells that share the asset. The loader copies
+heights into `GameLogic.elevationGrid[row, col]`; legacy rectangular boards default to 0.
+
+`GridHelper.IsElevationDiffOk` permits only -0.5, 0 and +0.5. Blink and reactions visit
+cells in straight-line order and compare consecutive heights, so `1 -> 1.5 -> 2`
+passes and `1 -> 2 -> 1` fails. They do not search for a route around a cliff. At an
+exact grid corner, passage fails only when both side cells block it. For elevation,
+a side is open if its height connects to both diagonal cells by valid half-steps;
+the direct diagonal height difference must also be valid. Missing side cells count
+as blocked. Wall and elevation checks apply independently, including for Blink.
+Enemy pathfinding
+and wandering apply the same height rule to neighboring movement steps; movement
+smoothing cannot cut across an invalid elevation transition.
+
+Elevation checks affect reaction ingredients, outputs, overlap outputs, and decay
+spread. Spell placement and the blue cast region retain their previous elevation-independent rules.
+
+The **blue** mesh outlines the cast region. The **yellow** mesh outlines valid Blink
+destinations, excluding the player cell, blocked rays, cliffs and occupied cells.
+Both the existing cast visibility range and Blink range limit movement destinations.
+These are spatial regions; mana and cooldown are checked when casting. Yellow is
+slightly inset so coincident blue/yellow edges remain visible. Occupancy updates the
+yellow mask between combat ticks; board changes and Blink arrival refresh both regions.
+
+For another scene, **Tools > Grid Mage > Levels > Use elevation tiles** creates the
+palette, replaces the standard Floor markers with Elevation 1, and configures both
+outlines. It preserves existing height tiles and spawn/wall markers. Save the scene afterward.
+
+Regression checks:
+
+```powershell
+unity command eval_file --file Tests/Elevation/Rules.cs --json
+unity command eval_file --file Tests/Elevation/Corners.cs --json
+unity command editor_play --json
+unity command eval_file --file Tests/Elevation/Runtime.cs --json
+unity command editor_stop --json
+```
+
+The runtime checks create a temporary board in Play mode; stop Play mode afterward.
+
+## Painting terrain and spawns
+
 1. Select **Background** as the active tilemap and paint the visible artwork. The supplied
    Background Floor tile uses the existing floor sprite; other regular tile assets work too.
 2. Select **Logic** and paint Floor everywhere gameplay should exist. Erase Logic tiles
@@ -61,10 +115,11 @@ Use square rectangular cells at Z = 0 with no gap. Keep the maps aligned with ea
 and with GridParent's local axes. GridParent itself can be translated and uniformly scaled.
 The supplied palette artwork fits unit cells; use a cell size of 1 and scale GridParent to
 resize the whole level. The loader rejects empty maps, unknown Logic tile types, invalid
-spawns, mismatched map centers, and unsupported grid geometry.
+spawns and unsupported grid geometry. Background artwork is independent of the loader;
+keep its cell centers aligned with Logic when painting matching terrain.
 
 Runtime Tile objects retain colliders, elemental artwork, queued previews, and particles.
-Their normal floor artwork is suppressed when Background is assigned. Authored static
+Their normal floor artwork is suppressed when a TilemapLevel is assigned. Authored static
 walls are permanent terrain; they do not become elemental stone and do not participate in
 stone reactions. Missing cells block sight as well as movement in this implementation.
 

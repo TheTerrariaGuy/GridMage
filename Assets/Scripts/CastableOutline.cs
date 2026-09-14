@@ -6,12 +6,16 @@ using UnityEngine.Rendering;
 [ExecuteAlways, DisallowMultipleComponent, RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
 public sealed class CastableOutline : MonoBehaviour
 {
+    public enum Region { Cast, Move }
+    [SerializeField] private Region region;
     [SerializeField] private Color highlightColor = new Color(.35f, .9f, 1f, 1f);
     [SerializeField, Range(0f, 1f)] private float opacity = .5f;
     [SerializeField, Range(0f, .49f), Tooltip("Solid border width as a fraction of a tile.")]
     private float borderWidth = 1f / 16f;
     [SerializeField, Range(0f, .49f), Tooltip("Inward fade width as a fraction of a tile.")]
     private float fadeWidth = .25f;
+    [SerializeField, Range(0f, .49f), Tooltip("Inset separates overlapping cast and movement borders.")]
+    private float inset;
     [SerializeField, Min(.01f)] private float falloff = 1f;
     private Mesh mesh;
     private MeshRenderer meshRenderer;
@@ -29,7 +33,7 @@ public sealed class CastableOutline : MonoBehaviour
         }
         var game = GameLogic.INSTANCE;
         if (game != null && game.gridParent == transform.parent)
-            Rebuild(game.castableGrid, game.spacing, game.offset);
+            Rebuild(region == Region.Move ? game.moveableGrid : game.castableGrid, game.spacing, game.offset);
         else Rebuild(lastGrid, lastSpacing, lastOffset);
     }
 
@@ -41,15 +45,16 @@ public sealed class CastableOutline : MonoBehaviour
         if (!isActiveAndEnabled || mesh == null) return;
         Color color = highlightColor;
         color.a *= opacity;
-        BuildMesh(mesh, grid, spacing, offset, color, borderWidth, fadeWidth, falloff);
+        BuildMesh(mesh, grid, spacing, offset, color, borderWidth, fadeWidth, falloff, inset);
         meshRenderer.enabled = mesh.vertexCount > 0 && color.a > 0f;
     }
 
     private void OnValidate()
     {
         opacity = Mathf.Clamp01(opacity);
-        borderWidth = Mathf.Clamp(borderWidth, 0f, .49f);
-        fadeWidth = Mathf.Clamp(fadeWidth, 0f, .49f - borderWidth);
+        inset = Mathf.Clamp(inset, 0f, .49f);
+        borderWidth = Mathf.Clamp(borderWidth, 0f, .49f - inset);
+        fadeWidth = Mathf.Clamp(fadeWidth, 0f, .49f - inset - borderWidth);
         falloff = Mathf.Max(.01f, falloff);
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.delayCall -= RefreshInEditor;
@@ -87,12 +92,13 @@ public sealed class CastableOutline : MonoBehaviour
 
     /// <summary>Joined inward bands around exposed cell edges. Distances are fractions of a tile.</summary>
     public static void BuildMesh(Mesh mesh, bool[,] grid, float spacing, float offset,
-        Color color, float borderWidth, float fadeWidth, float falloff)
+        Color color, float borderWidth, float fadeWidth, float falloff, float inset = 0f)
     {
         mesh.Clear();
         if (grid == null || spacing <= 0f) return;
-        borderWidth = Mathf.Clamp(borderWidth, 0f, .49f);
-        fadeWidth = Mathf.Clamp(fadeWidth, 0f, .49f - borderWidth);
+        inset = Mathf.Clamp(inset, 0f, .49f);
+        borderWidth = Mathf.Clamp(borderWidth, 0f, .49f - inset);
+        fadeWidth = Mathf.Clamp(fadeWidth, 0f, .49f - inset - borderWidth);
         falloff = Mathf.Max(.01f, falloff);
         var vertices = new List<Vector3>();
         var colors = new List<Color>();
@@ -101,13 +107,13 @@ public sealed class CastableOutline : MonoBehaviour
         {
             var loop = new Vector2[corners.Count];
             for (int i = 0; i < loop.Length; i++) loop[i] = ToLocal(corners[i], spacing, offset);
-            AppendBand(loop, 0f, borderWidth * spacing, 1f, 1f, color, vertices, colors, triangles);
+            AppendBand(loop, inset * spacing, (inset + borderWidth) * spacing, 1f, 1f, color, vertices, colors, triangles);
             const int fadeSteps = 8;
             for (int step = 0; step < fadeSteps; step++)
             {
                 float a = (float)step / fadeSteps, b = (float)(step + 1) / fadeSteps;
-                AppendBand(loop, (borderWidth + a * fadeWidth) * spacing,
-                    (borderWidth + b * fadeWidth) * spacing, FadeAlpha(a, falloff), FadeAlpha(b, falloff),
+                AppendBand(loop, (inset + borderWidth + a * fadeWidth) * spacing,
+                    (inset + borderWidth + b * fadeWidth) * spacing, FadeAlpha(a, falloff), FadeAlpha(b, falloff),
                     color, vertices, colors, triangles);
             }
         }

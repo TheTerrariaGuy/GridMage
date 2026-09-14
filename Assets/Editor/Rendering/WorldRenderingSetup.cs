@@ -14,6 +14,12 @@ public static class WorldRenderingSetup
 {
     public static void ConfigureCastableOutline(Assets.Scripts.GameLogic game)
     {
+        ConfigureOutline(game, false);
+        ConfigureOutline(game, true);
+    }
+
+    private static void ConfigureOutline(Assets.Scripts.GameLogic game, bool movement)
+    {
         const string materialPath = "Assets/Rendering/CastableOutline.mat";
         var material = AssetDatabase.LoadAssetAtPath<Material>(materialPath);
         if (material == null)
@@ -24,27 +30,35 @@ public static class WorldRenderingSetup
         material.SetColor("_Tint", Color.white);
         material.SetFloat("_Sway", 0f);
         EditorUtility.SetDirty(material);
-        var root = game.gridParent.Find("Castable Outline");
+        string name = movement ? "Moveable Outline" : "Castable Outline";
+        var root = game.gridParent.Find(name);
         if (root == null)
         {
-            root = new GameObject("Castable Outline").transform;
+            root = new GameObject(name).transform;
             root.SetParent(game.gridParent, false);
         }
-        root.localPosition = Vector3.zero;
+        root.localPosition = game.GridTranslation;
         root.localRotation = Quaternion.identity;
         root.localScale = Vector3.one;
         root.gameObject.layer = game.gridParent.gameObject.layer;
         var outline = root.GetComponent<CastableOutline>() ?? root.gameObject.AddComponent<CastableOutline>();
+        var outlineData = new SerializedObject(outline);
+        outlineData.FindProperty("region").enumValueIndex = movement ? 1 : 0;
+        outlineData.FindProperty("highlightColor").colorValue = movement ? new Color(1f, .85f, .1f, 1f) : new Color(.15f, .45f, 1f, 1f);
+        outlineData.FindProperty("opacity").floatValue = movement ? .7f : .85f;
+        outlineData.FindProperty("fadeWidth").floatValue = movement ? .2f : .06f;
+        outlineData.FindProperty("inset").floatValue = movement ? .14f : 0f;
+        outlineData.ApplyModifiedPropertiesWithoutUndo();
         var renderer = root.GetComponent<MeshRenderer>();
         renderer.sharedMaterial = material;
         renderer.sortingLayerName = WorldSorting.Foreground;
-        renderer.sortingOrder = -1;
+        renderer.sortingOrder = movement ? 0 : -1;
         renderer.shadowCastingMode = ShadowCastingMode.Off;
         renderer.receiveShadows = false;
         var data = new SerializedObject(game);
-        data.FindProperty("castableOutline").objectReferenceValue = outline;
+        data.FindProperty(movement ? "moveableOutline" : "castableOutline").objectReferenceValue = outline;
         data.ApplyModifiedPropertiesWithoutUndo();
-        outline.Rebuild(game.castableGrid, game.spacing, game.offset);
+        outline.Rebuild(movement ? game.moveableGrid : game.castableGrid, game.spacing, game.offset);
     }
 
     public static void ConfigureHoverOverlay(GridPointer pointer, Transform gridParent)

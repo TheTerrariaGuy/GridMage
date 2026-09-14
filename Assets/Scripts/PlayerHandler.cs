@@ -74,7 +74,7 @@ namespace Assets.Scripts
                 long rowTime = (2 * crossedR + 1) * dc;
                 long colTime = (2 * crossedC + 1) * dr;
                 if (rowTime == colTime &&
-                    (Blocked(grid, row + stepR, col) || Blocked(grid, row, col + stepC))) return false;
+                    (Blocked(grid, row + stepR, col) && Blocked(grid, row, col + stepC))) return false;
                 if (rowTime <= colTime) { row += stepR; crossedR++; }
                 if (colTime <= rowTime) { col += stepC; crossedC++; }
                 if (Blocked(grid, row, col)) return false;

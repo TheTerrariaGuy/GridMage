@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -8,10 +7,10 @@ namespace Assets.Scripts
     {
         public static TextureHandler INSTANCE { get; private set; }
 
-        [Tooltip("Key = tile type * 100 + variant. 0: default surface; 1: default front; 2-48: neighbor shapes (2 = isolated preview); 49-52: stone fronts. See Docs/ElementSpriteMap.md.")]
+        [Tooltip("Key = tile type * 100 + variant. 0: default surface; 2-48: neighbor shapes (2 = isolated preview). See Docs/ElementSpriteMap.md.")]
         [SerializeField] public Dictionary<int, Sprite> spriteMap = new();
         [SerializeField] private Sprite fallbackSprite;
-        [Tooltip("Height of the wall front in tile-local units.")]
+        [Tooltip("Vertical offset of wall artwork in tile-local units.")]
         [SerializeField, Min(0f)] private float wallHeight = 0.25f;
 
         private void Awake()
@@ -33,7 +32,7 @@ namespace Assets.Scripts
         {
             ApplyTexture(tile);
 
-            // Corners and front endpoints can change in any of the eight neighbors.
+            // Connected shapes can change in any of the eight neighbors.
             Tile[,] tiles = tile.gameLogic != null ? tile.gameLogic.tilesGrid : null;
             for (int dr = -1; dr <= 1; dr++)
             {
@@ -54,22 +53,13 @@ namespace Assets.Scripts
             // Combat replaces the grid before refreshing Tile.type on each cell.
             // Read the current grid so neighbor refreshes never use a stale type.
             int type = GridHelper.IsInBounds(grid, tile.row, tile.col) ? grid[tile.row, tile.col] : tile.type;
-            tile.SurfaceRenderer.enabled = type != 0 || tile.gameLogic == null || !tile.gameLogic.HasBackground;
+            tile.SurfaceRenderer.enabled = type != 0 || tile.gameLogic == null || tile.gameLogic.Level == null;
             bool wall = TileSpriteLayout.IsWall(type);
             float height = wall ? Mathf.Max(0f, wallHeight) : 0f;
             tile.SetWallSorting(wall);
             int surfaceVariant = TileSpriteLayout.SurfaceVariant(grid, tile.row, tile.col, type);
             tile.SurfaceRenderer.color = Indexing.INSTANCE.colorMap.TryGetValue(type, out Color32 color) ? color : Color.white;
             SetSprite(tile, tile.SurfaceRenderer, GetSprite(type, surfaceVariant), 1f, 1f, height);
-
-            SpriteRenderer front = tile.WallFrontRenderer;
-            if (front == null) return;
-            bool wallBelow = TileSpriteLayout.HasWall(grid, tile.row + 1, tile.col);
-            front.enabled = wall && height > 0f && !wallBelow;
-            if (!front.enabled) return;
-            front.color = tile.SurfaceRenderer.color;
-            SetSprite(tile, front, GetSprite(type, TileSpriteLayout.FrontVariant(grid, tile.row, tile.col)), 1f, height,
-                -0.5f + height * 0.5f);
         }
 
         public Sprite GetPreviewSprite(int type) => GetSprite(type, 2);
@@ -92,8 +82,6 @@ namespace Assets.Scripts
             // Base/spent/fading stages share shapes unless a stage has an explicit override.
             if (TileSpriteLayout.Connects(type) &&
                 spriteMap.TryGetValue(type / 100 * 10000 + variant, out sprite) && sprite != null)
-                return sprite;
-            if (variant >= 49 && spriteMap.TryGetValue(type * 100 + 1, out sprite) && sprite != null)
                 return sprite;
             if (variant != 0 && spriteMap.TryGetValue(type * 100, out sprite) && sprite != null)
                 return sprite;

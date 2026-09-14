@@ -9,13 +9,13 @@ namespace Assets.Scripts
     [DisallowMultipleComponent]
     public sealed class TilemapLevel : MonoBehaviour
     {
-        public Tilemap background;
         public Tilemap logic;
 
         public sealed class Layout
         {
             public BoundsInt bounds;
             public bool[,] exists, walkable, blocksSight, allowsSpells;
+            public float[,] elevations;
             public Vector2Int player; // x = column, y = row
             public readonly List<Spawn> enemies = new();
             public Vector3 origin;
@@ -40,8 +40,6 @@ namespace Assets.Scripts
         {
             if (logic == null || runtimeAnchor == null)
                 throw new InvalidOperationException("Assign the Logic tilemap and runtime grid parent.");
-            if (background == logic)
-                throw new InvalidOperationException("Background and Logic must be different tilemaps.");
             if (logic.layoutGrid == null || logic.layoutGrid.cellLayout != GridLayout.CellLayout.Rectangle)
                 throw new InvalidOperationException("Levels require a rectangular Unity Grid.");
             if (logic.GetComponent<TilemapCollider2D>() != null)
@@ -67,12 +65,17 @@ namespace Assets.Scripts
             layout.walkable = new bool[rows, cols];
             layout.blocksSight = new bool[rows, cols];
             layout.allowsSpells = new bool[rows, cols];
+            layout.elevations = new float[rows, cols];
             int players = 0;
             foreach (var entry in markers)
             {
                 var marker = entry.marker;
                 Vector2Int index = layout.ToIndex(entry.cell);
                 int r = index.y, c = index.x;
+                if (float.IsNaN(marker.elevation) || float.IsInfinity(marker.elevation) ||
+                    marker.elevation * 2f != Mathf.Round(marker.elevation * 2f))
+                    throw new InvalidOperationException($"Elevation at {entry.cell} must be a finite multiple of 0.5.");
+                layout.elevations[r, c] = marker.elevation;
                 layout.exists[r, c] = true;
                 layout.walkable[r, c] = marker.walkable;
                 layout.blocksSight[r, c] = marker.blocksSight;
@@ -101,10 +104,6 @@ namespace Assets.Scripts
             Vector3 cellSize = runtimeAnchor.InverseTransformVector(logic.transform.TransformVector(logic.layoutGrid.cellSize));
             if (Mathf.Abs(cellSize.x - layout.spacing) > .001f || Mathf.Abs(cellSize.y - layout.spacing) > .001f)
                 throw new InvalidOperationException("Logic cells must have no gap and matching X/Y size.");
-            if (background != null)
-                foreach (Vector3Int cell in new[] { first, first + Vector3Int.right, first + Vector3Int.up })
-                    if (!Close(background.GetCellCenterWorld(cell), logic.GetCellCenterWorld(cell)))
-                        throw new InvalidOperationException("Background and Logic cell centers must align.");
             return layout;
         }
 

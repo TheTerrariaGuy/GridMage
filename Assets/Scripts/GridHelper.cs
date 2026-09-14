@@ -117,9 +117,56 @@ namespace Assets.Scripts
             return tile != null;
         }
 
+        public static bool IsElevationDiffOk(float from, float to)
+        {
+            float diff = to - from;
+            return diff == 0f || diff == .5f || diff == -.5f;
+        }
+
+        public bool TestElevationLine(int r1, int c1, int r2, int c2)
+        {
+            var game = GameLogic.INSTANCE;
+            return game != null && TestElevationLine(game.elevationGrid, r1, c1, r2, c2, game.cellExists);
+        }
+
+        // Visit cells in ray order, comparing each entered cell with the previous cell.
+        // At a corner, either side must connect the current and diagonal cells.
+        public static bool TestElevationLine(float[,] heights, int r1, int c1, int r2, int c2,
+            bool[,] exists = null)
+        {
+            bool HasHeight(int r, int c) => IsInBounds(heights, r, c) &&
+                (exists == null || (IsInBounds(exists, r, c) && exists[r, c])) &&
+                !float.IsNaN(heights[r, c]) && !float.IsInfinity(heights[r, c]);
+            bool SideOpen(float from, float to, int r, int c) => HasHeight(r, c) &&
+                IsElevationDiffOk(from, heights[r, c]) && IsElevationDiffOk(heights[r, c], to);
+            if (!HasHeight(r1, c1) || !HasHeight(r2, c2)) return false;
+            int dr = System.Math.Abs(r2 - r1), dc = System.Math.Abs(c2 - c1);
+            int stepR = System.Math.Sign(r2 - r1), stepC = System.Math.Sign(c2 - c1);
+            long crossedR = 0, crossedC = 0;
+            while (r1 != r2 || c1 != c2)
+            {
+                float previous = heights[r1, c1];
+                long rowTime = (2 * crossedR + 1) * dc;
+                long colTime = (2 * crossedC + 1) * dr;
+                if (rowTime == colTime)
+                {
+                    int nextR = r1 + stepR, nextC = c1 + stepC;
+                    if (!HasHeight(nextR, nextC)) return false;
+                    float next = heights[nextR, nextC];
+                    if (!SideOpen(previous, next, nextR, c1) &&
+                        !SideOpen(previous, next, r1, nextC)) return false;
+                }
+                if (rowTime <= colTime) { r1 += stepR; crossedR++; }
+                if (colTime <= rowTime) { c1 += stepC; crossedC++; }
+                if (!HasHeight(r1, c1) || !IsElevationDiffOk(previous, heights[r1, c1])) return false;
+            }
+            return true;
+        }
+
         public bool TestForWalls(int[,] walls, int r1, int c1, int r2, int c2, bool allowTarget = false)
         {
             if (!IsInBounds(walls, r1, c1) || !IsInBounds(walls, r2, c2)) return false;
+            bool Blocked(int r, int c) => !IsInBounds(walls, r, c) || walls[r, c] != 0;
             int dr = System.Math.Abs(r2 - r1), dc = System.Math.Abs(c2 - c1);
             int stepR = System.Math.Sign(r2 - r1), stepC = System.Math.Sign(c2 - c1);
             long crossedR = 0, crossedC = 0;
@@ -128,6 +175,7 @@ namespace Assets.Scripts
             {
                 long rowTime = (2 * crossedR + 1) * dc;
                 long colTime = (2 * crossedC + 1) * dr;
+                if (rowTime == colTime && Blocked(r1 + stepR, c1) && Blocked(r1, c1 + stepC)) return false;
                 if (rowTime <= colTime)
                 {
                     r1 += stepR;

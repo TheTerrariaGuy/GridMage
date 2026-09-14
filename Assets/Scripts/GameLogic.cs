@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using static Indexing;
 
@@ -15,11 +14,11 @@ namespace Assets.Scripts
         [NonSerialized] public Tile[,] tilesGrid;
         [NonSerialized] public HashSet<Tile> tilesSet;
         [NonSerialized] public bool[,] cellExists;
+        [NonSerialized] public float[,] elevationGrid;
         [SerializeField] private TilemapLevel level;
         public TilemapLevel Level => level;
         public TilemapLevel.Layout LevelLayout { get; private set; }
         public Vector3 GridTranslation { get; private set; }
-        public bool HasBackground => level != null && level.background != null;
         [SerializeField] private GameObject tile;
         [SerializeField] private int rows, cols;
         [SerializeField] public Transform gridParent;
@@ -30,12 +29,10 @@ namespace Assets.Scripts
         [SerializeField, Min(0f)] private float blinkManaCost = 4f;
         [SerializeField, Min(0f)] private float placementManaRegenMultiplier = 0.5f;
         [NonSerialized] public bool[,] castableGrid;
-        private bool[,] visibleGrid;
+        [NonSerialized] public bool[,] moveableGrid;
+        private bool[,] blinkTerrainGrid;
         [SerializeField] private CastableOutline castableOutline;
-
-
-        //[SerializeField] public GameObject playerPoint;
-        
+        [SerializeField] private CastableOutline moveableOutline;
         private int currentSelection;
         public float time;
         public float currMana;
@@ -47,8 +44,6 @@ namespace Assets.Scripts
         public bool IsPlacementMode => queuedSpells.Count > 0;
         public float AvailableMana => Mathf.Max(0f, currMana - reservedMana);
         public int CurrentSelection => currentSelection;
-
-        // Use this for initialization
 
         void Start()
         {
@@ -89,8 +84,10 @@ namespace Assets.Scripts
             }
             grid = new int[rows, cols];
             cellExists = layout != null ? layout.exists : new bool[rows, cols];
+            elevationGrid = layout != null ? layout.elevations : new float[rows, cols];
             castableGrid = new bool[rows, cols];
-            visibleGrid = new bool[rows, cols];
+            moveableGrid = new bool[rows, cols];
+            blinkTerrainGrid = new bool[rows, cols];
             tilesGrid = new Tile[rows, cols];
             tilesSet = new HashSet<Tile>();
             for (int i = 0; i < grid.GetLength(0); i++)
@@ -108,6 +105,7 @@ namespace Assets.Scripts
                 }
             }
             if (castableOutline != null) castableOutline.transform.localPosition = GridTranslation;
+            if (moveableOutline != null) moveableOutline.transform.localPosition = GridTranslation;
             if (layout != null) level.HideMarkers();
             if (PlayerHandler.INSTANCE != null) PlayerHandler.INSTANCE.ResetForLevel();
             if (MobHandler.INSTANCE != null) MobHandler.INSTANCE.ResetForLevel();
@@ -126,12 +124,17 @@ namespace Assets.Scripts
         public bool BlocksSight(int r, int c) => !HasCell(r, c) ||
             (LevelLayout != null && LevelLayout.blocksSight[r, c]);
 
+        public bool CanStep(int fromR, int fromC, int toR, int toC) =>
+            CanWalk(fromR, fromC) && CanWalk(toR, toC) &&
+            GridHelper.IsElevationDiffOk(elevationGrid[fromR, fromC], elevationGrid[toR, toC]);
+
         public bool Castable(int r, int c) =>
             AllowsSpells(r, c) && GridHelper.IsInBounds(castableGrid, r, c) && castableGrid[r, c];
 
         public bool CanBlinkTo(int r, int c)
         {
-            return CanWalk(r, c) && GridHelper.IsInBounds(visibleGrid, r, c) && visibleGrid[r, c];
+            return CanWalk(r, c) && GridHelper.IsInBounds(blinkTerrainGrid, r, c) && blinkTerrainGrid[r, c] &&
+                (MobHandler.INSTANCE == null || !MobHandler.INSTANCE.IsOccupied(r, c));
         }
 
         public void MakeCastable()
@@ -139,21 +142,43 @@ namespace Assets.Scripts
             if (castableGrid != null)
             {
                 Array.Clear(castableGrid, 0, castableGrid.Length);
-                Array.Clear(visibleGrid, 0, visibleGrid.Length);
+                Array.Clear(blinkTerrainGrid, 0, blinkTerrainGrid.Length);
                 PlayerHandler player = PlayerHandler.INSTANCE;
                 if (player != null && Indexing.INSTANCE != null && HasCell(player.r, player.c))
                 {
                     int range = Mathf.Max(0, Indexing.INSTANCE.castRange);
+                    int blinkRange = Mathf.Max(0, Indexing.INSTANCE.blinkRange);
                     int[,] walls = GridHelper.INSTANCE.ExtractWalls();
                     for (int row = Mathf.Max(0, player.r - range); row <= Mathf.Min(rows - 1, player.r + range); row++)
                         for (int col = Mathf.Max(0, player.c - range); col <= Mathf.Min(cols - 1, player.c + range); col++)
                         {
-                            visibleGrid[row, col] = HasCell(row, col) && PlayerHandler.CanReach(walls, player.r, player.c, row, col, range);
-                            castableGrid[row, col] = AllowsSpells(row, col) && visibleGrid[row, col];
+                            bool visible = HasCell(row, col) && PlayerHandler.CanReach(walls, player.r, player.c, row, col, range);
+                            int distance = Mathf.Max(Mathf.Abs(row - player.r), Mathf.Abs(col - player.c));
+                            castableGrid[row, col] = AllowsSpells(row, col) && visible;
+                            blinkTerrainGrid[row, col] = distance > 0 && distance <= blinkRange && CanWalk(row, col) &&
+                                visible && GridHelper.INSTANCE.TestElevationLine(player.r, player.c, row, col);
                         }
                 }
             }
             castableOutline?.Rebuild(castableGrid, spacing, offset);
+            RefreshMovementOutline(true);
+        }
+
+        private void LateUpdate() => RefreshMovementOutline();
+
+        // Actor occupancy can change between combat ticks. Only rebuild the mesh when its mask changes.
+        private void RefreshMovementOutline(bool force = false)
+        {
+            if (moveableGrid == null) return;
+            bool changed = force;
+            for (int r = 0; r < moveableGrid.GetLength(0); r++)
+                for (int c = 0; c < moveableGrid.GetLength(1); c++)
+                {
+                    bool valid = CanBlinkTo(r, c);
+                    changed |= moveableGrid[r, c] != valid;
+                    moveableGrid[r, c] = valid;
+                }
+            if (changed) moveableOutline?.Rebuild(moveableGrid, spacing, offset);
         }
 
         void Update()
@@ -275,6 +300,7 @@ namespace Assets.Scripts
             }
             queuedSpells.Clear();
             reservedMana = 0f;
+            MakeCastable();
         }
 
         private void TickCombat()
@@ -291,6 +317,7 @@ namespace Assets.Scripts
             UpdateTiles();
             foreach (var visual in visuals) ParticleVFX.INSTANCE?.Play(visual, clock);
             if (MobHandler.INSTANCE != null) MobHandler.INSTANCE.HandleUpdate();
+            MakeCastable();
         }
 
         private int[,] HandleFading(int[,] g)
@@ -318,7 +345,8 @@ namespace Assets.Scripts
                             310 => "Electricity_Charge_Decay", 410 => "Lava_Cooling_Decay", _ => null };
                         var visual = NewVisual(id, i, j);
                         Indexing.INSTANCE.ModifyFade(Indexing.INSTANCE.fadeMap[g[i,j]], i, j, g[i,j], g, ref newGrid,
-                            (r, c) => TrackVisual(r, c, visual), AllowsSpells);
+                            (r, c) => TrackVisual(r, c, visual),
+                            (r, c) => AllowsSpells(r, c) && GridHelper.INSTANCE.TestElevationLine(i, j, r, c));
                     }
                 }
             }
@@ -407,6 +435,7 @@ namespace Assets.Scripts
                 int targetCol = c + requirement.x;
 
                 if (!HasCell(targetRow, targetCol) ||
+                    !GridHelper.INSTANCE.TestElevationLine(r, c, targetRow, targetCol) ||
                     !requirement.Matches(g[targetRow, targetCol]))
                 {
                     return false;
@@ -470,6 +499,7 @@ namespace Assets.Scripts
                 Change change = changeQueue.Min;
                 changeQueue.Remove(change);
                 if (!AllowsSpells(change.Row, change.Col)) continue;
+                if (!GridHelper.INSTANCE.TestElevationLine(change.SourceRow, change.SourceCol, change.Row, change.Col)) continue;
                 if (!GridHelper.INSTANCE.TestForWalls(walls,
                     change.SourceRow, change.SourceCol, change.Row, change.Col, change.Type == 410)) continue;
                 grid[change.Row, change.Col] = change.Type;

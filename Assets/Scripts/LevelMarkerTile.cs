@@ -8,6 +8,8 @@ namespace Assets.Scripts
     [CreateAssetMenu(fileName = "Level Marker", menuName = "Grid Mage/Level Marker")]
     public sealed class LevelMarkerTile : UnityEngine.Tilemaps.Tile
     {
+        [Tooltip("Terrain height in half-unit increments. Blue numbers represent n + 0.5.")]
+        public float elevation = 1f;
         public bool walkable = true;
         public bool blocksSight;
         public bool allowsSpells = true;

@@ -55,13 +55,13 @@ public static class TilemapLevelSetup
         root.transform.localPosition = new Vector3(game.offset - game.spacing * .5f, game.offset - game.spacing * .5f, 0f);
         root.GetComponent<Grid>().cellSize = new Vector3(game.spacing, game.spacing, 1f);
         var level = root.GetComponent<TilemapLevel>();
-        level.background = Map(root.transform, "Background", WorldSorting.Ground, -2, baseRenderer.sharedMaterial);
+        var background = Map(root.transform, "Background", WorldSorting.Ground, -2, baseRenderer.sharedMaterial);
         level.logic = Map(root.transform, "Logic", WorldSorting.Foreground, 10, baseRenderer.sharedMaterial);
         for (int r = 0; r < rows; r++)
             for (int c = 0; c < cols; c++)
             {
                 var cell = new Vector3Int(c, -r, 0);
-                level.background.SetTile(cell, backgroundTile);
+                background.SetTile(cell, backgroundTile);
                 level.logic.SetTile(cell, floor);
             }
         foreach (Vector2Int cell in new[] { new Vector2Int(10, 10), new Vector2Int(10, 15),

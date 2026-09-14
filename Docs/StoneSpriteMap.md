@@ -2,13 +2,13 @@
 
 Assign sprites in the scene's TextureHandler spriteMap. Keys are `tile type * 100 + variant`; gameplay IDs are unchanged. All stone entries are linked to RockWall sprites for both types. Types 400 and 401 connect to each other. Lava (410/411), empty cells, and cells outside the grid do not connect.
 
-`40000` / `40100` remain the default surface; `40001` / `40101` remain the default front. Clearing a shape entry uses its corresponding default. Shape entries take priority over these defaults.
+`40000` / `40100` remain the default surface. Clearing a shape entry uses its corresponding default. Shape entries take priority over these defaults.
 
 ## Surface shapes
 
 Rows below are mini 3-by-3 neighborhoods, read top to bottom (north to south), with `/` separating rows. `@` is this tile, `#` is connected stone, `.` is an empty/non-stone neighbor, and `?` is a diagonal that does not affect this shape. A diagonal matters only when both adjacent cardinal neighbors are stone. This yields 47 distinct shapes, including thin L/T/cross connections, filled corners, inner corners, edges, and solid interiors.
 
-These IDs describe topology, **not the numeric suffixes of RockWall sprite names**. Pick the artwork matching each neighborhood. The RockWall sheet includes its own south-facing rock faces. The scene uses Wall Height = 0 to display those tiles directly without duplicating or stretching a second face. The separate front slots are also linked, but are inactive with this setting.
+These IDs describe topology, **not the numeric suffixes of RockWall sprite names**. Pick the artwork matching each neighborhood. The RockWall sheet includes its own south-facing rock faces. The scene uses Wall Height = 0 to display those tiles without a vertical offset. Separate wall-front renderers and sprite slots are no longer used.
 
 | 400 key | 401 key | Neighborhood (N / center / S) | Connections / filled diagonals | Assigned sprite |
 |---|---|---|---|---|
@@ -60,16 +60,5 @@ These IDs describe topology, **not the numeric suffixes of RockWall sprite names
 | 40047 | 40147 | `##./#@#/###` | N, E, S, W; filled diagonals: SE, SW, NW | RockWall_25 |
 | 40048 | 40148 | `###/#@#/###` | N, E, S, W; filled diagonals: NE, SE, SW, NW | RockWall_11 |
 
-## Exposed wall fronts
-
-Fronts are shown only when the tile below is not stone. A front connects left/right only to another exposed front, so stepped structures get correct end caps.
-
-| 400 key | 401 key | Front artwork |
-|---|---|---|
-| 40049 | 40149 | Isolated face; both ends visible |
-| 40050 | 40150 | Connects left; right end visible |
-| 40051 | 40151 | Connects right; left end visible |
-| 40052 | 40152 | Connects both sides; middle section |
-
-Changing a cell refreshes it and all eight neighbors, including diagonal corners and neighboring front endpoints. Repeated combat updates select shapes from the current gameplay grid, not partially updated Tile components.
+Changing a cell refreshes it and all eight neighbors, including diagonal corners. Repeated combat updates select shapes from the current gameplay grid, not partially updated Tile components.
 

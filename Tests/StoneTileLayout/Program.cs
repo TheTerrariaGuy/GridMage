@@ -48,24 +48,8 @@ static class Program
         Equal(23, TileSpriteLayout.SurfaceVariant(Neighborhood(85), 1, 1), "Thin four-way cross");
         Equal(48, TileSpriteLayout.SurfaceVariant(Neighborhood(255), 1, 1), "Solid block interior");
 
-        var front = new int[2, 3];
-        front[0, 1] = 400;
-        Equal(49, TileSpriteLayout.FrontVariant(front, 0, 1), "Isolated front");
-        front[0, 0] = 401;
-        Equal(50, TileSpriteLayout.FrontVariant(front, 0, 1), "Front joins left across stone types");
-        front[0, 2] = 400;
-        Equal(52, TileSpriteLayout.FrontVariant(front, 0, 1), "Middle front");
-        front[1, 0] = 400;
-        Equal(51, TileSpriteLayout.FrontVariant(front, 0, 1), "Covered left neighbor creates front endpoint");
-        front[1, 1] = 401;
-        if (TileSpriteLayout.HasFront(front, 0, 1)) throw new Exception("Internal front must be hidden");
-        front[1, 1] = 410;
-        if (!TileSpriteLayout.HasFront(front, 0, 1)) throw new Exception("Lava must expose front");
-
         Equal(2, TileSpriteLayout.SurfaceVariant(new int[,] { { 400 } }, 0, 0), "Single-cell boundary");
         Equal(2, TileSpriteLayout.SurfaceVariant(null, 0, 0), "Uninitialized grid");
-        if (TileSpriteLayout.HasWall(front, -1, 0) || TileSpriteLayout.HasWall(front, 0, 3))
-            throw new Exception("Out-of-bounds cells must not join");
         foreach (int type in new[] { 0, 100, 200, 300, 410, 411, 500 })
             if (TileSpriteLayout.IsWall(type)) throw new Exception($"Non-wall type {type} joined");
 
@@ -115,6 +99,6 @@ static class Program
         }
         foreach (int type in new[] { 112, 212, 312, 410, 411 })
             Equal(0, TileSpriteLayout.SurfaceVariant(new int[,] { { type, type / 100 * 100 } }, 0, 0, type), "Excluded stages remain unconnected");
-        Console.WriteLine("Passed: 256 neighborhoods per element, water/stone 47 shapes, fire/lightning 16 shapes, 2x2 merging rules, stages, family separation, wall fronts, and boundaries.");
+        Console.WriteLine("Passed: 256 neighborhoods per element, water/stone 47 shapes, fire/lightning 16 shapes, 2x2 merging rules, stages, family separation, and boundaries.");
     }
 }

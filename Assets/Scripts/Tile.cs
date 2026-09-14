@@ -9,9 +9,7 @@ public class Tile : MonoBehaviour
     public int row, col;
     public GameLogic gameLogic;
     [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private SpriteRenderer wallFront;
     public SpriteRenderer SurfaceRenderer => spriteRenderer;
-    public SpriteRenderer WallFrontRenderer => wallFront;
     [SerializeField] private SpriteRenderer overlay;
     [SerializeField] private float queuedAlpha;
     private int queuedSpellType;
@@ -22,11 +20,10 @@ public class Tile : MonoBehaviour
     {
         surfaceGroup = WorldSorting.CreateGroup(transform, new Vector3(0f, -.5f, 0f), "Surface Y anchor", WorldSorting.Ground);
         WorldSorting.Include(surfaceGroup, spriteRenderer, 0);
-        if (wallFront != null) WorldSorting.Include(surfaceGroup, wallFront, 1);
         overlay.sortingLayerName = WorldSorting.Foreground;
         overlay.sortingOrder = 0;
         foreach (var renderer in GetComponentsInChildren<SpriteRenderer>())
-            if (renderer != spriteRenderer && renderer != wallFront && renderer != overlay)
+            if (renderer != spriteRenderer && renderer != overlay)
             {
                 renderer.sortingLayerName = WorldSorting.Ground;
                 renderer.sortingOrder = -1;
@@ -48,9 +45,9 @@ public class Tile : MonoBehaviour
         GoToPosition();
         gameLogic = GameLogic.INSTANCE;
         // Keep colliders, spell artwork, and previews; the authored map supplies the floor.
-        if (gameLogic.HasBackground)
+        if (gameLogic.Level != null)
             foreach (var renderer in GetComponentsInChildren<SpriteRenderer>())
-                if (renderer != spriteRenderer && renderer != wallFront && renderer != overlay)
+                if (renderer != spriteRenderer && renderer != overlay)
                     renderer.enabled = false;
         ChangeType(0);
         ClearQueuedSpell();

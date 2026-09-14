@@ -34,6 +34,7 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
   m_ColliderType: 0
+  elevation: 1
   walkable: 0
   blocksSight: 1
   allowsSpells: 0
