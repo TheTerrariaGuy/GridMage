@@ -1,6 +1,6 @@
 # Stone sprite map
 
-Assign sprites in the scene's TextureHandler spriteMap. Keys are `tile type * 100 + variant`; gameplay IDs are unchanged. All stone entries are linked to RockWall sprites for both types. Types 400 and 401 connect to each other. Lava (410/411), empty cells, and cells outside the grid do not connect.
+Assign sprites in Assets/Rendering/ElementSprites.asset. Keys are `tile type * 100 + variant`; gameplay IDs are unchanged. Base stone entries reference RockWall sprites; spent stone inherits them through the existing family fallback. Types 400 and 401 connect to each other. Lava (410/411), empty cells, and cells outside the grid do not connect.
 
 `40000` / `40100` remain the default surface. Clearing a shape entry uses its corresponding default. Shape entries take priority over these defaults.
 

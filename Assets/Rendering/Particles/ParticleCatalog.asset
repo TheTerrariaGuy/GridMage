@@ -11920,8 +11920,6 @@ MonoBehaviour:
     prefab: {fileID: 8938256999324936087, guid: 27fec2c602c223d4e8a23c47950c0ed4, type: 3}
   - id: Water_Water_Cardinal_Surge
     prefab: {fileID: 5348295096369193593, guid: ed4e5915640bd5e4f9a0295cceaffc1e, type: 3}
-  - id: Water_Water_Diagonal_Splash
-    prefab: {fileID: 5153633605979764210, guid: 867a199fabdae0049a7708ed31ad8a05, type: 3}
   damage:
   - element: 1
     prefab: {fileID: 4500993939970876213, guid: be4182cc6f971d04e8b3f0db5014a563, type: 3}

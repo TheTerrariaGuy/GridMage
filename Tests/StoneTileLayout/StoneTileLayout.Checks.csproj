@@ -4,6 +4,8 @@
     <TargetFramework>net10.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="../../Assets/Scripts/TileSpriteLayout.cs" Link="TileSpriteLayout.cs" />
+    <Compile Include="../../Assets/Scripts/Presentation/TileSpriteLayout.cs" Link="TileSpriteLayout.cs" />
+    <Compile Include="../../Assets/Scripts/Core/Grid/GridMath.cs" Link="GridMath.cs" />
+    <Compile Include="../../Assets/Scripts/Gameplay/Combat/ElementState.cs" Link="ElementState.cs" />
   </ItemGroup>
 </Project>

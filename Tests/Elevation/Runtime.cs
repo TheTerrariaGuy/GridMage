@@ -13,16 +13,16 @@ var map = game.Level.logic;
 map.ClearAllTiles();
 for (int y = -4; y <= 4; y++) for (int x = -4; x <= 4; x++) map.SetTile(new Vector3Int(x, y, 0), floor);
 map.SetTile(Vector3Int.zero, start);
-Indexing.INSTANCE.castRange = 4; Indexing.INSTANCE.blinkRange = 3;
-game.InitializedGrid();
+Assets.Scripts.PlayerHandler.INSTANCE.castRange = 4; Assets.Scripts.PlayerHandler.INSTANCE.blinkRange = 3;
+game.InitializeGrid();
 require(player.r == 4 && player.c == 4 && game.elevationGrid[4, 4] == 1, "Load elevation and player");
 game.elevationGrid[4, 5] = 1.5f; game.elevationGrid[4, 6] = 2; game.elevationGrid[4, 7] = 2.5f; game.elevationGrid[4, 8] = 3;
 game.MakeCastable();
 require(game.CanBlinkTo(4, 7) && game.moveableGrid[4, 7] && game.Castable(4, 7), "Blink climbs ramp");
 require(!game.CanBlinkTo(4, 8) && game.Castable(4, 8), "Blink range restricts yellow border");
-Indexing.INSTANCE.castRange = 2; game.MakeCastable();
+Assets.Scripts.PlayerHandler.INSTANCE.castRange = 2; game.MakeCastable();
 require(!game.CanBlinkTo(4, 7), "Existing cast visibility range still limits Blink");
-Indexing.INSTANCE.castRange = 4; game.MakeCastable();
+Assets.Scripts.PlayerHandler.INSTANCE.castRange = 4; game.MakeCastable();
 require(!game.CanBlinkTo(4, 4) && !game.moveableGrid[4, 4], "Origin is not a Blink destination");
 game.elevationGrid[4, 5] = 2;
 game.MakeCastable();
@@ -33,23 +33,34 @@ game.MakeMove(4, 6, 100); require(game.IsPlacementMode, "Queue spell across clif
 game.SubmitQueuedSpells(); require(game.grid[4, 6] == 100, "Placement crosses elevation unchanged");
 game.grid[4, 6] = 0;
 // Reactions: requirements, outputs, overlap path and decay all use ordered elevations.
-var checkReq = typeof(Assets.Scripts.GameLogic).GetMethod("CheckReq", flags);
-game.grid[4, 6] = 200;
-var req = new Indexing.Requirement[] { new Indexing.Requirement(2, 0, 200, false) };
-require(!(bool)checkReq.Invoke(game, new object[] { game.grid, req, 4, 4 }), "Ingredient across cliff rejected");
-game.elevationGrid[4, 5] = 1.5f;
-require((bool)checkReq.Invoke(game, new object[] { game.grid, req, 4, 4 }), "Ingredient up ramp accepted");
-var apply = typeof(Assets.Scripts.GameLogic).GetMethod("ApplyQueuedChanges", flags);
-System.Func<int, int[,]> output = type => {
-    var queue = new System.Collections.Generic.SortedSet<Assets.Scripts.GameLogic.Change>();
-    queue.Add(new Assets.Scripts.GameLogic.Change(4, 6, type, 0, 0, 4, 4));
-    var args = new object[] { queue, new int[9, 9] }; apply.Invoke(game, args); return (int[,])args[1];
+System.Func<Assets.Scripts.Reaction, int[,]> resolveRule = rule =>
+{
+    var board = new Assets.Scripts.BoardState(9, 9, game.cellExists, game.elevationGrid);
+    var input = (int[,])game.grid.Clone(); input[4, 4] = 100;
+    board.Replace(input);
+    new Assets.Scripts.ReactionResolver(board, family => family == 100 ?
+        new[] { rule } : System.Array.Empty<Assets.Scripts.Reaction>()).Resolve();
+    return board.Cells;
 };
-require(output(100)[4, 6] == 100, "Output climbs ramp");
+game.grid[4, 6] = 200;
+var ingredient = new Assets.Scripts.Reaction(
+    new[] { new Assets.Scripts.Requirement(2, 0, 200, false) },
+    new[] { new Assets.Scripts.Offset(0, 0, 201) });
+require(resolveRule(ingredient)[4, 4] != 201, "Ingredient across cliff rejected");
+game.elevationGrid[4, 5] = 1.5f;
+require(resolveRule(ingredient)[4, 4] == 201, "Ingredient up ramp accepted");
+System.Func<int, int, int, int[,]> output = (type, row, col) => resolveRule(
+    new Assets.Scripts.Reaction(new[] { new Assets.Scripts.Requirement(0, 0, 100, false) },
+        new[] { new Assets.Scripts.Offset(col - 4, row - 4, type) }));
+require(output(100, 4, 6)[4, 6] == 100, "Output climbs ramp");
+game.grid[4, 6] = 0;
 game.elevationGrid[4, 5] = 2;
-require(output(100)[4, 6] == 0 && output(410)[4, 6] == 0, "Normal/lava output blocked by cliff");
+require(output(100, 4, 6)[4, 6] == 0 && output(410, 4, 6)[4, 6] == 0, "Normal/lava output blocked by cliff");
 var fading = new int[9, 9]; fading[4, 4] = 110;
-var faded = (int[,])typeof(Assets.Scripts.GameLogic).GetMethod("HandleFading", flags).Invoke(game, new object[] { fading });
+var fadeBoard = new Assets.Scripts.BoardState(9, 9, game.cellExists, game.elevationGrid);
+fadeBoard.Replace(fading);
+new Assets.Scripts.ReactionResolver(fadeBoard, _ => System.Array.Empty<Assets.Scripts.Reaction>()).Resolve();
+var faded = fadeBoard.Cells;
 require(faded[4, 5] == 0 && faded[4, 3] == 111 && faded[4, 4] == 0, "Decay respects cliffs and still clears origin");
 // Enemy routes cannot cross a full-height barrier, even if its far side is flat.
 for (int r = 0; r < 9; r++) for (int c = 0; c < 9; c++) { game.grid[r, c] = 0; game.elevationGrid[r, c] = c >= 5 ? 2 : 1; }
@@ -60,18 +71,18 @@ mobs.UpdateBestPath(4, 4);
 require(mobs.IsReachable(4, 6), "Enemy path finds half-step opening");
 for (int i = 0; i < 100; i++)
 {
-    var step = mobs.getBestPath(3, 4, 100f);
-    require(step == null || game.CanStep(3, 4, 3 + step.r, 4 + step.c), "Wandering never crosses cliff");
+    var step = mobs.GetBestPath(3, 4, 100f);
+    require(!step.IsValid || game.CanStep(3, 4, 3 + step.r, 4 + step.c), "Wandering never crosses cliff");
 }
 game.MakeCastable();
-var enemy = UnityEditor.AssetDatabase.LoadAssetAtPath<Assets.Scripts.ScriptableObjects.EnemyData>("Assets/Scripts/ScriptableObjects/Enemies/Normal.asset");
+var enemy = UnityEditor.AssetDatabase.LoadAssetAtPath<Assets.Scripts.ScriptableObjects.EnemyData>("Assets/Data/Enemies/Normal.asset");
 mobs.SummonAt(4, 6, enemy);
 game.MakeCastable();
-require(!game.CanBlinkTo(4, 6) && !game.moveableGrid[4, 6], "Occupied cell excluded from yellow border");
+require(mobs.IsOccupied(4, 6), "Ramp destination contains an enemy");
+require(game.CanBlinkTo(4, 6) && game.moveableGrid[4, 6], "Occupied cell remains inside yellow border");
 var mobSet = (System.Collections.Generic.HashSet<MobScript>)typeof(Assets.Scripts.MobHandler).GetField("mobs", flags).GetValue(mobs);
 foreach (var mob in mobSet) mob.transform.position = game.tilesGrid[3, 6].transform.position;
-typeof(Assets.Scripts.GameLogic).GetMethod("LateUpdate", flags).Invoke(game, null);
-require(game.CanBlinkTo(4, 6) && game.moveableGrid[4, 6], "Border follows moving occupancy between ticks");
+require(game.CanBlinkTo(4, 6) && game.moveableGrid[4, 6], "Enemy movement does not change Blink eligibility or its border");
 // Existing wall corner and straight-ray restrictions remain in force.
 game.grid[4, 5] = 400; game.MakeCastable();
 require(!game.CanBlinkTo(4, 6) && !game.Castable(4, 6), "Wall still blocks both borders");
@@ -81,7 +92,7 @@ typeof(Assets.Scripts.PlayerHandler).GetField("blinkSpeed", flags).SetValue(play
 require(game.TryCastBlink(game.tilesGrid[4, 6]) && player.c == 6, "Actual Blink accepts ordered ramp");
 require(!game.moveableGrid[4, 6], "Border refreshes around new player origin");
 require(game.CanBlinkTo(4, 4), "Descending ramp after Blink");
-game.InitializedGrid();
+game.InitializeGrid();
 require(game.elevationGrid[4, 5] == 1, "Reload restores authored heights");
 // Corner rules must agree between cached Blink destinations and actual reaction writes.
 for (int mask = 0; mask < 4; mask++)
@@ -92,21 +103,14 @@ for (int mask = 0; mask < 4; mask++)
     game.grid[5, 4] = (mask & 2) != 0 ? 400 : 0;
     game.MakeCastable();
     require(game.CanBlinkTo(5, 5) == allowed && game.moveableGrid[5, 5] == allowed, "Blink wall corner mask");
-    var cornerQueue = new System.Collections.Generic.SortedSet<Assets.Scripts.GameLogic.Change>();
-    cornerQueue.Add(new Assets.Scripts.GameLogic.Change(5, 5, 100, 0, 0, 4, 4));
-    var cornerArgs = new object[] { cornerQueue, (int[,])game.grid.Clone() };
-    apply.Invoke(game, cornerArgs);
-    require((((int[,])cornerArgs[1])[5, 5] == 100) == allowed, "Reaction wall corner");
+    require((output(100, 5, 5)[5, 5] == 100) == allowed, "Reaction wall corner");
     game.grid[4, 5] = game.grid[5, 4] = 0;
     game.elevationGrid[4, 5] = (mask & 1) != 0 ? 4 : 1;
     game.elevationGrid[5, 4] = (mask & 2) != 0 ? 4 : 1;
     game.MakeCastable();
     require(game.CanBlinkTo(5, 5) == allowed && game.moveableGrid[5, 5] == allowed, "Blink elevation corner mask");
     require(game.Castable(5, 5), "Elevation corners do not restrict placement");
-    cornerQueue.Add(new Assets.Scripts.GameLogic.Change(5, 5, 100, 0, 0, 4, 4));
-    cornerArgs = new object[] { cornerQueue, (int[,])game.grid.Clone() };
-    apply.Invoke(game, cornerArgs);
-    require((((int[,])cornerArgs[1])[5, 5] == 100) == allowed, "Reaction elevation corner");
+    require((output(100, 5, 5)[5, 5] == 100) == allowed, "Reaction elevation corner");
 }
 UnityEngine.Object.Destroy(floor); UnityEngine.Object.Destroy(start);
 return $"PASS: {checks} runtime Blink, placement, reaction, enemy, occupancy and reload assertions.";

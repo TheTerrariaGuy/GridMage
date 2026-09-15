@@ -1,15 +1,15 @@
 # Painting levels
 
-SampleScene is configured with `GridParent/Level/Background` and `GridParent/Level/Logic`.
-Open Unity's Tile Palette window and select **Level Palette**. The palette contains,
+In Game is configured with `GridParent/Level/Background` and `GridParent/Level/Logic`.
+The conversion tool can create **Level Palette** under Assets/Levels/Palettes. It contains,
 left to right: Floor, Wall, Player Spawn, Enemy Spawn, Enemy Spawner, Background Floor.
-The corresponding assets live in `Assets/Levels`.
+Terrain/spawn assets live in `Assets/Levels/Markers`; art tiles live in `Assets/Levels/Tiles`.
 
 ## Elevation
 
-SampleScene now uses numbered elevation tiles on **Logic** in place of the flat Floor
+In Game now uses numbered elevation tiles on **Logic** in place of the flat Floor
 markers. Select **Elevation Palette** to paint heights. White `n` means `n`; blue `n`
-means `n + 0.5`. The assets in `Assets/Levels/Elevation` cover 1 through 8.5.
+means `n + 0.5`. The assets in `Assets/Levels/Markers/Elevation` cover 1 through 8.5.
 The sheet rows are white 1–4, blue 1–4, white 5–8, blue 5–8. The palette groups
 white 1–8 on its first row and blue 1–8 on its second row.
 Numbered base floor cells and default spawn markers start at 1; paint ramps and cliffs as needed. Background artwork
@@ -20,7 +20,7 @@ Use finite multiples of 0.5. Duplicate a spawn marker to give a particular spawn
 different height without changing other cells that share the asset. The loader copies
 heights into `GameLogic.elevationGrid[row, col]`; legacy rectangular boards default to 0.
 
-`GridHelper.IsElevationDiffOk` permits only -0.5, 0 and +0.5. Blink and reactions visit
+`GridMath.IsElevationDiffOk` permits only -0.5, 0 and +0.5. Blink and reactions visit
 cells in straight-line order and compare consecutive heights, so `1 -> 1.5 -> 2`
 passes and `1 -> 2 -> 1` fails. They do not search for a route around a cliff. At an
 exact grid corner, passage fails only when both side cells block it. For elevation,
@@ -35,7 +35,8 @@ Elevation checks affect reaction ingredients, outputs, overlap outputs, and deca
 spread. Spell placement and the blue cast region retain their previous elevation-independent rules.
 
 The **blue** mesh outlines the cast region. The **yellow** mesh outlines valid Blink
-destinations, excluding the player cell, blocked rays, cliffs and occupied cells.
+destinations, excluding the player cell, blocked rays and cliffs. Enemy-occupied cells
+remain valid Blink destinations.
 Both the existing cast visibility range and Blink range limit movement destinations.
 These are spatial regions; mana and cooldown are checked when casting. Yellow is
 slightly inset so coincident blue/yellow edges remain visible. Occupancy updates the
@@ -123,7 +124,7 @@ Their normal floor artwork is suppressed when a TilemapLevel is assigned. Author
 walls are permanent terrain; they do not become elemental stone and do not participate in
 stone reactions. Missing cells block sight as well as movement in this implementation.
 
-`GameLogic.InitializedGrid()` rereads the retained Logic map, rebuilds masks/cells, clears
+`GameLogic.InitializeGrid()` rereads the retained Logic map, rebuilds masks/cells, clears
 queued spells, and restores authored player/enemy spawns. It is a board reload, not a full
 reset of health, mana, or the combat clock. Editing the mask directly at runtime is not an
 authoring workflow; edit the Logic map and reload the board.
@@ -131,8 +132,10 @@ authoring workflow; edit the Logic map and reload the board.
 ## Checks
 
 - **Tools > Grid Mage > Levels > Check tilemap parsing** runs temporary Edit mode checks.
-- In a fresh SampleScene Play session, run
+- In a fresh In Game Play session, run
   `unity command eval_file --file Tests/TilemapLevel/Runtime.cs --json`, then stop Play mode.
   The runtime check temporarily replaces the board to exercise holes, negative coordinates,
   spawns, pathfinding, spell propagation, rendering flags, and reloads.
 - Existing Blink checks remain under `Tests/Blink`.
+
+Initialization and reset ownership are documented in [Architecture](Refactoring/Architecture.md).

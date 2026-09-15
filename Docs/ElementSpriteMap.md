@@ -1,6 +1,6 @@
 # Element sprites
 
-`TextureHandler.spriteMap` uses keys `tile type * 100 + variant`. Variant 0 is the default sprite, 2 is the isolated blob, and 2–48 use the neighborhood order documented in [StoneSpriteMap.md](StoneSpriteMap.md). `TileSpriteLayout` selects these variants for all four elements.
+`Assets/Rendering/ElementSprites.asset` (SpriteCatalog) uses keys `tile type * 100 + variant`. Variant 0 is the default sprite, 2 is the isolated blob, and 2–48 use the neighborhood order documented in [StoneSpriteMap.md](StoneSpriteMap.md). `TileSpriteLayout` selects these variants for all four elements.
 
 Water joins all eight neighbors like stone, including filled 2×2 corners. `Water_0` through `Water_46` correspond directly to variants 2–48, except for L, T, and four-way junctions. L-junctions use filled corner artwork on both connected sides regardless of diagonals:
 
@@ -49,6 +49,6 @@ Fire and lightning join cardinal neighbors only. Diagonals never fill their corn
 
 Base, spent, and fading states below suffix 10 connect within their element family. Fire, water, and lightning reaction states connect only to reaction states in the same family (110/111, 210/211, or 310/311), separately from stages below suffix 10. Shape entries on the base type apply to all connected stages; a stage-specific shape entry overrides them. Stone reaction states (410/411) stay separate and use isolated fire artwork. Reaction states retain their existing particle effects.
 
-Hover previews, queued previews, and the spell selector always use the isolated sprite, regardless of neighbors: `Fire_12`, `Water_0`, `Lightning_12`, or `RockWall_34`. Hover/queued opacity remains configurable on the tile prefab (0.5/0.75).
+Hover previews, queued previews, and the spell selector always use the isolated sprite, regardless of neighbors: `Fire_12`, `Water_0`, `Lightning_12`, or `RockWall_34`. Hover opacity is configured on GridPointer; queued opacity is configured on the tile prefab.
 
-`Indexing.colorMap` remains editable in code. All entries use white RGB. Base states have alpha 255; spent fire/water/lightning start at 240, followed by their existing lower fade values. Spent stone and second reaction stages use 170. Alpha is applied to the artwork, not to the tile's underlying grass or particles.
+`ElementDefinitions` stage alpha remains editable in code. All entries use white RGB. Base states have alpha 255; spent fire/water/lightning start at 240, followed by their existing lower fade values. Spent stone and second reaction stages use 170. Alpha is applied to the artwork, not to the tile's underlying grass or particles.

@@ -36,7 +36,9 @@ Enemy damage bursts follow their victim while remaining independently pooled. Th
 
 ## Castable-area outline
 
-The saved `Castable Outline` child of the grid contains one `MeshFilter`, `MeshRenderer` and `CastableOutline` component. `GameLogic.MakeCastable()` rebuilds its reusable mesh after grid initialization, player initialization and Blink arrival, including clearing it when there is no valid range. It reads the existing `castableGrid`; queued previews retain their existing behavior after the player moves.
+The saved `Castable Outline` and `Moveable Outline` objects are direct children of Player. Each contains one `MeshFilter`, `MeshRenderer` and `CastableOutline` component with an identity local transform. `GameLogic.MakeCastable()` rebuilds their reusable meshes from `castableGrid` and `moveableGrid`, including clearing them when there is no valid range.
+
+The boundary vertices are converted from board coordinates into player-local coordinates using the player's logical cell, rotation and scale. Both ranges follow the player throughout Blink, including when combat refreshes them during the animation. On arrival they rebuild for the destination's terrain and visibility. The conversion preserves tile alignment and border size despite the player's visual scale; the authored level's grid translation cancels between the player cell and mesh coordinates.
 
 `CastableOutline` traces exposed tile edges into joined loops, including holes and separate islands. Each loop has a solid border and eight inward fade bands using vertex alpha. There are no borders between adjacent castable cells. Widths are fractions of a tile, with their sum clamped below half a tile to avoid overlapping bands in narrow passages. The defaults are a cyan highlight, 50% opacity, a 1/16-tile solid border, a 1/4-tile fade and falloff 1. These controls are on the scene component; Inspector changes refresh the current mesh without a per-frame rebuild.
 
@@ -51,9 +53,9 @@ The saved `Castable Outline` child of the grid contains one `MeshFilter`, `MeshR
 - `ParticlePixelation`: shared game-pixel cell size for the particle shader.
 - `GridPointer`: tile picking and pointer interaction.
 - `CastableOutline`: one reusable area mesh driven by the cached castability grid.
-- `TextureHandler`: artwork placement and ground/wall classification.
+- `TextureHandler`: artwork placement and ground/wall classification, using SpriteCatalog.
 
-`Tools > Grid Mage > Rendering > Configure Y-sorted world` configures the saved sample scene, mob prefab, tile Z offsets and renderer settings. The checked-in assets are already configured.
+`Tools > Grid Mage > Rendering > Configure Y-sorted world` validates prerequisites and configures the active gameplay scene, mob prefab, tile Z offsets and renderer settings. Scene edits are marked dirty for review. The checked-in assets are already configured.
 
 `ParticlePixelationChecks.Run` checks GPU output for full cells at game-pixel sizes 1, 4, 6 and 9, two rotations and zoom levels, and three resolutions (including a doubled resolution and fractional cell sizes). Its 48 grid/alpha cases also check alpha seams; additional checks cover disabled pixelation, native sprite edges and both sprite/particle sorting orders. Captures and results go to `Temp/ParticlePixelationChecks`.
 
@@ -65,4 +67,6 @@ For CLI validation, use an isolated copy of the project:
 & 'C:/Program Files/Unity/Hub/Editor/6000.6.0f1/Editor/Unity.exe' -batchmode -projectPath '<isolated-project>' -executeMethod WorldRenderingChecks.Run -logFile '<log-path>'
 ```
 
-The checks open `Assets/Scenes/SampleScene.unity`; use `WorldRenderingSetup.ConfigureAndCheck` to configure it first as well. Omit `-quit`: the checks enter Play Mode and exit batch Unity when finished (an interactive editor returns to Edit Mode). They cover both rendered particle/sprite occlusion orders, catalog anchors at all four rotations, wall transitions, effect continuity and reuse, camera zoom/resize, tile picking and grid reset. Images and results are saved in `Temp/WorldRenderingChecks`.
+The checks clone gameplay wiring into an unsaved rectangular fixture, preserving cross-object references, and restore the previously active scene afterward. Save scene edits before starting. Setup/migration is not a prerequisite for validation. Omit `-quit`: the checks enter Play Mode and exit batch Unity when finished (an interactive editor returns to Edit Mode). They cover both rendered particle/sprite occlusion orders, catalog anchors at all four rotations, wall transitions, effect continuity and reuse, camera zoom/resize, tile picking and grid reset. Images and results are saved in `Temp/WorldRenderingChecks`.
+
+See [the refactoring validation guide](Refactoring/Validation.md) for all current suites and outputs.

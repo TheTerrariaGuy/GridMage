@@ -2,7 +2,7 @@
 if (!Application.isPlaying) throw new System.Exception("Enter Play mode first.");
 var game = Assets.Scripts.GameLogic.INSTANCE;
 var player = Assets.Scripts.PlayerHandler.INSTANCE;
-var index = Indexing.INSTANCE;
+var index = Assets.Scripts.PlayerHandler.INSTANCE;
 var speed = typeof(Assets.Scripts.PlayerHandler).GetField("blinkSpeed",
     System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
 float oldSpeed = (float)speed.GetValue(player), oldCooldown = index.blinkCooldown;
@@ -19,7 +19,7 @@ try
     player.r = 5;
     player.c = 5;
     player.transform.position = game.tilesGrid[5, 5].transform.position;
-    game.InitializedGrid();
+    game.InitializeGrid();
     require(game.castableGrid.GetLength(0) == game.grid.GetLength(0) &&
         game.castableGrid.GetLength(1) == game.grid.GetLength(1), "Cache must match the board dimensions.");
     for (int row = 0; row < game.grid.GetLength(0); row++)

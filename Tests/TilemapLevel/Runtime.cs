@@ -1,4 +1,4 @@
-// Run in a fresh SampleScene Play session via Unity Pipeline eval_file; stop Play afterward.
+// Run in a fresh In Game Play session via Unity Pipeline eval_file; stop Play afterward.
 if (!Application.isPlaying) throw new System.Exception("Enter Play mode first.");
 Time.timeScale = 0f;
 var game = Assets.Scripts.GameLogic.INSTANCE;
@@ -23,7 +23,7 @@ var noSpell = ScriptableObject.CreateInstance<Assets.Scripts.LevelMarkerTile>();
 noSpell.allowsSpells = false;
 var enemy = ScriptableObject.CreateInstance<Assets.Scripts.LevelMarkerTile>();
 enemy.spawnKind = Assets.Scripts.LevelSpawnKind.Enemy;
-enemy.enemy = UnityEditor.AssetDatabase.LoadAssetAtPath<Assets.Scripts.ScriptableObjects.EnemyData>("Assets/Scripts/ScriptableObjects/Enemies/Normal.asset");
+enemy.enemy = UnityEditor.AssetDatabase.LoadAssetAtPath<Assets.Scripts.ScriptableObjects.EnemyData>("Assets/Data/Enemies/Normal.asset");
 enemy.spawnInterval = 1f;
 try
 {
@@ -35,20 +35,20 @@ try
     level.logic.SetTile(new Vector3Int(-1, 0, 0), wall);
     level.logic.SetTile(new Vector3Int(0, 1, 0), noSpell);
     level.logic.SetTile(new Vector3Int(0, -2, 0), enemy);
-    game.InitializedGrid();
-    require(game.tilesSet.Count == 48 && game.tilesGrid[3, 4] == null && !game.HasCell(3, 4), "Only existing cells get runtime objects.");
+    game.InitializeGrid();
+    require(game.tilesGrid.Cast<Tile>().Count(t => t != null) == 48 && game.tilesGrid[3, 4] == null && !game.HasCell(3, 4), "Only existing cells get runtime objects.");
     require(game.HasCell(3, 2) && !game.CanWalk(3, 2), "Wall is present but not walkable.");
     require(game.CanWalk(2, 3) && !game.Castable(2, 3) && game.CanBlinkTo(2, 3), "Walkability and spell permission are independent.");
     require(!game.Castable(3, 4) && !game.Castable(3, 5) && !game.CanBlinkTo(3, 5), "Hole blocks targeting through it.");
     require(!game.CanWalk(-1, 0) && !game.HasCell(7, 3), "Array bounds remain guarded.");
-    foreach (var tile in game.tilesSet)
+    foreach (var tile in game.tilesGrid.Cast<Tile>().Where(t => t != null))
     {
         Vector3 world = level.logic.GetCellCenterWorld(game.LevelLayout.ToCell(tile.row, tile.col));
         require((tile.transform.position - world).sqrMagnitude < .00001f, "Runtime cell alignment.");
         require(Assets.Scripts.GridHelper.INSTANCE.TryGetTileOn(world, out var found) && found == tile, "World-to-cell round trip.");
     }
     require(!Assets.Scripts.GridHelper.INSTANCE.TryGetTileOn(level.logic.GetCellCenterWorld(new Vector3Int(1, 0, 0)), out _), "World lookup rejects a hole.");
-    require(mobs.getBestPath(3, 4) == null && mobs.getBestPath(3, 2) == null && mobs.getBestPath(3, 5) != null,
+    require(!mobs.GetBestPath(3, 4).IsValid && !mobs.GetBestPath(3, 2).IsValid && mobs.GetBestPath(3, 5).IsValid,
         "Paths avoid holes/walls and can go around them.");
     var mobSet = (System.Collections.Generic.HashSet<MobScript>)typeof(Assets.Scripts.MobHandler).GetField("mobs", flags).GetValue(mobs);
     require(mobSet.Count == 1, "One authored enemy spawn.");
@@ -66,7 +66,11 @@ try
     {
         System.Array.Clear(game.grid, 0, game.grid.Length);
         game.grid[3, 3] = stage;
-        var faded = (int[,])typeof(Assets.Scripts.GameLogic).GetMethod("HandleFading", flags).Invoke(game, new object[] { game.grid });
+        int[,] faded = null;
+        new Assets.Scripts.ReactionResolver(game.Board, Indexing.INSTANCE.GetReactions).Resolve(phase =>
+        {
+            if (phase == Assets.Scripts.ResolutionPhase.Fading) faded = (int[,])game.grid.Clone();
+        });
         require(faded[3, 3] == 0 && faded[3, 4] == 0 && faded[3, 2] == 0 && faded[2, 3] == 0,
             "Fade clears its source without writing to holes or forbidden terrain.");
         require(faded[4, 3] == stage + 1, "Fade still reaches valid floor.");
@@ -78,8 +82,12 @@ try
             System.Array.Clear(game.grid, 0, game.grid.Length);
             game.grid[3, 3] = a;
             game.grid[4, 3] = b;
-            var reacted = (int[,])typeof(Assets.Scripts.GameLogic).GetMethod("HandleSpells", flags).Invoke(game, new object[] { game.grid });
-            var overlap = (int[,])typeof(Assets.Scripts.GameLogic).GetMethod("HandleOverlap", flags).Invoke(game, new object[] { reacted, game.grid });
+            int[,] reacted = null;
+            new Assets.Scripts.ReactionResolver(game.Board, Indexing.INSTANCE.GetReactions).Resolve(phase =>
+            {
+                if (phase == Assets.Scripts.ResolutionPhase.Reactions) reacted = (int[,])game.grid.Clone();
+            });
+            var overlap = game.grid;
             require(reacted[3, 4] == 0 && overlap[3, 4] == 0 && overlap[3, 2] == 0 && overlap[2, 3] == 0,
                 "Reactions and overlaps respect mask and terrain permissions.");
         }
@@ -94,14 +102,14 @@ try
     game.SubmitQueuedSpells();
     require(game.grid[4, 3] == 100 && game.tilesGrid[4, 3].SurfaceRenderer.enabled, "Spells render above authored background.");
     foreach (var mob in mobSet) mob.TakeDamage(); // Adjacent null tiles must be safe.
-    game.InitializedGrid();
+    game.InitializeGrid();
     require(!game.IsPlacementMode && game.grid[4, 3] == 0 && player.r == 3 && player.c == 3,
         "Reload restores mask/spawns and clears spell state.");
     require(((System.Collections.Generic.HashSet<MobScript>)typeof(Assets.Scripts.MobHandler).GetField("mobs", flags).GetValue(mobs)).Count == 1,
         "Reload replaces enemies instead of accumulating them.");
 
     level.GetComponent<Grid>().cellSize = new Vector3(2f, 2f, 1f);
-    game.InitializedGrid();
+    game.InitializeGrid();
     Physics2D.SyncTransforms();
     require(Mathf.Approximately(game.spacing, 2f), "Runtime spacing follows the authoring grid.");
     var scaledTile = game.tilesGrid[4, 3];
@@ -116,8 +124,8 @@ try
         "Hover artwork matches scaled cells.");
 
     typeof(Assets.Scripts.GameLogic).GetField("level", flags).SetValue(game, null);
-    game.InitializedGrid();
-    require(game.LevelLayout == null && game.tilesSet.Count == 49 && game.HasCell(3, 4), "Unassigned levels retain rectangular fallback.");
+    game.InitializeGrid();
+    require(game.LevelLayout == null && game.tilesGrid.Cast<Tile>().Count(t => t != null) == 49 && game.HasCell(3, 4), "Unassigned levels retain rectangular fallback.");
     require(game.tilesGrid[3, 3].SurfaceRenderer.enabled && game.GridTranslation == Vector3.zero,
         "Fallback restores floor visuals and the legacy origin.");
     require(player.transform.position == game.tilesGrid[player.r, player.c].transform.position, "Reload places the player on the rebuilt grid.");

@@ -1,4 +1,4 @@
-// Run with Unity Pipeline eval_file in a fresh SampleScene Play session, then stop Play mode.
+// Run in a fresh rectangular ValidationFixture Play session, then stop Play mode.
 
 if (!Application.isPlaying) throw new System.Exception("Enter Play mode first.");
 Time.timeScale = 0f;
@@ -8,9 +8,9 @@ var mobs = Assets.Scripts.MobHandler.INSTANCE;
 var flags = System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance;
 var speedField = typeof(Assets.Scripts.PlayerHandler).GetField("blinkSpeed", flags);
 float originalSpeed = (float)speedField.GetValue(player);
-float originalCooldown = Indexing.INSTANCE.blinkCooldown;
+float originalCooldown = Assets.Scripts.PlayerHandler.INSTANCE.blinkCooldown;
 speedField.SetValue(player, 0f);
-Indexing.INSTANCE.blinkCooldown = 0f;
+Assets.Scripts.PlayerHandler.INSTANCE.blinkCooldown = 0f;
 System.Action<bool, string> require = (condition, message) =>
 {
     if (!condition) throw new System.Exception(message);
@@ -43,8 +43,15 @@ require(!game.TryCastBlink(game.tilesGrid[6, 6]), "Two corner walls must block B
 game.grid[6, 5] = 0;
 game.grid[5, 6] = 0;
 game.MakeCastable();
-mobs.SummonAt(6, 5, 1);
-require(!game.TryCastBlink(game.tilesGrid[6, 5]), "Occupied destination must be rejected.");
+mobs.SummonAt(5, 6, 1);
+require(mobs.IsOccupied(5, 6), "Blink destination must contain a live enemy.");
+require(game.CanBlinkTo(5, 6) && game.moveableGrid[5, 6], "Occupied destinations must remain in the Blink region.");
+var hoverPointer = UnityEngine.Object.FindAnyObjectByType<GridPointer>();
+hoverPointer.SetHovered(game.tilesGrid[5, 6], true);
+var hoverData = new UnityEditor.SerializedObject(hoverPointer);
+require(((SpriteRenderer)hoverData.FindProperty("hoverOverlay").objectReferenceValue).sprite ==
+    (Sprite)hoverData.FindProperty("teleportSprite").objectReferenceValue,
+    "Occupied destinations must show the teleport marker.");
 require(game.currMana == 30f, "Invalid casts must not spend mana.");
 
 game.currMana = 10f;
@@ -52,12 +59,13 @@ game.MakeMove(5, 3, 100);
 require(game.AvailableMana == 2f, "Queue must reserve its mana.");
 require(!game.TryCastBlink(game.tilesGrid[5, 6]), "Blink cannot spend reserved mana.");
 game.currMana = 12f;
-require(game.TryCastBlink(game.tilesGrid[5, 6]), "Exactly enough available mana must succeed.");
+require(game.TryCastBlink(game.tilesGrid[5, 6]), "Blink onto an enemy with exactly enough available mana must succeed.");
 require(player.r == 5 && player.c == 6 && player.transform.position == game.tilesGrid[5, 6].transform.position,
     "Blink must relocate both coordinates and transform.");
+require(mobs.IsOccupied(5, 6), "Blink must arrive on the enemy's tile without removing the enemy.");
 require(game.currMana == 8f && game.AvailableMana == 0f && game.IsPlacementMode && game.grid[5, 3] == 0,
     "Blink must preserve the queued spell without submitting it.");
-require(mobs.getBestPath(5, 6) == null && mobs.getBestPath(5, 5) != null,
+require(!mobs.GetBestPath(5, 6).IsValid && mobs.GetBestPath(5, 5).IsValid,
     "Enemy path field must target the new location immediately.");
 require(player.hp == hp && game.time == combatTime, "Blink must not advance combat.");
 foreach (var sprite in UnityEngine.Object.FindObjectsByType<SpriteRenderer>(FindObjectsSortMode.None))
@@ -119,6 +127,6 @@ finally
     inputSettings.backgroundBehavior = previousBackground;
     inputSettings.editorInputBehaviorInPlayMode = previousRouting;
     speedField.SetValue(player, originalSpeed);
-    Indexing.INSTANCE.blinkCooldown = originalCooldown;
+    Assets.Scripts.PlayerHandler.INSTANCE.blinkCooldown = originalCooldown;
 }
 return "Passed Blink integration: mana reservations, validity, relocation, enemy routes, single-click input, modifier release, and ordinary placement.";
