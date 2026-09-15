@@ -13,14 +13,17 @@ namespace Assets.Scripts
         [SerializeField] private Vector2 windDirection = Vector2.ClampMagnitude(Vector2.right + Vector2.down, 1f);
         [SerializeField] private float windSpeed = 1.5f;
         [SerializeField] private float noiseScale = 0.18f;
-        [SerializeField] private float strength = 1.2f;
-        [SerializeField] private float gradientSampleDistance = 0.02f;
+        [SerializeField] private float strength = 1f;
+        [SerializeField] private float gradientSampleDistance = 0.2f;
         [SerializeField] private float updateRate = 12f;
         [SerializeField] private float perlinScale = 10f;
+        [SerializeField] private float crosswindStretch = 1f;
+        [SerializeField] private float elevationDelaySeconds = 0.5f;
 
         private Tilemap background;
         private Vector3Int[] grassCells;
         private Vector2[] samplePositions;
+        private float[] grassElevations;
         private int[] currentTileIndices;
         private Vector2 windOffset;
         private float updateTimer;
@@ -38,6 +41,12 @@ namespace Assets.Scripts
             CacheGrassCells();
         }
 
+        private void Start()
+        {
+            // GameLogic initializes the layout in Start with execution order -100.
+            CacheGrassElevations();
+        }
+
         private void CacheGrassCells()
         {
             var cells = new List<Vector3Int>();
@@ -46,9 +55,29 @@ namespace Assets.Scripts
 
             grassCells = cells.ToArray();
             samplePositions = new Vector2[grassCells.Length];
+            grassElevations = new float[grassCells.Length];
             currentTileIndices = new int[grassCells.Length];
             for (int i = 0; i < grassCells.Length; i++)
                 samplePositions[i] = background.GetCellCenterWorld(grassCells[i]);
+        }
+
+        private void CacheGrassElevations()
+        {
+            var game = GameLogic.INSTANCE;
+            var layout = game != null ? game.LevelLayout : null;
+            if (layout == null || game.gridParent == null) return;
+
+            for (int i = 0; i < grassCells.Length; i++)
+            {
+                // Use the initialized layout's coordinates; no other tilemap is scanned.
+                Vector3 local = game.gridParent.InverseTransformPoint(
+                    background.GetCellCenterWorld(grassCells[i]));
+                int col = Mathf.RoundToInt((local.x - layout.origin.x) / layout.spacing);
+                int row = Mathf.RoundToInt((layout.origin.y - local.y) / layout.spacing);
+                if (row >= 0 && row < layout.exists.GetLength(0) &&
+                    col >= 0 && col < layout.exists.GetLength(1) && layout.exists[row, col])
+                    grassElevations[i] = layout.elevations[row, col];
+            }
         }
 
         private void Update()
@@ -62,10 +91,12 @@ namespace Assets.Scripts
 
         private void UpdateGrassTiles()
         {
+            Vector2 velocity = windDirection.normalized * (windSpeed * perlinScale);
             for (int i = 0; i < grassCells.Length; i++)
             {
-                // Subtract displacement so features travel along the wind direction.
-                Vector2 position = (samplePositions[i] - windOffset) * noiseScale;
+                float delay = grassElevations[i] * elevationDelaySeconds;
+                // Positive delay samples an earlier point in the moving noise pattern.
+                Vector2 position = (samplePositions[i] - windOffset + velocity * delay) * noiseScale;
                 int index = GetTileIndex(SampleGradientMagnitude(position));
                 if (index == currentTileIndices[i]) continue;
                 background.SetTile(grassCells[i], grassTiles[index]);
@@ -76,6 +107,13 @@ namespace Assets.Scripts
         private float SampleGradientMagnitude(Vector2 position)
         {
             position /= perlinScale;
+            Vector2 direction = windDirection.normalized;
+            if (direction == Vector2.zero) direction = Vector2.right;
+            Vector2 perpendicular = new Vector2(-direction.y, direction.x);
+            float across = Vector2.Dot(position, perpendicular);
+            // Compress sampling coordinates to widen the pattern across the wind.
+            position += perpendicular * across * (1f / Mathf.Max(0.01f, crosswindStretch) - 1f);
+
             float step = gradientSampleDistance;
             float dx = (Mathf.PerlinNoise(position.x + step, position.y) -
                         Mathf.PerlinNoise(position.x - step, position.y)) / (2f * step);
