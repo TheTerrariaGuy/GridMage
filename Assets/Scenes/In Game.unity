@@ -5341,7 +5341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CastableOutline
   region: 1
-  highlightColor: {r: 1, g: 0.85, b: 0.1, a: 1}
+  highlightColor: {r: 1, g: 0.85, b: 0.1, a: 0.2509804}
   opacity: 0.7
   borderWidth: 0.0625
   fadeWidth: 0.2
@@ -8765,7 +8765,7 @@ Tilemap:
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 0.13725491}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7058824}
   m_Origin: {x: -2, y: -15, z: 0}
   m_Size: {x: 21, y: 18, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -9097,7 +9097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CastableOutline
   region: 0
-  highlightColor: {r: 0.15, g: 0.45, b: 1, a: 1}
+  highlightColor: {r: 0.15, g: 0.45, b: 1, a: 0.2509804}
   opacity: 0.85
   borderWidth: 0.0625
   fadeWidth: 0.06
@@ -14610,7 +14610,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1978991871
 SpriteRenderer:
   serializedVersion: 3
